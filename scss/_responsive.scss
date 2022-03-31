@@ -1,0 +1,4366 @@
+/***********************************
+MEDIA QUERIES
+***********************************/  
+@media only screen and (max-width: 1700px) { 
+
+    /***********************************
+    CUSTOMER STORY STYLES
+    ***********************************/
+    .share-wrapper.custom-share {
+        margin-bottom: 80px;
+        
+
+        .share { 
+            top: inherit;
+            margin-bottom: 0;
+            position: inherit;
+            margin-left: inherit;
+
+            .sharethis-inline-share-buttons {
+                margin: -6px !important; 
+                flex-wrap: wrap !important;
+                display: inline-flex !important;
+                align-items: center !important;
+
+                .st-total { 
+                    margin: 6px !important;  
+                }
+
+                .st-btn {
+                    margin: 6px !important;  
+                }
+            }
+        }
+    }
+
+    .featured-story { 
+        margin-bottom: 30px; 
+    }
+
+}/* 1700 */
+
+@media only screen and (max-width: 1460px) { 
+
+    h1, .h1 { &.lg {font-size: 90px; line-height: 100px; @include letter-spacing(-25, 90) } } 
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .header-gutter {
+        height: 165px;
+        min-height: 165px;
+    }
+
+    .header {
+
+        .navbar {
+            padding: 60px 0 45px;
+        }
+    }
+
+    .follow-us-share {
+
+        &__content {
+            padding: 40px 35px;
+
+            &-btn-group {
+                margin-left: -10px;
+                margin-right: -10px;
+
+                &.get-app { 
+
+                    .btn {
+                        height: 70px;    
+
+                        img {
+                            max-width: 150px;
+                        }
+                    }
+                }
+
+                .btn {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    padding: 12px 26px;
+
+                    .icon {
+                        
+                        i {
+                            font-size: 38px;
+                            line-height: 38px;
+                        }
+                    }
+
+                    .text {
+
+                        .sub-title {
+                            font-size: 16px;
+                            line-height: 18px;
+                            @include letter-spacing(-25, 16);
+                        }
+
+                        .title {
+                            font-size: 26px;
+                            line-height: 28px;
+                            @include letter-spacing(-25, 26);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .for-brands {
+        padding: 150px 0;
+
+        &__content {
+
+            svg, img {
+                max-width: 200px;
+            }
+           
+           .title {
+                font-size: 60px;
+                line-height: 70px;
+                @include letter-spacing(-25, 60);
+           }
+        }
+    }
+
+    .request-demo {
+        padding: 150px 0;
+
+        &__content {
+            padding: 120px 60px !important;
+        }
+    }
+
+    .why-glewee {
+        padding-bottom: 180px;
+    } 
+
+    .our-network {
+        padding: 150px 0;
+    }
+
+    /***********************************
+    CAREERS
+    ***********************************/
+    .careers {
+
+        &__media {
+            margin-left: -30px;
+        }
+    } 
+
+    .main-highlights {
+        padding: 100px 0;
+    }
+
+    .current-openings {
+        padding-bottom: 120px;
+    }
+
+    .chat {
+        padding: 120px 0;
+    }
+
+    /***********************************
+    PRICING FEATURES
+    ***********************************/
+    .pricing {
+
+        &__card {
+            padding: 40px 30px;
+
+            &.popuar {
+
+                .popuar__text {
+                    padding: 11px 60px 9px;
+                    left: calc(50% - 137px);
+                }
+            }
+        }
+
+        &-bottom {
+            padding: 34px 100px 4px 36px;
+        }
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .featured-blog-posts {
+        padding-top: 200px;
+    } 
+
+    .blog-page {
+        padding-bottom: 200px;
+    }
+
+    .blog-post {
+
+        &.featured-blog {
+
+            .text {
+
+                .title {
+                    font-size: 50px;
+                    line-height: 60px;
+                    @include letter-spacing(-25, 50);
+                }
+            }
+        }
+
+        .media { 
+            min-width: 300px;
+            max-width: 300px;  
+        }
+
+        .text {
+
+            .title {
+                font-size: 30px;
+                line-height: 40px;
+                @include letter-spacing(-25, 30);
+            }
+        }
+    }
+
+    /***********************************
+    BLOG DETAILS STYLES
+    ***********************************/
+    .blog-details-page {
+        padding-bottom: 120px;
+
+        .btn.bg-white img {
+            max-width: 240px;
+        }
+
+        .blog-post-top {
+
+            .title {
+                font-size: 75px;
+                line-height: 76px;
+                @include letter-spacing(-25, 75);
+            }
+        }
+    }
+
+    .share-wrapper .share {
+        margin-left: -169px;
+    }
+
+    /***********************************
+    BRANDS STYLES
+    ***********************************/
+    .glewee-for-brands {
+        padding: 50px 0 320px;
+
+        &.creators {
+            padding-bottom: 250px;
+        }
+    }
+
+    .your-marketing {
+        padding: 320px 0 250px;
+
+        &.creators {
+            padding: 250px 0;
+        }
+
+        &__item {
+            margin-bottom: 420px;
+        }
+    }
+
+    .how-works {
+        padding: 175px 0;
+
+        &__item {
+            min-width: 1150px;
+            max-width: 1150px;
+        }
+    }
+
+    .request-demo-brands {
+        padding-bottom: 175px;
+    }
+
+    .ebook-offer.brands {
+        padding-bottom: 175px;
+    }
+
+    /***********************************
+    CUSTOMER STORY STYLES
+    ***********************************/
+    .story-post {
+
+        &.big .title {
+            font-size: 80px;
+            line-height: 90px;
+            @include letter-spacing(-25, 80);
+        }
+
+        .title {
+            font-size: 40px;
+            line-height: 50px; 
+            @include letter-spacing(-25, 40);
+        }
+    } 
+
+}/* 1460 */
+
+@media only screen and (max-width: 1366px) { 
+
+    h1, .h1 { &.lg { font-size: 80px; line-height: 90px; @include letter-spacing(-25, 80) } }
+
+    .container {
+        max-width: 1170px;
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner {
+        padding: 230px 0 160px;
+
+        &__media {
+            bottom: -160px;
+        }
+    }
+
+    .for-brands {
+        padding: 120px 0; 
+    } 
+
+    .request-demo {
+        padding: 120px 0;
+    }
+
+    .why-glewee {
+        padding: 150px 0;
+    } 
+
+    .our-network {
+        padding: 120px 0;
+    }
+
+    .latest-news {
+        padding: 120px 0;
+    }
+
+    /***********************************
+    TRY GLEWEE
+    ***********************************/
+    .try-glewee {
+        padding-bottom: 120px;
+    }
+
+    .trusted-brands {
+        padding: 120px 0;
+    }
+        
+    .ebook-offer {
+
+        &__item {
+
+            &-media {
+                max-width: 460px;
+            }
+
+            &-text {
+                margin-left: 400px;
+                padding: 66px 20px 85px 60px;
+            }
+        }
+    }
+
+    /***********************************
+    CONTACT US
+    ***********************************/
+    .follow-us-share {
+        padding-bottom: 110px;
+
+        &__content {
+            padding: 35px 30px;
+
+            &-btn-group { ;
+
+                &.get-app { 
+
+                    .btn {
+                        height: 60px;   
+                        padding: 13px 28px 13px 20px;
+                    }
+                }
+
+                .btn {  
+                    padding: 10px 22px;
+
+                    .icon {
+                        
+                        i {
+                            font-size: 34px;
+                            line-height: 34px;
+                        }
+                    }
+
+                    .text {
+
+                        .sub-title {
+                            font-size: 14px;
+                            line-height: 16px;
+                            @include letter-spacing(-25, 14);
+                        }
+
+                        .title {
+                            font-size: 22px;
+                            line-height: 24px;
+                            @include letter-spacing(-25, 22);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    CAREERS 
+    ***********************************/
+    .main-highlights {
+        padding: 80px 0;
+    }
+
+    .current-openings {
+        padding-bottom: 100px;
+    }
+
+    .chat {
+        padding: 100px 0;
+    }
+
+    .founders {
+        padding: 80px 0;
+    }
+
+    /***********************************
+    PRICING FEATURES
+    ***********************************/
+    .questions {
+        padding: 120px 0;
+    }
+
+    /***********************************
+    ABOUT GLEWEE
+    ***********************************/
+    .banner.about-glewee {
+        padding: 200px 0 1038px;
+    }
+
+    .we-empower {
+        padding: 180px 0;
+    }
+
+    .brand-awareness {
+        padding: 180px 0;
+    }
+
+    .about-trusted-brands { 
+        padding: 105px 0 180px;
+    }
+
+    .trusted-creators { 
+        padding: 180px 0;
+    }
+
+    .what-tabs__nav li a {
+        font-size: 22px;  
+        line-height: 32px;
+        padding-left: 25px;
+        @include letter-spacing(-25, 22);
+
+        &.active {
+            padding-left: 49px;
+        }
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .featured-blog-posts {
+        padding: 190px 0 120px;
+    }
+
+    .recommended-blog-posts {
+        padding: 120px 0;
+    }
+
+    .search-bar {
+        padding-bottom: 120px;
+    }
+
+    .blog-page {
+        padding: 120px 0 150px;
+    }
+
+    /***********************************
+    BLOG DETAILS STYLES
+    ***********************************/
+    .blog-details-page {
+        padding-bottom: 100px; 
+    }
+
+    /***********************************
+    BRANDS STYLES
+    ***********************************/
+    .glewee-for-brands {
+        padding: 40px 0 300px;
+
+        &.creators {
+            padding-bottom: 220px;
+        }
+
+        &__content .title {
+            margin-bottom: 15px;
+        }
+    }
+
+    .popup-video:before {
+        width: 175px;
+        height: 170px;
+        font-size: 65px;
+        line-height: 170px;
+        top: calc(50% - 85px);
+        left: calc(50% - 85px);
+
+        &:hover:before {
+            font-size: 70px;
+        }
+    }
+
+    .your-marketing {
+        padding: 300px 0 250px;
+
+        &.creators {
+            padding: 220px 0;
+        }
+
+        &__item {
+            margin-bottom: 390px;
+        }
+    }
+
+    .how-works { 
+
+        &__item {
+            min-width: 1000px;
+            max-width: 1000px;
+        }
+    }
+
+    .slider-controls .slick-dots {
+        margin-left: 10px;
+        margin-right: 10px;
+
+        li {
+            font-size: 20px;
+            line-height: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            @include letter-spacing(-25, 20);
+        }
+    }
+
+    .additional-item__media {  
+        padding: 37px 38px 0;
+    }
+
+    /***********************************
+    CREATORS STYLES
+    ***********************************/
+    .join-creators {
+        margin-top: 40px;
+    }
+
+    /***********************************
+    CUSTOMER STORY STYLES
+    ***********************************/
+    .gallery-item {
+        height: 373px;
+
+        .icon {
+            font-size: 70px;
+            line-height: 373px;
+        }
+    }
+
+    .mfp-move-from-top .mfp-container {
+
+        .mfp-arrow {
+            width: 80px;
+            height: 80px; 
+        }
+    } 
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .call-action {
+        padding-bottom: 120px;
+
+        &__item {
+
+            &-text { 
+                padding: 60px 38px;
+
+                .title { 
+                    margin-bottom: 5px; 
+                }
+            }
+        }
+    }
+
+    .footer {
+        padding: 120px 0;
+
+        &-bottom {
+            margin-top: 100px;
+        }
+    }
+
+} /* 1366 */
+
+@media only screen and (max-width: 1199px) {
+ 
+    h1, .h1 { font-size: 60px;  line-height: 68px; @include letter-spacing(-25, 60); &.lg { font-size: 72px; line-height: 84px; @include letter-spacing(-25, 72) } }
+    h2, .h2 { font-size: 55px;  line-height: 65px; @include letter-spacing(-25, 55) } 
+
+    .btn {
+
+        &.big-text {
+            font-size: 30px;
+            line-height: 40px;
+            padding: 18px 34px;
+            @include letter-spacing(-25, 30);
+        }
+    }
+
+    .container {
+        max-width: 1070px
+    }
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/ 
+    .header-gutter {
+        height: 140px;
+        min-height: 140px;
+    }
+
+    .header {  
+
+        .navbar {
+            padding: 40px 0;
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    &:not(.navbar-right) {
+
+                        > li {
+
+                            &:not(.btn-menu) {
+
+                                &:nth-last-child(2) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }   
+
+                    &.navbar-right {
+
+                        li {
+
+                            &.mobile-navbar-toggler {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/ 
+    .banner { 
+        padding-top: 155px;
+        margin-bottom: 100px;
+    }
+
+    .home-trusted-brands {
+        padding: 100px 0;
+    }
+
+    .for-brands {
+        padding: 100px 0; 
+
+        &__content {
+
+            svg, img {
+                max-width: 170px;
+            }
+
+            .title {
+                font-size: 45px;
+                line-height: 55px;
+                margin-bottom: 0;
+                @include letter-spacing(-25, 45);
+            }
+        }
+    }
+
+    .request-demo {
+        padding: 100px 0;
+
+        &__content {
+            padding: 80px 50px !important;
+        }
+    }
+
+    .why-glewee {
+        padding: 130px 0;
+    } 
+
+    .our-network {
+        padding: 100px 0;
+    }
+
+    .latest-news {
+        padding: 100px 0;
+
+        .blog-post .text {
+            max-width: 100%;
+            margin-right: auto;
+        }
+    }
+    /***********************************
+    TRY GLEWEE
+    ***********************************/
+    .try-glewee {
+        padding-bottom: 100px;
+    }
+
+    .trusted-brands {
+        padding: 100px 0;
+
+        &__item {
+
+            &-media  {
+                width: 270px;
+                height: 270px;
+            }
+        }
+    }
+
+    .trusted-brands-slider-wrapper {  
+        
+        .trusted-brands-slider {  
+
+            .slider-item { 
+                max-width: 300px; 
+            }
+        }
+    }
+
+    .contact {
+        padding: 80px 20px;
+    }
+
+    /***********************************
+    CONTACT US
+    ***********************************/
+    .contact-us {
+
+        &__item {
+
+            &.big {
+
+                .contact-us__item {
+
+                    &-text {
+
+                        .title {
+                            font-size: 36px;
+                            line-height: 46px;
+                            @include letter-spacing(-25, 36);
+                        } 
+                    }
+                }
+            }
+
+            &-text {
+
+                .title {
+                    font-size: 30px;
+                    line-height: 40px;
+                    @include letter-spacing(-25, 30);
+                }
+
+                .sub-title {
+                    font-size: 20px;
+                    line-height: 30px;
+                    @include letter-spacing(-25, 20);
+                }
+            }
+        }
+    }
+
+    .follow-us-share {
+        padding-bottom: 90px;
+
+        &__content {
+
+            &-btn-group.get-app {
+
+                .btn {
+
+                    img {
+                        max-width: 142px;
+                    }
+                 }
+            }
+        }
+    }
+
+    /***********************************
+    CAREERS 
+    ***********************************/
+    .careers {
+        padding-bottom: 70px;
+
+        &__media {
+            margin-left: -10px;
+        }
+    }
+
+    .main-highlights {
+        padding: 70px 0;
+
+        &__list {
+
+            li {
+
+                .icon {
+                    width: 120px;
+                    height: 120px;
+                    font-size: 50px;
+                    min-width: 120px;
+                    line-height: 50px;
+                    min-height: 120px;
+                }
+            } 
+        }
+    }
+
+    .current-openings {
+        padding: 80px 0;
+    }
+
+    .job__item {
+        margin-bottom: 40px;
+
+        .title {
+            font-size: 30px;
+            margin-bottom: 0;
+            line-height: 40px;
+            @include letter-spacing(-25, 30);
+        }
+
+        &-card {
+            padding: 30px 40px;
+
+            &-text {
+
+                .title {
+                    font-size: 30px;
+                    margin-bottom: 0;
+                    line-height: 40px;
+                    @include letter-spacing(-25, 30);
+                }
+
+                .sub-title, .position {
+                    font-size: 20px;
+                    line-height: 28px;
+                    margin-bottom: 5px;
+                    @include letter-spacing(-25, 20);
+                }
+            }
+        }
+    }
+
+    .chat {
+        padding: 80px 0;
+    }
+
+    /***********************************
+    PRICING FEATURES
+    ***********************************/
+    .questions {
+        padding: 100px 0;
+    } 
+
+    .pricing {
+
+        &__controller {
+            padding: 12px 20px;
+
+            label {
+                font-size: 15px;
+                line-height: 23px;
+                @include letter-spacing(-30, 15);
+            }
+
+            .toggle {
+                width: 70px;
+                height: 35px;
+                margin: 0 6px;
+            }
+        }
+
+        &__card { 
+
+            &.popuar {
+
+                .popuar__text {
+                    padding: 11px 40px 9px;
+                    left: calc(50% - 117px);
+                }
+            }
+
+            &-body .btn {
+                font-size: 20px;
+                line-height: 30px;
+                padding: 14px 18px;
+            }
+        }
+
+        &-bottom {
+            padding: 34px 50px 4px 36px;
+
+            &__content-btn {
+
+                .btn {
+                    font-size: 20px;
+                    line-height: 30px;
+                    padding: 14px 18px;
+                }
+            }
+        }
+    } 
+
+    /***********************************
+    ABOUT GLEWEE
+    ***********************************/
+    .banner.about-glewee {
+        padding: 160px 0 1140px;
+    }
+
+    .we-empower__content {
+        max-width: 100%;
+        margin-bottom: 40px;
+
+        p {
+            + p {
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .we-empower {
+        padding: 150px 0;
+    }
+
+    .brand-awareness {
+        padding: 150px 0;
+
+        &__media {
+            margin-left: inherit;
+            margin-bottom: 30px;
+        }
+    }
+
+    .about-trusted-brands {
+        padding: 105px 0 150px;
+    }
+
+    .trusted-creators {
+        padding: 150px 0;
+    }
+
+    .what-glewee {
+        padding: 140px 0;
+
+        &__content {
+            margin-bottom: 60px;
+        }
+    }
+
+    .what-tabs {
+
+        &__nav {
+            margin: -15px;
+            padding: 0 0 25px;
+            margin-bottom: 25px;
+            border-bottom: 2px solid $white;
+
+            li { 
+                margin: 15px;
+            }
+        }
+
+        &__body {
+            margin-left: 0;
+            border-left: 0;
+            
+            .tab-content {
+                margin-left: 0;
+            }
+        }
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .featured-blog-posts {
+        padding: 161px 0 100px;
+    }
+
+    .blog-post {
+
+        &.blog-post-latest .text {
+            max-width: 100%; 
+        }
+
+        &.featured-blog  {
+
+            .media {
+                min-width: 500px;
+                max-width: 500px;
+            }
+
+            .text {
+
+                .title {
+                    font-size: 42px;
+                    line-height: 50px;
+                    @include letter-spacing(-25, 42);
+                }
+            }
+        }
+    }
+
+    .recommended-blog-posts {
+        padding: 100px 0;
+    }
+
+    .search-bar {
+        padding-bottom: 100px;
+
+        &__form {
+
+            .form-group {
+
+                input {
+                    padding: 25px 30px !important;
+                    padding-right: 110px !important;
+                }
+
+                button {
+                    width: 100px;
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    .blog-page {
+        padding: 100px 0 120px;
+    }
+
+    .sidebar {
+        padding-top: 50px;
+
+        .widget {
+            margin-bottom: 45px;
+        }
+    }
+
+    /***********************************
+    BLOG DETAILS STYLES
+    ***********************************/
+    .blog-details-page {
+        padding-bottom: 80px;
+
+        .blog-post-top .title {
+            font-size: 65px;
+            line-height: 70px;
+            @include letter-spacing(-25, 65);
+        }
+
+        .main-content {
+            max-width: 100%;
+        }
+    }
+
+    .entry-content__btn-group { 
+        padding: 25px 0 72px;
+    }
+
+    .share-wrapper .share {
+        margin-left: -78px;
+    }
+
+    .ppc-progress-bar {
+        height: 10px !important;
+    }
+
+    /***********************************
+    BRANDS STYLES
+    ***********************************/
+    .glewee-for-brands {
+        padding: 30px 0 220px;
+
+        &.creators {
+            padding-bottom: 180px;
+        }
+
+        &__content .title {
+            font-size: 70px;
+            line-height: 80px;
+            @include letter-spacing(-25, 70);
+        }
+    }
+
+    .your-marketing {
+        padding: 220px 0;
+
+        &.creators {
+            padding: 180px 0;
+        }
+    }
+
+    .how-works {
+        padding: 150px 0; 
+
+        &.creators {
+            padding-top: 150px;
+        }
+
+        &.home {
+            padding-top: 150px;
+        }
+
+        &__item { 
+            min-width: 800px;
+            max-width: 800px;
+            min-height: 550px;  
+            padding: 60px 50px; 
+        }
+    }
+
+    .additional {
+        padding: 150px 0 140px;
+
+        &-item__media {
+            padding: 15px 15px 0;
+        }
+    }
+
+    .request-demo-brands {
+        padding-bottom: 150px;
+    }
+
+    .our-network.brands {
+        padding: 150px 0 100px;
+
+
+        .our-network__item-wraper { 
+            column-gap: 30px;
+            margin-left: 0; 
+        }
+    }
+
+    .ebook-offer.brands {
+        padding-bottom: 150px;
+    }
+
+    /***********************************
+    CUSTOMER STORY STYLES
+    ***********************************/
+    .customer-story {
+        padding: 35px 0 100px;
+
+        &__content {
+            margin-bottom: 40px;
+
+            .title {
+                max-width: 100%;
+            }
+
+            p {
+                max-width: 100%;
+            }
+
+            .view-gallery { 
+                margin-top: 25px; 
+            }
+        }
+    }
+
+    .featured-story {
+        padding: 40px;
+
+        .media { 
+            margin-left: 440px;
+        }
+    }
+
+    .campaign-gallery {
+        padding: 100px 0;
+    }
+
+    .gallery-modal {
+
+        &__content {
+            margin-bottom: -30px;
+        }
+
+        &__item {
+            margin-bottom: 30px;
+        }
+    }
+
+    .mfp-move-from-top .mfp-container {
+
+         .mfp-arrow {
+            width: 60px;
+            height: 60px;
+            font-size: 18px;
+            
+            &:before {
+                top: calc(50% - 13px);
+                left: calc(50% - 12px);
+            }
+        }
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .call-action {
+        padding: 100px 0;
+
+        &__item {
+
+            &-text {
+
+                .title { 
+                    margin-bottom: 0; 
+                }
+            }
+        }
+    }
+
+    .footer {
+
+        &__logo {
+            margin-bottom: 30px;
+        }  
+
+        &__item {
+
+            &-text {
+
+                .title {
+                    font-size: 34px;
+                    line-height: 44px;
+                    @include letter-spacing(-25, 34);
+                }
+            }
+        }
+
+        &-bottom {
+            margin-top: 80px;
+        }
+    }
+
+}/* 1199 */ 
+
+@media only screen and (max-width: 1080px) {
+
+    .header { 
+
+        .navbar {  
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    &:not(.navbar-right) {
+
+                        > li {
+
+                            &:not(.btn-menu) {
+
+                                &:nth-last-child(3) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }    
+                }
+            }
+        }
+    }
+
+    .device-model {
+        height: 580px;
+    }
+
+} /* 1080 */
+
+@media only screen and (max-width: 991px) { 
+ 
+    h1, .h1 { font-size: 55px;  line-height: 65px; @include letter-spacing(-25, 55); &.lg { font-size: 60px; line-height: 68px; @include letter-spacing(-25, 60) } }
+    h2, .h2 { font-size: 48px;  line-height: 58px; @include letter-spacing(-25, 48) }
+    h3, .h3 { font-size: 42px;  line-height: 52px; @include letter-spacing(-25, 42) }
+
+    .btn {
+        font-size: 22px;
+        line-height: 34px;
+        padding: 14px 22px;
+        @include letter-spacing(-30, 22);
+
+        &.big-text {
+            font-size: 28px;
+            line-height: 38px;
+            padding: 16px 30px;
+            @include letter-spacing(-25, 28);
+        }
+
+        &.follow {
+
+            .icon {
+
+                i {
+                    font-size: 23px;
+                    line-height: 23px;
+                }
+            }
+
+            .text {
+
+                .sub-title {
+                    font-size: 13px;
+                    line-height: 13px;
+                    @include letter-spacing(-25, 13);
+                }
+
+                .title {
+                    font-size: 16px;
+                    line-height: 22px;
+                    @include letter-spacing(-25, 16);
+                }
+            }
+        }
+
+        &.bg-white {
+            height: 49px;
+
+            img, svg {
+                max-width: 130px;
+            }
+        }
+    }
+
+    .description {
+
+        p {
+            font-size: 20px;
+            line-height: 32px;
+        }
+
+        &.lg {
+            
+            p {
+                font-size: 24px;
+                line-height: 36px;
+            }
+        }
+    }
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header-gutter {
+        height: 120px;
+        min-height: 120px;
+    }
+
+    .header { 
+
+        .navbar {
+            padding: 30px 0; 
+
+            .navbar-collapse {
+
+                .navbar-nav {
+                    margin-left: -10px;
+                    margin-right: -10px;
+
+                    > li {
+                        margin-left: 10px;
+                        margin-right: 10px; 
+                    }  
+                }
+            }
+        }
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/ 
+    .banner { 
+        margin-bottom: 80px;
+        padding: 165px 0 100px;
+
+        &__content {
+
+            .title {
+                padding: 5px 0;
+            }
+
+            p {
+                font-size: 24px;
+                line-height: 34px;
+            }
+
+            &-btn-group {
+
+                .btn {
+                    font-size: 24px;
+                    line-height: 34px;
+                    padding: 17px 22px;
+                    @include letter-spacing(-25, 24)
+                }
+            }
+        }
+
+        &__media {
+            bottom: -100px;
+            max-width: 615px;
+        }
+    }
+
+    .home-trusted-brands {
+        padding: 80px 0;
+    }
+
+    .for-brands {
+        padding: 80px 0; 
+
+        &__content {
+            margin-top: 30px;
+
+            svg, img {
+                max-width: 150px;
+            } 
+
+            p {
+                max-width: 100%;
+            }
+        }
+
+        &__media {
+            margin-left: inherit !important;
+            margin-right: inherit !important;
+        }
+    }
+
+    .request-demo {
+        padding: 80px 0;
+
+        &__content {
+            padding: 50px 35px !important;
+        }
+
+        &__text {
+
+            .title { 
+                margin-bottom: 0;
+            }
+
+            .sub-title {
+                margin-bottom: 5px;
+            }
+
+            .btn {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .why-glewee {
+        padding: 100px 0;
+
+        &__content {
+            margin-bottom: 45px;
+        }
+    } 
+
+    .our-network {
+        padding: 80px 0;
+
+        &__content {
+            margin-bottom: 40px;
+
+            .title {
+                margin-bottom: 10px;
+            }
+        }
+
+        &__item {
+            margin-bottom: 35px;
+
+            .title {
+                font-size: 42px;
+                line-height: 50px;
+                margin-bottom: 5px; 
+                @include letter-spacing(-25, 42);
+            }
+        }
+    }
+
+    .latest-news {
+        padding: 80px 0;
+
+        &__content {
+            margin-bottom: 40px;
+        }
+    }
+
+    /***********************************
+    TRY GLEWEE
+    ***********************************/
+    .try-glewee {
+        padding-bottom: 80px;
+
+        &__content {
+
+            .title {
+                margin-bottom: 5px;
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+
+    .trusted-brands {
+        padding: 80px 0; 
+
+        &__content {
+
+            .title {
+                margin-bottom: 8px;
+            }
+        }
+    } 
+
+    .contact {
+        padding: 60px 0px;
+
+        &__text {
+
+            .title {
+                margin-bottom: 5px;
+            }  
+        }
+    }
+
+    .ebook-offer {
+
+        &__item {
+
+            &-media { 
+                left: inherit;
+                position: inherit; 
+                @include transform(inherit);
+            }
+
+            &-text {
+                padding: 50px 20px;
+                margin-left: inherit;
+
+                .title {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    } 
+
+    /***********************************
+    CONTACT US
+    ***********************************/
+    .contact-us {
+
+        &__content .sub-title {
+            margin-bottom: 0;
+        }
+
+        &__item {
+
+            &.big .contact-us__item-icon { 
+                max-width: 100px;
+                margin-left: auto;
+                margin-bottom: 15px;
+            }
+
+            &-text .read-more {
+                margin-top: 20px;
+            }
+        }
+    } 
+
+    .follow-us-share {
+        padding: 80px 0;
+
+        &__content { 
+
+            &-btn-group.get-app {
+
+                .btn {
+                    height: 55px;
+                }
+            }
+        }
+    }
+
+    /***********************************
+    CAREERS 
+    ***********************************/
+    .careers {
+        padding-bottom: 60px;
+
+        &__media {
+            margin-top: 30px;
+            text-align: center; 
+        }
+
+        &__content {
+            margin-bottom: 35px;
+
+            &.culture {   
+                max-width: 100%;
+
+                .title {
+                    margin-bottom: 0;
+                }
+
+                .sub-title {
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    max-width: 100%;
+                    font-size: 18px;
+                    line-height: 26px;  
+                }
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+
+    .main-highlights {
+        padding: 60px 0;
+
+        &__content {
+            margin-bottom: 30px;
+
+            p {
+                max-width: 100%;
+            }
+        }
+
+        &__list {
+
+            li {
+
+                .icon {
+                    width: 90px;
+                    height: 90px;
+                    font-size: 40px;
+                    min-width: 90px;
+                    line-height: 40px;
+                    min-height: 90px;
+                }
+
+                .text {
+
+                    .title {
+                        margin-bottom: 0;
+                    }
+                }
+            } 
+        }
+    }
+
+    .founders {
+        padding: 60px 0;
+
+        &__media {
+            margin-bottom: 30px;
+        }
+
+        &__content {
+            max-width: 100%;
+        }
+    }
+
+    .current-openings {
+        padding: 60px 0;
+    }
+
+    .chat {
+        padding: 60px 0;
+    }
+
+    /***********************************
+    PRICING FEATURES
+    ***********************************/
+    .pricing-features {
+
+        &__content {
+
+            .title {
+                margin-bottom: 5px;
+            } 
+        }
+    }
+
+    .fine-print {
+
+        &__content {
+
+            .title {
+                margin-bottom: 5px;
+            }
+
+            .btn {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .questions {
+        padding: 80px 0;
+    }
+
+    .pricing {
+
+        &__controller {
+            margin-top: 20px;  
+        } 
+
+        &-bottom {
+            padding: 34px 36px 4px;
+        }
+    } 
+
+    /***********************************
+    ABOUT GLEWEE
+    ***********************************/
+    .banner.about-glewee {
+        padding: 140px 0 1160px;
+    }
+
+    .we-empower {
+        padding: 100px 0;
+
+        &__content {
+
+            p {
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    .brand-awareness {
+        padding: 100px 0;
+
+        &__media {
+            margin-bottom: 25px;
+        }
+    }
+
+    .about-trusted-brands {
+        padding: 100px 0;
+    }
+
+    .trusted-creators {
+        padding: 100px 0;
+    }
+
+    .what-glewee {
+        padding: 100px 0;
+    }
+
+    .what-tabs__nav li a {
+        font-size: 20px;
+        line-height: 30px;
+        @include letter-spacing(-25, 20);
+    }
+
+    .about-contact {
+        padding: 80px 0 100px;
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .featured-blog-posts {
+        padding: 140px 0 80px;
+
+        .entry-title {
+
+            p {
+                font-size: 24px;
+                line-height: 34px;
+            }
+        }
+    }
+
+    .blog-post.featured-blog {
+        flex-direction: column;
+
+        .media {
+            min-width: 100%;
+            max-width: 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+
+        .text {
+            max-width: 100%;
+        }
+    }
+
+    .recommended-blog-posts {
+        padding: 80px 0;
+
+        .entry-title {
+            margin-bottom: 40px;
+
+            p {
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    .search-bar {
+        padding-bottom: 80px;
+
+        &__form {
+
+            .form-group {
+
+                input {         
+                    font-size: 24px !important;
+                    padding: 25px 30px !important;
+                    padding-right: 90px !important;
+                    @include letter-spacing(-25, 24);
+                    @include placeholderWithlettertraking(#707C9F, 24px, 34px, -25, 400);
+                }
+
+                button {
+                    width: 80px;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    .blog-page {
+        padding: 90px 0;
+    }
+
+    .blog-post .media {
+        min-width: 280px;
+        max-width: 280px;
+    }
+
+    /***********************************
+    BLOG DETAILS STYLES
+    ***********************************/
+    .blog-details-page {
+        padding: 15px 0 60px;
+
+        .btn.bg-white {
+            height: 80px;
+
+            img {
+                max-width: 200px;
+            }
+        }
+
+        .blog-post-top {
+
+            .date {
+                margin-bottom: 5px;
+            }
+
+            .title {
+                font-size: 48px;
+                line-height: 58px; 
+                @include letter-spacing(-25, 48);
+            }
+        }
+    }
+
+    .entry-content {
+
+        &__btn-group {
+            padding: 15px 0 50px;
+        }
+    }
+ 
+    .share-wrapper {
+        margin-top: 30px;
+
+        .share {
+            margin-left: 0;
+            position: inherit !important;
+
+            .st-total {
+                margin-bottom: 0 !important;
+                margin-right: 8px !important;
+            }
+
+            .sharethis-inline-share-buttons {
+                margin-bottom: -8px;
+
+                .st-btn {
+                    margin-bottom: 8 !important;
+                    margin-right: 8px !important;
+                    display: inline-flex !important;
+                }
+            }
+        }
+    } 
+
+    /***********************************
+    BRANDS STYLES
+    ***********************************/
+    .glewee-for-brands {
+        padding: 25px 0 100px;
+
+        &.creators {
+            padding-bottom: 100px;
+        }
+
+        &__content {
+
+            .title {
+                font-size: 60px;
+                line-height: 70px;
+                margin-bottom: 5px;
+                @include letter-spacing(-25, 60);
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 30px;
+            }
+        }
+
+        &__btn-group {
+            margin-top: 35px;
+        }
+    }
+
+    .popup-video:before {
+        text-indent: 10px;
+        width: 130px;
+        height: 130px;
+        font-size: 50px;
+        line-height: 130px;
+        top: calc(50% - 65px);
+        left: calc(50% - 65px);
+    }
+
+    .device-model {
+        height: 520px;
+    }
+
+    .your-marketing {
+        padding: 100px 0;
+
+        &.creators {
+            padding: 100px 0;
+
+            .your-marketing__item-media {
+                top: inherit !important;
+                right: inherit !important;
+                left: inherit !important;
+            }
+        }
+
+        &__item {
+            margin-bottom: 50px;
+
+            &.align-left .your-marketing__item-media {
+                top: inherit;
+                left: inherit;
+                right: inherit;
+            }
+
+            &-text {
+                max-width: 100%;
+                margin-bottom: 30px;
+            }
+
+            &-media {
+                top: inherit;
+                left: inherit; 
+                right: inherit;
+                position: inherit; 
+                transform: rotate(0);
+            }
+        }
+    }
+
+    .how-works {
+        padding: 100px 0;
+
+        &.creators {
+            padding-top: 100px;
+        }
+
+        &.home {
+            padding: 100px 0;
+        }
+
+        &__content {
+
+            &-view a { 
+                font-size: 20px; 
+                line-height: 30px;
+                @include letter-spacing(-25, 20);
+            }
+        }
+
+        &__item {
+            min-width: 650px;
+            max-width: 650px;
+            min-height: 850px;
+            padding: 50px 40px;
+            flex-direction: column-reverse !important;
+            justify-content: space-between !important;
+
+            &-text {
+                max-width: 100%;
+
+                 .sub-title { 
+                    max-width: 100%;
+                    font-size: 20px;
+                    line-height: 30px;
+                    @include letter-spacing(-25, 20);
+                }
+            }
+
+            &-media {
+                right: inherit;
+                position: inherit;
+                margin-bottom: 20px;
+                margin-left: inherit;
+            }
+        }
+    }
+
+    .slider-controls {
+
+        .slider-arrows .how-works__arrow {
+            width: 60px;
+            height: 60px; 
+            line-height: 60px;
+
+            i {
+                font-size: 16px;
+            }
+        }
+
+        .slick-dots li {
+            font-size: 16px;
+            line-height: 26px;
+            @include letter-spacing(-25, 16);
+        }
+    }
+
+    .additional {
+        padding: 100px 0;
+
+        .mb-55 { 
+            margin-bottom: -35px;
+        } 
+    }
+
+    .additional-item {
+        margin-bottom: 35px;
+
+        &__text {
+            max-width: 100%;
+
+            .title {
+                max-width: 100%;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .application {
+        padding: 100px 0;
+    }
+
+    .request-demo-brands {
+        padding: 100px 0;
+
+        &.creators {
+            padding: 100px 0;
+        }
+    }
+
+    .our-network.brands {
+        padding: 100px 0;
+
+        &.creators {
+            padding: 100px 0;
+        }
+
+        .our-network__content {
+            max-width: 100%;
+        }
+
+        .our-network__item-wraper { 
+            margin-bottom: -35px;
+
+            .our-network__item {
+                margin-bottom: 35px !important;
+            }
+        }
+    }
+
+    .ebook-offer.brands {
+        padding-bottom: 120px;
+    }
+
+    /***********************************
+    CUSTOMER STORY STYLES
+    ***********************************/
+    .customer-story {
+        padding: 25px 0 80px;
+
+        &__content .title {
+            line-height: 58px;
+        }
+    }
+
+    .featured-story {
+        min-height: 500px;
+
+        .media {
+            margin-left: 300px;
+            margin-bottom: 45px;
+        }
+    }
+
+    .share-wrapper.custom-share {
+        margin-bottom: 50px;
+    }
+
+    .campaign-gallery {
+        padding: 80px 0;
+    }
+
+    .gallery-modal {
+        
+        &__content {
+            margin-bottom: -25px;
+        }
+
+        &__item {
+            margin-bottom: 25px;
+        }
+    }
+
+    .story-post { 
+        min-height: 280px; 
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .call-action {
+        padding: 80px 0;
+
+        &__item {
+
+            &-text {
+                padding: 50px 25px;
+            }
+        }
+    }
+
+    .footer {
+        padding: 100px 0;
+
+        &__widget {
+            margin-bottom: 30px;
+        }
+
+        &__item {
+
+            &-text {
+
+                .sub-title {
+                    font-size: 24px;
+                    line-height: 34px;
+                    @include letter-spacing(-25, 30);
+                }
+
+                .title {
+                    font-size: 30px;
+                    line-height: 40px;
+                    @include letter-spacing(-25, 30);
+                }
+            }
+        }
+
+        &-bottom {
+            margin-top: 70px;
+        }
+    }
+
+}/* 991 */
+
+@media only screen and (max-width: 950px) {
+
+    .device-model {
+        height: 500px;
+    }
+
+}/* 950 */
+
+@media only screen and (max-width: 920px) {
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {  
+
+        .navbar {  
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    &:not(.navbar-right) {
+
+                        > li {
+
+                            &:not(.btn-menu) {
+
+                                &:nth-last-child(4) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }  
+                }
+            }
+        }
+    }
+
+}/* 920 */
+
+@media only screen and (max-width: 1050px) {
+
+    .mfp-move-from-top .mfp-container .mfp-content {
+        padding: 40px 0; 
+    }
+
+} /* 1050 */
+
+@media only screen and (max-width: 850px) {
+
+    /***********************************
+    ABOUT GLEWEE
+    ***********************************/
+    .banner.about-glewee {
+        padding-bottom: 1080px;
+    }
+
+    .device-model {
+        height: 440px;
+    }
+
+}/* 830 */
+
+@media only screen and (max-width: 790px) {
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {  
+
+        .navbar {  
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    &:not(.navbar-right) {
+
+                        > li {
+
+                            &:not(.btn-menu) {
+
+                                &:nth-last-child(5) {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }  
+                }
+            }
+        }
+    }
+
+}/* 790 */
+
+@media only screen and (max-width: 767px) {
+ 
+    h1, .h1 { font-size: 48px;  line-height: 58px; @include letter-spacing(-25, 48); &.lg { font-size: 55px; line-height:  65px; @include letter-spacing(-25,  55) } }
+    h2, .h2 { font-size: 42px;  line-height: 52px; @include letter-spacing(-25, 42) }
+    h3, .h3 { font-size: 36px;  line-height: 48px; @include letter-spacing(-25, 36) }
+    h4, .h4 { font-size: 30px;  line-height: 42px; @include letter-spacing(-25, 30) }
+    h5, .h5 { font-size: 24px;  line-height: 36px; @include letter-spacing(-25, 24) } 
+    h6, .h6 { font-size: 20px;  line-height: 30px; @include letter-spacing(-25, 24) } 
+
+    .btn {
+        font-size: 20px;
+        line-height: 28px;
+        padding: 12px 20px;
+        @include letter-spacing(-30, 20);
+
+        &.big-text {
+            font-size: 24px;
+            line-height: 34px;
+            padding: 14px 28px;
+            @include letter-spacing(-25, 24);
+        }
+
+        &.follow {
+
+            .icon {
+
+                i {
+                    font-size: 20px;
+                    line-height: 20px;
+                }
+            }
+
+            .text {
+
+                .sub-title {
+                    font-size: 11px;
+                    line-height: 11px;
+                    @include letter-spacing(-25, 11);
+                }
+
+                .title {
+                    font-size: 14px;
+                    line-height: 18px;
+                    @include letter-spacing(-25, 14);
+                }
+            }
+        }
+
+        &.bg-white {
+            height: 43px;
+
+            img, svg {
+                max-width: 110px;
+            }
+        }
+    }
+
+   /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header { 
+
+        .navbar {
+
+            .navbar-collapse {
+
+                .navbar-nav { 
+
+                    > li {
+                        
+                        > a {
+                            font-size: 16px;
+                            line-height: 24px;
+                            @include letter-spacing(-25, 16);
+                        }
+
+                        &.btn-menu {
+                            
+                            > a {
+                                padding: 5px 14px;
+                            }
+
+                            &.border-green, &.border-pink {
+                                 
+                                > a {
+                                    padding: 3px 14px;
+                                }
+                            }
+                        }
+                    }    
+                }
+            }
+        }
+    }
+
+    .sidr {
+
+        .sidr-inner {
+
+            .mobile-header {
+
+                .navbar-header {
+
+                    .navbar-brand { 
+                        max-width: 120px; 
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    HOME STYLES
+    ***********************************/ 
+    .banner { 
+        margin-bottom: 60px;
+        padding: 135px 0 50px;
+
+        &__media {
+            bottom: -50px; 
+        }
+    }
+
+    .home-trusted-brands {
+        padding: 60px 0;
+    }
+
+    .for-brands {
+        padding: 60px 0; 
+
+        &__content { 
+
+            svg, img {
+                max-width: 110px;
+            } 
+
+            .title {
+                font-size: 40px;
+                line-height: 50px;
+                @include letter-spacing(-25, 40);
+            }
+
+            .sub-title {
+                font-size: 24px;
+                margin-bottom: 0;
+                line-height: 30px;
+            }
+
+            .btn {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .request-demo {
+        padding: 60px 0;
+
+        &__content {
+            padding: 40px 25px !important;
+        }
+
+        &__media {
+            top: inherit;
+            position: inherit;
+            margin-bottom: 110px;
+            margin-left: inherit;
+        }
+    }
+
+    .why-glewee {
+        padding: 80px 0;
+
+        &__content {
+            margin-bottom: 35px;
+
+            .title {
+                margin-bottom: 5px;
+            }
+        }
+    } 
+
+    .our-network {
+        padding: 60px 0;
+
+        &__content {
+
+            .title {
+                margin-bottom: 5px;
+            }
+        }
+
+        &__item {
+
+            .title {
+                font-size: 36px;
+                line-height: 46px;
+                @include letter-spacing(-25, 36); 
+            }
+
+            .read-more { 
+                font-size: 20px; 
+                line-height: 30px; 
+                @include letter-spacing(-25, 20); 
+            }
+        }
+    }
+
+    .latest-news {
+        padding: 60px 0;
+
+        &__content {
+            margin-bottom: 35px;
+        }
+    }
+
+    /***********************************
+    TRY GLEWEE
+    ***********************************/
+    .try-glewee {
+        padding-bottom: 60px;
+
+        &__content {
+            margin-bottom: 40px;
+        }
+    }
+
+    .trusted-brands {
+        padding: 60px 0; 
+    } 
+
+    .contact {
+        padding: 50px 20px;
+
+        &__text {  
+            margin-bottom: 40px;
+        }
+    }
+
+    .ebook-offer {
+        padding: 60px 0;
+
+        &__item { 
+
+            &-text {
+                padding: 40px 20px;
+            }
+        }
+    }
+
+    /***********************************
+    CONTACT US
+    ***********************************/
+    .contact-us {
+        padding-bottom: 60px;
+    }   
+
+    .look-forward {
+        padding: 60px 0;
+    }
+
+    .follow-us-share {
+        padding: 60px 0;
+
+        &__content {
+
+            &-btn-group.get-app {
+
+                .btn {
+                    height: 49px;
+                }
+            }
+        }
+    }
+
+    /***********************************
+    CAREERS 
+    ***********************************/
+    .careers {
+        padding-bottom: 60px;
+
+        &__media {
+            margin-top: 30px;
+            text-align: center; 
+        }
+
+        &__content {
+            margin-bottom: 35px;
+
+            &.culture {   
+                max-width: 100%;
+
+                .title {
+                    margin-bottom: 0;
+                }
+
+                .sub-title {
+                    margin-bottom: 5px;
+                }
+
+                p {
+                    max-width: 100%;
+                    font-size: 18px;
+                    line-height: 26px;  
+                }
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+
+    .main-highlights {
+        padding: 50px 0; 
+
+        &__list {
+
+            li {
+
+                .icon {
+                    width: 70px;
+                    height: 70px;
+                    font-size: 30px;
+                    min-width: 70px;
+                    line-height: 30px;
+                    min-height: 70px;
+                } 
+            } 
+        }
+    }
+
+    .founders {
+        padding: 50px 0;  
+
+        &__content {
+
+            .title {
+                font-size: 30px;
+                line-height: 40px;
+                @include letter-spacing(-25, 30);
+            }
+
+            .quote {
+                padding-left: 65px;
+
+                &:after {
+                    width: 50px;
+                    height: 40px;
+                }
+
+                p {
+                    font-size: 20px;
+                    line-height: 28px;
+                    @include letter-spacing(-25, 20);
+                }
+            }
+        }
+    }
+
+    .current-openings {
+        padding: 50px 0;
+    } 
+
+    .job__item {
+        margin-bottom: 40px;
+
+        .title {
+            font-size: 24px; 
+            line-height: 34px;
+            @include letter-spacing(-25, 24);
+        }
+
+        &-card {
+            padding: 30px 25px; 
+
+            &-text {
+
+                .title {
+                    font-size: 24px; 
+                    line-height: 34px;
+                    @include letter-spacing(-25, 24);
+                }
+
+                .sub-title, .position {
+                    font-size: 18px;
+                    line-height: 26px;
+                    margin-bottom: 0px;
+                    @include letter-spacing(-25, 18);
+                }
+            }
+        }
+    }
+
+    .chat {
+        padding: 50px 0;
+    }
+
+    /***********************************
+    PRICING FEATURES
+    ***********************************/
+    .questions {
+        padding: 60px 0;
+    }
+
+    .fine-print {
+        padding: 60px 0;
+ 
+        &__media {
+            margin-top: 30px;
+            max-width: 250px;
+            margin-left: auto;
+            text-align: center;
+            margin-right: auto;
+        }
+    }
+
+    .pricing {
+        padding-bottom: 60px;
+
+        &-bottom__content {
+            margin-bottom: 20px;
+        } 
+    }
+
+    /***********************************
+    ABOUT GLEWEE
+    ***********************************/
+    .banner.about-glewee {
+        padding: 140px 0 970px;
+
+        .banner__content {
+            margin-bottom: 30px;
+
+            p {
+                font-size: 20px;
+                line-height: 30px;
+            }
+
+            .sub-title {
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .we-empower {
+        padding: 80px 0;
+
+        &__item {
+            padding: 15px;
+
+            &.big {
+                padding: 20px;
+            }
+        }
+    }
+
+    .brand-awareness {
+        padding: 80px 0;
+    }
+
+    .about-trusted-brands {
+        padding: 80px 0;
+    }
+
+    .trusted-creators {
+        padding: 80px 0;
+    }
+
+    .what-glewee {
+        padding: 80px 0;
+
+        &__content {
+            margin-bottom: 40px;
+        }
+    }
+
+    .what-tabs {
+
+        &__item {
+
+            &.active { 
+                flex-direction: column !important;
+            }
+
+            &-text { 
+                min-width: inherit;
+                max-width: inherit;
+                padding-right: inherit; 
+
+                .content {
+                    margin-bottom: 25px;
+
+                    .title {
+                        margin-bottom: 15px;
+                    }
+
+                    .sub-title {
+                        margin-bottom: 10px;
+                    }
+
+                    ul li { 
+                        margin-bottom: 15px;
+                    }
+                }
+            }
+
+            &-media {
+                margin-top: 40px;
+                margin-right: inherit; 
+            }
+        }
+    }
+
+    .about-contact {
+        padding: 80px 0;
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .featured-blog-posts {
+        padding: 130px 0 60px;
+    }
+
+    .recommended-blog-posts {
+        padding: 60px 0;
+
+        .entry-title {
+            margin-bottom: 30px;
+
+            .title {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .search-bar {
+        padding: 60px 0;
+
+        &__form {
+
+            .form-group {
+
+                input {          
+                    padding: 20px 25px !important;
+                    padding-right: 80px !important;  
+                }
+
+                button {
+                    width: 70px;
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+
+    .blog-page {
+        padding: 60px 0;
+
+        .main-title {
+            font-size: 22px;
+            line-height: 32px; 
+            @include letter-spacing(-25, 22);
+        }
+    }
+
+    .blog_load_more .loadmore { 
+        font-size: 22px; 
+        line-height: 32px;
+        @include letter-spacing(-25, 22);
+    }
+
+    .sidebar {
+
+        .widget {
+            margin-bottom: 35px;
+        }
+    }
+
+    .blog-post {
+
+        &.featured-blog {
+
+            .text {
+                
+                .title {
+                    font-size: 36px;
+                    line-height: 48px;
+                    @include letter-spacing(-25, 36);
+                }
+            }
+        }
+
+        .media {
+            min-width: 250px;
+            max-width: 250px;
+        }
+
+        .text {
+
+            .title {
+                font-size: 26px;
+                line-height: 36px;
+                margin-bottom: 5px;
+                @include letter-spacing(-25, 26);
+            }
+
+            .date {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    /***********************************
+    BLOG DETAILS STYLES
+    ***********************************/
+    .blog-details-page {
+        padding-bottom: 50px;
+
+        .btn.bg-white {
+            height: 70px;
+
+            img {
+                max-width: 189px;
+            }
+        }
+
+        .blog-post-top .title {
+            font-size: 36px;
+            line-height: 46px;
+            @include letter-spacing(-25, 36);
+        }
+
+        .blog-post:not(.blog-post-sm) .enty-media { 
+            margin-bottom: 35px; 
+        }
+
+        .entry-footer { 
+            padding: 45px; 
+            margin-top: 30px; 
+
+            .entry-title {
+
+                .title, .sub-title {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+
+    .entry-content {
+
+        &__btn-group {
+            padding: 10px 0 31px;
+        }
+
+        p {
+            margin: 0 0 25px;
+        }
+
+        hr {
+            margin: 30px 0;
+        }
+    }
+
+    /***********************************
+    BRANDS STYLES
+    ***********************************/
+    .glewee-for-brands {
+        padding: 25px 0 80px;
+
+        &.creators {
+            padding-bottom: 80px;
+        }
+
+        &__content {
+            margin-bottom: 35px;
+
+            .title {
+                font-size: 50px;
+                line-height: 60px;
+                margin-bottom: 0px;
+                @include letter-spacing(-25, 50);
+
+            }
+
+            .sub-title {
+                margin-bottom: 5px;
+            }
+        }
+
+        &__btn-group {
+            margin: 30px -10px -10px;
+
+            .btn {
+                margin: 0px 10px 10px; 
+            }
+        }
+    } 
+
+    .popup-video {
+
+        &:before {
+            width: 80px;
+            height: 80px;
+            font-size: 30px;
+            text-indent: 5px;
+            line-height: 80px;
+            top: calc(50% - 40px);
+            left: calc(50% - 40px);
+        }
+
+        &:hover:before {
+            font-size: 37px;
+        }
+    }
+
+    .your-marketing {
+        padding: 80px 0;
+
+        &.creators {
+            padding: 80px 0;
+        }
+    }
+
+    .how-works {
+        padding: 80px 0;
+
+        &.creators {
+            padding: 80px 0;
+        }
+
+        &.home {
+            padding: 80px 0;
+        }
+
+        &__item {
+            min-width: 450px;
+            max-width: 450px;
+            min-height: 755px;
+            padding: 40px 30px;  
+        }
+    }
+
+    .additional {
+        padding: 80px 0;
+
+        &__content {
+            margin-bottom: 30px;
+        }
+    }
+
+    .application {
+        padding: 80px 0;
+    }
+
+    .request-demo-brands {
+        padding: 80px 0;
+
+        &.creators {
+            padding: 80px 0;
+        }
+    }
+
+    .our-network.brands {
+        padding: 80px 0;
+
+        &.creators {
+            padding: 80px 0;
+        }
+
+        .our-network__item-wraper {
+            flex-direction: column;
+
+            .our-network__item {
+                max-width: 100%;
+
+                p {
+                    max-width: 100%;
+                }
+
+                .title {
+                    font-size: 60px; 
+                    line-height: 70px; 
+                    @include letter-spacing(-25, 60);
+                }
+            }
+        }
+    }
+
+    .ebook-offer.brands {
+        padding: 80px 0 100px;
+    }
+
+    /***********************************
+    CUSTOMER STORY STYLES
+    ***********************************/
+    .gallery-item {
+        height: 354px;
+
+        .icon {
+            font-size: 60px;
+            line-height: 354px;
+        }
+    }
+
+    .customer-story {
+        padding: 25px 0 60px;
+
+        &__content .title {
+            line-height: 52px;
+        }
+    }
+
+    .story-post {
+        min-height: 250px;
+    }
+
+    .share-wrapper.custom-share {
+        margin-bottom: 40px;
+    }
+
+    .featured-story {
+        min-height: 470px;
+
+        .media {
+            margin-left: 230px;
+            margin-bottom: 60px;
+        }
+    }
+
+    .campaign-gallery {
+        padding: 60px 0;
+    }
+
+    .gallery-modal { 
+
+        &__content {
+            margin-left: 0;
+            margin-bottom: -20px;
+        }
+
+        &__item { 
+            margin-bottom: 20px;
+        } 
+
+        &__media { 
+            max-height: 300px; 
+            margin-bottom: 20px;
+        }
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .call-action {
+        padding: 60px 0;
+
+        &__item {
+
+            &-text {
+                padding: 35px 20px;
+ 
+                .title {
+                    font-size: 30px; 
+                    line-height: 40px; 
+                    @include letter-spacing(-25, 30);
+                } 
+            }
+        }
+    }
+
+    .footer {
+        padding: 70px 0; 
+
+        &__widget {
+
+            &-menu {
+
+                li {
+                    margin-bottom: 20px;
+
+                    &.title {
+                       
+                       a {
+                            font-size: 24px;
+                            line-height: 34px;
+                            @include letter-spacing(-30, 24);
+                       }
+                    }
+
+                    a {
+                        font-size: 20px;
+                        line-height: 28px;
+                        @include letter-spacing(-25, 20);
+                    }
+                }
+            }
+        }
+    }
+   
+}/* 767 */ 
+
+@media only screen and (max-width: 720px) {
+
+    .device-model {
+        height: 370px;
+    }
+
+} /* 720 */
+
+@media only screen and (max-width: 630px) {
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {  
+
+        .navbar {  
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    &:not(.navbar-right) {
+
+                        > li { 
+                            display: none; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .device-model {
+        height: 310px;
+    }
+
+} /* 630 */
+
+@media only screen and (max-width: 590px) {
+
+    /***********************************
+    ABOUT GLEWEE
+    ***********************************/
+    .banner.about-glewee {
+        padding-bottom: 905px;
+    }
+} /* 590 */
+
+@media only screen and (max-width: 575px) {
+ 
+    h1, .h1 { font-size: 42px;  line-height: 52px; @include letter-spacing(-25, 42); &.lg { font-size: 48px; line-height:  58px; @include letter-spacing(-25,  48) } }
+    h2, .h2 { font-size: 36px;  line-height: 48px; @include letter-spacing(-25, 36) }
+    h3, .h3 { font-size: 30px;  line-height: 42px; @include letter-spacing(-25, 30) }
+    h4, .h4 { font-size: 24px;  line-height: 36px; @include letter-spacing(-25, 24) }
+    h5, .h5 { font-size: 20px;  line-height: 30px; @include letter-spacing(-25, 20) } 
+    h6, .h6 { font-size: 18px;  line-height: 28px; @include letter-spacing(-25, 18) } 
+
+    .btn {
+        font-size: 18px;
+        line-height: 24px;
+        padding: 10px 18px;
+        @include letter-spacing(-30, 18);
+
+        &.big-text {
+            font-size: 20px;
+            line-height: 28px;
+            padding: 12px 25px;
+            @include letter-spacing(-25, 20);
+        }
+
+        &.follow {
+
+            .icon {
+                margin-right: 8px;
+
+                i {
+                    font-size: 18px;
+                    line-height: 18px;
+                }
+            }
+
+            .text {
+
+                .sub-title {
+                    font-size: 10px;
+                    line-height: 10px;
+                    @include letter-spacing(-25, 10);
+                }
+
+                .title {
+                    font-size: 13px;
+                    line-height: 17px;
+                    @include letter-spacing(-25, 13);
+                }
+            }
+        }
+
+        &.bg-white {
+            height: 41px;
+
+            img, svg {
+                max-width: 100px;
+            }
+        }
+    } 
+
+    /***********************************
+    HOME STYLES
+    ***********************************/ 
+    .banner { 
+        margin-bottom: 40px;
+        padding: 110px 0 40px;
+
+        &__content {
+
+            &-btn-group {
+
+                .btn  {
+                    font-size: 20px;
+                    line-height: 28px;
+                    padding: 15px 14px;
+                    @include letter-spacing(-25, 20);
+
+                    svg, img {
+                        max-width: 90px;
+                    }
+                }
+
+                .scrollDown {
+                    width: 60px;
+                    height: 60px;
+                    line-height: 60px;
+
+                    i {
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+
+        &__media {
+            bottom: -40px; 
+        }
+    }
+
+    .home-trusted-brands {
+        padding: 40px 0;
+    }
+
+    .for-brands {
+        padding: 40px 0; 
+
+        &__content { 
+
+            svg, img {
+                max-width: 100px;
+            } 
+
+            .title {
+                font-size: 35px;
+                line-height: 45px;
+                @include letter-spacing(-25, 35);
+            }  
+        }
+    }
+
+    .request-demo {
+        padding: 40px 0;
+
+        &__content {
+            padding: 30px 20px !important;
+        }
+
+        &__media {
+            margin-bottom: 60px;
+        }
+
+        &__text .title {
+            font-size: 28px;
+            line-height: 38px;
+            @include letter-spacing(-25, 28);
+        }
+    }
+
+    .why-glewee {
+        padding: 50px 0;
+    } 
+
+    .our-network {
+        padding: 40px 0;
+    }
+
+    .latest-news {
+        padding: 40px 0;
+    }
+
+    /***********************************
+    TRY GLEWEE
+    ***********************************/
+    .try-glewee {
+        padding: 40px 0;
+
+        &__content {
+            margin-bottom: 30px;
+        }
+    }
+
+    .trusted-brands {
+        padding: 40px 0; 
+
+        &__content { 
+            margin-bottom: 35px;
+        }
+
+        &__item {
+
+            &-media  {
+                width: 250px;
+                height: 250px;
+            }
+        }
+    }  
+
+    .trusted-brands-slider-wrapper {  
+        
+        .trusted-brands-slider {  
+
+            .slider-item { 
+                max-width: 280px; 
+            }
+        }
+    }
+
+    .contact {
+        padding: 30px 20px;
+        border-radius: 25px;
+
+        &__text {  
+            margin-bottom: 30px;
+        }
+    }
+
+    .ebook-offer { 
+        padding: 50px 0;
+
+        &__item { 
+
+            &-text { 
+                padding: 30px 20px;
+            }
+        }
+    }
+
+    /***********************************
+    CONTACT US
+    ***********************************/
+    .contact-us {
+        padding: 40px 0;
+
+        &__item {
+            padding: 25px;
+
+            &.big {
+
+                .contact-us__item { 
+
+                    &-icon {
+                        max-width: 70px; 
+                    }
+
+                    &-text {
+
+                        .title {
+                            font-size: 28px;
+                            line-height: 38px;
+                            @include letter-spacing(-25, 28);
+                        }
+
+                        .read-more {
+
+                            i {
+                                font-size: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-text {
+
+                .title {
+                    font-size: 24px;
+                    line-height: 34px;
+                    @include letter-spacing(-25, 24);
+                }
+
+                .sub-title {
+                    font-size: 15px;
+                    line-height: 25px;
+                    @include letter-spacing(-25, 15);
+                }
+
+                .read-more { 
+
+                    i {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }   
+
+    .look-forward {
+        padding: 40px 0;
+    }
+
+    .follow-us-share {
+        padding: 40px 0;
+
+        &__content {
+            padding: 30px 20px;
+
+            &-btn-group { 
+                margin-left: -5px;
+                margin-right: -5px;
+
+                .btn {
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    padding: 10px 16px;
+                }
+
+                &.get-app {
+                    margin-left: -5px;
+                    margin-right: -5px;
+
+                    .btn {
+                        height: 47px; 
+                        margin-left: 5px;
+                        margin-right: 5px;
+                        padding: 10px 18px;
+                    }
+                }
+            }
+        }
+    }
+
+    /***********************************
+    CAREERS 
+    ***********************************/
+    .careers {
+        padding-bottom: 40px; 
+    }
+
+    .main-highlights {
+        padding: 40px 0; 
+
+        &__list {
+
+            li {
+
+                .icon {
+                    width: 60px;
+                    height: 60px;
+                    font-size: 25px;
+                    min-width: 60px;
+                    line-height: 25px;
+                    min-height: 60px;
+                } 
+            } 
+        }
+    }
+
+    .founders {
+        padding: 40px 0;  
+
+        &__content {
+
+            .title {
+                font-size: 24px;
+                line-height: 34px;
+                @include letter-spacing(-25, 24);
+            }
+
+            .quote {
+                padding-left: 55px;
+
+                &:after {
+                    width: 40px;
+                    height: 30px;
+                }
+
+                p {
+                    font-size: 18px;
+                    line-height: 26px;
+                    @include letter-spacing(-25, 18);
+                }
+            }
+        }
+    }
+
+    .current-openings {
+        padding: 40px 0;
+    } 
+
+    .job__item {
+        margin-bottom: 30px; 
+
+        &-card {
+            padding: 30px 20px; 
+            flex-direction: column;
+
+            &-text {
+                margin-right: 0; 
+            }
+
+            &-button {
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .chat {
+        padding: 40px 0;
+    }
+
+    /***********************************
+    PRICING FEATURES
+    ***********************************/
+    .questions {
+        padding: 40px 0;
+    }
+
+    .fine-print {
+        padding: 40px 0; 
+    }
+
+    .pricing {
+        padding: 40px 0;
+
+        &__controller {
+
+            .toggle {
+                width: 65px;
+                height: 32px;
+            }
+        }
+
+        .pricing-item-wraper {
+            margin: 35px 0  35px;
+        }
+
+        &__card {
+            padding: 40px 25px;
+            border-radius: 25px;
+
+            &.popuar {
+                padding-top: 70px;
+
+                &:after {
+                    border-radius: 25px;
+                }
+            }
+        }
+
+        &-bottom {
+            padding: 30px 25px 0px;
+
+           &__content-ul-wraper ul { 
+                column-gap: inherit;
+                column-count: inherit; 
+            }
+        }
+    }
+
+    /***********************************
+    ABOUT GLEWEE
+    ***********************************/
+    .banner.about-glewee {
+        padding: 130px 0 1040px;
+    }
+
+    .about-glewee__item {
+        padding: 20px;
+    }
+
+    .we-empower {
+        padding: 50px 0;
+    }
+
+    .brand-awareness {
+        padding: 50px 0;
+
+        &__content {
+
+            .sub-title {
+                margin-bottom: 0;
+            }
+
+            p + p {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .about-trusted-brands {
+        padding: 50px 0;
+    }
+
+    .trusted-creators {
+        padding: 50px 0;
+    }
+
+    .what-glewee {
+        padding: 50px 0;
+    }
+
+    .what-tabs {
+
+        &__nav {
+            margin: -10px;
+            margin-bottom: 20px;
+
+            li  {
+                margin: 10px;
+
+                a {
+                    font-size: 18px;
+                    line-height: 28px;
+                    padding-left: 20px;
+                    @include letter-spacing(-25, 18);
+
+                    &:after { 
+                        height: 28px; 
+                    }
+
+                    &.active {
+                        padding-left: 45px;
+
+                        &:after {
+                            width: 28px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__item-text .content {
+
+            .title {
+                margin-bottom: 5px;
+            }
+
+            .sub-title {
+                margin-bottom: 5px;
+            }
+
+            ul li {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .about-contact {
+        padding: 50px 0;
+    }
+
+    /***********************************
+    BLOG STYLES
+    ***********************************/
+    .featured-blog-posts {
+        padding: 115px 0 40px;
+
+        .entry-title {
+            margin-bottom: 30px;
+        }
+    }
+
+    .recommended-blog-posts {
+        padding: 40px 0;
+    }
+
+    .search-bar {
+        padding: 40px 0;
+
+        &__form {
+
+            .form-group {
+
+                input {         
+                    font-size: 20px !important;  
+                    line-height: 30px !important;
+                    padding: 15px 20px !important;
+                    padding-right: 70px !important;
+                    @include letter-spacing(-25, 20);
+                    @include placeholderWithlettertraking(#707C9F, 20px, 30px, -25, 400);
+                }
+
+                button {
+                    width: 60px;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .blog-post { 
+        flex-direction: column;
+
+        &.blog-post-latest-xl {
+            padding: 30px 20px;
+
+            .text {
+                .sub-title {
+                    font-size: 20px;
+                    line-height: 30px;
+                    @include letter-spacing(-25, 20);
+                }
+            }
+        }
+
+        &.blog-post-lg {
+
+            .media {
+                min-width: 100%;
+                max-width: 100%;
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+        .media {
+            min-width: 100%;
+            max-width: 100%;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+
+        .text {
+
+            .date {
+                font-size: 16px;
+                margin-bottom: 0;
+                line-height: 24px;
+                @include letter-spacing(-25, 16);
+            }
+
+            .title {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    /***********************************
+    BLOG DETAILS STYLES
+    ***********************************/
+    .blog-details-page {
+        padding-bottom: 40px;
+
+        .blog-post-top {
+
+            .date {
+                font-size: 16px;
+                line-height: 24px;
+                @include letter-spacing(-25, 16);
+            } 
+        }
+
+        .blog-post:not(.blog-post-sm) .enty-media {
+            margin-bottom: 25px;
+        }
+
+        .entry-footer {
+            padding: 20px; 
+        }
+    }
+
+    .sidebar {
+        padding-top: 40px;
+    }
+   
+    /***********************************
+    BRANDS STYLES
+    ***********************************/
+    .glewee-for-brands {
+        padding: 20px 0 60px;
+
+        &.creators {
+            padding-bottom: 60px;
+        }
+
+        &__content .title {
+            font-size: 32px;
+            line-height: 40px; 
+            @include letter-spacing(-25, 32);
+        }
+    }  
+
+    .popup-video {
+
+        &:before {
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+            text-indent: 2px;
+            line-height: 60px;
+            top: calc(50% - 30px);
+            left: calc(50% - 30px);
+        }
+
+        &:hover:before {
+            font-size: 27px;
+        }
+    }
+
+    .your-marketing {
+        padding: 60px 0;
+
+        &.creators {
+            padding: 60px 0;
+        }
+
+        &__item-text .btn {
+            margin-top: 20px;
+        }
+    }
+
+    .how-works {
+        padding: 60px 0;
+
+        &.creators {
+            padding: 60px 0;
+        }
+
+        &.home {
+            padding: 60px 0;
+        }
+
+        &__content {
+
+            &-text {
+
+                .title {
+                    font-size: 25px;
+                    line-height: 35px;
+                    @include letter-spacing(-25, 35);
+                }
+            }
+
+            &-view a {
+                font-size: 14px;
+                margin-left: 5px;
+                line-height: 24px;
+                @include letter-spacing(-25, 24);
+            }
+        }
+
+        &__item {
+            min-width: 350px;
+            max-width: 350px;
+            min-height: 705px;
+            padding: 30px 20px;  
+        }
+    }
+
+    .additional {
+        padding: 60px 0;
+    }
+
+    .additional-item__media {
+        padding: 5px;
+        height: 290px;
+    }
+
+    .application {
+        padding: 60px 0;
+    }
+
+    .request-demo-brands {
+        padding: 60px 0;
+
+        &.creators {
+            padding: 60px 0;
+        }
+    }
+
+    .our-network.brands {
+        padding: 60px 0;
+
+        &.creators {
+            padding: 60px 0 80px;
+        }
+    }
+
+    .ebook-offer.brands {
+        padding: 60px 0 80px;
+    }
+
+    /***********************************
+    CUSTOMER STORY STYLES
+    ***********************************/
+    .customer-story {
+        padding: 20px 0 50px;
+
+        &__content {
+
+            .title {
+                line-height: 48px;
+            }
+
+            .view-gallery span {
+                width: 60px;
+                height: 60px; 
+                font-size: 23px;
+                line-height: 60px;
+                margin-right: 10px; 
+            }
+        } 
+    }
+
+    .story-post.big .title {
+        font-size: 50px;
+        line-height: 60px;
+        @include letter-spacing(-25, 50px);
+    }
+
+    .story-post {
+        min-height: 230px;
+    }
+
+    .featured-story {
+        padding: 20px; 
+        border-radius: 25px;
+
+        .media {
+            margin-left: 60px;
+            margin-bottom: 80px;
+        }
+    }
+
+    .share-wrapper.custom-share {
+        margin-bottom: 30px;
+    }
+
+    .campaign-gallery {
+        padding: 40px 0;
+
+        &__content .title {
+            margin-bottom: 0;
+        }
+    }
+
+    .gallery-item { 
+        border-radius: 20px;
+    }
+
+    .gallery-modal { 
+
+        &__content {
+            margin-left: 0;
+            margin-bottom: -10px;
+        }
+
+        &__item { 
+            margin-bottom: 10px;
+        }
+
+        &__media {
+            border-radius: 20px;
+        }
+    }
+ 
+    .mfp-move-from-top .mfp-container {
+        .mfp-content {
+            padding: 40px 0;
+        }
+
+        .mfp-arrow {
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    }
+
+    /***********************************
+    CREATORS STYLES
+    ***********************************/
+    .join-creators {
+        margin-top: 30px;
+    }
+
+    /***********************************
+    FOOTER STYLES
+    ***********************************/
+    .call-action {
+        padding: 40px 0;
+
+        &__item-text {
+            padding: 20px 18px;
+        }
+    }
+
+    .footer {
+        padding: 50px 0;
+
+        &-bottom {
+            margin-top: 40px;
+
+            &__btn-group {
+                margin-left: -5px;
+                margin-right: -5px; 
+
+                a {
+                    margin-left: 5px;
+                    margin-right: 5px;
+                }
+            }   
+        }
+
+        &__item { 
+            height: 220px; 
+            
+            &-media { 
+                top: -140px; 
+            }
+        }
+
+    }
+
+}/* 575 */ 
+
+@media only screen and (max-width: 550px) {
+
+    /***********************************
+    ABOUT GLEWEE
+    ***********************************/
+    .banner.about-glewee {
+        padding: 130px 0 970px;
+    }
+
+    .device-model {
+        height: 265px;
+    }
+    
+} /* 550 */
+
+@media only screen and (max-width: 480px) {
+
+    h1, .h1 { font-size: 39px; line-height:  49px; @include letter-spacing(-25,  39); &.lg { font-size: 42px; line-height:  52px; @include letter-spacing(-25,  42) } } 
+    h2, .h2 { font-size: 34px; line-height:  40px; @include letter-spacing(-25,  34) } 
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header-gutter {
+        height: 102px;
+        min-height: 102px;
+    }
+
+    .header {  
+
+        .navbar {  
+
+            .navbar-header {
+
+                .navbar-brand {
+                    max-width: 135px;
+                }
+            }
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    > li { 
+
+                        &:nth-last-child(2) {
+                            display: none;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+
+   /***********************************
+    HOME STYLES
+    ***********************************/
+    .follow-us-share {
+
+        &__content {
+
+            &-btn-group.get-app {
+
+                .btn {
+
+                    img   {
+                        max-width: 81px;
+                    }
+                }
+            }
+        }
+    }
+
+    .device-model {
+        height: 215px;
+    }
+} /* 480 */
+
+@media only screen and (max-width: 450px) {
+
+    /***********************************
+    BRANDS STYLES
+    ***********************************/ 
+    .how-works { 
+
+        &__item {
+            min-width: 250px;
+            max-width: 250px; 
+            padding: 25px 15px;
+            min-height: 670px;  
+        }
+    }
+
+    .slider-controls .slick-dots li {
+        font-size: 14px;
+        line-height: 24px; 
+        @include letter-spacing(-25, 14);
+    }
+
+    /***********************************
+    CUSTOMER STORY STYLES
+    ***********************************/
+    .featured-story {
+        min-height: 450px;
+    } 
+} /* 450 */
+
+@media only screen and (max-width: 420px) {
+
+    /***********************************
+    HEADER STYLES
+    ***********************************/
+    .header {  
+
+        .navbar {   
+
+            .navbar-collapse {
+
+                .navbar-nav {
+
+                    > li { 
+
+                        &:nth-last-child(2) {
+                            display: none;
+                        } 
+                    }
+                }
+            }
+        }
+    }
+    
+}/* 420 */ 
+
+@media only screen and (max-width: 380px) {
+
+    /***********************************
+    ABOUT GLEWEE
+    ***********************************/
+    .banner.about-glewee {
+        padding: 130px 0 960px;
+    }
+
+    .device-model {
+        height: 170px;
+    }
+
+    /***********************************
+    CUSTOMER STORY STYLES
+    ***********************************/
+    .gallery-item {
+        height: 280px;
+
+        .icon {
+            font-size: 50px;
+            line-height: 280px;
+        }
+    }
+    
+}/* 380 */ 
+
+@media only screen and (max-width: 350px) {
+
+    /***********************************
+    CUSTOMER STORY STYLES
+    ***********************************/
+    .featured-story {
+        min-height: 410px;
+    }
+    
+}/* 350 */ 
