@@ -364,6 +364,26 @@ section {
     padding: 50px 0;
 }
 
+blockquote {
+    position: relative;
+    padding-left: 95px !important;
+}
+blockquote:before {
+    top: 0;
+    left: 0;
+    width: 76px;
+    height: 50px;
+    position: absolute;
+    content: "";
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(images/svg/quote.svg);
+}
+blockquote h1, blockquote .h1, blockquote h2, blockquote .h2, blockquote h3, blockquote .h3, blockquote h4,
+blockquote .h4, blockquote h5, blockquote .h5, blockquote h6, blockquote .h6 {
+    color: #000;
+}
+
 .container {
     width: 100%;
     max-width: 1440px;
@@ -599,7 +619,7 @@ select:focus, textarea:hover, textarea:focus {
 }
 .fluid h1, .fluid h2, .fluid h3, .fluid h4, .fluid h5, .fluid h6,
 .fluid .h1, .fluid .h2, .fluid .h3, .fluid .h4, .fluid .h5, .fluid .h6, .fluid p,
-.fluid .entry-title, .fluid .description, .fluid .block-content,
+.fluid .entry-content, .fluid .description, .fluid .block-content,
 .fluid .content, .fluid .testi-item {
     max-width: 100% !important;
 }
@@ -625,6 +645,10 @@ select:focus, textarea:hover, textarea:focus {
 
 .color-primary {
     color: #001179;
+}
+
+.color-black {
+    color: #000;
 }
 
 .default {
@@ -945,8 +969,7 @@ HOME STYLES
 .banner {
     overflow: hidden;
     position: relative;
-    margin-bottom: 120px;
-    padding: 261px 0 173px;
+    padding: 261px 0 161px;
 }
 .banner:after {
     top: 0;
@@ -983,17 +1006,20 @@ HOME STYLES
     margin-top: 15px;
 }
 .banner__content-btn-group {
+    z-index: 1;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     margin-top: 20px;
     margin-left: -10px;
+    position: relative;
     margin-right: -10px;
 }
 .banner__content-btn-group.white {
     margin-top: 0;
     margin-left: -7px;
     margin-right: -7px;
+    padding: 0 0 10px;
 }
 .banner__content-btn-group.white .btn, .banner__content-btn-group.white button {
     margin-left: 7px;
@@ -1009,7 +1035,7 @@ HOME STYLES
 }
 .banner__content .title {
     color: #001179;
-    padding: 10px 0;
+    padding: 0 0 10px;
 }
 .banner__content p {
     color: #000;
@@ -1067,16 +1093,21 @@ HOME STYLES
 
 .for-brands {
     overflow: hidden;
-    padding: 155px 0 175px;
+    padding: 150px 0 150px;
+}
+.for-brands__content .transparent-text {
+    background: linear-gradient(111deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 0;
 }
 .for-brands__content .title {
     margin-bottom: 5px;
 }
 .for-brands__content .sub-title {
-    display: block;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 40px;
     margin-bottom: 7px;
 }
 .for-brands__content p {
@@ -1093,10 +1124,16 @@ HOME STYLES
     margin-left: 65px;
     margin-right: -200px;
 }
-.for-brands.creators .for-brands__content p {
+.for-brands__item {
+    margin-bottom: 150px;
+}
+.for-brands__item:last-child {
+    margin-bottom: 0;
+}
+.for-brands__item.creators .for-brands__content p {
     max-width: 405px;
 }
-.for-brands.creators .for-brands__media {
+.for-brands__item.creators .for-brands__media {
     margin-right: 35px;
     margin-left: -200px;
 }
@@ -1139,13 +1176,11 @@ HOME STYLES
     margin-top: 20px;
 }
 .request-demo__media {
-    top: 45px;
+    top: -108px;
     z-index: -1;
-    right: -85px;
+    right: -115px;
     position: absolute;
     margin-left: 540px;
-    -webkit-transform: rotate(-30deg);
-    transform: rotate(-30deg);
 }
 
 .why-glewee {
@@ -1274,12 +1309,15 @@ HOME STYLES
 .our-network {
     padding: 150px 0 190px;
 }
-.our-network__content .title {
-    color: #7D8FFA;
-    margin-bottom: 20px;
+.our-network.home .our-network__content .title {
+    font-size: 84px;
+    line-height: 96px;
+    margin-bottom: 10px;
+    letter-spacing: -2.52px;
 }
 .our-network__content .sub-title {
-    display: block;
+    font-size: 60px;
+    line-height: 75px;
 }
 .our-network__item {
     margin-bottom: 40px;
@@ -1288,10 +1326,10 @@ HOME STYLES
     margin-bottom: 0;
 }
 .our-network__item .title {
-    font-size: 50px;
-    line-height: 58px;
+    font-size: 56px;
+    line-height: 64px;
     margin-bottom: 10px;
-    letter-spacing: -1.375px;
+    letter-spacing: -1.4px;
     background: linear-gradient(112deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -1307,10 +1345,22 @@ HOME STYLES
     font-weight: 600;
     line-height: 34px;
     letter-spacing: -0.6px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .our-network__item .read-more i {
     font-size: 13px;
     margin-left: 12px;
+    display: inline-block;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.our-network__item .read-more:hover {
+    color: #7D8FFA;
+}
+.our-network__item .read-more:hover i {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
 }
 
 .latest-news {
@@ -1345,10 +1395,7 @@ BRANDS PAGE STYLES
 }
 
 .glewee-for-brands {
-    padding: 64px 0 390px;
-}
-.glewee-for-brands.creators {
-    padding-bottom: 260px;
+    padding: 64px 0 120px;
 }
 .glewee-for-brands.creators .glewee-for-brands__content {
     margin-bottom: 0;
@@ -1359,20 +1406,28 @@ BRANDS PAGE STYLES
 .glewee-for-brands.creators .glewee-for-brands__btn-group .btn {
     margin: 0 10px 10px;
 }
+.glewee-for-brands.creators .media {
+    margin-bottom: 20px;
+}
 .glewee-for-brands__content {
     margin-bottom: 42px;
 }
 .glewee-for-brands__content .title {
     font-size: 95px;
     line-height: 95px;
-    margin-bottom: 20px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
     letter-spacing: -2.375px;
-    background: linear-gradient(135deg, #EF66C5 0%, #364DDD 49.75%, #00BFE8 100%);
+    background: linear-gradient(111deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
 }
 .glewee-for-brands__content .sub-title {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 .glewee-for-brands__content p + p {
     margin-top: 10px;
@@ -1476,12 +1531,15 @@ BRANDS PAGE STYLES
     background: linear-gradient(135deg, #fff7fc 0%, #edf0ff 49.75%, #f8feff 100%);
 }
 .mfp-move-from-top .mfp-container {
-    padding: 0;
+    padding: 0 15px;
 }
 .mfp-move-from-top .mfp-container .mfp-content {
     height: 100%;
     padding: 40px 0;
     vertical-align: middle;
+}
+.mfp-move-from-top .mfp-container .mfp-content .container {
+    padding: 0;
 }
 .mfp-move-from-top .mfp-with-anim {
     opacity: 0;
@@ -1659,11 +1717,11 @@ BRANDS PAGE STYLES
 .your-marketing.creators .your-marketing__item.align-left .your-marketing__item-media {
     top: -590px;
     right: -80px;
-    left: -475px;
+    left: -510px;
 }
 .your-marketing.creators .your-marketing__item-media {
     top: -500px;
-    right: -510px;
+    right: -570px;
 }
 .your-marketing__item {
     position: relative;
@@ -1679,14 +1737,15 @@ BRANDS PAGE STYLES
             flex-direction: row-reverse;
 }
 .your-marketing__item.align-left .your-marketing__item-media {
-    top: -440px;
-    left: -580px;
+    top: -640px;
+    left: -610px;
     right: inherit;
 }
 .your-marketing__item-text {
     max-width: 620px;
 }
 .your-marketing__item-text .title {
+    max-width: 595px;
     margin-bottom: 5px;
 }
 .your-marketing__item-text .sub-title {
@@ -1702,13 +1761,11 @@ BRANDS PAGE STYLES
     margin-top: 25px;
 }
 .your-marketing__item-media {
-    top: -400px;
+    top: -600px;
     left: -40px;
     z-index: -1;
     right: -580px;
     position: absolute;
-    -webkit-transform: rotate(-30deg);
-    transform: rotate(-30deg);
 }
 
 .how-works {
@@ -1791,13 +1848,14 @@ BRANDS PAGE STYLES
     border-radius: 500px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    background: linear-gradient(111deg, #ffb1e7 0%, #8d9dff 49.75%, #5de2ff 100%);
+    background: linear-gradient(105deg, #ffb1e7 0%, #8d9dff 49.75%, #5de2ff 100%);
 }
 .slider-controls .slider-arrows .how-works__arrow:hover {
-    background: #001179;
+    background: #001179 !important;
 }
 .slider-controls .slider-arrows .how-works__arrow.how-works__arrow_left {
     margin-right: 12px;
+    background: linear-gradient(225deg, #ffb1e7 0%, #8d9dff 49.75%, #5de2ff 100%);
 }
 .slider-controls .slider-arrows .how-works__arrow i {
     color: #FFF;
@@ -1808,10 +1866,10 @@ BRANDS PAGE STYLES
     font-size: 0;
     position: initial;
     text-align: right;
-    margin: -10px -20px 0;
+    margin: 0 -20px 0;
 }
 .slider-controls .slick-dots li {
-    margin: 10px 0;
+    margin: 0;
     width: auto;
     height: auto;
     color: #ACB6D6;
@@ -1870,6 +1928,11 @@ BRANDS PAGE STYLES
     display: block;
     margin-bottom: 55px;
 }
+.additional-item-small .additional-item__text .title {
+    font-size: 30px;
+    line-height: 42px;
+    letter-spacing: -0.75px;
+}
 .additional-item__media {
     width: 100%;
     height: 430px;
@@ -1888,10 +1951,10 @@ BRANDS PAGE STYLES
     transition: all 0.3s ease;
 }
 .additional-item__text {
-    max-width: 613px;
+    max-width: 603px;
 }
 .additional-item__text .title {
-    max-width: 448px;
+    max-width: 100%;
     margin-bottom: 10px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
@@ -1961,7 +2024,7 @@ BRANDS PAGE STYLES
     margin-bottom: 5px;
 }
 .our-network.brands .our-network__item p {
-    max-width: 228px;
+    max-width: 295px;
 }
 .our-network.brands .our-network__item-wraper {
     -webkit-column-gap: 70px;
@@ -1972,7 +2035,7 @@ BRANDS PAGE STYLES
 }
 
 .ebook-offer.brands {
-    padding: 100px 0 200px;
+    padding: 100px 0 120px;
 }
 
 /***********************************
@@ -2145,7 +2208,7 @@ BLOG PAGE STYLES
 }
 
 .blog-page {
-    padding: 140px 0 250px;
+    padding: 140px 0;
 }
 .blog-page .mb-30 {
     margin-bottom: -30px;
@@ -2159,37 +2222,49 @@ BLOG PAGE STYLES
     border-bottom: 6px solid #CAD1FC;
 }
 
-.blog_load_more .loadmore {
+.pagination {
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    border-radius: 0;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+.pagination a {
     border: 0;
-    padding: 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 24px;
     color: #001179;
+    font-size: 24px;
     font-weight: 700;
-    line-height: 34px;
-    margin: 0 0 0 auto;
+    line-height: 36px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background: transparent;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
     letter-spacing: -0.6px;
-}
-.blog_load_more .loadmore span {
-    font-size: 14px;
-    margin-left: 20px;
-    display: inline-block;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-.blog_load_more .loadmore:hover {
+.pagination a i {
+    font-size: 14px;
+}
+.pagination a:hover {
     color: #7D8FFA;
 }
-.blog_load_more .loadmore:hover span {
-    color: #7D8FFA;
+.pagination .float-left {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.pagination .float-left a i {
+    margin-right: 25px;
+}
+.pagination .float-right {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.pagination .float-right a i {
+    margin-left: 25px;
 }
 
 .sidebar .widget {
@@ -2244,11 +2319,16 @@ BLOG PAGE STYLES
     color: #8387C6;
     background: linear-gradient(110deg, #ffe0f5 0%, #cad1fc 49.75%, #d1f7ff 100%);
 }
+.sidebar .widget .footer__item.footer__item-demo {
+    height: 330px;
+}
 .sidebar .widget .footer__item.footer__item-demo .footer__item-media {
+    top: -60px;
+    right: -20px;
     min-height: 157px;
 }
 .sidebar .widget .footer__item.footer__item-demo .footer__item-media img {
-    left: 10px;
+    max-width: 294px;
 }
 .sidebar .widget .footer__item.footer__item-demo .footer__item-text {
     padding: 25px 23px 21px;
@@ -2299,6 +2379,8 @@ BLOG PAGE STYLES
 .blog-post.blog-post-latest-xl {
     border-radius: 24px;
     padding: 42.5px 40px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
     background: linear-gradient(111deg, #fff7fc 0%, #edf0ff 49.75%, #f8feff 100%);
 }
 .blog-post.blog-post-latest-xl .text {
@@ -2308,9 +2390,13 @@ BLOG PAGE STYLES
     color: #001179;
     font-weight: 400;
     margin-bottom: 5px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .blog-post.blog-post-latest-xl .text .title {
     color: #7D8FFA;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .blog-post.blog-post-latest-xl .text .sub-title {
     color: #001179;
@@ -2327,44 +2413,44 @@ BLOG PAGE STYLES
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-.blog-post.blog-post-latest-xl .text a:-webkit-any-link:hover.date, .blog-post.blog-post-latest-xl .text a:-webkit-any-link:focus.date {
-    color: #7D8FFA;
+.blog-post.blog-post-latest-xl:-webkit-any-link:hover, .blog-post.blog-post-latest-xl:-webkit-any-link:focus {
+    background: #001179;
 }
-.blog-post.blog-post-latest-xl .text a:-moz-any-link:hover.date, .blog-post.blog-post-latest-xl .text a:-moz-any-link:focus.date {
-    color: #7D8FFA;
+.blog-post.blog-post-latest-xl:-moz-any-link:hover, .blog-post.blog-post-latest-xl:-moz-any-link:focus {
+    background: #001179;
 }
-.blog-post.blog-post-latest-xl .text a:any-link:hover.date, .blog-post.blog-post-latest-xl .text a:any-link:focus.date {
-    color: #7D8FFA;
+.blog-post.blog-post-latest-xl:any-link:hover, .blog-post.blog-post-latest-xl:any-link:focus {
+    background: #001179;
 }
-.blog-post.blog-post-latest-xl .text a:-webkit-any-link:hover .title, .blog-post.blog-post-latest-xl .text a:-webkit-any-link:focus .title {
-    color: #001179;
+.blog-post.blog-post-latest-xl:-webkit-any-link:hover .date, .blog-post.blog-post-latest-xl:-webkit-any-link:hover .title, .blog-post.blog-post-latest-xl:-webkit-any-link:focus .date, .blog-post.blog-post-latest-xl:-webkit-any-link:focus .title {
+    color: #FFF;
 }
-.blog-post.blog-post-latest-xl .text a:-moz-any-link:hover .title, .blog-post.blog-post-latest-xl .text a:-moz-any-link:focus .title {
-    color: #001179;
+.blog-post.blog-post-latest-xl:-moz-any-link:hover .date, .blog-post.blog-post-latest-xl:-moz-any-link:hover .title, .blog-post.blog-post-latest-xl:-moz-any-link:focus .date, .blog-post.blog-post-latest-xl:-moz-any-link:focus .title {
+    color: #FFF;
 }
-.blog-post.blog-post-latest-xl .text a:any-link:hover .title, .blog-post.blog-post-latest-xl .text a:any-link:focus .title {
-    color: #001179;
+.blog-post.blog-post-latest-xl:any-link:hover .date, .blog-post.blog-post-latest-xl:any-link:hover .title, .blog-post.blog-post-latest-xl:any-link:focus .date, .blog-post.blog-post-latest-xl:any-link:focus .title {
+    color: #FFF;
 }
-.blog-post.blog-post-latest-xl .text a:-webkit-any-link:hover .sub-title, .blog-post.blog-post-latest-xl .text a:-webkit-any-link:focus .sub-title {
-    color: #7D8FFA;
+.blog-post.blog-post-latest-xl:-webkit-any-link:hover .sub-title, .blog-post.blog-post-latest-xl:-webkit-any-link:focus .sub-title {
+    color: #FFF;
 }
-.blog-post.blog-post-latest-xl .text a:-moz-any-link:hover .sub-title, .blog-post.blog-post-latest-xl .text a:-moz-any-link:focus .sub-title {
-    color: #7D8FFA;
+.blog-post.blog-post-latest-xl:-moz-any-link:hover .sub-title, .blog-post.blog-post-latest-xl:-moz-any-link:focus .sub-title {
+    color: #FFF;
 }
-.blog-post.blog-post-latest-xl .text a:any-link:hover .sub-title, .blog-post.blog-post-latest-xl .text a:any-link:focus .sub-title {
-    color: #7D8FFA;
+.blog-post.blog-post-latest-xl:any-link:hover .sub-title, .blog-post.blog-post-latest-xl:any-link:focus .sub-title {
+    color: #FFF;
 }
-.blog-post.blog-post-latest-xl .text a:-webkit-any-link:hover .sub-title i, .blog-post.blog-post-latest-xl .text a:-webkit-any-link:focus .sub-title i {
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%);
+.blog-post.blog-post-latest-xl:-webkit-any-link:hover .sub-title i, .blog-post.blog-post-latest-xl:-webkit-any-link:focus .sub-title i {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
 }
-.blog-post.blog-post-latest-xl .text a:-moz-any-link:hover .sub-title i, .blog-post.blog-post-latest-xl .text a:-moz-any-link:focus .sub-title i {
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%);
+.blog-post.blog-post-latest-xl:-moz-any-link:hover .sub-title i, .blog-post.blog-post-latest-xl:-moz-any-link:focus .sub-title i {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
 }
-.blog-post.blog-post-latest-xl .text a:any-link:hover .sub-title i, .blog-post.blog-post-latest-xl .text a:any-link:focus .sub-title i {
-    -webkit-transform: translateX(50%);
-    transform: translateX(50%);
+.blog-post.blog-post-latest-xl:any-link:hover .sub-title i, .blog-post.blog-post-latest-xl:any-link:focus .sub-title i {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
 }
 .blog-post.blog-post-latest {
     -webkit-box-orient: vertical;
@@ -2387,16 +2473,16 @@ BLOG PAGE STYLES
     line-height: 40px;
     letter-spacing: -0.75px;
 }
-.blog-post.blog-post-lg .media {
+.blog-post.blog-post-md .media {
     min-width: 210px;
     max-width: 210px;
 }
-.blog-post.blog-post-lg .text .title {
+.blog-post.blog-post-md .text .title {
     font-size: 24px;
     line-height: 34px;
     letter-spacing: -0.6px;
 }
-.blog-post.blog-post-lg .text p {
+.blog-post.blog-post-md .text p {
     max-width: 405px;
 }
 .blog-post.featured-blog {
@@ -2504,7 +2590,8 @@ BLOG PAGE STYLES
     transition: all 0.3s ease;
 }
 .blog-post .media .categories li a:hover, .blog-post .media .categories li a:focus {
-    background: #d9d9d9;
+    color: #FFF;
+    background: #001179;
 }
 .blog-post .text {
     max-width: 620px;
@@ -2568,6 +2655,9 @@ BLOG DETAILS PAGE STYLES
 .blog-details-page .mb-30 {
     margin-bottom: -30px;
 }
+.blog-details-page .entry-content {
+    margin-bottom: 40px;
+}
 .blog-details-page .main-content {
     max-width: 690px;
 }
@@ -2597,14 +2687,14 @@ BLOG DETAILS PAGE STYLES
     padding: 0;
     overflow: inherit;
 }
-.blog-details-page .blog-post:not(.blog-post-sm) .enty-media {
+.blog-details-page .blog-post:not(.blog-post-sm) .entry-media {
     overflow: hidden;
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
     border-radius: 36px;
     background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
 }
-.blog-details-page .blog-post:not(.blog-post-sm) .enty-media img {
+.blog-details-page .blog-post:not(.blog-post-sm) .entry-media img {
     width: 100%;
     height: auto;
 }
@@ -2649,20 +2739,15 @@ BLOG DETAILS PAGE STYLES
 .entry-content .h4, .entry-content h5, .entry-content .h5, .entry-content h6, .entry-content .h6 {
     margin-bottom: 10px;
 }
-.entry-content__btn-group {
-    margin-left: -12px;
-    margin-right: -12px;
-    margin-bottom: -12px;
-    padding: 30px 0 85px;
-}
-.entry-content__btn-group .btn {
+.entry-content .btn {
     height: 97px;
-    margin-left: 12px;
-    margin-right: 12px;
-    margin-bottom: 12px !important;
+    margin-top: 10px;
     padding: 16px 31px 14px 34px;
     -webkit-box-shadow: 0px 24px 36px rgba(0, 0, 0, 0.16);
             box-shadow: 0px 24px 36px rgba(0, 0, 0, 0.16);
+}
+.entry-content .btn + .btn {
+    margin-left: 12px;
 }
 .entry-content hr {
     margin: 40px 0;
@@ -2682,13 +2767,36 @@ BLOG DETAILS PAGE STYLES
 .entry-content p a:not(.btn):hover, .entry-content p a:not(.btn):focus {
     color: #001179;
 }
+.entry-content p img {
+    border-radius: 36px;
+}
 .entry-content p img.alignnone {
     width: 100%;
     margin-bottom: 0;
     border-radius: 36px;
 }
+.entry-content .wp-caption {
+    overflow: hidden;
+    position: relative;
+    border-radius: 36px;
+    margin-bottom: 30px;
+}
+.entry-content .wp-caption .text {
+    bottom: 0;
+    position: absolute;
+    padding: 28px 25px;
+}
+.entry-content .wp-caption img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+}
+.entry-content .wp-caption h1, .entry-content .wp-caption h2, .entry-content .wp-caption h3, .entry-content .wp-caption h4, .entry-content .wp-caption h5, .entry-content .wp-caption h6 {
+    color: #FFF;
+}
 .entry-content .btn {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 .entry-content a:not(.btn):hover, .entry-content a:not(.btn):focus {
     color: #001179;
@@ -3211,7 +3319,7 @@ CAREERS PAGE STYLES
 ***********************************/
 .careers {
     overflow: hidden;
-    padding: 40px 0 80px;
+    padding: 40px 0 120px;
 }
 .careers__content {
     margin-bottom: 45px;
@@ -3286,6 +3394,7 @@ CAREERS PAGE STYLES
     min-height: 140px;
     margin-right: 23px;
     border-radius: 500px;
+    color: #FFF;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -3313,11 +3422,7 @@ CAREERS PAGE STYLES
     position: absolute;
 }
 .founders__media-text .sub-title {
-    font-size: 24px;
-    font-weight: 700;
-    font-family: "poppins", sans-serif;
-    line-height: 34px;
-    letter-spacing: -0.6px;
+    color: #000;
 }
 .founders__content {
     max-width: 880px;
@@ -3326,34 +3431,9 @@ CAREERS PAGE STYLES
 .founders__content .title {
     margin-bottom: 20px;
 }
-.founders__content .quote {
-    position: relative;
-    padding-left: 95px;
-}
-.founders__content .quote:after {
-    top: 0;
-    left: 0;
-    content: "";
-    width: 76px;
-    height: 50px;
-    position: absolute;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-image: url(images/svg/quote.svg);
-}
-.founders__content .quote p {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 42px;
-    font-family: "poppins", sans-serif;
-    letter-spacing: -0.75px;
-}
-.founders__content .quote p + p {
-    margin-top: 10px;
-}
 
 .current-openings {
-    padding: 95px 0px 145px;
+    padding: 95px 0px 120px;
 }
 .current-openings__content {
     margin-bottom: 35px;
@@ -3390,12 +3470,9 @@ CAREERS PAGE STYLES
     margin-right: 20px;
 }
 .job__item-card-text .sub-title, .job__item-card-text .position {
-    font-size: 24px;
-    line-height: 36px;
-    font-weight: 700;
-    font-family: "poppins", sans-serif;
     margin-bottom: 10px;
-    letter-spacing: -0.6px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .job__item-card-text .title {
     color: #001179;
@@ -3403,6 +3480,15 @@ CAREERS PAGE STYLES
 }
 .job__item-card-button .btn {
     white-space: nowrap;
+}
+.job__item-card:-webkit-any-link:hover .job__item-card-text .position, .job__item-card:-webkit-any-link:hover .job__item-card-text .sub-title {
+    color: #001179;
+}
+.job__item-card:-moz-any-link:hover .job__item-card-text .position, .job__item-card:-moz-any-link:hover .job__item-card-text .sub-title {
+    color: #001179;
+}
+.job__item-card:any-link:hover .job__item-card-text .position, .job__item-card:any-link:hover .job__item-card-text .sub-title {
+    color: #001179;
 }
 
 .chat {
@@ -3704,11 +3790,9 @@ ABOUT GLEWEE PAGE STYLES
 }
 .about-page-wraper__overly {
     z-index: -1;
-    top: 200px;
-    left: -1124px;
+    top: -250px;
+    left: -1270px;
     position: absolute;
-    -webkit-transform: rotate(-47deg);
-    transform: rotate(-47deg);
 }
 
 .we-empower {
@@ -3846,13 +3930,7 @@ ABOUT GLEWEE PAGE STYLES
     transition: all 0.3s ease;
 }
 .about-glewee__item-text .sub-title {
-    display: block;
-    font-size: 24px;
-    line-height: 34px;
-    font-weight: 700;
-    font-family: "poppins", sans-serif;
     color: #7D8FFA;
-    letter-spacing: -0.6px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
@@ -3880,6 +3958,14 @@ ABOUT GLEWEE PAGE STYLES
 }
 .brand-awareness__media {
     margin-left: -200px;
+}
+.brand-awareness__content a.readmore__anchor {
+    color: #000;
+    font-weight: 700;
+}
+.brand-awareness__content .content-editor h1, .brand-awareness__content .content-editor h2, .brand-awareness__content .content-editor h3, .brand-awareness__content .content-editor h4, .brand-awareness__content .content-editor h5, .brand-awareness__content .content-editor h6 {
+    color: #000;
+    margin-bottom: 7px;
 }
 .brand-awareness__content .btn {
     margin-top: 27px;
@@ -4107,6 +4193,12 @@ CUSTOMER STORY STYLES
 }
 .customer-story__content p {
     max-width: 615px;
+}
+.customer-story__content a.readmore__anchor {
+    color: #000;
+    font-size: 24px;
+    line-height: 34px;
+    font-weight: 700;
 }
 .customer-story__content .view-gallery {
     display: block;
@@ -4535,33 +4627,6 @@ DEFAULT STYLES
 ***********************************/
 .default-page {
     padding: 60px 0;
-}
-
-blockquote {
-    position: relative;
-    margin: 30px 0 !important;
-    padding-left: 70px !important;
-    background-color: transparent;
-    border-left: 10px solid #001179;
-}
-blockquote:before {
-    top: 0;
-    left: 15px;
-    content: '"';
-    line-height: 1;
-    color: #001179;
-    font-weight: 700;
-    font-size: 100px;
-    position: absolute;
-}
-blockquote p {
-    font-style: italic;
-    margin-bottom: 0;
-}
-blockquote h1, blockquote .h1, blockquote h2, blockquote .h2, blockquote h3, blockquote .h3, blockquote h4,
-blockquote .h4, blockquote h5, blockquote .h5, blockquote h6, blockquote .h6 {
-    margin: 0;
-    line-height: 1.4;
 }
 
 .content-editor h1, .content-editor .h1, .content-editor h2, .content-editor .h2, .content-editor h3, .content-editor .h3, .content-editor h4, .content-editor .h4, .content-editor h5, .content-editor .h5, .content-editor h6, .content-editor .h6 {
@@ -5293,6 +5358,13 @@ MEDIA QUERIES
 ***********************************/
 @media only screen and (max-width: 1700px) {
     /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner__media {
+        right: -100px;
+    }
+
+    /***********************************
     CUSTOMER STORY STYLES
     ***********************************/
     .share-wrapper.custom-share {
@@ -5327,6 +5399,15 @@ MEDIA QUERIES
     }
 }
 /* 1700 */
+@media only screen and (max-width: 1560px) {
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner__media {
+        right: -60px;
+    }
+}
+/* 1560 */
 @media only screen and (max-width: 1460px) {
     h1.lg, .h1.lg {
         font-size: 90px;
@@ -5379,16 +5460,13 @@ MEDIA QUERIES
         letter-spacing: -0.65px;
     }
 
-    .for-brands {
-        padding: 150px 0;
-    }
-    .for-brands__content svg, .for-brands__content img {
-        max-width: 200px;
-    }
     .for-brands__content .title {
         font-size: 60px;
         line-height: 70px;
         letter-spacing: -1.5px;
+    }
+    .for-brands__item {
+        margin-bottom: 120px;
     }
 
     .request-demo {
@@ -5417,10 +5495,6 @@ MEDIA QUERIES
         padding: 100px 0;
     }
 
-    .current-openings {
-        padding-bottom: 120px;
-    }
-
     .chat {
         padding: 120px 0;
     }
@@ -5446,10 +5520,6 @@ MEDIA QUERIES
         padding-top: 200px;
     }
 
-    .blog-page {
-        padding-bottom: 200px;
-    }
-
     .blog-post.featured-blog .text .title {
         font-size: 50px;
         line-height: 60px;
@@ -5471,13 +5541,14 @@ MEDIA QUERIES
     .blog-details-page {
         padding-bottom: 120px;
     }
-    .blog-details-page .btn.bg-white img {
-        max-width: 240px;
-    }
     .blog-details-page .blog-post-top .title {
         font-size: 75px;
         line-height: 76px;
         letter-spacing: -1.875px;
+    }
+
+    .entry-content .btn.bg-white img {
+        max-width: 240px;
     }
 
     .share-wrapper .share {
@@ -5488,10 +5559,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 50px 0 320px;
-    }
-    .glewee-for-brands.creators {
-        padding-bottom: 250px;
+        padding: 50px 0 120px;
     }
 
     .your-marketing {
@@ -5513,10 +5581,6 @@ MEDIA QUERIES
     }
 
     .request-demo-brands {
-        padding-bottom: 175px;
-    }
-
-    .ebook-offer.brands {
         padding-bottom: 175px;
     }
 
@@ -5559,9 +5623,15 @@ MEDIA QUERIES
     .for-brands {
         padding: 120px 0;
     }
+    .for-brands__item {
+        margin-bottom: 100px;
+    }
 
     .request-demo {
         padding: 120px 0;
+    }
+    .request-demo__media {
+        margin-left: 400px;
     }
 
     .why-glewee {
@@ -5570,6 +5640,16 @@ MEDIA QUERIES
 
     .our-network {
         padding: 120px 0;
+    }
+    .our-network.home .our-network__content .title {
+        font-size: 74px;
+        line-height: 86px;
+        letter-spacing: -2.22px;
+    }
+    .our-network__content .sub-title {
+        font-size: 50px;
+        line-height: 65px;
+        letter-spacing: -1.25px;
     }
 
     .latest-news {
@@ -5629,6 +5709,10 @@ MEDIA QUERIES
     /***********************************
     CAREERS 
     ***********************************/
+    .careers {
+        padding-bottom: 100px;
+    }
+
     .main-highlights {
         padding: 80px 0;
     }
@@ -5701,7 +5785,7 @@ MEDIA QUERIES
     }
 
     .blog-page {
-        padding: 120px 0 150px;
+        padding: 120px 0;
     }
 
     /***********************************
@@ -5715,13 +5799,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 40px 0 300px;
-    }
-    .glewee-for-brands.creators {
-        padding-bottom: 220px;
-    }
-    .glewee-for-brands__content .title {
-        margin-bottom: 15px;
+        padding: 40px 0 120px;
     }
 
     .popup-video:before {
@@ -5752,14 +5830,14 @@ MEDIA QUERIES
     }
 
     .slider-controls .slick-dots {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
     }
     .slider-controls .slick-dots li {
         font-size: 20px;
         line-height: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
         letter-spacing: -0.5px;
     }
 
@@ -5863,7 +5941,6 @@ MEDIA QUERIES
     ***********************************/
     .banner {
         padding-top: 155px;
-        margin-bottom: 100px;
     }
 
     .home-trusted-brands {
@@ -5873,14 +5950,14 @@ MEDIA QUERIES
     .for-brands {
         padding: 100px 0;
     }
-    .for-brands__content svg, .for-brands__content img {
-        max-width: 170px;
-    }
     .for-brands__content .title {
         font-size: 45px;
         line-height: 55px;
         margin-bottom: 0;
         letter-spacing: -1.125px;
+    }
+    .for-brands__item {
+        margin-bottom: 80px;
     }
 
     .request-demo {
@@ -5889,13 +5966,35 @@ MEDIA QUERIES
     .request-demo__content {
         padding: 80px 50px !important;
     }
+    .request-demo__text {
+        max-width: 490px;
+    }
+    .request-demo__media {
+        right: -300px;
+    }
 
     .why-glewee {
         padding: 130px 0;
     }
+    .why-glewee__item.glewee {
+        padding-top: 92px;
+    }
+    .why-glewee__item.expand .why-glewee__item-media {
+        right: -80px;
+    }
 
     .our-network {
         padding: 100px 0;
+    }
+    .our-network.home .our-network__content .title {
+        font-size: 64px;
+        line-height: 76px;
+        letter-spacing: -1.92px;
+    }
+    .our-network__content .sub-title {
+        font-size: 40px;
+        line-height: 55px;
+        letter-spacing: -1px;
     }
 
     .latest-news {
@@ -5959,7 +6058,7 @@ MEDIA QUERIES
     CAREERS 
     ***********************************/
     .careers {
-        padding-bottom: 70px;
+        padding-bottom: 80px;
     }
     .careers__media {
         margin-left: -10px;
@@ -6130,6 +6229,12 @@ MEDIA QUERIES
     .recommended-blog-posts {
         padding: 100px 0;
     }
+    .recommended-blog-posts .blog-post .text {
+        max-width: 100%;
+    }
+    .recommended-blog-posts .blog-post .text p {
+        max-width: 100%;
+    }
 
     .search-bar {
         padding-bottom: 100px;
@@ -6144,7 +6249,7 @@ MEDIA QUERIES
     }
 
     .blog-page {
-        padding: 100px 0 120px;
+        padding: 100px 0;
     }
 
     .sidebar {
@@ -6169,10 +6274,6 @@ MEDIA QUERIES
         max-width: 100%;
     }
 
-    .entry-content__btn-group {
-        padding: 25px 0 72px;
-    }
-
     .share-wrapper .share {
         margin-left: -78px;
     }
@@ -6185,10 +6286,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 30px 0 220px;
-    }
-    .glewee-for-brands.creators {
-        padding-bottom: 180px;
+        padding: 30px 0 100px;
     }
     .glewee-for-brands__content .title {
         font-size: 70px;
@@ -6238,10 +6336,6 @@ MEDIA QUERIES
            -moz-column-gap: 30px;
                 column-gap: 30px;
         margin-left: 0;
-    }
-
-    .ebook-offer.brands {
-        padding-bottom: 150px;
     }
 
     /***********************************
@@ -6414,15 +6508,17 @@ MEDIA QUERIES
     HOME STYLES
     ***********************************/
     .banner {
-        margin-bottom: 80px;
         padding: 165px 0 100px;
     }
     .banner__content .title {
-        padding: 5px 0;
+        padding: 0 0 5px;
     }
     .banner__content p {
         font-size: 24px;
         line-height: 34px;
+    }
+    .banner__content-btn-group.white {
+        padding: 0 0 5px;
     }
     .banner__content-btn-group .btn {
         font-size: 24px;
@@ -6431,8 +6527,7 @@ MEDIA QUERIES
         letter-spacing: -0.6px;
     }
     .banner__media {
-        bottom: -100px;
-        max-width: 615px;
+        right: -15px;
     }
 
     .home-trusted-brands {
@@ -6445,15 +6540,15 @@ MEDIA QUERIES
     .for-brands__content {
         margin-top: 30px;
     }
-    .for-brands__content svg, .for-brands__content img {
-        max-width: 150px;
-    }
     .for-brands__content p {
         max-width: 100%;
     }
     .for-brands__media {
         margin-left: inherit !important;
         margin-right: inherit !important;
+    }
+    .for-brands__item {
+        margin-bottom: 60px;
     }
 
     .request-demo {
@@ -6477,6 +6572,23 @@ MEDIA QUERIES
     }
     .why-glewee__content {
         margin-bottom: 45px;
+    }
+    .why-glewee__item-text .number {
+        font-size: 110px;
+        line-height: 115px;
+        letter-spacing: -3.3px;
+    }
+    .why-glewee__item.glewee {
+        padding-top: 60px;
+    }
+    .why-glewee__item.glewee .why-glewee__item-text {
+        max-width: 100%;
+    }
+    .why-glewee__item.boost-brand {
+        min-height: 815px;
+    }
+    .why-glewee__item.boost-brand.drive {
+        min-height: 550px;
     }
 
     .our-network {
@@ -6576,6 +6688,7 @@ MEDIA QUERIES
         padding-bottom: 60px;
     }
     .careers__media {
+        margin-right: 0;
         margin-top: 30px;
         text-align: center;
     }
@@ -6630,6 +6743,7 @@ MEDIA QUERIES
     }
     .founders__content {
         max-width: 100%;
+        padding-left: 0;
     }
 
     .current-openings {
@@ -6804,12 +6918,6 @@ MEDIA QUERIES
     .blog-details-page {
         padding: 15px 0 60px;
     }
-    .blog-details-page .btn.bg-white {
-        height: 80px;
-    }
-    .blog-details-page .btn.bg-white img {
-        max-width: 200px;
-    }
     .blog-details-page .blog-post-top .date {
         margin-bottom: 5px;
     }
@@ -6819,8 +6927,21 @@ MEDIA QUERIES
         letter-spacing: -1.2px;
     }
 
-    .entry-content__btn-group {
-        padding: 15px 0 50px;
+    .entry-content .wp-caption {
+        border-radius: 20px;
+    }
+    .entry-content .wp-caption .text {
+        padding: 20px 15px;
+    }
+    .entry-content .btn.bg-white {
+        height: 80px;
+    }
+    .entry-content .btn.bg-white img {
+        max-width: 200px;
+    }
+    .entry-content .btn {
+        margin-top: 0;
+        margin-bottom: 30px;
     }
 
     .share-wrapper {
@@ -6849,10 +6970,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 25px 0 100px;
-    }
-    .glewee-for-brands.creators {
-        padding-bottom: 100px;
+        padding: 25px 0 800px;
     }
     .glewee-for-brands__content .title {
         font-size: 60px;
@@ -7016,10 +7134,6 @@ MEDIA QUERIES
         margin-bottom: 35px !important;
     }
 
-    .ebook-offer.brands {
-        padding-bottom: 120px;
-    }
-
     /***********************************
     CUSTOMER STORY STYLES
     ***********************************/
@@ -7028,6 +7142,10 @@ MEDIA QUERIES
     }
     .customer-story__content .title {
         line-height: 58px;
+    }
+    .customer-story__content a.readmore__anchor {
+        font-size: 20px;
+        line-height: 30px;
     }
 
     .featured-story {
@@ -7206,6 +7324,14 @@ MEDIA QUERIES
         max-width: 110px;
     }
 
+    blockquote {
+        padding-left: 65px !important;
+    }
+    blockquote:before {
+        width: 50px;
+        height: 40px;
+    }
+
     /***********************************
      HEADER STYLES
      ***********************************/
@@ -7229,7 +7355,6 @@ MEDIA QUERIES
     HOME STYLES
     ***********************************/
     .banner {
-        margin-bottom: 60px;
         padding: 135px 0 50px;
     }
     .banner__media {
@@ -7243,8 +7368,8 @@ MEDIA QUERIES
     .for-brands {
         padding: 60px 0;
     }
-    .for-brands__content svg, .for-brands__content img {
-        max-width: 110px;
+    .for-brands__item {
+        margin-bottom: 50px;
     }
     .for-brands__content .title {
         font-size: 40px;
@@ -7268,9 +7393,16 @@ MEDIA QUERIES
     }
     .request-demo__media {
         top: inherit;
+        right: inherit;
         position: inherit;
-        margin-bottom: 110px;
+        margin-bottom: 30px;
         margin-left: inherit;
+    }
+    .request-demo__text {
+        max-width: 100%;
+    }
+    .request-demo__text p {
+        max-width: 100%;
     }
 
     .why-glewee {
@@ -7282,12 +7414,42 @@ MEDIA QUERIES
     .why-glewee__content .title {
         margin-bottom: 5px;
     }
+    .why-glewee__item {
+        padding: 30px !important;
+    }
+    .why-glewee__item-text .number {
+        font-size: 90px;
+        line-height: 95px;
+        letter-spacing: -2.85px;
+    }
+    .why-glewee__item.glewee .why-glewee__item-text .title {
+        font-size: 30px;
+        line-height: 42px;
+        letter-spacing: -0.75px;
+    }
+    .why-glewee__item.boost-brand {
+        min-height: 480px;
+    }
+    .why-glewee__item.boost-brand.drive {
+        min-height: 380px;
+    }
+    .why-glewee__item.boost-brand .why-glewee__item-media {
+        bottom: -310px;
+    }
 
     .our-network {
         padding: 60px 0;
     }
-    .our-network__content .title {
+    .our-network.home .our-network__content .title {
+        font-size: 54px;
+        line-height: 66px;
         margin-bottom: 5px;
+        letter-spacing: -1.62px;
+    }
+    .our-network__content .sub-title {
+        font-size: 36px;
+        line-height: 50px;
+        letter-spacing: -0.9px;
     }
     .our-network__item .title {
         font-size: 36px;
@@ -7388,14 +7550,6 @@ MEDIA QUERIES
     .main-highlights {
         padding: 50px 0;
     }
-    .main-highlights__list li .icon {
-        width: 70px;
-        height: 70px;
-        font-size: 30px;
-        min-width: 70px;
-        line-height: 30px;
-        min-height: 70px;
-    }
 
     .founders {
         padding: 50px 0;
@@ -7404,18 +7558,6 @@ MEDIA QUERIES
         font-size: 30px;
         line-height: 40px;
         letter-spacing: -0.75px;
-    }
-    .founders__content .quote {
-        padding-left: 65px;
-    }
-    .founders__content .quote:after {
-        width: 50px;
-        height: 40px;
-    }
-    .founders__content .quote p {
-        font-size: 20px;
-        line-height: 28px;
-        letter-spacing: -0.5px;
     }
 
     .current-openings {
@@ -7590,7 +7732,7 @@ MEDIA QUERIES
         letter-spacing: -0.55px;
     }
 
-    .blog_load_more .loadmore {
+    .pagination a {
         font-size: 22px;
         line-height: 32px;
         letter-spacing: -0.55px;
@@ -7625,19 +7767,16 @@ MEDIA QUERIES
     .blog-details-page {
         padding-bottom: 50px;
     }
-    .blog-details-page .btn.bg-white {
-        height: 70px;
-    }
-    .blog-details-page .btn.bg-white img {
-        max-width: 189px;
-    }
     .blog-details-page .blog-post-top .title {
         font-size: 36px;
         line-height: 46px;
         letter-spacing: -0.9px;
     }
-    .blog-details-page .blog-post:not(.blog-post-sm) .enty-media {
+    .blog-details-page .blog-post:not(.blog-post-sm) .entry-media {
         margin-bottom: 35px;
+    }
+    .blog-details-page .entry-content {
+        margin-bottom: 30px;
     }
     .blog-details-page .entry-footer {
         padding: 45px;
@@ -7647,8 +7786,18 @@ MEDIA QUERIES
         margin-bottom: 5px;
     }
 
-    .entry-content__btn-group {
-        padding: 10px 0 31px;
+    .entry-content .wp-caption {
+        margin-bottom: 25px;
+    }
+    .entry-content .btn {
+        margin-top: -5px;
+        margin-bottom: 25px;
+    }
+    .entry-content .btn.bg-white {
+        height: 70px;
+    }
+    .entry-content .btn.bg-white img {
+        max-width: 189px;
     }
     .entry-content p {
         margin: 0 0 25px;
@@ -7661,10 +7810,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 25px 0 80px;
-    }
-    .glewee-for-brands.creators {
-        padding-bottom: 80px;
+        padding: 25px 0 60px;
     }
     .glewee-for-brands__content {
         margin-bottom: 35px;
@@ -7727,6 +7873,11 @@ MEDIA QUERIES
     .additional__content {
         margin-bottom: 30px;
     }
+    .additional-item-small .additional-item__text .title {
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: -0.6px;
+    }
 
     .application {
         padding: 80px 0;
@@ -7764,7 +7915,7 @@ MEDIA QUERIES
     }
 
     .ebook-offer.brands {
-        padding: 80px 0 100px;
+        padding: 80px 0;
     }
 
     /***********************************
@@ -7956,12 +8107,19 @@ MEDIA QUERIES
         max-width: 100px;
     }
 
+    blockquote {
+        padding-left: 55px !important;
+    }
+    blockquote:before {
+        width: 40px;
+        height: 30px;
+    }
+
     /***********************************
     HOME STYLES
     ***********************************/
     .banner {
-        margin-bottom: 40px;
-        padding: 110px 0 40px;
+        padding: 110px 0 275px;
     }
     .banner__content-btn-group .btn {
         font-size: 20px;
@@ -7980,8 +8138,13 @@ MEDIA QUERIES
     .banner__content-btn-group .scrollDown i {
         font-size: 25px;
     }
+    .banner__content .title {
+        max-width: 395px;
+    }
     .banner__media {
-        bottom: -40px;
+        right: 15px;
+        bottom: -275px;
+        max-width: 265px;
     }
 
     .home-trusted-brands {
@@ -7991,8 +8154,8 @@ MEDIA QUERIES
     .for-brands {
         padding: 40px 0;
     }
-    .for-brands__content svg, .for-brands__content img {
-        max-width: 100px;
+    .for-brands__item {
+        margin-bottom: 30px;
     }
     .for-brands__content .title {
         font-size: 35px;
@@ -8006,9 +8169,6 @@ MEDIA QUERIES
     .request-demo__content {
         padding: 30px 20px !important;
     }
-    .request-demo__media {
-        margin-bottom: 60px;
-    }
     .request-demo__text .title {
         font-size: 28px;
         line-height: 38px;
@@ -8016,11 +8176,52 @@ MEDIA QUERIES
     }
 
     .why-glewee {
-        padding: 50px 0;
+        padding: 40px 0;
+    }
+    .why-glewee__item {
+        padding: 20px !important;
+    }
+    .why-glewee__item.expand-big .why-glewee__item-media {
+        right: -310px;
+    }
+    .why-glewee__item-text .number {
+        font-size: 70px;
+        line-height: 75px;
+        letter-spacing: -2.1px;
+    }
+    .why-glewee__item.glewee .why-glewee__item-text .title {
+        font-size: 24px;
+        line-height: 34px;
+        letter-spacing: -0.6px;
+    }
+    .why-glewee__item.glewee .why-glewee__item-text .btn {
+        margin-top: 15px;
+    }
+    .why-glewee__item.boost-brand {
+        min-height: 350px;
+    }
+    .why-glewee__item.boost-brand.drive {
+        min-height: 300px;
+    }
+    .why-glewee__item.boost-brand.drive .why-glewee__item-media {
+        margin-left: 10px;
+    }
+    .why-glewee__item.boost-brand .why-glewee__item-media {
+        bottom: -350px;
     }
 
     .our-network {
         padding: 40px 0;
+    }
+    .our-network.home .our-network__content .title {
+        font-size: 45px;
+        line-height: 55px;
+        letter-spacing: -1.35px;
+    }
+    .our-network__content .sub-title {
+        font-size: 30px;
+        line-height: 40px;
+        letter-spacing: -0.75px;
     }
 
     .latest-news {
@@ -8141,13 +8342,17 @@ MEDIA QUERIES
     .main-highlights {
         padding: 40px 0;
     }
+    .main-highlights__list li {
+        -webkit-box-align: start;
+            -ms-flex-align: start;
+                align-items: start;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+    }
     .main-highlights__list li .icon {
-        width: 60px;
-        height: 60px;
-        font-size: 25px;
-        min-width: 60px;
-        line-height: 25px;
-        min-height: 60px;
+        margin-bottom: 15px;
     }
 
     .founders {
@@ -8157,18 +8362,6 @@ MEDIA QUERIES
         font-size: 24px;
         line-height: 34px;
         letter-spacing: -0.6px;
-    }
-    .founders__content .quote {
-        padding-left: 55px;
-    }
-    .founders__content .quote:after {
-        width: 40px;
-        height: 30px;
-    }
-    .founders__content .quote p {
-        font-size: 18px;
-        line-height: 26px;
-        letter-spacing: -0.45px;
     }
 
     .current-openings {
@@ -8253,6 +8446,12 @@ MEDIA QUERIES
     .we-empower {
         padding: 50px 0;
     }
+    .we-empower__item {
+        min-height: 170px;
+    }
+    .we-empower__item.big .we-empower__item-text {
+        margin-top: 30px;
+    }
 
     .brand-awareness {
         padding: 50px 0;
@@ -8324,6 +8523,10 @@ MEDIA QUERIES
 
     .recommended-blog-posts {
         padding: 40px 0;
+    }
+    .recommended-blog-posts .blog-post.blog-post-md .media {
+        min-width: 100%;
+        max-width: 100%;
     }
 
     .search-bar {
@@ -8416,7 +8619,7 @@ MEDIA QUERIES
         line-height: 24px;
         letter-spacing: -0.4px;
     }
-    .blog-details-page .blog-post:not(.blog-post-sm) .enty-media {
+    .blog-details-page .blog-post:not(.blog-post-sm) .entry-media {
         margin-bottom: 25px;
     }
     .blog-details-page .entry-footer {
@@ -8431,10 +8634,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 20px 0 60px;
-    }
-    .glewee-for-brands.creators {
-        padding-bottom: 60px;
+        padding: 20px 0 40px;
     }
     .glewee-for-brands__content .title {
         font-size: 32px;
@@ -8496,6 +8696,11 @@ MEDIA QUERIES
         padding: 60px 0;
     }
 
+    .additional-item-small .additional-item__text .title {
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: -0.5px;
+    }
     .additional-item__media {
         padding: 5px;
         height: 290px;
@@ -8520,7 +8725,7 @@ MEDIA QUERIES
     }
 
     .ebook-offer.brands {
-        padding: 60px 0 80px;
+        padding: 60px 0;
     }
 
     /***********************************

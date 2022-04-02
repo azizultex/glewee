@@ -304,6 +304,8 @@
 	
 	        // Replace image with new SVG
 	        $img.replaceWith($svg);
+
+	        var rellax = new Rellax('.rellax');
 	
 	    }, 'xml');
 	});
@@ -311,6 +313,20 @@
 	$('.gallery-item').hoverdir({
         hoverDelay: 75
     });
+
+    $('.readmore').readmore({ 
+    	speed: 75,
+    	collapsedHeight: 360,
+    	moreLink: '<a href="#" class="readmore__anchor">Expand +</a>',
+    	lessLink: '<a href="#" class="readmore__anchor">Expand -</a>' }, 
+    );
+
+    $('.about-readmores').readmore({ 
+    	speed: 75,
+    	collapsedHeight: 310,
+    	moreLink: '<a href="#" class="readmore__anchor">Keep Reading +</a>',
+    	lessLink: '<a href="#" class="readmore__anchor">Keep Reading -</a>' }, 
+    );
 
 	/*** Number Counter */
 	$('.counter').counterUp({

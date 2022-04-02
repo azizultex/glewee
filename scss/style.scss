@@ -80,6 +80,28 @@ section {
 	padding: 50px 0;
 }
 
+blockquote { 
+	position: relative;
+	padding-left: 95px !important;
+
+	&:before {
+		top: 0;
+		left: 0;
+		width: 76px;
+		height: 50px;
+		position: absolute;
+		content: "";
+		background-size: contain;  
+		background-repeat: no-repeat;
+		background-image: url(images/svg/quote.svg);
+	}
+
+	h1, .h1, h2, .h2, h3, .h3, h4, 
+	.h4, h5, .h5, h6, .h6 {
+		color: $black;
+	}
+}
+
 .container {
 	width: 100%;
 	max-width: 1440px;
@@ -300,7 +322,7 @@ select, textarea {
 
 	h1, h2, h3, h4, h5, h6,
 	.h1, .h2, .h3, .h4, .h5, .h6, p, 
-	.entry-title, .description, .block-content, 
+	.entry-content, .description, .block-content, 
 	.content, .testi-item {
 		max-width: 100% !important;
 	}
@@ -327,6 +349,10 @@ select, textarea {
 
 .color-primary {
 	color: $primary;
+}
+
+.color-black {
+	color: $black;
 }
 
 // Default CSS
@@ -731,9 +757,8 @@ HOME STYLES
 ***********************************/
 .banner {
 	overflow: hidden;
-	position: relative; 
-	margin-bottom: 120px;
-	padding: 261px 0 173px;
+	position: relative;  
+	padding: 261px 0 161px;
 
 	&:after {
 		top: 0;
@@ -783,15 +808,18 @@ HOME STYLES
 	&__content {
 
 		&-btn-group {
+			z-index: 1;
 			display: flex;
 			margin-top: 20px;	
 			margin-left: -10px;
+			position: relative;
 			margin-right: -10px;
 
 			&.white {
 				margin-top: 0;	
 				margin-left: -7px;
 				margin-right: -7px;
+				padding: 0 0 10px;
 
 				.btn, button {
 					margin-left: 7px;
@@ -811,7 +839,7 @@ HOME STYLES
 
 		.title {
 			color: $primary;
-			padding: 10px 0;
+			padding: 0 0 10px;
 		}
 
 		p {
@@ -870,12 +898,16 @@ HOME STYLES
 
 .for-brands {
 	overflow: hidden;
-	padding: 155px 0 175px;
+	padding: 150px 0 150px;
 
 	&__content {
 
-		img {
-
+		.transparent-text {
+			background: linear-gradient(111deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+			width: fit-content; 
+			margin-bottom: 0;
 		}
 
 		.title {
@@ -883,10 +915,6 @@ HOME STYLES
 		}
 
 		.sub-title {
-			display: block;
-			font-size: 30px;
-			font-weight: 700;
-			line-height: 40px;
 			margin-bottom: 7px;
 		}
 
@@ -910,20 +938,28 @@ HOME STYLES
 		margin-right: -200px;
 	}
 
-	&.creators {
+	&__item {
+		margin-bottom: 150px;
 
-		.for-brands {
+		&:last-child {
+			margin-bottom: 0;
+		}
 
-			&__content {
+		&.creators {
 
-				p {
-					max-width: 405px;
+			.for-brands {
+
+				&__content {
+
+					p {
+						max-width: 405px;
+					}
 				}
-			}
 
-			&__media { 
-				margin-right: 35px;
-				margin-left: -200px;
+				&__media { 
+					margin-right: 35px;
+					margin-left: -200px;
+				}
 			}
 		}
 	}
@@ -977,13 +1013,12 @@ HOME STYLES
 		}
 	}
 
-	&__media {
-		top: 45px;
-		z-index: -1;
-		right: -85px; 
-		position: absolute;
-		margin-left: 540px;
-		@include transform(rotate(-30deg)); 
+	&__media { 
+		top: -108px;
+	    z-index: -1;
+	    right: -115px;
+	    position: absolute;
+	    margin-left: 540px;
 	}
 }
 
@@ -1155,15 +1190,21 @@ HOME STYLES
 .our-network {
 	padding: 150px 0 190px;
 
+	&.home {
+
+		.our-network__content .title {
+			font-size: 84px;
+			line-height: 96px; 
+			margin-bottom: 10px;
+			@include letter-spacing(-30, 84);
+		}
+	}
+
 	&__content { 
 
-		.title {
-			color: $secondary;
-			margin-bottom: 20px;
-		}
-
-		.sub-title {
-			display: block;
+		.sub-title {  
+			font-size: 60px;
+			line-height: 75px;
 		}
 	}
 
@@ -1175,10 +1216,10 @@ HOME STYLES
 		}
 
 		.title {
-			font-size: 50px;
-			line-height: 58px;
+			font-size: 56px;
+			line-height: 64px;
 			margin-bottom: 10px;
-			@include letter-spacing(-25, 55);
+			@include letter-spacing(-25, 56);
 			background: linear-gradient(112deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
 			-webkit-text-fill-color: transparent;
 			-webkit-background-clip: text;
@@ -1199,10 +1240,21 @@ HOME STYLES
 			font-weight: 600;
 			line-height: 34px;
 			@include letter-spacing(-25, 24);
+			@include transition(all .3s ease);
 
 			i {
 				font-size: 13px;
 				margin-left: 12px;
+				display: inline-block;
+				@include transition(all .3s ease);
+			}
+
+			&:hover {
+				color: $secondary;
+
+				i {
+				 	@include transform(translate(100%, 0));
+				}
 			}
 		}
 	}
@@ -1246,10 +1298,9 @@ BRANDS PAGE STYLES
 }
 
 .glewee-for-brands {
-	padding: 64px 0 390px;
+	padding: 64px 0 120px;
 
-	&.creators {
-		padding-bottom: 260px;
+	&.creators { 
 
 		.glewee-for-brands {
 
@@ -1265,6 +1316,10 @@ BRANDS PAGE STYLES
 				}
 			}
 		}
+
+		.media {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__content {
@@ -1273,15 +1328,18 @@ BRANDS PAGE STYLES
 		.title {
 			font-size: 95px;
 			line-height: 95px;
-			margin-bottom: 20px;
-			@include letter-spacing(-25, 95);
-			background: linear-gradient(135deg, #EF66C5 0%, #364DDD 49.75%, #00BFE8 100%);
+		    width: fit-content;
+			margin-bottom: 10px;
+			margin-left: auto;
+			margin-right: auto;
+			@include letter-spacing(-25, 95); 
+			background: linear-gradient(111deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
 			-webkit-text-fill-color: transparent;
     		-webkit-background-clip: text;
 		}
 
 		.sub-title {
-			margin-bottom: 15px;
+			margin-bottom: 10px;
 		}	
 
 		p {
@@ -1400,11 +1458,16 @@ BRANDS PAGE STYLES
 	}
 
 	.mfp-container {
-		padding: 0; 
+		padding: 0 15px; 
+
 		.mfp-content {
 			height: 100%;
 			padding: 40px 0;
 			vertical-align: middle; 
+
+			.container {
+				padding: 0;
+			}
 		}
 	}
   
@@ -1633,12 +1696,12 @@ BRANDS PAGE STYLES
 			&.align-left .your-marketing__item-media {
 			    top: -590px; 
 			    right: -80px;
-			    left: -475px; 
+			    left: -510px; 
 			}
 			
 			&-media {
 			    top: -500px; 
-			    right: -510px;
+			    right: -570px;
 			}
 		}
 	}
@@ -1660,8 +1723,8 @@ BRANDS PAGE STYLES
 			.your-marketing__item {
 
 				&-media { 
-					top: -440px;
-					left: -580px;
+					top: -640px;
+					left: -610px;
 					right: inherit;
 				}
 			}
@@ -1671,6 +1734,7 @@ BRANDS PAGE STYLES
 			max-width: 620px; 
 
 			.title {
+				max-width: 595px;
 				margin-bottom: 5px;
 			}
 
@@ -1694,12 +1758,11 @@ BRANDS PAGE STYLES
 		}
 
 		&-media { 
-			top: -400px;
+			top: -600px;
 			left: -40px; 
 			z-index: -1;
 			right: -580px;
-			position: absolute; 
-			@include transform(rotate(-30deg));
+			position: absolute;  
 		}
 	}
 }
@@ -1806,15 +1869,16 @@ BRANDS PAGE STYLES
 			text-align: center;
 			border-radius: 500px;
 			@include transition(all .3s ease);
-			background: linear-gradient(111deg, #ffb1e7 0%, #8d9dff 49.75%, #5de2ff 100%);
+			background: linear-gradient(105deg, #ffb1e7 0%, #8d9dff 49.75%, #5de2ff 100%);
 
 
 			&:hover {
-				background: $primary; 
+				background: $primary !important; 
 			}
 			
 			&.how-works__arrow_left {
 				margin-right: 12px;
+				background: linear-gradient(225deg, #ffb1e7 0%, #8d9dff 49.75%, #5de2ff 100%);
 			}
 
 			i {
@@ -1829,10 +1893,10 @@ BRANDS PAGE STYLES
 	    font-size: 0;
 	    position: initial;
 	    text-align: right; 
-	    margin: -10px -20px 0;
+	    margin: 0 -20px 0;
 
 		li { 
-			margin: 10px 0;
+			margin: 0;
 			width: auto;
 			height: auto;
 			color: #ACB6D6;
@@ -1900,6 +1964,15 @@ BRANDS PAGE STYLES
 	display: block;
 	margin-bottom: 55px;
 
+	&-small {
+
+		.additional-item__text .title {
+			font-size: 30px;
+			line-height: 42px;
+			@include letter-spacing(-25, 30);
+		}	
+	}
+
 	&__media {  
 		width: 100%;
 		height: 430px;
@@ -1918,10 +1991,10 @@ BRANDS PAGE STYLES
 	}
 
 	&__text {
-		max-width: 613px;
+		max-width: 603px;
 
 		.title {
-			max-width: 448px;
+			max-width: 100%;
 			margin-bottom: 10px;
 			@include transition(all .3s ease);
 		}
@@ -2000,7 +2073,7 @@ BRANDS PAGE STYLES
 			}
 
 			p {
-				max-width: 228px;
+				max-width: 295px;
 			}
 
 			&-wraper {
@@ -2013,7 +2086,7 @@ BRANDS PAGE STYLES
 }
 
 .ebook-offer.brands {
-	padding: 100px 0 200px;
+	padding: 100px 0 120px;
 } 
 
 /***********************************
@@ -2176,7 +2249,7 @@ BLOG PAGE STYLES
 }
 
 .blog-page {
-	padding: 140px 0 250px; 
+	padding: 140px 0; 
 
 	.mb-30 {
 		margin-bottom: -30px;
@@ -2192,34 +2265,54 @@ BLOG PAGE STYLES
 	}  
 }
 
-.blog_load_more {
+.pagination {
+	margin: 0;
+	display: block;
+	overflow: hidden;
+	border-radius: 0;
+	margin-left: -10px;
+	margin-right: -10px;
 
-	.loadmore {
+	a {
 		border: 0;
-		padding: 0;
 		display: flex;
-		font-size: 24px;
 		color: $primary;
+		font-size: 24px;
 		font-weight: 700;
-		line-height: 34px; 
-		margin: 0 0 0 auto;
+		line-height: 36px; 
 		align-items: center; 
-		background: transparent;
-		@include transition(all 0.3s ease);
 		@include letter-spacing(-25, 24);
+		@include transition(all 0.3s ease);
 
-		span {   
-			font-size: 14px;  
-			margin-left: 20px;   
-			display: inline-block;
-			@include transition(all 0.3s ease);
+		i {
+			font-size: 14px;
 		}
 
 		&:hover {
-			color: $secondary;
+			color: $secondary; 
+		}
+	}
 
-			span {
-				color: $secondary; 
+	.float-left {
+		padding-left: 10px;
+		padding-right: 10px;
+
+		a {
+
+			i {
+			    margin-right: 25px;
+			}
+		}
+	}
+
+	.float-right {
+		padding-left: 10px;
+		padding-right: 10px;
+
+		a {
+
+			i {
+			    margin-left: 25px;
 			}
 		}
 	}
@@ -2285,15 +2378,17 @@ BLOG PAGE STYLES
 		}
 
 		.footer__item.footer__item-demo { 
+			height: 330px;
 
 			.footer__item {
 
 				&-media {
+					top: -60px;
+					right: -20px;
 					min-height: 157px;
-					 
 
-					img { 
-						left: 10px;
+					img {
+						max-width: 294px;
 					}
 				}
 
@@ -2366,6 +2461,7 @@ BLOG PAGE STYLES
 	&.blog-post-latest-xl { 
 		border-radius: 24px;
 		padding: 42.5px 40px;
+		@include transition(all 0.3s ease);
 		background: linear-gradient(111deg, #fff7fc 0%, #edf0ff 49.75%, #f8feff 100%);
 
 		.text {
@@ -2375,10 +2471,12 @@ BLOG PAGE STYLES
 				color: $primary;
 				font-weight: 400;
 				margin-bottom: 5px; 
+				@include transition(all 0.3s ease);
 			}
 
 			.title {
 				color: $secondary;
+				@include transition(all 0.3s ease);
 			}
 
 			.sub-title {
@@ -2396,32 +2494,26 @@ BLOG PAGE STYLES
 					@include transition(all 0.3s ease);
 				}
 			}
-		
-			a {
+		} 
 
-				&:any-link {
+		&:any-link {
 
-					&:hover, &:focus {
+			&:hover, &:focus {
+				background: $primary;
 
-						&.date {
-							color: $secondary;
-						}
+				.date, .title {
+					color: $white;
+				} 
 
-						.title {
-							color: $primary;
-						}
+				.sub-title {
+					color: $white;
 
-						.sub-title {
-							color: $secondary;
-
-							i {
-								@include transform(translateX(50%));
-							}
-						}
+					i {
+						@include transform(translate(100%, 0));
 					}
 				}
 			}
-		}
+		} 
 	}
 
 	&.blog-post-latest {
@@ -2452,7 +2544,7 @@ BLOG PAGE STYLES
 		}
 	}
 
-	&.blog-post-lg { 
+	&.blog-post-md { 
 
 		.media {
 			min-width: 210px;
@@ -2591,7 +2683,8 @@ BLOG PAGE STYLES
 					@include transition(all .3s ease);
 
 					&:hover, &:focus {
-						background: darken($white, 15%);
+						color: $white;
+						background: $primary;
 					}
 				}
 			}
@@ -2666,6 +2759,10 @@ BLOG DETAILS PAGE STYLES
 		margin-bottom: -30px;
 	}
 
+	.entry-content {
+		margin-bottom: 40px;
+	}
+
 	.main-content {
 		max-width: 690px;
 	}
@@ -2699,10 +2796,10 @@ BLOG DETAILS PAGE STYLES
 		padding: 0;
 		overflow: inherit;
 
-		.enty-media {
+		.entry-media {
 			overflow: hidden;
 			position: relative;
-			margin-bottom: 50px; 
+			margin-bottom: 40px; 
 			border-radius: 36px;
 			background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
 
@@ -2761,23 +2858,18 @@ BLOG DETAILS PAGE STYLES
 	h1, .h1, h2, .h2, h3, .h3, h4, 
 	.h4, h5, .h5, h6, .h6 { 
 		margin-bottom: 10px;
-	}
+	} 
 
-	&__btn-group {
-		margin-left: -12px;
-		margin-right: -12px;
-		margin-bottom: -12px;
-		padding: 30px 0 85px;
+	.btn { 
+		height: 97px;  
+		margin-top: 10px;
+		padding: 16px 31px 14px 34px;
+		box-shadow: 0px 24px 36px rgba(0, 0, 0, 0.16); 
 
-		.btn {
-			height: 97px;
+		+ .btn {
 			margin-left: 12px;
-			margin-right: 12px;
-			margin-bottom: 12px !important;
-			padding: 16px 31px 14px 34px;
-			box-shadow: 0px 24px 36px rgba(0, 0, 0, 0.16); 
 		}
-	}
+	} 
 
 	hr {
 		margin: 40px 0;
@@ -2801,6 +2893,7 @@ BLOG DETAILS PAGE STYLES
 		}
 
 		img {
+			border-radius: 36px;
 
 			&.alignnone {
 				width: 100%;
@@ -2810,8 +2903,31 @@ BLOG DETAILS PAGE STYLES
 		}
 	}
 
+	.wp-caption {
+		overflow: hidden;
+		position: relative;
+		border-radius: 36px;
+		margin-bottom: 30px;
+
+		.text {
+			bottom: 0;
+			position: absolute;
+			padding: 28px 25px;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			color: $white;
+		}
+	}
+
 	.btn {
-		margin-bottom: 20px;
+		margin-bottom: 40px;
 	}
 
 	a:not(.btn) {
@@ -2915,7 +3031,6 @@ BLOG DETAILS PAGE STYLES
 		background: #00B157 !important;
 	}
 }
-
 
 .share-wrapper {
 	border: 0;
@@ -3405,7 +3520,7 @@ CAREERS PAGE STYLES
 ***********************************/
 .careers {
 	overflow: hidden;
-	padding: 40px 0 80px;
+	padding: 40px 0 120px;
 
 	&__content {
 		margin-bottom: 45px;
@@ -3493,6 +3608,7 @@ CAREERS PAGE STYLES
 				min-height: 140px;
 				margin-right: 23px;
 				border-radius: 500px; 
+				color: $white;
 
 				display: inline-flex;
 				align-items: center;
@@ -3522,11 +3638,7 @@ CAREERS PAGE STYLES
 			position: absolute; 
 
 			.sub-title {
-				font-size: 24px;
-				font-weight: 700;
-				font-family: $pop;
-				line-height: 34px;
-				@include letter-spacing(-25, 24);
+				color: $black;
 			}
 		} 
 	}
@@ -3538,40 +3650,11 @@ CAREERS PAGE STYLES
 		.title {
 			margin-bottom: 20px;
 		}
-
-		.quote {
-			position: relative;
-			padding-left: 95px;
-
-			&:after {
-				top: 0;
-				left: 0;
-				content: "";
-				width: 76px;
-				height: 50px;
-				position: absolute;
-				background-size: contain;  
-				background-repeat: no-repeat;
-				background-image: url(images/svg/quote.svg);
-			}
-			
-			p {
-				font-size: 30px;
-				font-weight: 700;
-				line-height: 42px;
-				font-family: $pop;
-				@include letter-spacing(-25, 30);
-
-				+ p {
-					margin-top: 10px;
-				}
-			}
-		}
 	}
 }
 
 .current-openings {
-	padding: 95px 0px 145px;
+	padding: 95px 0px 120px;
 
 	&__content {
 		margin-bottom: 35px;
@@ -3615,13 +3698,9 @@ CAREERS PAGE STYLES
 		&-text { 
 			margin-right: 20px;
 
-			.sub-title, .position {
-				font-size: 24px;
-				line-height: 36px;
-				font-weight: 700;
-				font-family: $pop;
-				margin-bottom: 10px;
-				@include letter-spacing(-25, 24);
+			.sub-title, .position { 
+				margin-bottom: 10px; 
+				@include transition(all .3s ease);
 			}
 
 			.title {
@@ -3630,13 +3709,25 @@ CAREERS PAGE STYLES
 			}
 		}
 
-		&-button {
+		&-button { 
 
-			.btn {
+			.btn {  
 				white-space: nowrap;
 			}
 		}
-	}
+
+		&:any-link {
+
+			&:hover {
+				.job__item-card-text {
+
+					.position, .sub-title {
+						color: $primary;
+					}
+				}
+			}
+		}
+	} 
 }
 
 .chat {
@@ -3992,10 +4083,9 @@ ABOUT GLEWEE PAGE STYLES
 
 	&__overly {
 		z-index: -1;
-		top: 200px;
-		left: -1124px; 
-		position: absolute;
-		@include transform(rotate(-47deg));
+	    top: -250px;
+	    left: -1270px;
+		position: absolute; 
 	} 
 }
 
@@ -4130,14 +4220,8 @@ ABOUT GLEWEE PAGE STYLES
 			@include transition(all .3s ease);
 		}
 
-		.sub-title {
-			display: block;
-			font-size: 24px;
-			line-height: 34px;
-			font-weight: 700;
-			font-family: $pop;
-			color: $secondary;
-			@include letter-spacing(-25, 24);
+		.sub-title {    
+			color: $secondary; 
 			@include transition(all .3s ease);
 		}
 	}
@@ -4177,6 +4261,19 @@ ABOUT GLEWEE PAGE STYLES
 	}
 
 	&__content {
+
+		a.readmore__anchor {
+			color: $black;
+			font-weight: 700;
+		}
+
+		.content-editor {
+
+			h1, h2, h3, h4, h5, h6 {
+				color: $black;
+				margin-bottom: 7px;
+			}
+		}
 
 		.btn {
 			margin-top: 27px;
@@ -4269,11 +4366,11 @@ ABOUT GLEWEE PAGE STYLES
 		}
 	}
 
-	&__item {
+	&__item { 
 
-		&.active {
+		&.active { 
 			display: flex !important;
-			flex-direction: row !important;			
+			flex-direction: row !important;
 		}
 
 		&-text {
@@ -4341,8 +4438,8 @@ ABOUT GLEWEE PAGE STYLES
 			}
 		}
 
-		&-media {
-			margin-right: -400px;
+		&-media { 
+			margin-right: -400px; 
 		}
 	}
 }
@@ -4440,6 +4537,13 @@ CUSTOMER STORY STYLES
 
 		p {
 			max-width: 615px;
+		}
+
+		a.readmore__anchor {
+			color: $black;
+			font-size: 24px;
+			line-height: 34px;
+			font-weight: 700;
 		}
 
 		.view-gallery {
@@ -4934,36 +5038,6 @@ DEFAULT STYLES
 ***********************************/
 .default-page {
 	padding: 60px 0;
-}
-
-blockquote {
-	position: relative;
-	margin: 30px 0 !important;
-	padding-left: 70px !important;
-	background-color: transparent;
-	border-left: 10px solid $primary;
-
-	&:before {
-		top: 0;
-		left: 15px;
-		content: '"';
-		line-height: 1;
-		color: $primary;
-		font-weight: 700;
-		font-size: 100px;
-		position: absolute;
-	}
-
-	p {
-		font-style: italic;
-		margin-bottom: 0;
-	}
-
-	h1, .h1, h2, .h2, h3, .h3, h4, 
-	.h4, h5, .h5, h6, .h6 {
-		margin: 0;
-		line-height: 1.4;
-	}
 }
 
 .content-editor {

@@ -4,6 +4,13 @@ MEDIA QUERIES
 @media only screen and (max-width: 1700px) { 
 
     /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner__media {
+        right: -100px;
+    }
+
+    /***********************************
     CUSTOMER STORY STYLES
     ***********************************/
     .share-wrapper.custom-share {
@@ -38,6 +45,16 @@ MEDIA QUERIES
     }
 
 }/* 1700 */
+
+@media only screen and (max-width: 1560px) {
+
+    /***********************************
+    HOME STYLES
+    ***********************************/
+    .banner__media {
+        right: -60px;
+    }
+}/* 1560 */
 
 @media only screen and (max-width: 1460px) { 
 
@@ -110,20 +127,19 @@ MEDIA QUERIES
         }
     }
 
-    .for-brands {
-        padding: 150px 0;
+    .for-brands { 
 
         &__content {
 
-            svg, img {
-                max-width: 200px;
-            }
-           
            .title {
                 font-size: 60px;
                 line-height: 70px;
                 @include letter-spacing(-25, 60);
            }
+        }
+
+        &__item {
+            margin-bottom: 120px;
         }
     }
 
@@ -157,10 +173,6 @@ MEDIA QUERIES
         padding: 100px 0;
     }
 
-    .current-openings {
-        padding-bottom: 120px;
-    }
-
     .chat {
         padding: 120px 0;
     }
@@ -192,10 +204,6 @@ MEDIA QUERIES
     ***********************************/
     .featured-blog-posts {
         padding-top: 200px;
-    } 
-
-    .blog-page {
-        padding-bottom: 200px;
     }
 
     .blog-post {
@@ -233,10 +241,6 @@ MEDIA QUERIES
     .blog-details-page {
         padding-bottom: 120px;
 
-        .btn.bg-white img {
-            max-width: 240px;
-        }
-
         .blog-post-top {
 
             .title {
@@ -244,6 +248,13 @@ MEDIA QUERIES
                 line-height: 76px;
                 @include letter-spacing(-25, 75);
             }
+        }
+    }
+
+    .entry-content {
+
+        .btn.bg-white img {
+            max-width: 240px;
         }
     }
 
@@ -255,11 +266,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 50px 0 320px;
-
-        &.creators {
-            padding-bottom: 250px;
-        }
+        padding: 50px 0 120px;
     }
 
     .your-marketing {
@@ -284,10 +291,6 @@ MEDIA QUERIES
     }
 
     .request-demo-brands {
-        padding-bottom: 175px;
-    }
-
-    .ebook-offer.brands {
         padding-bottom: 175px;
     }
 
@@ -332,10 +335,18 @@ MEDIA QUERIES
 
     .for-brands {
         padding: 120px 0; 
+
+        &__item {
+            margin-bottom: 100px;
+        }
     } 
 
     .request-demo {
         padding: 120px 0;
+
+        &__media {
+            margin-left: 400px;
+        }
     }
 
     .why-glewee {
@@ -344,6 +355,24 @@ MEDIA QUERIES
 
     .our-network {
         padding: 120px 0;
+
+        &.home {
+
+            .our-network__content .title {
+                font-size: 74px;
+                line-height: 86px; 
+                @include letter-spacing(-30, 74);
+            }
+        }
+
+        &__content { 
+
+            .sub-title {
+                font-size: 50px;
+                line-height: 65px;
+                @include letter-spacing(-25, 50);
+            }
+        }
     }
 
     .latest-news {
@@ -428,6 +457,10 @@ MEDIA QUERIES
     /***********************************
     CAREERS 
     ***********************************/
+    .careers {
+        padding-bottom: 100px;
+    }
+
     .main-highlights {
         padding: 80px 0;
     }
@@ -501,7 +534,7 @@ MEDIA QUERIES
     }
 
     .blog-page {
-        padding: 120px 0 150px;
+        padding: 120px 0;
     }
 
     /***********************************
@@ -515,15 +548,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 40px 0 300px;
-
-        &.creators {
-            padding-bottom: 220px;
-        }
-
-        &__content .title {
-            margin-bottom: 15px;
-        }
+        padding: 40px 0 120px;
     }
 
     .popup-video:before {
@@ -560,14 +585,14 @@ MEDIA QUERIES
     }
 
     .slider-controls .slick-dots {
-        margin-left: 10px;
-        margin-right: 10px;
+        margin-left: 5px;
+        margin-right: 5px;
 
         li {
             font-size: 20px;
             line-height: 30px;
-            padding-left: 10px;
-            padding-right: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
             @include letter-spacing(-25, 20);
         }
     }
@@ -698,8 +723,7 @@ MEDIA QUERIES
     HOME STYLES
     ***********************************/ 
     .banner { 
-        padding-top: 155px;
-        margin-bottom: 100px;
+        padding-top: 155px; 
     }
 
     .home-trusted-brands {
@@ -711,16 +735,16 @@ MEDIA QUERIES
 
         &__content {
 
-            svg, img {
-                max-width: 170px;
-            }
-
             .title {
                 font-size: 45px;
                 line-height: 55px;
                 margin-bottom: 0;
                 @include letter-spacing(-25, 45);
             }
+        }
+
+        &__item {
+            margin-bottom: 80px;
         }
     }
 
@@ -730,14 +754,48 @@ MEDIA QUERIES
         &__content {
             padding: 80px 50px !important;
         }
+
+        &__text {
+            max-width: 490px;
+        }
+
+        &__media {
+            right: -300px;
+        }
     }
 
     .why-glewee {
         padding: 130px 0;
+
+        &__item.glewee {
+            padding-top: 92px;
+        }
+
+        &__item.expand .why-glewee__item-media { 
+            right: -80px; 
+        }
     } 
 
     .our-network {
         padding: 100px 0;
+
+        &.home {
+
+            .our-network__content .title {
+                font-size: 64px;
+                line-height: 76px; 
+                @include letter-spacing(-30, 64);
+            }
+        }
+
+        &__content { 
+
+            .sub-title {
+                font-size: 40px;
+                line-height: 55px;
+                @include letter-spacing(-25, 40);
+            }
+        }
     }
 
     .latest-news {
@@ -841,7 +899,7 @@ MEDIA QUERIES
     CAREERS 
     ***********************************/
     .careers {
-        padding-bottom: 70px;
+        padding-bottom: 80px;
 
         &__media {
             margin-left: -10px;
@@ -1066,6 +1124,15 @@ MEDIA QUERIES
 
     .recommended-blog-posts {
         padding: 100px 0;
+
+
+        .blog-post .text {
+            max-width: 100%;
+            
+            p {
+                max-width: 100%;
+            }
+        }
     }
 
     .search-bar {
@@ -1089,7 +1156,7 @@ MEDIA QUERIES
     }
 
     .blog-page {
-        padding: 100px 0 120px;
+        padding: 100px 0;
     }
 
     .sidebar {
@@ -1117,10 +1184,6 @@ MEDIA QUERIES
         }
     }
 
-    .entry-content__btn-group { 
-        padding: 25px 0 72px;
-    }
-
     .share-wrapper .share {
         margin-left: -78px;
     }
@@ -1133,11 +1196,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 30px 0 220px;
-
-        &.creators {
-            padding-bottom: 180px;
-        }
+        padding: 30px 0 100px;
 
         &__content .title {
             font-size: 70px;
@@ -1193,10 +1252,6 @@ MEDIA QUERIES
             column-gap: 30px;
             margin-left: 0; 
         }
-    }
-
-    .ebook-offer.brands {
-        padding-bottom: 150px;
     }
 
     /***********************************
@@ -1435,14 +1490,13 @@ MEDIA QUERIES
     /***********************************
     HOME STYLES
     ***********************************/ 
-    .banner { 
-        margin-bottom: 80px;
+    .banner {  
         padding: 165px 0 100px;
 
         &__content {
 
             .title {
-                padding: 5px 0;
+                padding: 0 0 5px;
             }
 
             p {
@@ -1451,6 +1505,10 @@ MEDIA QUERIES
             }
 
             &-btn-group {
+
+                &.white {
+                    padding: 0 0 5px;
+                }
 
                 .btn {
                     font-size: 24px;
@@ -1461,9 +1519,8 @@ MEDIA QUERIES
             }
         }
 
-        &__media {
-            bottom: -100px;
-            max-width: 615px;
+        &__media { 
+            right: -15px;
         }
     }
 
@@ -1477,10 +1534,6 @@ MEDIA QUERIES
         &__content {
             margin-top: 30px;
 
-            svg, img {
-                max-width: 150px;
-            } 
-
             p {
                 max-width: 100%;
             }
@@ -1489,6 +1542,10 @@ MEDIA QUERIES
         &__media {
             margin-left: inherit !important;
             margin-right: inherit !important;
+        }
+
+        &__item {
+            margin-bottom: 60px;
         }
     }
 
@@ -1520,6 +1577,31 @@ MEDIA QUERIES
 
         &__content {
             margin-bottom: 45px;
+        } 
+
+        &__item {
+
+            &-text .number {
+                font-size: 110px; 
+                line-height: 115px; 
+                @include letter-spacing(-30, 110);
+            }
+
+            &.glewee {
+                padding-top: 60px;
+
+                .why-glewee__item-text {
+                    max-width: 100%;
+                }
+            }
+
+            &.boost-brand {
+                min-height: 815px;
+
+                &.drive {
+                    min-height: 550px;
+                }
+            }
         }
     } 
 
@@ -1660,6 +1742,7 @@ MEDIA QUERIES
         padding-bottom: 60px;
 
         &__media {
+            margin-right: 0;
             margin-top: 30px;
             text-align: center; 
         }
@@ -1735,6 +1818,7 @@ MEDIA QUERIES
 
         &__content {
             max-width: 100%;
+            padding-left: 0;
         }
     }
 
@@ -1918,14 +2002,6 @@ MEDIA QUERIES
     .blog-details-page {
         padding: 15px 0 60px;
 
-        .btn.bg-white {
-            height: 80px;
-
-            img {
-                max-width: 200px;
-            }
-        }
-
         .blog-post-top {
 
             .date {
@@ -1942,8 +2018,25 @@ MEDIA QUERIES
 
     .entry-content {
 
-        &__btn-group {
-            padding: 15px 0 50px;
+        .wp-caption {
+            border-radius: 20px;
+
+            .text {
+                padding: 20px 15px;
+            }
+        }
+
+        .btn.bg-white {
+            height: 80px;
+
+            img {
+                max-width: 200px;
+            }
+        }
+
+        .btn {
+            margin-top: 0;
+            margin-bottom: 30px;
         }
     }
  
@@ -1975,11 +2068,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 25px 0 100px;
-
-        &.creators {
-            padding-bottom: 100px;
-        }
+        padding: 25px 0 800px;
 
         &__content {
 
@@ -2172,18 +2261,22 @@ MEDIA QUERIES
         }
     }
 
-    .ebook-offer.brands {
-        padding-bottom: 120px;
-    }
-
     /***********************************
     CUSTOMER STORY STYLES
     ***********************************/
     .customer-story {
         padding: 25px 0 80px;
 
-        &__content .title {
-            line-height: 58px;
+        &__content {
+
+            .title {
+                line-height: 58px;
+            }
+
+            a.readmore__anchor {
+                font-size: 20px;
+                line-height: 30px;
+            }
         }
     }
 
@@ -2417,6 +2510,15 @@ MEDIA QUERIES
         }
     }
 
+    blockquote {
+        padding-left: 65px !important;
+
+        &:before {
+            width: 50px;
+            height: 40px;
+        } 
+    }
+
    /***********************************
     HEADER STYLES
     ***********************************/
@@ -2474,8 +2576,7 @@ MEDIA QUERIES
     /***********************************
     HOME STYLES
     ***********************************/ 
-    .banner { 
-        margin-bottom: 60px;
+    .banner {  
         padding: 135px 0 50px;
 
         &__media {
@@ -2488,13 +2589,13 @@ MEDIA QUERIES
     }
 
     .for-brands {
-        padding: 60px 0; 
+        padding: 60px 0;
+
+        &__item {
+            margin-bottom: 50px;
+        } 
 
         &__content { 
-
-            svg, img {
-                max-width: 110px;
-            } 
 
             .title {
                 font-size: 40px;
@@ -2523,10 +2624,19 @@ MEDIA QUERIES
 
         &__media {
             top: inherit;
+            right: inherit;
             position: inherit;
-            margin-bottom: 110px;
-            margin-left: inherit;
+            margin-bottom: 30px;
+            margin-left: inherit; 
         }
+
+        &__text {
+            max-width: 100%;
+
+            p {
+                max-width: 100%;
+            }
+        } 
     }
 
     .why-glewee {
@@ -2539,15 +2649,61 @@ MEDIA QUERIES
                 margin-bottom: 5px;
             }
         }
+
+        &__item {
+            padding: 30px !important;
+
+            &-text .number {
+                font-size: 90px; 
+                line-height: 95px; 
+                @include letter-spacing(-30, 95);
+            }
+
+            &.glewee { 
+
+                .why-glewee__item-text { 
+
+                    .title {
+                        font-size: 30px;
+                        line-height: 42px;
+                        @include letter-spacing(-25, 30);
+                    }
+                }
+            }
+
+            &.boost-brand {
+                min-height: 480px;
+
+                &.drive {
+                    min-height: 380px;
+                }
+
+                .why-glewee__item-media { 
+                    bottom: -310px; 
+                }
+            }
+        }
     } 
 
     .our-network {
         padding: 60px 0;
 
+        &.home {
+
+            .our-network__content .title {
+                font-size: 54px;
+                line-height: 66px; 
+                margin-bottom: 5px;
+                @include letter-spacing(-30, 54);
+            }
+        }
+
         &__content {
 
-            .title {
-                margin-bottom: 5px;
+            .sub-title {
+                font-size: 36px;
+                line-height: 50px;
+                @include letter-spacing(-25, 36);
             }
         }
 
@@ -2674,22 +2830,7 @@ MEDIA QUERIES
     }
 
     .main-highlights {
-        padding: 50px 0; 
-
-        &__list {
-
-            li {
-
-                .icon {
-                    width: 70px;
-                    height: 70px;
-                    font-size: 30px;
-                    min-width: 70px;
-                    line-height: 30px;
-                    min-height: 70px;
-                } 
-            } 
-        }
+        padding: 50px 0;  
     }
 
     .founders {
@@ -2701,21 +2842,6 @@ MEDIA QUERIES
                 font-size: 30px;
                 line-height: 40px;
                 @include letter-spacing(-25, 30);
-            }
-
-            .quote {
-                padding-left: 65px;
-
-                &:after {
-                    width: 50px;
-                    height: 40px;
-                }
-
-                p {
-                    font-size: 20px;
-                    line-height: 28px;
-                    @include letter-spacing(-25, 20);
-                }
             }
         }
     }
@@ -2927,7 +3053,7 @@ MEDIA QUERIES
         }
     }
 
-    .blog_load_more .loadmore { 
+    .pagination a { 
         font-size: 22px; 
         line-height: 32px;
         @include letter-spacing(-25, 22);
@@ -2980,22 +3106,18 @@ MEDIA QUERIES
     .blog-details-page {
         padding-bottom: 50px;
 
-        .btn.bg-white {
-            height: 70px;
-
-            img {
-                max-width: 189px;
-            }
-        }
-
         .blog-post-top .title {
             font-size: 36px;
             line-height: 46px;
             @include letter-spacing(-25, 36);
         }
 
-        .blog-post:not(.blog-post-sm) .enty-media { 
+        .blog-post:not(.blog-post-sm) .entry-media { 
             margin-bottom: 35px; 
+        }
+
+        .entry-content {
+            margin-bottom: 30px;
         }
 
         .entry-footer { 
@@ -3013,8 +3135,21 @@ MEDIA QUERIES
 
     .entry-content {
 
-        &__btn-group {
-            padding: 10px 0 31px;
+        .wp-caption {
+           margin-bottom: 25px;
+        }
+
+        .btn {
+            margin-top: -5px;
+            margin-bottom: 25px;
+        }
+
+        .btn.bg-white {
+            height: 70px;
+
+            img {
+                max-width: 189px;
+            }
         }
 
         p {
@@ -3030,11 +3165,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 25px 0 80px;
-
-        &.creators {
-            padding-bottom: 80px;
-        }
+        padding: 25px 0 60px;
 
         &__content {
             margin-bottom: 35px;
@@ -3111,6 +3242,15 @@ MEDIA QUERIES
         &__content {
             margin-bottom: 30px;
         }
+
+        &-item-small {
+
+            .additional-item__text .title {
+                font-size: 24px;
+                line-height: 32px;
+                @include letter-spacing(-25, 24);
+            }   
+        }
     }
 
     .application {
@@ -3152,7 +3292,7 @@ MEDIA QUERIES
     }
 
     .ebook-offer.brands {
-        padding: 80px 0 100px;
+        padding: 80px 0;
     }
 
     /***********************************
@@ -3370,12 +3510,20 @@ MEDIA QUERIES
         }
     } 
 
+    blockquote {
+        padding-left: 55px !important;
+
+        &:before {
+            width: 40px;
+            height: 30px;
+        } 
+    }
+
     /***********************************
     HOME STYLES
     ***********************************/ 
-    .banner { 
-        margin-bottom: 40px;
-        padding: 110px 0 40px;
+    .banner {  
+        padding: 110px 0 275px;
 
         &__content {
 
@@ -3402,10 +3550,16 @@ MEDIA QUERIES
                     }
                 }
             }
+
+            .title {
+                max-width: 395px;
+            }
         }
 
-        &__media {
-            bottom: -40px; 
+        &__media { 
+            right: 15px;
+            bottom: -275px;
+            max-width: 265px; 
         }
     }
 
@@ -3416,11 +3570,11 @@ MEDIA QUERIES
     .for-brands {
         padding: 40px 0; 
 
-        &__content { 
+        &__item {
+            margin-bottom: 30px;
+        }
 
-            svg, img {
-                max-width: 100px;
-            } 
+        &__content { 
 
             .title {
                 font-size: 35px;
@@ -3437,10 +3591,6 @@ MEDIA QUERIES
             padding: 30px 20px !important;
         }
 
-        &__media {
-            margin-bottom: 60px;
-        }
-
         &__text .title {
             font-size: 28px;
             line-height: 38px;
@@ -3449,11 +3599,75 @@ MEDIA QUERIES
     }
 
     .why-glewee {
-        padding: 50px 0;
+        padding: 40px 0;
+
+        &__item {
+            padding: 20px !important;
+
+            &.expand-big .why-glewee__item-media { 
+                right: -310px;
+            }
+
+            &-text .number {
+                font-size: 70px; 
+                line-height: 75px; 
+                @include letter-spacing(-30, 70);
+            }
+
+            &.glewee { 
+
+                .why-glewee__item-text { 
+
+                    .title {
+                        font-size: 24px;
+                        line-height: 34px;
+                        @include letter-spacing(-25, 24);
+                    }
+
+                    .btn {
+                        margin-top: 15px;
+                    }
+                }
+            }
+
+            &.boost-brand {
+                min-height: 350px;
+
+                &.drive {
+                    min-height: 300px;
+
+                    .why-glewee__item-media { 
+                        margin-left: 10px; 
+                    }
+                }
+
+                .why-glewee__item-media { 
+                    bottom: -350px; 
+                }
+            }
+        }
     } 
 
     .our-network {
         padding: 40px 0;
+
+        &.home {
+
+            .our-network__content .title {
+                font-size: 45px;
+                line-height: 55px;  
+                @include letter-spacing(-30, 45);
+            }
+        }
+
+        &__content {
+
+            .sub-title {
+                font-size: 30px;
+                line-height: 40px;
+                @include letter-spacing(-25, 30);
+            }
+        }
     }
 
     .latest-news {
@@ -3621,19 +3835,13 @@ MEDIA QUERIES
     .main-highlights {
         padding: 40px 0; 
 
-        &__list {
+        &__list li { 
+            align-items: start ;
+            flex-direction: column;
 
-            li {
-
-                .icon {
-                    width: 60px;
-                    height: 60px;
-                    font-size: 25px;
-                    min-width: 60px;
-                    line-height: 25px;
-                    min-height: 60px;
-                } 
-            } 
+             .icon {
+                margin-bottom: 15px;
+            }
         }
     }
 
@@ -3647,21 +3855,6 @@ MEDIA QUERIES
                 line-height: 34px;
                 @include letter-spacing(-25, 24);
             }
-
-            .quote {
-                padding-left: 55px;
-
-                &:after {
-                    width: 40px;
-                    height: 30px;
-                }
-
-                p {
-                    font-size: 18px;
-                    line-height: 26px;
-                    @include letter-spacing(-25, 18);
-                }
-            }
         }
     }
 
@@ -3673,7 +3866,7 @@ MEDIA QUERIES
         margin-bottom: 30px; 
 
         &-card {
-            padding: 30px 20px; 
+            padding: 30px 20px;  
             flex-direction: column;
 
             &-text {
@@ -3752,7 +3945,16 @@ MEDIA QUERIES
 
     .we-empower {
         padding: 50px 0;
-    }
+    
+        &__item { 
+            min-height: 170px; 
+
+            &.big .we-empower__item-text {
+                margin-top: 30px;
+            }
+        }
+
+    } 
 
     .brand-awareness {
         padding: 50px 0;
@@ -3844,6 +4046,11 @@ MEDIA QUERIES
 
     .recommended-blog-posts {
         padding: 40px 0;
+
+        .blog-post.blog-post-md .media {
+            min-width: 100%;
+            max-width: 100%;
+        }
     }
 
     .search-bar {
@@ -3932,7 +4139,7 @@ MEDIA QUERIES
             } 
         }
 
-        .blog-post:not(.blog-post-sm) .enty-media {
+        .blog-post:not(.blog-post-sm) .entry-media {
             margin-bottom: 25px;
         }
 
@@ -3949,11 +4156,7 @@ MEDIA QUERIES
     BRANDS STYLES
     ***********************************/
     .glewee-for-brands {
-        padding: 20px 0 60px;
-
-        &.creators {
-            padding-bottom: 60px;
-        }
+        padding: 20px 0 40px;
 
         &__content .title {
             font-size: 32px;
@@ -4033,9 +4236,21 @@ MEDIA QUERIES
         padding: 60px 0;
     }
 
-    .additional-item__media {
-        padding: 5px;
-        height: 290px;
+    .additional-item {
+
+        &-small {
+
+            .additional-item__text .title {
+                font-size: 20px;
+                line-height: 28px;
+                @include letter-spacing(-25, 20);
+            }   
+        }
+
+        &__media {
+            padding: 5px;
+            height: 290px;
+        }
     }
 
     .application {
@@ -4059,7 +4274,7 @@ MEDIA QUERIES
     }
 
     .ebook-offer.brands {
-        padding: 60px 0 80px;
+        padding: 60px 0;
     }
 
     /***********************************
