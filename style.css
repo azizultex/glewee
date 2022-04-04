@@ -689,6 +689,9 @@ HEADER STYLES
 .header.stop .navbar {
     padding: 20px 0;
 }
+.header.stop .glewee-progress-bar {
+    height: 6px !important;
+}
 .header .navbar {
     margin: 0;
     padding: 91px 0 45px;
@@ -989,6 +992,15 @@ HOME STYLES
 }
 .banner.about-glewee:after {
     background: inherit;
+}
+.banner.about-glewee .container {
+    position: relative;
+}
+.banner.about-glewee .about-glewee__media {
+    z-index: -1;
+    top: -212px;
+    left: -443px;
+    position: absolute;
 }
 .banner.about-glewee .banner__content {
     max-width: 1048px;
@@ -1864,6 +1876,7 @@ BRANDS PAGE STYLES
 .slider-controls .slick-dots {
     width: auto;
     font-size: 0;
+    line-height: 0;
     position: initial;
     text-align: right;
     margin: 0 -20px 0;
@@ -2272,6 +2285,10 @@ BLOG PAGE STYLES
 }
 .sidebar .widget:last-child {
     margin-bottom: 0;
+}
+.sidebar .widget__recommended [class^=col]:last-child .blog-post {
+    border: 0;
+    padding-bottom: 0;
 }
 .sidebar .widget .widget-title {
     font-size: 24px;
@@ -6590,6 +6607,9 @@ MEDIA QUERIES
     .why-glewee__item.boost-brand.drive {
         min-height: 550px;
     }
+    .why-glewee__item.expand .why-glewee__item-text {
+        max-width: 345px;
+    }
 
     .our-network {
         padding: 80px 0;
@@ -7436,6 +7456,9 @@ MEDIA QUERIES
     .why-glewee__item.boost-brand .why-glewee__item-media {
         bottom: -310px;
     }
+    .why-glewee__item.expand .why-glewee__item-text {
+        max-width: 300px;
+    }
 
     .our-network {
         padding: 60px 0;
@@ -8141,6 +8164,10 @@ MEDIA QUERIES
     .banner__content .title {
         max-width: 395px;
     }
+    .banner__content p {
+        font-size: 20px;
+        line-height: 30px;
+    }
     .banner__media {
         right: 15px;
         bottom: -275px;
@@ -8181,8 +8208,8 @@ MEDIA QUERIES
     .why-glewee__item {
         padding: 20px !important;
     }
-    .why-glewee__item.expand-big .why-glewee__item-media {
-        right: -310px;
+    .why-glewee__item.expand .why-glewee__item-text {
+        max-width: 210px;
     }
     .why-glewee__item-text .number {
         font-size: 70px;
@@ -8203,8 +8230,11 @@ MEDIA QUERIES
     .why-glewee__item.boost-brand.drive {
         min-height: 300px;
     }
+    .why-glewee__item.boost-brand.drive .why-glewee__item-text {
+        max-width: 150px;
+    }
     .why-glewee__item.boost-brand.drive .why-glewee__item-media {
-        margin-left: 10px;
+        margin-left: -15px;
     }
     .why-glewee__item.boost-brand .why-glewee__item-media {
         bottom: -350px;
@@ -8338,6 +8368,10 @@ MEDIA QUERIES
     .careers {
         padding-bottom: 40px;
     }
+    .careers .description.lg p {
+        font-size: 20px;
+        line-height: 30px;
+    }
 
     .main-highlights {
         padding: 40px 0;
@@ -8432,6 +8466,11 @@ MEDIA QUERIES
                 column-count: inherit;
     }
 
+    .pricing-features__content .description.lg p {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
     /***********************************
     ABOUT GLEWEE
     ***********************************/
@@ -8519,6 +8558,10 @@ MEDIA QUERIES
     }
     .featured-blog-posts .entry-title {
         margin-bottom: 30px;
+    }
+    .featured-blog-posts .entry-title p {
+        font-size: 20px;
+        line-height: 30px;
     }
 
     .recommended-blog-posts {
@@ -8883,6 +8926,10 @@ MEDIA QUERIES
         display: none;
     }
 
+    .banner__content .title {
+        max-width: 345px;
+    }
+
     /***********************************
      HOME STYLES
      ***********************************/
@@ -8892,6 +8939,10 @@ MEDIA QUERIES
 
     .device-model {
         height: 215px;
+    }
+
+    .why-glewee__item.expand.expand-big .why-glewee__item-media {
+        right: -260px;
     }
 }
 /* 480 */
@@ -8933,10 +8984,6 @@ MEDIA QUERIES
     /***********************************
     ABOUT GLEWEE
     ***********************************/
-    .banner.about-glewee {
-        padding: 130px 0 960px;
-    }
-
     .device-model {
         height: 170px;
     }

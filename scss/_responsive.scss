@@ -1602,6 +1602,10 @@ MEDIA QUERIES
                     min-height: 550px;
                 }
             }
+
+            &.expand .why-glewee__item-text {
+                max-width: 345px;
+            }
         }
     } 
 
@@ -2682,9 +2686,12 @@ MEDIA QUERIES
                     bottom: -310px; 
                 }
             }
-        }
-    } 
 
+            &.expand .why-glewee__item-text {
+                max-width: 300px;
+            }
+        }
+    }  
     .our-network {
         padding: 60px 0;
 
@@ -3554,6 +3561,11 @@ MEDIA QUERIES
             .title {
                 max-width: 395px;
             }
+
+            p {
+                font-size: 20px;
+                line-height: 30px;
+            }
         }
 
         &__media { 
@@ -3604,8 +3616,8 @@ MEDIA QUERIES
         &__item {
             padding: 20px !important;
 
-            &.expand-big .why-glewee__item-media { 
-                right: -310px;
+            &.expand .why-glewee__item-text {
+                max-width: 210px;
             }
 
             &-text .number {
@@ -3636,8 +3648,15 @@ MEDIA QUERIES
                 &.drive {
                     min-height: 300px;
 
-                    .why-glewee__item-media { 
-                        margin-left: 10px; 
+                    .why-glewee__item {
+
+                        &-text {
+                            max-width: 150px;
+                        }
+
+                        &-media { 
+                            margin-left: -15px; 
+                        }
                     }
                 }
 
@@ -3830,6 +3849,11 @@ MEDIA QUERIES
     ***********************************/
     .careers {
         padding-bottom: 40px; 
+
+        .description.lg p {
+            font-size: 20px;
+            line-height: 30px;
+        }
     }
 
     .main-highlights {
@@ -3929,6 +3953,20 @@ MEDIA QUERIES
                 column-gap: inherit;
                 column-count: inherit; 
             }
+        }
+    } 
+
+    .pricing-features {
+
+        &__content {
+
+           .description.lg {
+
+                p {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+           }
         }
     }
 
@@ -4041,6 +4079,11 @@ MEDIA QUERIES
 
         .entry-title {
             margin-bottom: 30px;
+            
+            p {
+                font-size: 20px;
+                line-height: 30px;
+            }
         }
     }
 
@@ -4463,6 +4506,10 @@ MEDIA QUERIES
         }
     }
 
+    .banner__content .title {
+        max-width: 345px;
+    }
+
    /***********************************
     HOME STYLES
     ***********************************/
@@ -4485,6 +4532,11 @@ MEDIA QUERIES
     .device-model {
         height: 215px;
     }
+
+    .why-glewee__item.expand.expand-big .why-glewee__item-media { 
+        right: -260px;
+    }
+    
 } /* 480 */
 
 @media only screen and (max-width: 450px) {
@@ -4547,10 +4599,6 @@ MEDIA QUERIES
     /***********************************
     ABOUT GLEWEE
     ***********************************/
-    .banner.about-glewee {
-        padding: 130px 0 960px;
-    }
-
     .device-model {
         height: 170px;
     }

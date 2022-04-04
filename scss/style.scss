@@ -398,6 +398,10 @@ HEADER STYLES
 		.navbar {
 			padding: 20px 0;
 		} 
+
+		.glewee-progress-bar {
+			height: 6px !important;
+		}
 	}
 	
 	.navbar {
@@ -782,6 +786,17 @@ HOME STYLES
 			background: inherit;
 		}
 
+		.container {
+			position: relative;
+		}
+
+		.about-glewee__media { 
+		    z-index: -1;
+		    top: -212px;
+		    left: -443px;
+		    position: absolute;
+		}
+
 		.banner {
 
 			&__content {
@@ -1140,6 +1155,10 @@ HOME STYLES
 						bottom: inherit;
 						margin-left: 193px;
 						margin-top: inherit;
+
+						img {
+							// width: 100%;
+						}
 					}
 				}
 			}
@@ -1891,6 +1910,7 @@ BRANDS PAGE STYLES
 	.slick-dots {
 		width: auto;
 	    font-size: 0;
+	    line-height: 0;
 	    position: initial;
 	    text-align: right; 
 	    margin: 0 -20px 0;
@@ -2325,6 +2345,11 @@ BLOG PAGE STYLES
 
 		&:last-child {
 			margin-bottom: 0;
+		}
+
+		&__recommended [class^="col"]:last-child .blog-post {
+		    border: 0;
+		    padding-bottom: 0;
 		}
 
 		.widget-title {

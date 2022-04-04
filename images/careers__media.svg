@@ -1,13 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="868" height="554" viewBox="0 0 868 554">
 
   <style>
-  	@-webkit-keyframes floating-back {
+  	@keyframes floating-back {
 	    from { -webkit-transform: translate(0,  0px); transform: translate(0,  0px); }
 	    65%  { -webkit-transform: translate(0, -15px); transform: translate(0, -15px); }
 	    to   { -webkit-transform: translate(0, 0px); transform: translate(0, 0px); }    
+	} 
+
+  @keyframes floating-left {
+	    from { -webkit-transform: translate(0,  0px); transform: translate(0,  0px); }
+	    65%  { -webkit-transform: translate(-15px, 0); transform: translate(-15px, 0); }
+	    to   { -webkit-transform: translate(0, 0px); transform: translate(0, 0px); }    
 	}
 
-	#woman {
+  @keyframes floating-left {
+	    from { -webkit-transform: translate(0,  0px); transform: translate(0,  0px); }
+	    65%  { -webkit-transform: translate(-15px, 0); transform: translate(-15px, 0); }
+	    to   { -webkit-transform: translate(0, 0px); transform: translate(0, 0px); }    
+	} 
+
+  @keyframes floating-right {
+	    from { -webkit-transform: translate(0,  0px); transform: translate(0,  0px); }
+	    65%  { -webkit-transform: translate(15px, 0); transform: translate(15px, 0); }
+	    to   { -webkit-transform: translate(0, 0px); transform: translate(0, 0px); }    
+	} 
+
+	#woman, #c-bar-4 {
 		animation-duration: 3s; 
 		animation-name: floating-back; 
 		animation-iteration-count: infinite; 
@@ -21,6 +39,52 @@
 		animation-iteration-count: infinite; 
 		animation-timing-function: ease-in-out;
 	}
+
+	#c-bar-4 , #c-bar-5 , #c-bar-6 {
+		animation-duration: 2s; 
+		animation-name: floating-back; 
+		animation-iteration-count: infinite; 
+		animation-timing-function: ease-in-out;
+	}
+
+	#c-bar-5 {
+		animation-delay: .3s;
+	}
+
+	#c-bar-6 {
+		animation-delay: .6s;
+	}
+
+	#c-bar-1 , #c-bar-2 , #c-bar-3, #c-bar-10,  #c-bar-7, #c-bar-8, #c-bar-9 {
+		animation-duration: 2s; 
+		animation-name: floating-left; 
+		animation-iteration-count: infinite; 
+		animation-timing-function: ease-in-out;
+	}
+
+	#c-bar-2, #c-bar-8 {
+		animation-delay: .3s;
+	}
+
+	#c-bar-3, #c-bar-9 {
+		animation-delay: .6s;
+	}
+
+	#c-ball-1, #c-ball-2, #c-ball-3 {
+		animation-duration: 2s; 
+		animation-name: floating-left; 
+		animation-iteration-count: infinite; 
+		animation-timing-function: ease-in-out;
+	} 
+
+	#c-ball-2 {
+		animation-name: floating-back;
+	} 
+
+	#c-ball-3  { 
+		animation-name: floating-right;
+	}
+
   </style>  
 
   <defs>
@@ -130,36 +194,46 @@
 		<g id="Group_3265" data-name="Group 3265" transform="translate(93.864 84.155)" clip-path="url(#clip-path-4)">
 		  <rect id="Rectangle_5800" data-name="Rectangle 5800" width="413.326" height="438.655" transform="translate(-107.015 258.276) rotate(-67.494)" fill="url(#linear-gradient-8)"/>
 		</g>
-		<g id="bar-4" transform="translate(494.764 20.962)" clip-path="url(#clip-path-5)">
+		<g id="c-bar-4"><g id="bar-4" transform="translate(494.764 20.962)" clip-path="url(#clip-path-5)">
 		  <rect id="Rectangle_5801" data-name="Rectangle 5801" width="13.26" height="38.96" transform="translate(0 0)" fill="#dd42ad"/>
-		</g>
-		<g id="bar-5" transform="translate(527.089 20.962)" clip-path="url(#clip-path-6)">
+		</g></g>
+		<g id="c-bar-5">
+			<g id="bar-5" transform="translate(527.089 20.962)" clip-path="url(#clip-path-6)">
 		  <rect id="Rectangle_5803" data-name="Rectangle 5803" width="13.26" height="38.96" transform="translate(0 0)" fill="#dd42ad"/>
 		</g>
-		<g id="bar-6" transform="translate(559.415 20.962)" clip-path="url(#clip-path-7)">
+		</g>
+		<g id="c-bar-6">
+			<g id="bar-6" transform="translate(559.415 20.962)" clip-path="url(#clip-path-7)">
 		  <rect id="Rectangle_5805" data-name="Rectangle 5805" width="13.258" height="38.96" transform="translate(0 0)" fill="#dd42ad"/>
 		</g>
-		<path id="Path_28656" data-name="Path 28656" d="M0,0H80.638V13.258H0Z" transform="translate(368.197 309.909)" fill="#364ddd"/>
-		<path id="Path_28657" data-name="Path 28657" d="M0,0H80.638V13.258H0Z" transform="translate(368.197 342.232)" fill="#364ddd"/>
-		<path id="Path_28658" data-name="Path 28658" d="M0,0H80.638V13.258H0Z" transform="translate(368.197 374.559)" fill="#364ddd"/>
+		</g>
+		<g id="c-bar-7"><path id="Path_28656" data-name="Path 28656" d="M0,0H80.638V13.258H0Z" transform="translate(368.197 309.909)" fill="#364ddd"/></g>
+		<g id="c-bar-8"><path id="Path_28657" data-name="Path 28657" d="M0,0H80.638V13.258H0Z" transform="translate(368.197 342.232)" fill="#364ddd"/></g>
+		<g id="c-bar-9"><path id="Path_28658" data-name="Path 28658" d="M0,0H80.638V13.258H0Z" transform="translate(368.197 374.559)" fill="#364ddd"/></g>
 		<path id="Path_28580" data-name="Path 28580" d="M367.986,336.75a39.634,39.634,0,0,0,40.076,40.076c22.484,0,41.03-17.592,41.03-40.076Z" transform="translate(40.499 -185.771)" fill="#cad1fc"/>
 		<path id="Path_28581" data-name="Path 28581" d="M668.732,540.326a26.985,26.985,0,1,0-53.971,0Z" transform="translate(85.471 -153.554)" fill="#f4e0c6"/>
 		<path id="Path_28583" data-name="Path 28583" d="M630.492,310.9l-44.418,76.934-44.418,76.934H719.327l-44.418-76.934Z" transform="translate(72.174 -190.375)" fill="#001179"/>
 		<path id="Path_28584" data-name="Path 28584" d="M95.116,272.76,144.377,301.2l49.261,28.441V215.878l-49.261,28.441Z" transform="translate(-9.046 -207.66)" fill="#ffe0f5"/>
 		<path id="Path_28655" data-name="Path 28655" d="M0,0H203.765V109.3H0Z" transform="translate(0 277.469)" fill="#001179"/>
 		<path id="Path_28585" data-name="Path 28585" d="M238.244,541.348a33.628,33.628,0,1,1,67.256,0" transform="translate(16.987 -154.577)" fill="#ffe0f5"/>
-		<g id="ball-1" transform="translate(604.045 49.748)" clip-path="url(#clip-path-8)">
+		<g id="c-ball-1"><g id="ball-1" transform="translate(604.045 49.748)" clip-path="url(#clip-path-8)">
 		  <rect id="Rectangle_5814" data-name="Rectangle 5814" width="47.67" height="47.67" transform="translate(-16.7 19.536) rotate(-49.475)" fill="#7d8ffa"/>
-		</g>
-		<g id="ball-2" transform="translate(659.8 49.748)" clip-path="url(#clip-path-9)">
+		</g></g>
+		<g id="c-ball-2"><g id="ball-2" transform="translate(659.8 49.748)" clip-path="url(#clip-path-9)">
 		  <rect id="Rectangle_5815" data-name="Rectangle 5815" width="47.671" height="47.671" transform="matrix(0.65, -0.76, 0.76, 0.65, -16.7, 19.536)" fill="#0ca1ce"/>
-		</g>
-		<g id="ball-3" transform="translate(715.554 49.748)" clip-path="url(#clip-path-10)">
+		</g></g>
+		<g id="c-ball-3"><g id="ball-3" transform="translate(715.554 49.748)" clip-path="url(#clip-path-10)">
 		  <rect id="Rectangle_5816" data-name="Rectangle 5816" width="47.67" height="47.67" transform="matrix(0.65, -0.76, 0.76, 0.65, -16.7, 19.536)" fill="#dd42ad"/>
+		</g></g>
+		<g id="c-bar-1">
+			<path id="bar-1" d="M0,0H83.554V13.258H0Z" transform="translate(4.029 158.963)" fill="#0ca1ce"/>
 		</g>
-		<path id="bar-1" d="M0,0H83.554V13.258H0Z" transform="translate(4.029 158.963)" fill="#0ca1ce"/>
-		<path id="bar-2" d="M0,0H83.554V13.258H0Z" transform="translate(4.029 191.288)" fill="#0ca1ce"/>
-		<path id="bar-3" d="M0,0H83.554V13.258H0Z" transform="translate(4.029 223.615)" fill="#0ca1ce"/>
+		<g id="c-bar-2">
+			<path id="bar-2" d="M0,0H83.554V13.258H0Z" transform="translate(4.029 191.288)" fill="#0ca1ce"/>
+		</g>
+		<g id="c-bar-3">
+			<path id="bar-3" d="M0,0H83.554V13.258H0Z" transform="translate(4.029 223.615)" fill="#0ca1ce"/>
+		</g>
 		<path id="Path_28653" data-name="Path 28653" d="M0,0H29.287V29.287H0Z" transform="translate(247.871 42.079) rotate(-45)" fill="#ffe0f5"/>
 		<path id="Path_28589" data-name="Path 28589" d="M22.292,504.506a24.135,24.135,0,0,0,0-48.27Z" transform="translate(-22.292 -163.94)" fill="#ffe0f5"/>
 		<g id="male">
@@ -179,9 +253,9 @@
 			<path id="Path_28660" data-name="Path 28660" d="M0,0H238.557V227.693H0Z" transform="translate(-66.871 37.202) rotate(-29.089)" fill="url(#linear-gradient-11)"/>
 		  </g>
 		</g>
-		<g id="Group_3311" data-name="Group 3311" transform="translate(627.338 144.17)" clip-path="url(#clip-path-15)">
+		<g id="c-bar-10"><g id="Group_3311" data-name="Group 3311" transform="translate(627.338 144.17)" clip-path="url(#clip-path-15)">
 		  <rect id="Rectangle_5834" data-name="Rectangle 5834" width="69.198" height="46.519" transform="matrix(0.879, -0.478, 0.478, 0.879, -6.033, 3.28)" fill="#0ca1ce"/>
-		</g>
+		</g></g>
 		<g id="Group_3444" data-name="Group 3444">
 		  <path id="Path_28610" data-name="Path 28610" d="M-6615.042-20621.928c-4.159,64.574-118.318,143.842-208.725,96.566s-3.607,92.916,0,93.811,230.828-11.3,230.828-11.3,21.986-99.113,18.929-103.068S-6615.042-20621.928-6615.042-20621.928Z" transform="translate(7491.027 21024.195)" fill="#fff"/>
 		</g>
