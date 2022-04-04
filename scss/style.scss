@@ -127,12 +127,15 @@ select, textarea {
 	line-height: 26px !important; 
 	background: $white !important;
 	border-radius: 500px !important;
-	padding: 17px 20px !important;
+	padding: 14px 16px !important;
 	@include transition(all 0.3s ease);
 	-webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12) !important;
+    @include placeholderWithlettertraking(#000, 18px, 26px, 0, 400);
+
 
 	&:hover, &:focus {
 		outline: 0;
@@ -153,6 +156,10 @@ select, textarea {
 	@include letter-spacing(-30, 24);
 	@include transition(all 0.3s ease);  
 	background: linear-gradient(135deg,#ef66c5 0%, #364ddd 49.75%, #00bfe8 100%); 
+
+	img {
+		border-radius: 0 !important;
+	}
 
 	&.big-text {
 		font-size: 36px;	
@@ -3938,6 +3945,10 @@ PRICING FEATURES PAGE STYLES
 				color: $white;
 				padding: 16.01px 24.5px;
 				background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%); 
+
+				&:hover {
+					background: $primary;
+				}
 			}
 		}
 
@@ -4035,6 +4046,11 @@ PRICING FEATURES PAGE STYLES
 						color: $white;
 						border-color: $white;
 						background: transparent;
+
+						&:hover {
+							background: $white;
+							color: $black;
+						}
 					}
 				}
 			}
@@ -4290,14 +4306,17 @@ ABOUT GLEWEE PAGE STYLES
 		a.readmore__anchor {
 			color: $black;
 			font-weight: 700;
+			display: block !important;
 		}
 
 		.content-editor {
+    		overflow: hidden;
+			transition: height 75ms;
 
 			h1, h2, h3, h4, h5, h6 {
 				color: $black;
 				margin-bottom: 7px;
-			}
+			} 
 		}
 
 		.btn {
@@ -4569,6 +4588,7 @@ CUSTOMER STORY STYLES
 			font-size: 24px;
 			line-height: 34px;
 			font-weight: 700;
+			display: block !important;
 		}
 
 		.view-gallery {
@@ -5062,7 +5082,7 @@ FOOTER STYLES
 DEFAULT STYLES
 ***********************************/
 .default-page {
-	padding: 60px 0;
+	padding: 80px 0;
 }
 
 .content-editor {
@@ -5194,10 +5214,21 @@ DEFAULT STYLES
 		    padding-right: 10px;
 	    }
 	}
-}
+} 
 
 .gform_wrapper {
 	width: 100%;
+
+	&.gravity-theme {
+
+		* {
+			align-items: center;
+		}
+
+		#field_submit {
+			margin-top: 10px !important;
+		}
+	}
 
 	.gform_validation_errors {
 		display: none;
@@ -5208,7 +5239,7 @@ DEFAULT STYLES
 		.gform_body {
 
 			.gform_fields {
-				grid-row-gap: 20px;
+				grid-row-gap: 17px;
 
 				.gfield {
 
@@ -5220,43 +5251,92 @@ DEFAULT STYLES
 					}
 
 					.gfield_label {
-						color: $black;
+						color: $primary;
 						font-size: 18px;
-						font-weight: 400;
+						font-weight: 700;
 						line-height: 26px;
 						margin-bottom: 5px;
+
+						.gfield_required {
+							display: none;
+						}
 					}
 
 					.ginput_container {
 
 						label {
-							color: $black;
+							color: $primary;
 							font-size: 18px;
-							font-weight: 400;
+							font-weight: 700;
 							line-height: 26px;
 							margin-bottom: 5px;
+						} 
+
+						&.ginput_container_consent {
+
+							.gfield_required_text {
+								display: none;
+							}
+
+							.gfield_consent_label {
+								margin-bottom: 0;
+								font-weight: 400; 
+								padding-left: 35px;
+								position: relative;
+
+								&:after {
+									top: 0;
+									left: 0;
+									z-index: 1;
+									content: "";
+									width: 24px;
+									height: 24px;
+									position: absolute;
+									background: $white;
+									border-radius: 500px; 
+								}
+
+								&:before {
+									top: 4px;
+									left: 4px;
+									z-index: 2;
+									content: "";
+									opacity: 0;
+									width: 16px;
+									height: 16px;
+									position: absolute;
+									background: $black;
+									border-radius: 500px;
+									visibility: hidden;
+								}
+							}
+
+							input {
+								display: none;
+
+								&:checked ~ .gfield_consent_label:before {
+									opacity: 1;
+									visibility: visible;
+								}
+							}
 						}
 
 						&.ginput_container_select {
 							position: relative;
 
 							&:before {
-								z-index: 1;
-								width: 26px;
-								right: 20px;
-								color: #FFF;
-								height: 26px;
-								content: "";
+								z-index: 1; 
+								right: 28px;
+								color: #FFF; 
+								content: "\e819";
 								font-size: 7px;
 								text-indent: 1px;
 								line-height: 24px;
 								text-align: center;
-								font-family: "flv";
-								position: absolute;
-								border-radius: 500px;
+								font-family: "glewee";
+								position: absolute; 
 								pointer-events: none;
-								top: calc(50% - 13px);
-								border: 2px solid #FFF;
+								top: calc(50% - 13px); 
 							}
 
 							select {
@@ -5264,14 +5344,16 @@ DEFAULT STYLES
 								color: $white !important;
 								background: $primary !important;
 								padding-right: 60px !important;
-							}
+							} 
 						}
 
 						&.ginput_container_textarea {
 							line-height: 0;
 
 							.textarea {
+								resize: none !important;
 								height: 150px !important;
+								padding: 24px 19px !important;
 								border-radius: 16px !important;
 							}
 						}
@@ -5286,22 +5368,25 @@ DEFAULT STYLES
 						line-height: 20px;
 						background: transparent;
 					}
+
+					.btn {
+						margin-left: auto;
+					}
 				}
 			}
 		}
 
 		.gform_footer {
 			text-align: right;
-			padding: 0 !important;
-			margin: -85px 0 0 !important;
+			padding: 0 !important;;
 
 			.btn {
 				margin: 0 !important;
 			}
+		}
 
-			.gform_ajax_spinner {
-				display: none;
-			}
+		.gform_ajax_spinner {
+			display: none;
 		}
 	}
 }

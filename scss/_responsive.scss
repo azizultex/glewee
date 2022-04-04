@@ -1671,7 +1671,7 @@ MEDIA QUERIES
     } 
 
     .contact {
-        padding: 60px 0px;
+        padding: 60px 20px;
 
         &__text {
 
@@ -2409,6 +2409,26 @@ MEDIA QUERIES
     }
 
 } /* 1050 */
+
+@media only screen and (max-width: 880px) { 
+
+    .gform_wrapper.gravity-theme {
+
+        .gform_fields {
+            grid-column-gap: 0 !important;
+        }
+
+        .gfield:not(.gfield--width-full) {
+            grid-column: 1/-1 !important;
+        }
+
+        #field_submit {
+            margin-top: 0px !important;
+        }
+
+    } 
+
+} /* 880 */
 
 @media only screen and (max-width: 850px) {
 
@@ -3407,6 +3427,13 @@ MEDIA QUERIES
                 }
             }
         }
+    }
+
+    /***********************************
+    DEFAULT STYLES
+    ***********************************/
+    .default-page {
+        padding: 70px 0;
     }
    
 }/* 767 */ 
@@ -4448,6 +4475,13 @@ MEDIA QUERIES
             }
         }
 
+    }
+
+    /***********************************
+    DEFAULT STYLES
+    ***********************************/
+    .default-page {
+        padding: 50px 0;
     }
 
 }/* 575 */ 

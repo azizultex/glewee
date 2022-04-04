@@ -7,88 +7,86 @@
 	            <div class="row" data-sticky_parent> 
 	                <div class="col-xl-7 offset-xl-2 offset-lg-1" data-sticky_column>
 	                    <main class="main-content">
-	                        <div class="blog-post-top">
-	                            <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                            <h1 class="title">Glewee is Now Available on iOS and Android!</h1>
-	                        </div> 
+	                    	<?php
+	                    		echo '<div class="blog-post-top">';
+	                    			echo '<a href="'.esc_url( get_day_link( get_the_time( 'Y' ), get_the_time( 'm' ), get_the_time( 'd' ) ) ).'" class="date text-uppercase">'.get_the_date('F j, Y').'</a>';
 
-	                        <article class="blog-post"> 
-	                            <div class="entry-media"> 
-	                                <img src="<?php echo get_theme_file_uri(); ?>/images/latest-news-post-1.png" class="img-fluid" alt=""> 
-	                            </div> 
+	                    			the_title( '<h1 class="title">', '</h1>' );
+	                    		echo '</div>';
 
-	                            <div class="entry-content">
-	                                <p>After months of development, growth, and many many iterations of the idea boards – Glewee is now formally live on Web, iOS, and Android! With our Web app designed primarily for Brands to create campaigns, engage with Creators, and track post metrics; we focused our efforts on developing the iOS + Android version of Glewee exclusively for Creators. Creating a Glewee profile, linking social media accounts, applying for campaigns and staying organized while monetizing your following has never been easier.</p>
-	                                
-	                                <p>If you’re reading this on a mobile device, click the button below to see our live application on Apple’s App Store or The Google Play Store!</p>
-	
-	                                <a href="#" class="btn bg-white"><img src="<?php echo get_theme_file_uri(); ?>/images/app-store-big.png" class="img-fluid" alt=""></a>
-	                                <a href="#" class="btn bg-white"><img src="<?php echo get_theme_file_uri(); ?>/images/google-play-big.png" class="img-fluid" alt=""></a>
+	                    		echo '<article class="blog-post">';
 
-	                                <h4>A Glimpse Of The Glewee App Capabilities</h4>
+	                    			if ( has_post_thumbnail() ) 
+	                    			{
+	                    				echo '<div class="entry-media">';
 
-	                                <hr>
+	                    					the_post_thumbnail( 'post_large', array( 'class' => 'img-fluid' ) );
 
-	                                <h5>Explore</h5>
+	                    				echo '</div> ';
+	                    			}
 
-	                                <p>After months of development, growth, and many many iterations of the idea boards – Glewee is now formally live on Web, iOS, and Android! With our Web app designed primarily for Brands to create campaigns, engage with Creators, and track post metrics; we focused our efforts on developing the iOS + Android version of Glewee exclusively for Creators. Creating a Glewee profile, linking social media accounts, applying for campaigns and staying organized while monetizing your following has never been easier.</p>
+                					if( '' !== get_post()->post_content )
+                			        {
+                			        	echo '<div class="entry-content">';
 
-	                                <p>If you’re reading this on a mobile device, click the button below to see our live application on Apple’s App Store or The Google Play Store!</p>
+                			        		the_content();
 
-	                                <figure class="wp-caption">
-	                                    <img class="img-fluid" src="<?php echo get_theme_file_uri(); ?>/images/explore-item-1.jpg" alt="Azizul Haque">  
-	                                    <div class="text">
-	                                        <h2>Explore</h2>
-	                                        <h4>Brand Campaigns</h4>
-	                                    </div>
-	                                </figure>
+                			        	echo '</div>';
+                			        }
 
-	                                <h5>Creator Profiles</h5>
+                			        echo '<hr>';
 
-	                                <p>While setting up a Glewee Creator Account, each user must authenticate their social media accounts. This allows us to pull in profile metrics like follower count and engagement rates, as well as post metrics such as impressions, likes, comments, and shares. We use this data to display it back to the Brands that each Creator works with in order to show them how good the posts are doing in a campaign deployed by the Brand. For the Creator, this is the perfect page to display a users’ total follower count across all their social media accounts in real time. Once a Creator has worked with various Brands on the Glewee platform, this page will act as their portfolio – displaying total Estimated Content Value data points, total cross platform follower count, and showcasing the work the Creator has published to social media on behalf of brands on Glewee.</p>
-	
-	                                <figure class="wp-caption">
-	                                    <img class="img-fluid" src="<?php echo get_theme_file_uri(); ?>/images/explore-item-2.jpg" alt="Azizul Haque">  
-	                                    <div class="text">
-	                                        <h2>Explore</h2>
-	                                        <h4>Brand Campaigns</h4>
-	                                    </div>
-	                                </figure>
+    						        $cta_switcher = get_field( 'bottom_cta_option' );
+                                	$embed_source_code = get_field('embed_source_code');
+                                	$cta_options = $cta_switcher == 'default' ? get_field( 'blog_cta_options', 'options' ) : get_field('cta_options');
 
-	                                <h5>Creator Profiles</h5>
+    						        if ( $cta_switcher == 'cta_custom' || $cta_switcher == 'default' && !empty( $cta_options ) ) 
+                                	{
+                                		echo '<div class="entry-footer">';
+                                			echo '<div class="entry-title">';
 
-	                                <p>While setting up a Glewee Creator Account, each user must authenticate their social media accounts. This allows us to pull in profile metrics like follower count and engagement rates, as well as post metrics such as impressions, likes, comments, and shares. We use this data to display it back to the Brands that each Creator works with in order to show them how good the posts are doing in a campaign deployed by the Brand. For the Creator, this is the perfect page to display a users’ total follower count across all their social media accounts in real time. Once a Creator has worked with various Brands on the Glewee platform, this page will act as their portfolio – displaying total Estimated Content Value data points, total cross platform follower count, and showcasing the work the Creator has published to social media on behalf of brands on Glewee.</p>
+	                                			if ( $cta_options['title'] ) 
+	                                			{
+	                                				printf( '<h2 class="title">%s</h2>', $cta_options['title'] );
+	                                			}
 
-	                                <figure class="wp-caption">
-	                                    <img class="img-fluid" src="<?php echo get_theme_file_uri(); ?>/images/explore-item-1.jpg" alt="Azizul Haque">  
-	                                    <div class="text">
-	                                        <h2>Explore</h2>
-	                                        <h4>Brand Campaigns</h4>
-	                                    </div>
-	                                </figure>
-	                            </div>
+    	                                		if ( $cta_options['sub_title'] ) 
+    	                                		{
+    	                                			printf( '<h5 class="sub-title">%s</h5>', $cta_options['sub_title'] );
+    	                                		}
 
-	                            <hr>
+    	                                		if ( $cta_options['description'] ) 
+    	                                		{
+    	                                			printf( '%s', $cta_options['description'] );
+    	                                		}
 
-	                            <div class="entry-footer">
-	                                <div class="entry-title">
-	                                    <h2 class="title">Request a Demo</h2>
-	                                    <h5 class="sub-title">Let’s Start Building Campaigns</h5>
-	                                    <p>Tired of getting no response from influencers online? Book a live demo and unlock Creator Marketing today.</p>
-	                                    <a href="#" class="btn secondary-btn">Request a Demo</a>
-	                                </div>
+    	                                		acfButton( $cta_options, 'secondary-btn' );
 
-	                                <div class="photo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/blog-entry-footer.png" alt="">
-	                                </div>
-	                            </div>
+                                    		echo '</div>';
 
-	                            <div class="share-wrapper">
-	                                <div class="share" data-sticky_column>
-	                                    <div class="sharethis-inline-share-buttons"></div>
-	                                </div>
-	                            </div>
-	                        </article>
+                                    		printf( '<div class="photo">
+                                    			<img src="%s" alt="%s">
+                                    		</div>', esc_url( get_theme_file_uri( 'images/blog-entry-footer.png' ) ), get_the_title() );
+                                    		
+                                		echo '</div>';
+                                	}
+                                	elseif ( $cta_switcher == 'embed' )
+                                	{
+                                		echo '<div class="blog-action embed mt-5">';
+
+                                			printf('<div class="blog-post-ccta">%s</div>', $embed_source_code);
+
+                                		echo '</div>';
+                                	}
+
+                                	echo '<div class="share-wrapper">';
+                                	    echo '<div class="share" data-sticky_column>';
+                                	        echo sharethis_inline_buttons();
+                                	    echo '</div>';
+                                	echo '</div>';
+
+	                    		echo '</article>';
+	                    	?>
 	                    </main>
 	                </div>
 

@@ -10,13 +10,8 @@ if ( ! function_exists( 'glewee_setup' ) ) {
 
 		/** Enable support for Post Thumbnails on posts and pages. */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'post_thumb', 280, 156, true );
-		add_image_size( 'post_medium', 880, 486, true );
-		add_image_size( 'team_small', 78, 80, true );
-		add_image_size( 'team_thumb', 160, 160, true );
-		add_image_size( 'team_medium', 280, 380, true );
-		add_image_size( 'story_thumb', 315, 315, true );
-		add_image_size( 'story_single', 737, 452, true );
+		add_image_size( 'post_thumb', 330, 330, true );
+		add_image_size( 'post_large', 690, 690, true );
 
 		/*** Editor Style */
 		add_editor_style(get_template_directory_uri() . '/css/content-editor.css');

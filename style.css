@@ -412,13 +412,15 @@ select, textarea {
     line-height: 26px !important;
     background: #FFF !important;
     border-radius: 500px !important;
-    padding: 17px 20px !important;
+    padding: 14px 16px !important;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
+    -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12) !important;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.12) !important;
 }
 input[type=text]:not(.select2-input)::-webkit-inner-spin-button,
 input[type=number]::-webkit-inner-spin-button,
@@ -435,6 +437,62 @@ select::-webkit-inner-spin-button, textarea::-webkit-inner-spin-button {
     color: #333;
     text-align: center;
     position: relative;
+}
+input[type=text]:not(.select2-input)::-webkit-input-placeholder,
+input[type=number]::-webkit-input-placeholder,
+input[type=email]::-webkit-input-placeholder,
+input[type=tel]::-webkit-input-placeholder,
+input[type=search]::-webkit-input-placeholder,
+input[type=password]::-webkit-input-placeholder,
+input[type=file]::-webkit-input-placeholder,
+select::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #000;
+    font-size: 18px;
+    font-line: 26px;
+    font-weight: 400;
+    letter-spacing: 0pxpx;
+}
+input[type=text]:not(.select2-input)::-moz-placeholder,
+input[type=number]::-moz-placeholder,
+input[type=email]::-moz-placeholder,
+input[type=tel]::-moz-placeholder,
+input[type=search]::-moz-placeholder,
+input[type=password]::-moz-placeholder,
+input[type=file]::-moz-placeholder,
+select::-moz-placeholder, textarea::-moz-placeholder {
+    color: #000;
+    font-size: 18px;
+    font-line: 26px;
+    font-weight: 400;
+    letter-spacing: 0pxpx;
+}
+input[type=text]:not(.select2-input):-ms-input-placeholder,
+input[type=number]:-ms-input-placeholder,
+input[type=email]:-ms-input-placeholder,
+input[type=tel]:-ms-input-placeholder,
+input[type=search]:-ms-input-placeholder,
+input[type=password]:-ms-input-placeholder,
+input[type=file]:-ms-input-placeholder,
+select:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #000;
+    font-size: 18px;
+    font-line: 26px;
+    font-weight: 400;
+    letter-spacing: 0pxpx;
+}
+input[type=text]:not(.select2-input):-moz-placeholder,
+input[type=number]:-moz-placeholder,
+input[type=email]:-moz-placeholder,
+input[type=tel]:-moz-placeholder,
+input[type=search]:-moz-placeholder,
+input[type=password]:-moz-placeholder,
+input[type=file]:-moz-placeholder,
+select:-moz-placeholder, textarea:-moz-placeholder {
+    color: #000;
+    font-size: 18px;
+    font-line: 26px;
+    font-weight: 400;
+    letter-spacing: 0pxpx;
 }
 input[type=text]:not(.select2-input):hover, input[type=text]:not(.select2-input):focus,
 input[type=number]:hover,
@@ -474,6 +532,9 @@ select:focus, textarea:hover, textarea:focus {
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
+}
+.btn img {
+    border-radius: 0 !important;
 }
 .btn.big-text {
     font-size: 36px;
@@ -3675,6 +3736,9 @@ PRICING FEATURES PAGE STYLES
     padding: 16.01px 24.5px;
     background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
 }
+.pricing__card.popuar .pricing__card-body .btn:hover {
+    background: #001179;
+}
 .pricing__card-header {
     margin-bottom: 20px;
 }
@@ -3741,6 +3805,10 @@ PRICING FEATURES PAGE STYLES
     color: #FFF;
     border-color: #FFF;
     background: transparent;
+}
+.pricing__card.varies .pricing__card-body .btn:hover {
+    background: #FFF;
+    color: #000;
 }
 .pricing-bottom {
     -webkit-column-gap: 30px;
@@ -3979,6 +4047,12 @@ ABOUT GLEWEE PAGE STYLES
 .brand-awareness__content a.readmore__anchor {
     color: #000;
     font-weight: 700;
+    display: block !important;
+}
+.brand-awareness__content .content-editor {
+    overflow: hidden;
+    -webkit-transition: height 75ms;
+    transition: height 75ms;
 }
 .brand-awareness__content .content-editor h1, .brand-awareness__content .content-editor h2, .brand-awareness__content .content-editor h3, .brand-awareness__content .content-editor h4, .brand-awareness__content .content-editor h5, .brand-awareness__content .content-editor h6 {
     color: #000;
@@ -4216,6 +4290,7 @@ CUSTOMER STORY STYLES
     font-size: 24px;
     line-height: 34px;
     font-weight: 700;
+    display: block !important;
 }
 .customer-story__content .view-gallery {
     display: block;
@@ -4643,7 +4718,7 @@ FOOTER STYLES
 DEFAULT STYLES
 ***********************************/
 .default-page {
-    padding: 60px 0;
+    padding: 80px 0;
 }
 
 .content-editor h1, .content-editor .h1, .content-editor h2, .content-editor .h2, .content-editor h3, .content-editor .h3, .content-editor h4, .content-editor .h4, .content-editor h5, .content-editor .h5, .content-editor h6, .content-editor .h6 {
@@ -4748,49 +4823,96 @@ DEFAULT STYLES
 .gform_wrapper {
     width: 100%;
 }
+.gform_wrapper.gravity-theme * {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.gform_wrapper.gravity-theme #field_submit {
+    margin-top: 10px !important;
+}
 .gform_wrapper .gform_validation_errors {
     display: none;
 }
 .gform_wrapper form .gform_body .gform_fields {
-    grid-row-gap: 20px;
+    grid-row-gap: 17px;
 }
 .gform_wrapper form .gform_body .gform_fields .gfield.hidden_label .gfield_label {
     display: none;
 }
 .gform_wrapper form .gform_body .gform_fields .gfield .gfield_label {
-    color: #000;
+    color: #001179;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 26px;
     margin-bottom: 5px;
 }
+.gform_wrapper form .gform_body .gform_fields .gfield .gfield_label .gfield_required {
+    display: none;
+}
 .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container label {
-    color: #000;
+    color: #001179;
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 26px;
     margin-bottom: 5px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_required_text {
+    display: none;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label {
+    margin-bottom: 0;
+    font-weight: 400;
+    padding-left: 35px;
+    position: relative;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label:after {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    background: #FFF;
+    border-radius: 500px;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent .gfield_consent_label:before {
+    top: 4px;
+    left: 4px;
+    z-index: 2;
+    content: "";
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background: #000;
+    border-radius: 500px;
+    visibility: hidden;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent input {
+    display: none;
+}
+.gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_consent input:checked ~ .gfield_consent_label:before {
+    opacity: 1;
+    visibility: visible;
 }
 .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_select {
     position: relative;
 }
 .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_select:before {
     z-index: 1;
-    width: 26px;
-    right: 20px;
+    right: 28px;
     color: #FFF;
-    height: 26px;
-    content: "";
+    content: "";
     font-size: 7px;
     text-indent: 1px;
     line-height: 24px;
     text-align: center;
-    font-family: "flv";
+    font-family: "glewee";
     position: absolute;
-    border-radius: 500px;
     pointer-events: none;
     top: calc(50% - 13px);
-    border: 2px solid #FFF;
 }
 .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_select select {
     margin: 0 !important;
@@ -4802,7 +4924,9 @@ DEFAULT STYLES
     line-height: 0;
 }
 .gform_wrapper form .gform_body .gform_fields .gfield .ginput_container.ginput_container_textarea .textarea {
+    resize: none !important;
     height: 150px !important;
+    padding: 24px 19px !important;
     border-radius: 16px !important;
 }
 .gform_wrapper form .gform_body .gform_fields .gfield .validation_message {
@@ -4814,15 +4938,17 @@ DEFAULT STYLES
     line-height: 20px;
     background: transparent;
 }
+.gform_wrapper form .gform_body .gform_fields .gfield .btn {
+    margin-left: auto;
+}
 .gform_wrapper form .gform_footer {
     text-align: right;
     padding: 0 !important;
-    margin: -85px 0 0 !important;
 }
 .gform_wrapper form .gform_footer .btn {
     margin: 0 !important;
 }
-.gform_wrapper form .gform_footer .gform_ajax_spinner {
+.gform_wrapper form .gform_ajax_spinner {
     display: none;
 }
 
@@ -6633,7 +6759,7 @@ MEDIA QUERIES
     }
 
     .contact {
-        padding: 60px 0px;
+        padding: 60px 20px;
     }
     .contact__text .title {
         margin-bottom: 5px;
@@ -7221,6 +7347,18 @@ MEDIA QUERIES
     }
 }
 /* 1050 */
+@media only screen and (max-width: 880px) {
+    .gform_wrapper.gravity-theme .gform_fields {
+        grid-column-gap: 0 !important;
+    }
+    .gform_wrapper.gravity-theme .gfield:not(.gfield--width-full) {
+        grid-column: 1/-1 !important;
+    }
+    .gform_wrapper.gravity-theme #field_submit {
+        margin-top: 0px !important;
+    }
+}
+/* 880 */
 @media only screen and (max-width: 850px) {
     /***********************************
     ABOUT GLEWEE
@@ -7995,6 +8133,13 @@ MEDIA QUERIES
         font-size: 20px;
         line-height: 28px;
         letter-spacing: -0.5px;
+    }
+
+    /***********************************
+    DEFAULT STYLES
+    ***********************************/
+    .default-page {
+        padding: 70px 0;
     }
 }
 /* 767 */
@@ -8851,6 +8996,13 @@ MEDIA QUERIES
     }
     .footer__item-media {
         top: -140px;
+    }
+
+    /***********************************
+    DEFAULT STYLES
+    ***********************************/
+    .default-page {
+        padding: 50px 0;
     }
 }
 /* 575 */

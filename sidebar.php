@@ -1,15 +1,36 @@
 <div class="col-xl-3">
     <aside class="sidebar" data-sticky_column> 
-        <div class="widget">
-            <h5 class="widget-title text-capitalize">Categories</h5>
+        <?php 
+            // Start Tags Widget
+            $current_cat = get_queried_object_id();
 
-            <ul class="categories list-unstyled">
-                <li class="active"><a href="#">All Articles <i class="icon-arrow-right-1"></i></a></li>
-                <li><a href="#">For Brands <i class="icon-arrow-right-1"></i></a></li>
-                <li><a href="#">For Creators <i class="icon-arrow-right-1"></i></a></li>
-                <li><a href="#">General <i class="icon-arrow-right-1"></i></a></li> 
-            </ul>
-        </div>
+            $categories = get_tags( array(
+                'order'   => 'ASC',
+                'orderby' => 'name', 
+                'taxonomy' => 'category',
+            ));
+
+            if ( $categories ) 
+            {
+                $all_active = !is_category() ? ' class="active"' : '';
+
+                echo '<div class="widget">';
+                    printf( '<h5 class="widget-title text-capitalize">%s</h5>', 'Categories' );
+
+                    echo '<ul class="categories list-unstyled">';
+                        echo '<li'.$all_active.'><a href="'.esc_url( get_permalink( get_option( 'page_for_posts' ) ) ).'">All Articles <i class="icon-arrow-right-1"></i></a></li>';
+
+                        foreach ( $categories as $cat ) 
+                        {
+                            $active = $current_cat == $cat->term_id ? ' class="active"' : '';
+
+                            printf( '<li%s><a href="%s">%s</a></li>', $active, esc_url( get_category_link( $cat ) ), $cat->name  );
+                        }
+
+                    echo '</ul>';
+                echo '</div>';
+            } 
+        ?>
 
         <div class="widget widget__recommended">
             <h5 class="widget-title text-capitalize">Recommended Reading</h5>
