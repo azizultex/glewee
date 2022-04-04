@@ -2,8 +2,6 @@ jQuery( document ).ready(function() {
 
     // Home
     dynamic_title_repeater_accordion('capabilities', 'title');
-    dynamic_title_repeater_accordion('partners', 'title');
-    dynamic_title_repeater_accordion('faq', 'title');
 
 });
 

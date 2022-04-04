@@ -2071,7 +2071,7 @@ BRANDS PAGE STYLES
 	.our-network {
 
 		&__content {
-			max-width: 440px;
+			max-width: 521px;
 		}
 
 		&__item {
@@ -5227,23 +5227,7 @@ DEFAULT STYLES
 						margin-bottom: 5px;
 					}
 
-					&.recaptcha {
-						text-align: right;
-						margin-right: 214px;
-
-						.ginput_recaptcha {
-							display: inline-block;
-							transform: scale(0.90133);
-							transform-origin: right center;
-						}
-
-						.validation_message {
-							display: none !important;
-						}
-					}
-
 					.ginput_container {
-						display: block;
 
 						label {
 							color: $black;
@@ -5251,17 +5235,6 @@ DEFAULT STYLES
 							font-weight: 400;
 							line-height: 26px;
 							margin-bottom: 5px;
-						}
-
-						.name_first, .name_last {
-							margin: 0;
-							width: 100%;
-							display: block;
-							padding: 0 !important;
-						}
-
-						.name_last {
-							margin-top: 15px;
 						}
 
 						&.ginput_container_select {
@@ -5289,7 +5262,7 @@ DEFAULT STYLES
 							select {
 								margin: 0 !important;
 								color: $white !important;
-								background: $black !important;
+								background: $primary !important;
 								padding-right: 60px !important;
 							}
 						}
