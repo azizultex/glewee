@@ -1,7 +1,12 @@
 jQuery( document ).ready(function() {
 
-    // Home
-    dynamic_title_repeater_accordion('capabilities', 'title');
+    // Careers
+    dynamic_title_repeater_accordion('highlights', 'title');
+    dynamic_title_repeater_accordion('jobs_group', 'name');
+    dynamic_title_repeater_accordion('jobs', 'title');
+
+    // Pricing
+    dynamic_title_repeater_accordion('pricing_table', 'title');
 
 });
 

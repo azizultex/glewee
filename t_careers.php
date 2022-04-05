@@ -2,43 +2,81 @@
 /*
 Template Name: Careers
 */
-get_header( '', array( 'transparent' => true )  ); ?>
+get_header( '', array( 'transparent' => true )  ); 
+	
+	$careers_content = get_field( 'careers_content' ); ?>
 
 	<div id="primary" class="content-area">
 	    <div class="overlay"></div>
 	    
+	    <?php if ( !empty( $careers_content ) && array_filter( $careers_content ) ): ?>
 	    <section class="careers">
 	        <div class="container">
+	        	<?php if ( $careers_content['title'] || $careers_content['description'] ): ?>
 	            <div class="row">
 	                <div class="col-12">
 	                    <div class="careers__content entry-title">
-	                        <h1 class="title lg">Careers</h1> 
-	                        <div class="description lg">
-	                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt</p>
-	                        </div>
+	                    	<?php 
+	                    		if ( $careers_content['title'] ) 
+	                    		{
+	                    			printf( '<h1 class="title lg">%s</h1>', $careers_content['title'] );
+	                    		}
+	                    		else
+	                    		{
+	                    			printf( '<h1 class="title lg">%s</h1>', get_the_title() );
+	                    		}
+
+	                    		if ( $careers_content['description'] ) 
+	                    		{
+	                    			printf( '<div class="description lg">%s</div>', $careers_content['description'] );
+	                    		}
+	                    	?>
 	                    </div> 
 	                </div>
 	            </div> 
+	        	<?php endif;
 
+	        	if ( $careers_content['small_title'] || $careers_content['sub_title'] || $careers_content['content'] || $careers_content['button'] || $careers_content['image'] ): ?>
 	            <div class="row">
-	                <div class="col-lg-6">
+	            	<?php if ( $careers_content['small_title'] || $careers_content['sub_title'] || $careers_content['content'] || $careers_content['button'] ): ?>
+	                <div class="<?php if ( $careers_content['image'] ) { echo 'col-lg-6'; } else { echo 'col-lg-12 fluid'; }; ?>">
 	                    <div class="careers__content culture">
-	                        <h2 class="title">Glewee is awesome and so is it’s culture.</h2>
-	                        <h5 class="sub-title">Elevate your marketing objectives with Glewee’s Campaign Creation process.</h5>
-	                        <p>By utilizing all of our in-app analytic tracking tools, you can discover the ideal Creator team for your next social media campaign. Browse our extensive Creator database, launch your first campaign, and begin deploying influential social media personalities to be your next brand advocates today.</p>
-	                        <a href="#" class="btn btn-red">View Career Opportunities</a>
+	                    	<?php
+	                    		if ( $careers_content['small_title'] ) 
+	                    		{
+	                    			printf( '<h2 class="title">%s</h2>', $careers_content['small_title'] );
+	                    		}
+
+	                    		if ( $careers_content['sub_title'] ) 
+	                    		{
+	                    			printf( '<h5 class="sub-title">%s</h5>', $careers_content['sub_title'] );
+	                    		}
+
+	                    		if ( $careers_content['content'] ) 
+	                    		{
+	                    			printf( '%s', $careers_content['content'] );
+	                    		}
+
+	                    		acfButton( $careers_content, 'btn-red smoothScroll' );
+	                    	?>
 	                    </div>
 	                </div>
+	            	<?php endif;
 
+	            	if ( $careers_content['image'] ): ?>
 	                <div class="col-lg-6">
 	                    <div class="careers__media">
-	                        <img src="<?php echo get_theme_file_uri(); ?>/images/careers__media.svg" class="img-fluid" alt="">
+	                    	<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $careers_content['image']['url'] ), $careers_content['image']['alt'] ); ?>
 	                    </div>
 	                </div>
+	            	<?php endif; ?>
 	            </div>
+	            <?php endif; ?>
 	        </div>
 	    </section><!-- /careers -->
+	    <?php endif;
 
+	    $careers_highlights  = get_field( 'careers_highlights' ); if ( !empty( $careers_highlights ) && array_filter( $careers_highlights ) ): ?>
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-12">
@@ -50,44 +88,65 @@ get_header( '', array( 'transparent' => true )  ); ?>
 	    <section class="main-highlights">
 	        <div class="container">
 	            <div class="row align-items-center">
-	                <div class="col-lg-5">
+	            	<?php if ( $careers_highlights['title'] || $careers_highlights['content'] ): ?>
+	                <div class="<?php if ( $careers_highlights['highlights'] ) { echo 'col-lg-5'; } else { echo 'col-lg-12 fluid'; }; ?>">
 	                    <div class="main-highlights__content">
-	                        <h2 class="title">A Section here about the main highlights of Glewee</h2>
-	                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum</p>
+	                    	<?php
+	                    		if ( $careers_highlights['title'] ) 
+	                    		{
+	                    			printf( '<h2 class="title">%s</h2>', $careers_highlights['title'] );
+	                    		}
+
+	                    		if ( $careers_highlights['content'] ) 
+	                    		{
+	                    			printf( '%s', $careers_highlights['content'] );
+	                    		}
+	                    	?>
 	                    </div>
 	                </div>
+	                <?php endif;
 
+	                if ( $careers_highlights['highlights'] ): ?>
 	                <div class="col-lg-7">
 	                    <ul class="main-highlights__list">
-	                        <li>
-	                            <div class="icon" style="background: #FFB1E7;"><i class="icon-heart"></i></div>
-	                            <div class="text">
-	                                <h5 class="title">Beyond Benefits</h5>
-	                                <p>After months of development, growth, and many many iterations of the idea boards – Glewee is now formally live on Web, iOS</p>
-	                            </div>
-	                        </li>
+	                    	<?php
+	                    		foreach ( $careers_highlights['highlights'] as $highlight ) 
+	                    		{
+	                    			echo '<li>';
 
-	                        <li>
-	                            <div class="icon" style="background: #7D8FFA;"><i class="icon-thumbs-up"></i></div>
-	                            <div class="text">
-	                                <h5 class="title">Mental Health First</h5>
-	                                <p>After months of development, growth, and many many iterations of the idea boards – Glewee is now formally live on Web, iOS</p>
-	                            </div>
-	                        </li>
-	                        
-	                        <li>
-	                            <div class="icon" style="background: #0CA1CE;"><i class="icon-user"></i></div>
-	                            <div class="text">
-	                                <h5 class="title">Family Values</h5>
-	                                <p>After months of development, growth, and many many iterations of the idea boards – Glewee is now formally live on Web, iOS</p>
-	                            </div>
-	                        </li>
+	                    				if ( $highlight['icon'] ) 
+	                    				{
+	                    					printf( '<div class="icon" style="background: %s;"><i class="%s"></i></div>', $highlight['color'], $highlight['icon'] );
+	                    				}
+
+	                    				if ( $highlight['title'] || $highlight['description'] ) 
+	                    				{
+	                    					echo '<div class="text">';
+
+	                    						if ( $highlight['title'] ) 
+	                    						{
+	                    							printf( '<h5 class="title">%s</h5>', $highlight['title'] );
+	                    						}
+
+	                    						if ( $highlight['description'] ) 
+	                    						{
+	                    							printf( '%s', $highlight['description'] );
+	                    						}
+
+	                    					echo '</div>';
+	                    				}
+	                    			echo '</li>';
+	                    		}
+	                    	?>
 	                    </ul>
 	                </div>
+	                <?php endif; ?>
 	            </div>
 	        </div>
 	    </section><!-- /main-highlights -->
+	    <?php endif;
 
+	    $careers_message = get_field( 'careers_message' ); if ( !empty( $careers_message ) && array_filter( $careers_message ) ): ?>
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-12">
@@ -99,30 +158,58 @@ get_header( '', array( 'transparent' => true )  ); ?>
 	    <section class="founders">
 	        <div class="container">
 	            <div class="row align-items-center">
+	            	<?php if ( $careers_message['image'] ): ?>
 	                <div class="col-lg-4">
 	                    <div class="founders__media">
-	                        <div class="founders__media-text">
-	                            <h5 class="title">Christian</h5>
-	                            <h6 class="sub-title">CTO of Glewee</h6>
-	                        </div>
-	                        <div class="founders__media-img">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/founders__media.png" class="img-fluid" alt="">
-	                        </div>
-	                    </div>
-	                </div>
+	                        <?php
+	                        	if ( $careers_message['name'] || $careers_message['position'] ) 
+	                        	{
+	                        		echo '<div class="founders__media-text">';
 
-	                <div class="col-lg-8">
-	                    <div class="founders__content">
-	                        <h2 class="title">A Message from one of the founders of Glewee</h2>
-	                        <blockquote>
-	                            <h5>I started Glewee to do this and that for these people and those people. We made something awesome and can’t wait for you to use it.</h5>
-	                        </blockquote>
+	                        			if ( $careers_message['name'] ) 
+	                        			{
+	                        				printf( '<h5 class="title">%s</h5>', $careers_message['name'] );
+	                        			}
+
+	                        			if ( $careers_message['position'] ) 
+	                        			{
+	                        				printf( '<h6 class="sub-title">%s</h6>', $careers_message['position'] );
+	                        			}
+
+	                        		echo '</div>';
+	                        	}
+
+	                        	printf( '<div class="founders__media-img">
+		                            <img src="%s" class="img-fluid" alt="%s">
+		                        </div>', esc_url( $careers_message['image']['url'] ), $careers_message['image']['alt'] );
+	                        ?>
 	                    </div>
 	                </div>
+	            	<?php endif;
+
+	            	if ( $careers_message['title'] || $careers_message['quote'] ): ?>
+	                <div class="<?php if ( $careers_message['image'] ) { echo 'col-lg-8'; } else { echo 'col-lg-12 fluid'; }; ?>">
+	                    <div class="founders__content">
+	                    	<?php
+	                    		if ( $careers_message['title'] ) 
+	                    		{
+	                    			printf( '<h2 class="title">%s</h2>', $careers_message['title'] );
+	                    		}
+
+	                    		if ( $careers_message['quote'] ) 
+	                    		{
+	                    			printf( '<blockquote><h5>%s</h5></blockquote>', $careers_message['quote'] );
+	                    		}
+	                    	?>
+	                    </div>
+	                </div>
+	                <?php endif ?>
 	            </div>
 	        </div>
 	    </section><!-- /founders -->
+	    <?php endif;
 
+	    $careers_opportunities = get_field( 'careers_opportunities' ); if ( !empty( $careers_opportunities ) && array_filter( $careers_opportunities ) ): ?>
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-12">
@@ -131,127 +218,90 @@ get_header( '', array( 'transparent' => true )  ); ?>
 	        </div>
 	    </div>
 
-	    <div class="current-openings">
+	    <div id="opportunities" class="current-openings">
 	        <div class="container">
+	        	<?php if ( $careers_opportunities['title'] || $careers_opportunities['description'] ): ?>
 	            <div class="row">
 	                <div class="col-12">
 	                    <div class="current-openings__content">
-	                        <h2 class="title">Current Openings</h2>
-	                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et</p>
+	                    	<?php
+	                    		if ( $careers_opportunities['title'] ) 
+	                    		{
+	                    			printf( '<h2 class="title">%s</h2>', $careers_opportunities['title'] );
+	                    		}
+
+	                    		if ( $careers_opportunities['description'] ) 
+	                    		{
+	                    			printf( '%s', $careers_opportunities['description'] );
+	                    		}
+	                    	?>
 	                    </div>
 	                </div>
 	            </div>
+	            <?php endif;
 
+	            if ( $careers_opportunities['jobs_group'] ): ?>
 	            <div class="row">
 	                <div class="col-12">
-	                    <div class="job__item">
-	                        <h4 class="title">Marketing + Sales</h4>
+	                	<?php
+	                		foreach ( $careers_opportunities['jobs_group'] as $group ) 
+	                		{
+	                			echo '<div class="job__item">';
 
-	                        <a href="#" target="_blank" class="job__item-card d-flex align-items-sm-center justify-content-between">
-	                            <div class="job__item-card-text">
-	                                <h6 class="sub-title color-secondary">Marketing</h6>
-	                                <h4 class="title">Digital Marketing Assitant</h4>
-	                                <h6 class="position color-black">Boston, MA</h6>
-	                            </div>
+	                				if ( $group['name'] ) 
+	                				{
+	                					printf( '<h4 class="title">%s</h4>', $group['name'] );
+	                				}
 
-	                            <div class="job__item-card-button">
-	                                <span class="btn">View Details & Apply</span>
-	                            </div>
-	                        </a><!-- /job__item-card -->
+	                				if ( $group['jobs'] ) 
+	                				{
+	                					foreach ( $group['jobs'] as $job ) 
+	                					{
+	                						$link = $job['link'] ? 'href="'.esc_url( $job['link']['url'] ).'" target="'.$job['link']['target'].'"' : '';
 
-	                        <a href="#" target="_blank" class="job__item-card d-flex align-items-sm-center justify-content-between">
-	                            <div class="job__item-card-text">
-	                                <h6 class="sub-title color-secondary">Sales</h6>
-	                                <h4 class="title">Lead UI Designer</h4>
-	                                <h6 class="position color-black">Boston, MA</h6>
-	                            </div>
+	                						echo '<a '.$link.' class="job__item-card d-flex align-items-sm-center justify-content-between">';
 
-	                            <div class="job__item-card-button">
-	                                <span class="btn">View Details & Apply</span>
-	                            </div>
-	                        </a><!-- /job__item-card -->
+		                						if ( $job['category'] || $job['title'] || $job['location'] ) 
+		                						{
+		                							echo '<div class="job__item-card-text">';
 
-	                        <a href="#" target="_blank" class="job__item-card d-flex align-items-sm-center justify-content-between">
-	                            <div class="job__item-card-text">
-	                                <h6 class="sub-title color-secondary">Sales</h6>
-	                                <h4 class="title">Backend Engineer</h4>
-	                                <h6 class="position color-black">Boston, MA</h6>
-	                            </div>
+		                								if ( $job['category'] ) 
+		                								{
+		                									printf( '<h6 class="sub-title color-secondary">%s</h6>', $job['category'] );
+		                								}
 
-	                            <div class="job__item-card-button">
-	                                <span class="btn">View Details & Apply</span>
-	                            </div>
-	                        </a><!-- /job__item-card -->
+		                								if ( $job['title'] ) 
+		                								{
+		                									printf( '<h4 class="title">%s</h4>', $job['title'] );
+		                								}
 
-	                        <a href="#" target="_blank" class="job__item-card d-flex align-items-sm-center justify-content-between">
-	                            <div class="job__item-card-text">
-	                                <h6 class="sub-title color-secondary">Marketing</h6>
-	                                <h4 class="title">Backend Engineer</h4>
-	                                <h6 class="position color-black">Boston, MA</h6>
-	                            </div>
+		                								if ( $job['location'] ) 
+		                								{
+		                									printf( '<h6 class="position color-black">%s</h6>', $job['location'] );
+		                								}
+		                							echo '</div>';
+		                						}
 
-	                            <div class="job__item-card-button">
-	                                <span class="btn">View Details & Apply</span>
-	                            </div>
-	                        </a><!-- /job__item-card -->
-	                    </div><!-- /job__item -->
-
-	                    <div class="job__item">
-	                        <h4 class="title">Development</h4>
-
-	                        <a href="#" target="_blank" class="job__item-card d-flex align-items-sm-center justify-content-between">
-	                            <div class="job__item-card-text">
-	                                <h6 class="sub-title color-secondary">Developer</h6>
-	                                <h4 class="title">Digital Marketing Assitant</h4>
-	                                <h6 class="position color-black">Boston, MA</h6>
-	                            </div>
-
-	                            <div class="job__item-card-button">
-	                                <span class="btn">View Details & Apply</span>
-	                            </div>
-	                        </a><!-- /job__item-card -->
-
-	                        <a href="#" target="_blank" class="job__item-card d-flex align-items-sm-center justify-content-between">
-	                            <div class="job__item-card-text">
-	                                <h6 class="sub-title color-secondary">Lead Developer</h6>
-	                                <h4 class="title">Lead UI Designer</h4>
-	                                <h6 class="position color-black">Boston, MA</h6>
-	                            </div>
-
-	                            <div class="job__item-card-button">
-	                                <span class="btn">View Details & Apply</span>
-	                            </div>
-	                        </a><!-- /job__item-card -->
-
-	                        <a href="#" target="_blank" class="job__item-card d-flex align-items-sm-center justify-content-between">
-	                            <div class="job__item-card-text">
-	                                <h6 class="sub-title color-secondary">Jr Developer</h6>
-	                                <h4 class="title">Backend Engineer</h4>
-	                                <h6 class="position color-black">Boston, MA</h6>
-	                            </div>
-
-	                            <div class="job__item-card-button">
-	                                <span class="btn">View Details & Apply</span>
-	                            </div>
-	                        </a><!-- /job__item-card -->
-
-	                        <a href="#" target="_blank" class="job__item-card d-flex align-items-sm-center justify-content-between">
-	                            <div class="job__item-card-text">
-	                                <h6 class="sub-title color-secondary">Jr Developer</h6>
-	                                <h4 class="title">Backend Engineer</h4>
-	                                <h6 class="position color-black">Boston, MA</h6>
-	                            </div>
-
-	                            <div class="job__item-card-button">
-	                                <span class="btn">View Details & Apply</span>
-	                            </div>
-	                        </a><!-- /job__item-card -->
-	                    </div><!-- /job__item -->
+	                							if ( $job['link'] ) 
+	                							{
+	                								printf( '<div class="job__item-card-button">
+						                                <span class="btn">%s</span>
+						                            </div>', $job['link']['title'] );
+	                							}
+	                						echo '</a>';
+	                					}
+	                				}
+	                			echo '</div>';
+	                		}
+	                	?>
 	                </div>
 	            </div>
+	            <?php endif; ?>
 	        </div>
 	    </div><!-- /current-openings -->
+	    <?php endif;
 
+	    $careers_contact = get_field( 'careers_contact' ); if ( !empty( $careers_contact ) && array_filter( $careers_contact ) ): ?>
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-12">
@@ -265,21 +315,47 @@ get_header( '', array( 'transparent' => true )  ); ?>
 	            <div class="row">
 	                <div class="col-12">
 	                    <div class="contact">
-	                        <div class="contact__text text-center">
-	                            <h3 class="title">Not ready to apply but want to chat?</h3>
-	                            <div class="description">
-	                                <p>Send us a message, we look forward to speaking with you!</p>
-	                            </div>
-	                        </div>
+	                    	<?php
+	                    		if ( $careers_contact['title'] || $careers_contact['description'] ) 
+	                    		{
+	                    			echo '<div class="contact__text text-center">';
 
-	                        <div class="contact__form">
-	                            <?php echo do_shortcode('[gravityform id="1" title="false" description="false" tabindex="10" ajax="true"]'); ?>
-	                        </div>
+	                    				if ( $careers_contact['title'] ) 
+	                    				{
+	                    					printf( '<h3 class="title">%s</h3>', $careers_contact['title'] );
+	                    				}
+
+	                    				if ( $careers_contact['description'] ) 
+	                    				{
+	                    					printf( '<div class="description">%s</div>', $careers_contact['description'] );
+	                    				}
+
+	                    			echo '</div>';
+	                    		}
+
+	                    		if ( $careers_contact['form_type'] ) 
+	                    		{
+									echo '<div class="contact__form">';
+
+		                    		if ( $careers_contact['form_type'] == 'embed' && $careers_contact['embed_code'] ) 
+		                    		{
+		                    			printf('<div class="embed_code">%s</div>', $careers_contact['embed_code']);
+		                    		}
+		                    		elseif( $careers_contact['form_type'] == 'form' && $careers_contact['select_form'] )
+		                    		{
+		                    			echo do_shortcode('[gravityform id="'. $careers_contact['select_form']['id'] .'" title="false" description="false" tabindex="10" ajax="true"]');
+		                    		} 
+
+	                    			echo '</div>';
+	                    		}
+	                    	?>
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
 	    </section><!-- /chat -->
+	    <?php endif; ?>
+
 	</div><!-- /content-area -->
 
 <?php get_footer(); ?>

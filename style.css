@@ -681,7 +681,7 @@ select:focus, textarea:hover, textarea:focus {
 .fluid h1, .fluid h2, .fluid h3, .fluid h4, .fluid h5, .fluid h6,
 .fluid .h1, .fluid .h2, .fluid .h3, .fluid .h4, .fluid .h5, .fluid .h6, .fluid p,
 .fluid .entry-content, .fluid .description, .fluid .block-content,
-.fluid .content, .fluid .testi-item {
+.fluid .content, .fluid .testi-item, .fluid div {
     max-width: 100% !important;
 }
 
@@ -3730,6 +3730,9 @@ PRICING FEATURES PAGE STYLES
     letter-spacing: -0.72px;
     background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
 }
+.pricing__card.popuar .pricing__card-header .sub-title {
+    color: #364DDD;
+}
 .pricing__card.popuar .pricing__card-body .btn {
     border: none;
     color: #FFF;
@@ -3743,7 +3746,7 @@ PRICING FEATURES PAGE STYLES
     margin-bottom: 20px;
 }
 .pricing__card-header .sub-title {
-    color: #7D8FFA;
+    color: #0CA1CE;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
@@ -3751,7 +3754,7 @@ PRICING FEATURES PAGE STYLES
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-.pricing__card-header .title .counter:before {
+.pricing__card-header .title span:before {
     top: 0;
     left: 0;
     content: "$";
@@ -4805,12 +4808,14 @@ DEFAULT STYLES
 .gform_confirmation_wrapper {
     margin-left: auto;
     margin-right: auto;
+    text-align: center;
 }
 .gform_confirmation_wrapper .gform_confirmation_message {
     font-size: 16px;
     line-height: 20px;
     position: relative;
     padding-left: 25px;
+    display: inline-block;
 }
 .gform_confirmation_wrapper .gform_confirmation_message:before {
     left: 0;

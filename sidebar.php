@@ -23,8 +23,9 @@
                         foreach ( $categories as $cat ) 
                         {
                             $active = $current_cat == $cat->term_id ? ' class="active"' : '';
+                            $name = $cat->name == 'Brands' ? 'For Brands' : ( $cat->name == 'Creators' ? 'For Creators' : $cat->name );
 
-                            printf( '<li%s><a href="%s">%s</a></li>', $active, esc_url( get_category_link( $cat ) ), $cat->name  );
+                            printf( '<li%s><a href="%s">%s</a></li>', $active, esc_url( get_category_link( $cat ) ), $name );
                         }
 
                     echo '</ul>';

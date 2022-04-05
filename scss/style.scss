@@ -330,7 +330,7 @@ select, textarea {
 	h1, h2, h3, h4, h5, h6,
 	.h1, .h2, .h3, .h4, .h5, .h6, p, 
 	.entry-content, .description, .block-content, 
-	.content, .testi-item {
+	.content, .testi-item, div {
 		max-width: 100% !important;
 	}
 }
@@ -3940,6 +3940,13 @@ PRICING FEATURES PAGE STYLES
 				background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
 			}
 
+			.pricing__card-header {
+
+				.sub-title {
+					color: #364DDD;
+				}
+			}
+
 			.pricing__card-body .btn {
 				border: none;
 				color: $white;
@@ -3956,14 +3963,14 @@ PRICING FEATURES PAGE STYLES
 			margin-bottom: 20px;
 
 			.sub-title {    
-				color: $secondary;  
+				color: #0CA1CE;  
 				@include transition(all .3s ease);
 			}
 
 			.title {  
 				@include transition(all .3s ease);
 
-				.counter {
+				span {
 
 					&:before {
 						top: 0;
@@ -5199,12 +5206,14 @@ DEFAULT STYLES
 .gform_confirmation_wrapper  {
 	margin-left: auto;
 	margin-right: auto;
+	text-align: center;
 
 	.gform_confirmation_message {
 		font-size: 16px;
 		line-height: 20px;
 		position: relative;
 		padding-left: 25px;
+		display: inline-block;
 
 	    &:before {
 	    	left: 0;

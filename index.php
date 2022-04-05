@@ -171,166 +171,36 @@
 	                        <main class="main-content">
 	                            <h5 class="main-title">All Posts</h5>
 
-	                            <article class="blog-post d-flex align-items-center">
-	                                <div class="media float-left">
-	                                    <a href="blog-details.html">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-1.jpg" class="img-fluid" alt="">
-	                                    </a>
+	                            <?php
+	                            	if ( have_posts() ): 
+	                            		while ( have_posts() ): the_post(); 
 
-	                                    <ul class="categories list-inline">
-	                                        <li><a href="#">Creators</a></li>
-	                                    </ul>
-	                                </div>
+	                            			get_template_part( 'template-parts/content', 'post' ); 
+	                            		
+	                            		endwhile;
+	                            	endif;
 
-	                                <div class="text">
-	                                    <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                    <a href="#"><h4 class="title">Glewee is Now Available on iOS and Android!</h4></a>
-	                                    <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With...</p>
-	                                </div>
-	                            </article>  
+	                            	if ( get_previous_posts_link() || get_next_posts_link() ): ?>
+	                            	<div class="pagination">
+	                            	    <div class="float-left">
+	                            	    	<?php 
+	                            	    		if ( get_previous_posts_link() ) 
+	                            	    		{
+	                            	    			previous_posts_link('<i class="icon-arrow-left"></i> Previous Posts');
+	                            	    		}
+	                            	    	?>
+	                            	    </div>
 
-
-	                            <article class="blog-post d-flex align-items-center">
-	                                <div class="media float-left">
-	                                    <a href="blog-details.html">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-2.jpg" class="img-fluid" alt="">
-	                                    </a>
-
-	                                    <ul class="categories list-inline">
-	                                        <li><a href="#">Creators</a></li>
-	                                    </ul>
-	                                </div>
-
-	                                <div class="text">
-	                                    <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                    <a href="#"><h4 class="title">Glewee is Now Available on iOS and Android!</h4></a>
-	                                    <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With...</p>
-	                                </div>
-	                            </article>  
-
-
-	                            <article class="blog-post d-flex align-items-center">
-	                                <div class="media float-left">
-	                                    <a href="blog-details.html">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-3.jpg" class="img-fluid" alt="">
-	                                    </a>
-
-	                                    <ul class="categories list-inline">
-	                                        <li><a href="#">Creators</a></li>
-	                                    </ul>
-	                                </div>
-
-	                                <div class="text">
-	                                    <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                    <a href="#"><h4 class="title">Glewee is Now Available on iOS and Android!</h4></a>
-	                                    <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With...</p>
-	                                </div>
-	                            </article>  
-
-
-	                            <article class="blog-post d-flex align-items-center">
-	                                <div class="media float-left">
-	                                    <a href="blog-details.html">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-4.jpg" class="img-fluid" alt="">
-	                                    </a>
-
-	                                    <ul class="categories list-inline">
-	                                        <li><a href="#">Creators</a></li>
-	                                    </ul>
-	                                </div>
-
-	                                <div class="text">
-	                                    <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                    <a href="#"><h4 class="title">Glewee is Now Available on iOS and Android!</h4></a>
-	                                    <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With...</p>
-	                                </div>
-	                            </article>  
-
-
-	                            <article class="blog-post d-flex align-items-center">
-	                                <div class="media float-left">
-	                                    <a href="blog-details.html">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-5.jpg" class="img-fluid" alt="">
-	                                    </a>
-
-	                                    <ul class="categories list-inline">
-	                                        <li><a href="#">Creators</a></li>
-	                                    </ul>
-	                                </div>
-
-	                                <div class="text">
-	                                    <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                    <a href="#"><h4 class="title">Glewee is Now Available on iOS and Android!</h4></a>
-	                                    <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With...</p>
-	                                </div>
-	                            </article>  
-
-
-	                            <article class="blog-post d-flex align-items-center">
-	                                <div class="media float-left">
-	                                    <a href="blog-details.html">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-6.jpg" class="img-fluid" alt="">
-	                                    </a>
-
-	                                    <ul class="categories list-inline">
-	                                        <li><a href="#">Creators</a></li>
-	                                    </ul>
-	                                </div>
-
-	                                <div class="text">
-	                                    <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                    <a href="#"><h4 class="title">Glewee is Now Available on iOS and Android!</h4></a>
-	                                    <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With...</p>
-	                                </div>
-	                            </article>  
-
-
-	                            <article class="blog-post d-flex align-items-center">
-	                                <div class="media float-left">
-	                                    <a href="blog-details.html">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-7.jpg" class="img-fluid" alt="">
-	                                    </a>
-
-	                                    <ul class="categories list-inline">
-	                                        <li><a href="#">Creators</a></li>
-	                                    </ul>
-	                                </div>
-
-	                                <div class="text">
-	                                    <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                    <a href="#"><h4 class="title">Glewee is Now Available on iOS and Android!</h4></a>
-	                                    <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With...</p>
-	                                </div>
-	                            </article>  
-
-
-	                            <article class="blog-post d-flex align-items-center">
-	                                <div class="media float-left">
-	                                    <a href="blog-details.html">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-8.jpg" class="img-fluid" alt="">
-	                                    </a>
-
-	                                    <ul class="categories list-inline">
-	                                        <li><a href="#">Creators</a></li>
-	                                    </ul>
-	                                </div>
-
-	                                <div class="text">
-	                                    <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                    <a href="#"><h4 class="title">Glewee is Now Available on iOS and Android!</h4></a>
-	                                    <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With...</p>
-	                                </div>
-	                            </article>  
-
-	                            <div class="pagination">
-	                                <div class="float-left">
-	                                    <a href="#"><i class="icon-arrow-left"></i>Previous Posts</a>
-	                                </div>
-
-	                                <div class="float-right">
-	                                    <a href="#">Previous Posts<i class="icon-arrow-right"></i></a>
-	                                </div>
-	                            </div>
+	                            	    <div class="float-right">
+	                            	    	<?php 
+	                            	    		if ( get_next_posts_link() ) 
+	                            	    		{
+	                            	    			next_posts_link('Next Posts<i class="icon-arrow-right"></i>');
+	                            	    		}
+	                            	    	?>
+	                            	    </div>
+	                            	</div>
+	                            <?php endif; ?>
 	                        </main>
 	                    </div>
 
