@@ -8,6 +8,9 @@ jQuery( document ).ready(function() {
     // Pricing
     dynamic_title_repeater_accordion('pricing_table', 'title');
 
+    // Contact
+    dynamic_title_repeater_accordion('contact_options', 'title');
+
 });
 
 function dynamic_title_repeater_accordion(repeater_name, field_name) {

@@ -72,7 +72,7 @@ BASE STYLES
     content: "";
 }
 
-.icon-linkedin-in:before {
+.icon-linkedin:before {
     content: "";
 }
 
@@ -128,7 +128,7 @@ BASE STYLES
     content: "";
 }
 
-.icon-arrow-down-1:before {
+.icon-arrow-down:before {
     content: "";
 }
 
@@ -144,7 +144,7 @@ BASE STYLES
     content: "";
 }
 
-.icon-arrow-left-1:before {
+.icon-arrow-left:before {
     content: "";
 }
 
@@ -164,7 +164,7 @@ BASE STYLES
     content: "";
 }
 
-.icon-arrow-right-1:before {
+.icon-arrow-right:before {
     content: "";
 }
 
@@ -3269,18 +3269,18 @@ CONTACT US PAGE STYLES
 }
 .contact-us__item:-webkit-any-link:hover .contact-us__item-text .read-more i {
     display: inline-block;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
 }
 .contact-us__item:-moz-any-link:hover .contact-us__item-text .read-more i {
     display: inline-block;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
 }
 .contact-us__item:any-link:hover .contact-us__item-text .read-more i {
     display: inline-block;
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
 }
 .contact-us__item.big:-webkit-any-link:hover .contact-us__item-text .read-more i {
     -webkit-transform: translate(0, 20%);
@@ -3388,8 +3388,107 @@ CONTACT US PAGE STYLES
     line-height: 32px;
     letter-spacing: -0.75px;
 }
-.follow-us-share__content-btn-group .btn:hover, .follow-us-share__content-btn-group .btn:focus {
-    background: #001179 !important;
+.follow-us-share__content-btn-group .btn.background-icon-facebook {
+    background: #4064AD;
+}
+.follow-us-share__content-btn-group .btn.background-icon-facebook:hover {
+    background: #324e88 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-gplus {
+    background: #DC4E41;
+}
+.follow-us-share__content-btn-group .btn.background-icon-gplus:hover {
+    background: #c63224 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-instagram {
+    background: #7D2CBD;
+}
+.follow-us-share__content-btn-group .btn.background-icon-instagram:hover {
+    background: #622294 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-linkedin {
+    background: #007AB9;
+}
+.follow-us-share__content-btn-group .btn.background-icon-linkedin:hover {
+    background: #005886 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-pinterest {
+    background: #EB274D;
+}
+.follow-us-share__content-btn-group .btn.background-icon-pinterest:hover {
+    background: #cc1337 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-qq {
+    background: #FEBF1B;
+}
+.follow-us-share__content-btn-group .btn.background-icon-qq:hover {
+    background: #e5a601 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-quora {
+    background: #b92b27;
+}
+.follow-us-share__content-btn-group .btn.background-icon-quora:hover {
+    background: #8f211e !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-reddit-alien {
+    background: #FF5600;
+}
+.follow-us-share__content-btn-group .btn.background-icon-reddit-alien:hover {
+    background: #cc4500 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-sina-weibo {
+    background: #E6162D;
+}
+.follow-us-share__content-btn-group .btn.background-icon-sina-weibo:hover {
+    background: #b71224 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-snapchat-ghost {
+    background: #FFFC00;
+}
+.follow-us-share__content-btn-group .btn.background-icon-snapchat-ghost:hover {
+    background: #ccca00 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-telegram {
+    background: #0088cc;
+}
+.follow-us-share__content-btn-group .btn.background-icon-telegram:hover {
+    background: #006699 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-twitter {
+    background: #1F9CEB;
+}
+.follow-us-share__content-btn-group .btn.background-icon-twitter:hover {
+    background: #1280c5 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-vkontakte {
+    background: #5181b8;
+}
+.follow-us-share__content-btn-group .btn.background-icon-vkontakte:hover {
+    background: #3e6898 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-wechat {
+    background: #7bb32e;
+}
+.follow-us-share__content-btn-group .btn.background-icon-wechat:hover {
+    background: #5f8a24 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-whatsapp {
+    background: #25D366;
+}
+.follow-us-share__content-btn-group .btn.background-icon-whatsapp:hover {
+    background: #1da851 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-youtube {
+    background: #FF0000;
+}
+.follow-us-share__content-btn-group .btn.background-icon-youtube:hover {
+    background: #cc0000 !important;
+}
+.follow-us-share__content-btn-group .btn.background-icon-twitch {
+    background: #9147FE;
+}
+.follow-us-share__content-btn-group .btn.background-icon-twitch:hover {
+    background: #7314fe !important;
 }
 
 /***********************************

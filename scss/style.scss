@@ -3393,7 +3393,7 @@ CONTACT US PAGE STYLES
 
 							i {
 								display: inline-block;
-								@include transform(translateX(100%));
+								@include transform(translateY(10px));
 							}
 						}
 					}
@@ -3539,8 +3539,15 @@ CONTACT US PAGE STYLES
 					}
 				}
 
-				&:hover, &:focus {
-					background: $primary !important;
+				@each $name, $color in $social-colors {
+
+					&.background-icon-#{$name} {
+						background: $color;
+
+						&:hover {
+							background: darken($color, 10%) !important;
+						}
+					}
 				}
 			}
 		}
