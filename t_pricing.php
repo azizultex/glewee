@@ -2,7 +2,7 @@
 /*
 Template Name: Pricing + Features
 */
-get_header( '', array( 'transparent' => true ) ); ?>
+get_header(); ?>
 	
 	<div id="primary" class="content-area">
 	    <div class="overlay"></div>

@@ -52,7 +52,7 @@ BASE STYLES
     content: "";
 }
 
-.icon-arrow-up-1:before {
+.icon-arrow-up:before {
     content: "";
 }
 
@@ -590,6 +590,111 @@ select:focus, textarea:hover, textarea:focus {
     line-height: 24px;
     letter-spacing: -0.45px;
 }
+.btn.follow .text .title i {
+    display: none;
+}
+.btn.follow.background-icon-facebook {
+    background: #4064AD;
+}
+.btn.follow.background-icon-facebook:hover {
+    background: #324e88 !important;
+}
+.btn.follow.background-icon-gplus {
+    background: #DC4E41;
+}
+.btn.follow.background-icon-gplus:hover {
+    background: #c63224 !important;
+}
+.btn.follow.background-icon-instagram {
+    background: #7D2CBD;
+}
+.btn.follow.background-icon-instagram:hover {
+    background: #622294 !important;
+}
+.btn.follow.background-icon-linkedin {
+    background: #007AB9;
+}
+.btn.follow.background-icon-linkedin:hover {
+    background: #005886 !important;
+}
+.btn.follow.background-icon-pinterest {
+    background: #EB274D;
+}
+.btn.follow.background-icon-pinterest:hover {
+    background: #cc1337 !important;
+}
+.btn.follow.background-icon-qq {
+    background: #FEBF1B;
+}
+.btn.follow.background-icon-qq:hover {
+    background: #e5a601 !important;
+}
+.btn.follow.background-icon-quora {
+    background: #b92b27;
+}
+.btn.follow.background-icon-quora:hover {
+    background: #8f211e !important;
+}
+.btn.follow.background-icon-reddit-alien {
+    background: #FF5600;
+}
+.btn.follow.background-icon-reddit-alien:hover {
+    background: #cc4500 !important;
+}
+.btn.follow.background-icon-sina-weibo {
+    background: #E6162D;
+}
+.btn.follow.background-icon-sina-weibo:hover {
+    background: #b71224 !important;
+}
+.btn.follow.background-icon-snapchat-ghost {
+    background: #FFFC00;
+}
+.btn.follow.background-icon-snapchat-ghost:hover {
+    background: #ccca00 !important;
+}
+.btn.follow.background-icon-telegram {
+    background: #0088cc;
+}
+.btn.follow.background-icon-telegram:hover {
+    background: #006699 !important;
+}
+.btn.follow.background-icon-twitter {
+    background: #1F9CEB;
+}
+.btn.follow.background-icon-twitter:hover {
+    background: #1280c5 !important;
+}
+.btn.follow.background-icon-vkontakte {
+    background: #5181b8;
+}
+.btn.follow.background-icon-vkontakte:hover {
+    background: #3e6898 !important;
+}
+.btn.follow.background-icon-wechat {
+    background: #7bb32e;
+}
+.btn.follow.background-icon-wechat:hover {
+    background: #5f8a24 !important;
+}
+.btn.follow.background-icon-whatsapp {
+    background: #25D366;
+}
+.btn.follow.background-icon-whatsapp:hover {
+    background: #1da851 !important;
+}
+.btn.follow.background-icon-youtube {
+    background: #FF0000;
+}
+.btn.follow.background-icon-youtube:hover {
+    background: #cc0000 !important;
+}
+.btn.follow.background-icon-twitch {
+    background: #9147FE;
+}
+.btn.follow.background-icon-twitch:hover {
+    background: #7314fe !important;
+}
 .btn.primary-color {
     color: #001179;
     background: #FFF;
@@ -714,6 +819,12 @@ select:focus, textarea:hover, textarea:focus {
 
 .default {
     padding: 50px 0;
+}
+
+.readmore {
+    overflow: hidden;
+    -webkit-transition: height 75ms;
+    transition: height 75ms;
 }
 
 /***********************************
@@ -1766,19 +1877,20 @@ BRANDS PAGE STYLES
 .mfp-move-from-top .mfp-iframe-scaler .mfp-close:hover, .mfp-move-from-top .mfp-iframe-scaler .mfp-close:focus {
     color: #7D8FFA;
 }
-
-.mfp-close {
-    top: -5%;
+.mfp-move-from-top .mfp-close {
     opacity: 1;
-    right: 15px;
-    width: auto;
-    height: auto;
     color: #001179;
     font-size: 18px;
-    line-height: 24px;
+    cursor: pointer;
+    line-height: 44px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    font-family: "glewee";
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
-.mfp-close:active {
-    top: -5%;
+.mfp-move-from-top .mfp-close:hover, .mfp-move-from-top .mfp-close:focus {
+    color: #7D8FFA;
 }
 
 .your-marketing {
@@ -3387,6 +3499,9 @@ CONTACT US PAGE STYLES
     font-size: 30px;
     line-height: 32px;
     letter-spacing: -0.75px;
+}
+.follow-us-share__content-btn-group .btn .text .title i {
+    display: none;
 }
 .follow-us-share__content-btn-group .btn.background-icon-facebook {
     background: #4064AD;

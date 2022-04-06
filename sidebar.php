@@ -12,7 +12,7 @@
 
             if ( $categories ) 
             {
-                $all_active = !is_category() ? ' class="active"' : '';
+                $all_active = is_home() ? ' class="active"' : '';
 
                 echo '<div class="widget">';
                     printf( '<h5 class="widget-title text-capitalize">%s</h5>', 'Categories' );

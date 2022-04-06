@@ -2,7 +2,7 @@
 /*
 Template Name: About
 */
-get_header( '', array( 'transparent' => true ) ); ?>
+get_header(); ?>
 	
 	<div id="primary" class="content-area">
 

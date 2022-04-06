@@ -218,6 +218,21 @@ select, textarea {
 				font-weight: 600;
 				line-height: 24px;
 				@include letter-spacing(-25, 18);
+
+				i {
+					display: none;
+				}
+			}
+		}
+
+		@each $name, $color in $social-colors {
+
+			&.background-icon-#{$name} {
+				background: $color;
+
+				&:hover {
+					background: darken($color, 10%) !important;
+				}
 			}
 		}
 	}
@@ -365,6 +380,11 @@ select, textarea {
 // Default CSS
 .default {
 	padding: 50px 0;
+}
+
+.readmore {
+	overflow: hidden;
+	@include transition(height 75ms);
 }
 
 /***********************************
@@ -1694,21 +1714,22 @@ BRANDS PAGE STYLES
 			}
 		}
 	}
-}
 
-.mfp-close {
-	top: -5%;
-    opacity: 1; 
-	right: 15px;
-    width: auto;
-    height: auto;
-    color: $primary; 
-    font-size: 18px; 
-    line-height: 24px;
+	.mfp-close {
+		opacity: 1;
+		color: $primary;
+		font-size: 18px;
+		cursor: pointer;
+		line-height: 44px;
+		padding-bottom: 20px;
+		text-transform: uppercase;
+		font-family: 'glewee';
+		@include transition(all 0.3s ease); 
 
-    &:active {
-	    top: -5%;
-	}  
+		&:hover, &:focus {
+			color: $secondary;
+		}
+	}
 }
 
 .your-marketing {
@@ -3536,6 +3557,10 @@ CONTACT US PAGE STYLES
 						font-size: 30px;
 						line-height: 32px;
 						@include letter-spacing(-25, 30);
+
+						i {
+							display: none;
+						}
 					}
 				}
 

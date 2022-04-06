@@ -67,7 +67,7 @@
         </div>
     </div><!-- /mobile-header -->
     
-    <header class="header<?php if ( $args['transparent'] ) echo ' transparent'; if ( $args['sticky'] ) echo ' sticky'; ?>">
+    <header class="header<?php if ( $args['transparent'] !== false ) echo ' transparent'; if ( $args['sticky'] ) echo ' sticky'; ?>">
         <nav class="navbar navbar-expand">
             <div class="container d-flex justify-content-between align-items-center">
                 <div class="navbar-header">
@@ -117,7 +117,7 @@
         </nav><!-- /nav -->
     </header><!-- /header -->
     <?php 
-        if ( !is_front_page() && !is_home() && !is_page_template( 't_about.php' ) ) 
+        if ( !is_front_page() && !is_home() && !is_page_template( 't_about.php' ) && !is_category() && !is_tag() ) 
         {
             echo '<div class="header-gutter"></div>';
         } 

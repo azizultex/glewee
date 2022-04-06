@@ -2,7 +2,7 @@
 /*
 Template Name: Careers
 */
-get_header( '', array( 'transparent' => true )  ); 
+get_header(); 
 	
 	$careers_content = get_field( 'careers_content' ); ?>
 

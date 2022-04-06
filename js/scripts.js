@@ -390,6 +390,7 @@
         midClick: true,
         fixedBgPos: true,
         removalDelay: 500,
+        closeBtnInside: false,
         fixedContentPos: true,
         tLoading: 'Loading image #%curr%...',
         image: {
@@ -409,7 +410,7 @@
               // this.contentContaine.append(this.arrowLeft.add(this.arrowRight));
             }
         },
-        closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close">Close</button>',
+        closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close"><i class="icon-xmark"></i></button>',
     });
 
     /*** how-works Slider */

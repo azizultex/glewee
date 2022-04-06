@@ -2,150 +2,96 @@
 /*
 Template Name: Try Glewee
 */
-get_header( '', array( 'transparent' => true ) ); ?>
+get_header(); ?>
 
 	<div id="primary" class="content-area">
 	    <div class="overlay"></div>
 	    
+	    <?php $try_content = get_field( 'try_content' ); if ( !empty( $try_content ) && array_filter( $try_content ) ): ?>
 	    <section class="try-glewee">
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-12">
-	                    <div class="try-glewee__content text-center">
-	                        <h1 class="title lg">Try Glewee</h1>
-	                        <div class="description">
-	                            <p>Fill out these few questions below to get started on your free demo request!</p>
-	                        </div>
-	                    </div> 
+	                	<?php
+	                		if ( $try_content['title'] || $try_content['description'] ) 
+	                		{
+	                			echo '<div class="try-glewee__content text-center">';
 
-	                    <div class="contact">
-	                        <div class="contact__text text-center">
-	                            <h3 class="title">Request a Demo</h3>
-	                            <div class="description">
-	                                <p>Send us a message, we look forward to speaking with you!</p>
-	                            </div>
-	                        </div>
+	                				if ( $try_content['title'] ) 
+	                				{
+	                					printf( '<h1 class="title lg">%s</h1>', $try_content['title'] );
+	                				}
+	                				else
+	                				{
+	                					printf( '<h1 class="title lg">%s</h1>', get_the_title() );
+	                				}
 
-	                        <div class="contact__form">
-	                            <?php echo do_shortcode('[gravityform id="2" title="false" description="false" tabindex="10" ajax="true"]'); ?>
-	                        </div>
-	                    </div>
+	                				if ( $try_content['description'] ) 
+	                				{
+	                					printf( '<div class="description">%s</div>', $try_content['description'] );
+	                				}
+
+	                			echo '</div>';
+	                		}
+
+	                		if ( $try_content['form_title'] || $try_content['form_description'] || $try_content['form_type'] ) 
+	                		{
+	                			echo '<div class="contact">';
+
+	                    		if ( $try_content['form_title'] || $try_content['form_description'] ) 
+	                    		{
+	                    			echo '<div class="contact__text text-center">';
+
+	                    				if ( $try_content['form_title'] ) 
+	                    				{
+	                    					printf( '<h3 class="title">%s</h3>', $try_content['form_title'] );
+	                    				}
+
+	                    				if ( $try_content['form_description'] ) 
+	                    				{
+	                    					printf( '<div class="description">%s</div>', $try_content['form_description'] );
+	                    				}
+
+	                    			echo '</div>';
+	                    		}
+
+	                    		if ( $try_content['form_type'] ) 
+	                    		{
+									echo '<div class="contact__form">';
+
+		                    		if ( $try_content['form_type'] == 'embed' && $try_content['embed_code'] ) 
+		                    		{
+		                    			printf('<div class="embed_code">%s</div>', $try_content['embed_code']);
+		                    		}
+		                    		elseif( $try_content['form_type'] == 'form' && $try_content['select_form'] )
+		                    		{
+		                    			echo do_shortcode('[gravityform id="'. $try_content['select_form']['id'] .'" title="false" description="false" tabindex="10" ajax="true"]');
+		                    		} 
+
+	                    			echo '</div>';
+	                    		}
+
+	                    		echo '</div>';
+	                		}
+	                	?>
 	                </div>
 	            </div>
 	        </div>
 	    </section><!-- /try-glewee -->
+	    <?php endif;
 
-	    <section class="trusted-brands pt-0">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-12">
-	                    <div class="trusted-brands__content text-center">
-	                        <h2 class="title">Trusted by a wide range of Brands</h2>
-	                        <div class="description">
-	                            <p>After years of working alongside Creators and Brands, it was clear that the industry had some holes in it.</p>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div> 
-	        </div>
+    	$brands_type = get_field( 'trusted_brands_type' );
 
-	        <div class="container-fluid pl-0 pr-0">
-	            <div class="row">
-	                <div class="col-12">
-	                    <div class="trusted-brands-slider-wrapper"> 
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-1.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-1.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-2.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-2.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-3.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-3.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-4.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-4.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-1.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-1.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-2.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-2.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-3.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-3.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-4.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-4.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </section><!-- /trusted-brands -->
-
+    	get_template_part( 
+    		'template-parts/content', 'brands', 
+    		array( 
+    			'class' => 'pt-0',
+    			'type' => $brands_type, 
+    			'id' => get_the_ID(),
+    		) 
+    	); 
+	    
+	    $ebook_offer = get_field( 'try_ebook_offer' ); if ( !empty( $ebook_offer ) && array_filter( $ebook_offer ) ): ?>
 	    <div class="container">
 	        <div class="row">
 	            <div class="col-12">
@@ -159,61 +105,56 @@ get_header( '', array( 'transparent' => true ) ); ?>
 	            <div class="row mb-60">
 	                <div class="col-12">
 	                    <div class="ebook-offer__item d-flex flex-xl-row flex-column align-items-center">
-	                        <div class="ebook-offer__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/ebook-offer.png" class="img-fluid" alt="">
-	                        </div>
-	                        <div class="ebook-offer__item-text">
-	                            <h4 class="title">Ebook Offer Goes Here</h4>
-	                            <div class="description">
-	                                <p>Join the Glewee Creator Community to maximize your social media career, enhance organization, track your statistics, and join new, exciting, campaigns.</p>
-	                            </div>
-	                            <a href="#" class="btn">Download Now</a>
-	                        </div>
+	                    	<?php
+	                    		$class = !$ebook_offer['image'] ? ' ml-0 fluid' : '';
+
+	                    		if ( $ebook_offer['image'] ) 
+	                    		{
+	                    			printf( '<div class="ebook-offer__item-media">
+			                            <img src="%s" class="img-fluid" alt="%s">
+			                        </div>', esc_url( $ebook_offer['image']['url'] ), $ebook_offer['image']['alt'] );
+	                    		}
+
+	                    		if ( $ebook_offer['title'] || $ebook_offer['content'] || $ebook_offer['button'] ) 
+	                    		{
+	                    			echo '<div class="ebook-offer__item-text'.$class.'">';
+
+	                    				if ( $ebook_offer['title'] ) 
+	                    				{
+	                    					printf( '<h4 class="title">%s</h4>', $ebook_offer['title'] );
+	                    				}
+
+	                    				if ( $ebook_offer['content'] ) 
+	                    				{
+	                    					printf( '<div class="description">%s</div>', $ebook_offer['content'] );
+	                    				}
+
+	                    				acfButton( $ebook_offer );
+
+	                    			echo '</div>';
+	                    		}
+	                    	?>
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
 	    </section><!-- /ebook-offer -->
+		<?php endif;
 
-	    <div class="container">
-	        <div class="row">
-	            <div class="col-12">
-	                <hr>
-	            </div>
-	        </div>
-	    </div>
+        $call_action = get_field( 'call_action', 'options' ); 
+        if ( $call_action ): ?>
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-12">
+		                <hr>
+		            </div>
+		        </div>
+		    </div>
 
-	    <section class="call-action">
-	        <div class="container">
-	            <div class="row mb-30">
-	                <div class="col-sm-6">
-	                    <a href="brands.html" class="call-action__item d-flex flex-column justify-content-between">
-	                        <div class="call-action__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/call-action.png" class="img-fluid" alt="">
-	                        </div>
-	                        <div class="call-action__item-text">
-	                            <h1 class="sub-title">Glewee</h1>
-	                            <h2 class="title">For Brands</h2>
-	                            <h6 class="link">Learn More <i class="icon-arrow-right-1"></i></h6>
-	                        </div>
-	                    </a>
-	                </div><!-- /call-action__item -->
-
-	                <div class="col-sm-6">
-	                    <a href="creators.html" class="call-action__item left-image d-flex flex-column justify-content-between">
-	                        <div class="call-action__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/call-action.png" class="img-fluid" alt="">
-	                        </div>
-	                        <div class="call-action__item-text">
-	                            <h1 class="sub-title">Glewee</h1>
-	                            <h2 class="title">For Creators</h2>
-	                            <h6 class="link">Learn More <i class="icon-arrow-right-1"></i></h6>
-	                        </div>
-	                    </a>
-	                </div><!-- /call-action__item -->
-	            </div>
-	        </div>
-	    </section><!-- /call-action -->
+	    	<?php 
+	    	get_template_part( 'template-parts/call', 'action' ); 
+			
+		endif; ?>
 
 	</div><!-- /content-area -->
 

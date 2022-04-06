@@ -2,7 +2,7 @@
 /*
 Template Name: Contact Us
 */
-get_header( '', array( 'transparent' => true ) ); ?>
+get_header(); ?>
 	
 	<div id="primary" class="content-area">
 	    <div class="overlay"></div>
@@ -199,9 +199,9 @@ get_header( '', array( 'transparent' => true ) ); ?>
 				                                </div>
 				                                <div class="text">
 				                                    <span class="sub-title">%s</span>
-				                                    <span class="title">Instagram</span>
+				                                    <span class="title">%s</span>
 				                                </div>
-				                            </a>', esc_url( $social['url'] ), $social['icon']['value'], $social['icon']['value'], $social['label'] );
+				                            </a>', esc_url( $social['url'] ), $social['icon']['value'], $social['icon']['value'], $social['label'], $social['icon']['label'] );
 	                    				}
 
 	                    			echo '</div>';

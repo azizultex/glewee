@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(  '', array( 'transparent' => false ) ); ?>
 	
 	<div id="primary" class="content-area">
 		

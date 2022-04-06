@@ -1,4 +1,4 @@
-<?php get_header( '', array( 'sticky' => true ) ); ?>
+<?php get_header( '', array( 'transparent' => false, 'sticky' => true ) ); ?>
 	
 	<div id="primary" class="content-area"> 
 

@@ -1,5 +1,9 @@
 jQuery( document ).ready(function() {
 
+    // Options
+    dynamic_title_repeater_accordion('footer_action_box', 'title');
+    dynamic_title_repeater_accordion('call_action', 'title');
+    
     // Careers
     dynamic_title_repeater_accordion('highlights', 'title');
     dynamic_title_repeater_accordion('jobs_group', 'name');
@@ -10,6 +14,10 @@ jQuery( document ).ready(function() {
 
     // Contact
     dynamic_title_repeater_accordion('contact_options', 'title');
+
+    // Customer Story
+    dynamic_title_repeater_accordion('gallery', 'creator');
+    dynamic_title_repeater_accordion('features', 'title');
 
 });
 

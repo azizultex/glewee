@@ -58,67 +58,96 @@
                     </div> 
                 </div> 
 
+                <?php $action_box = get_field( 'footer_action_box', 'options' ); if ( $action_box ): ?>
                 <div class="col-xl-6 col-lg-7">
                     <div class="row mb-30">
-                        <div class="col-sm-6">
-                            <a href="brands.html" class="footer__item">
-                                <div class="footer__item-media">
-                                    <img src="<?php echo get_theme_file_uri(); ?>/images/for-brands.png" class="img-fluid" alt="">
-                                </div>
-                                <div class="footer__item-text entry-title">
-                                    <h6 class="sub-title secondary">Glewee</h6>
-                                    <h5 class="title">For Brands</h5>
-                                </div>
-                            </a>
-                        </div>
+                        <?php
+                            foreach ( $action_box as $key => $box ) 
+                            {
+                                $style = $key % 2 ? ' small' : '';
+                                $column = count( $action_box ) > 1 ? 'col-sm-6' : 'col-sm-12';
+                                $link = $box['link'] ? 'href="'.esc_url( $box['link']['url'] ).'" target="'.$box['link']['target'].'"' : '';
 
-                        <div class="col-sm-6">
-                            <a href="creators.html" class="footer__item small">
-                                <div class="footer__item-media">
-                                    <img src="<?php echo get_theme_file_uri(); ?>/images/for-creators.png" class="img-fluid" alt="">
-                                </div>
-                                <div class="footer__item-text entry-title">
-                                    <h6 class="sub-title secondary">Glewee</h6>
-                                    <h5 class="title">For Creators</h5>
-                                </div>
-                            </a>
-                        </div>
+                                echo '<div class="'.$column.'">';
+                                    echo '<a '.$link.' class="footer__item'.$style.'">';
+
+                                        if ( $box['image'] ) 
+                                        {
+                                            printf( '<div class="footer__item-media">
+                                                <img src="%s" class="img-fluid" alt="%s">
+                                            </div>', esc_url( $box['image']['url'] ), $box['image']['alt'] );
+                                        }
+
+                                        if ( $box['sub_title'] || $box['title'] ) 
+                                        {
+                                            echo '<div class="footer__item-text entry-title">';
+
+                                                if ( $box['sub_title'] ) 
+                                                {
+                                                    printf( '<h6 class="sub-title secondary">%s</h6>', $box['sub_title'] );
+                                                }
+
+                                                if ( $box['title'] ) 
+                                                {
+                                                    printf( '<h5 class="title">%s</h5>', $box['title'] );
+                                                }
+                                            echo '</div>';
+                                        }
+                                    echo '</a>';
+                                echo '</div>';
+                            }
+                        ?>
                     </div>
                 </div>
+                <?php endif; ?>
             </div>  
 
             <div class="row">
                 <div class="offset-xl-2 col-xl-10"> 
                     <div class="footer-bottom d-flex align-items-center justify-content-between flex-wrap flex-sm-row flex-column">
-                        <div class="footer-bottom__btn-group">
-                            <a href="#" class="btn follow" style="background: #7558F2;">
-                                <div class="icon float-left">
-                                    <i class="icon-instagram"></i>
-                                </div>
-                                <div class="text">
-                                    <span class="sub-title">Follow us on</span>
-                                    <span class="title">Instagram</span>
-                                </div>
-                            </a>
+                        <?php
+                            $apps_store = get_field( 'apps_store', 'options' );
+                            $social_media = get_field( 'social_media', 'options' );
 
-                            <a href="#" class="btn follow" style="background: #286290;">
-                                <div class="icon float-left">
-                                    <i class="icon-linkedin-in"></i>
-                                </div>
-                                <div class="text">
-                                    <span class="sub-title">Follow us on</span>
-                                    <span class="title">LinkedIn</span>
-                                </div>
-                            </a>
-                        </div>
+                            if ( $social_media['social'] ) 
+                            {
+                                echo '<div class="footer-bottom__btn-group">';
 
-                        <div class="footer-bottom__btn-group">
-                            <a href="#" class="btn bg-white"><img src="<?php echo get_theme_file_uri(); ?>/images/app-store.png" class="img-fluid" alt=""></a>
-                            <a href="#" class="btn bg-white"><img src="<?php echo get_theme_file_uri(); ?>/images/google-play.png" class="img-fluid" alt=""></a>
-                        </div>
+                                    foreach ( $social_media['social'] as $social ) 
+                                    {
+                                        printf( '<a href="%s" class="btn follow background-%s" targe="_blank">
+                                            <div class="icon float-left">
+                                                <i class="%s"></i>
+                                            </div>
+                                            <div class="text">
+                                                <span class="sub-title">%s</span>
+                                                <span class="title">%s</span>
+                                            </div>
+                                        </a>', esc_url( $social['url'] ), $social['icon']['value'], $social['icon']['value'], $social['label'], $social['icon']['label']  );
+                                    }
 
-                        <div class="footer-bottom__privacy">
-                            <?php
+                                echo '</div>';
+                            }
+
+                            if ( !$apps_store['apple_store'] || $apps_store['google_play'] ) 
+                            {
+                                echo '<div class="footer-bottom__btn-group">';
+
+                                    if ( $apps_store['apple_store'] ) 
+                                    {
+                                        printf( '<a href="%s" class="btn bg-white" target="_blank"><img src="%s" class="img-fluid" alt="Apple Store"></a>', esc_url( $apps_store['apple_store'] ), esc_url( get_theme_file_uri( 'images/app-store.png' )) );
+                                    }
+
+                                    if ( $apps_store['google_play'] ) 
+                                    {
+                                        printf( '<a href="%s" class="btn bg-white" target="_blank"><img src="%s" class="img-fluid" alt="Apple Store"></a>', esc_url( $apps_store['google_play'] ), esc_url( get_theme_file_uri( 'images/google-play.png' )) );
+                                    }
+
+                                echo '</div>';
+                            }
+
+                            echo '<div class="footer-bottom__privacy">';
+
                                 wp_nav_menu( array(
                                     'menu'               => 'Privacy Menu',
                                     'theme_location'     => 'menu-5',
@@ -129,8 +158,9 @@
                                     'fallback_cb'        => 'wp_bootstrap_navwalker::fallback',
                                     'walker'             => new wp_bootstrap_navwalker(),
                                 ));
-                            ?>
-                        </div>
+
+                            echo '</div>';
+                        ?>
                     </div>
                 </div>
             </div>

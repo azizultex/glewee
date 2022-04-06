@@ -2,7 +2,7 @@
 /*
 Template Name: Home
 */
-get_header( '', array( 'transparent' => true ) ); ?>
+get_header(); ?>
 
 	<div class="banner">
 	    <div class="container"> 
@@ -579,45 +579,21 @@ get_header( '', array( 'transparent' => true ) ); ?>
 	        </div>
 	    </section><!-- /latest-news -->
 
-	    <div class="container">
-	        <div class="row">
-	            <div class="col-12">
-	                <hr>
-	            </div>
-	        </div>
-	    </div>
+        <?php 
+        	$call_action = get_field( 'call_action', 'options' ); if ( $call_action ): ?>
+    	    <div class="container">
+    	        <div class="row">
+    	            <div class="col-12">
+    	                <hr>
+    	            </div>
+    	        </div>
+    	    </div>
 
-	    <section class="call-action">
-	        <div class="container">
-	            <div class="row mb-30">
-	                <div class="col-sm-6">
-	                    <a href="brands.html" class="call-action__item d-flex flex-column justify-content-between">
-	                        <div class="call-action__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/call-action.png" class="img-fluid" alt="">
-	                        </div>
-	                        <div class="call-action__item-text">
-	                            <h1 class="sub-title">Glewee</h1>
-	                            <h2 class="title">For Brands</h2>
-	                            <h6 class="link">Learn More <i class="icon-arrow-right-1"></i></h6>
-	                        </div>
-	                    </a>
-	                </div><!-- /call-action__item -->
-
-	                <div class="col-sm-6">
-	                    <a href="creators.html" class="call-action__item left-image d-flex flex-column justify-content-between">
-	                        <div class="call-action__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/call-action.png" class="img-fluid" alt="">
-	                        </div>
-	                        <div class="call-action__item-text">
-	                            <h1 class="sub-title">Glewee</h1>
-	                            <h2 class="title">For Creators</h2>
-	                            <h6 class="link">Learn More <i class="icon-arrow-right-1"></i></h6>
-	                        </div>
-	                    </a>
-	                </div><!-- /call-action__item -->
-	            </div>
-	        </div>
-	    </section><!-- /call-action -->
+    	    <?php
+    	    get_template_part( 'template-parts/call', 'action' ); 
+    		
+    		endif; 
+    	?>
 
 	</div><!-- /content-area -->
 
