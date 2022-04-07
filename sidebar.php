@@ -30,101 +30,123 @@
 
                     echo '</ul>';
                 echo '</div>';
-            } 
+            }
+
+            // Start Recommended Widget
+            $rc_args = array(
+                'order'=> 'DESC',
+                'posts_per_page' => 3,
+                'meta_key' => 'my_post_viewed',
+                'orderby' => 'meta_value_num',
+            );
+
+            $recommended_query = new WP_Query( $rc_args );
+
+            if ( $recommended_query->have_posts() ):
+                echo '<div class="widget widget__recommended">';
+                    echo '<h4 class="widget-title">Recommended Reading</h4>';
+
+                    echo '<div class="row mb-30">';
+
+                        while ( $recommended_query->have_posts() ): $recommended_query->the_post(); 
+                            echo '<div class="col-xl-12 col-md-4 col-sm-6">';
+
+                                get_template_part( 'template-parts/content', 'post', array( 'sidebar_recommended' => true ) ); 
+                            
+                            echo '</div>';
+                        endwhile;
+
+                    echo '</div>';
+                echo '</div>';
+            endif; wp_reset_query();
+
+            $action_box = get_field( 'footer_action_box', 'options' );
+            $blog_call_action = get_field( 'blog_call_action', get_option('page_for_posts') );
+
+            if ( !empty( $blog_call_action ) && array_filter( $blog_call_action ) || $action_box ) 
+            {
+                echo '<div class="widget">';
+                    echo '<h5 class="widget-title text-capitalize">Try these!</h5>';
+
+                    echo '<div class="row mb-30">';
+
+                        foreach ( $action_box as $key => $box ) 
+                        {
+                            $style = $key % 2 ? ' small' : '';
+                            $link = $box['link'] ? 'href="'.esc_url( $box['link']['url'] ).'" target="'.$box['link']['target'].'"' : '';
+
+                            echo '<div class="col-xl-12 col-sm-6">';
+                                echo '<a '.$link.' class="footer__item'.$style.'" style="background: linear-gradient(135deg, #fff7fc 0%, #edf0ff 49.75%, #f8feff 100%);">';
+
+                                    if ( $box['image'] ) 
+                                    {
+                                        printf( '<div class="footer__item-media">
+                                            <img src="%s" class="img-fluid" alt="%s">
+                                        </div>', esc_url( $box['image']['url'] ), $box['image']['alt'] );
+                                    }
+
+                                    if ( $box['sub_title'] || $box['title'] ) 
+                                    {
+                                        echo '<div class="footer__item-text entry-title">';
+
+                                            if ( $box['sub_title'] ) 
+                                            {
+                                                printf( '<h6 class="sub-title secondary">%s</h6>', $box['sub_title'] );
+                                            }
+
+                                            if ( $box['title'] ) 
+                                            {
+                                                printf( '<h5 class="title">%s</h5>', $box['title'] );
+                                            }
+                                        echo '</div>';
+                                    }
+                                echo '</a>';
+                            echo '</div>';
+                        }
+
+                        if ( $blog_call_action['image'] || $blog_call_action['title'] || $blog_call_action['description'] ) 
+                        {
+                            $link = $blog_call_action['link'] ? 'href="'.esc_url( $blog_call_action['link']['url'] ).'" target="'.$blog_call_action['link']['target'].'"' : '';
+
+                            echo '<div class="col-xl-12 col-sm-6">';
+                                echo '<a '.$link.' class="footer__item footer__item-demo" style="background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);">';
+
+                                    if ( $blog_call_action['image'] ) 
+                                    {
+                                        printf( '<div class="footer__item-media">
+                                            <img src="%s" class="img-fluid" alt="%s">
+                                        </div>', esc_url( $blog_call_action['image']['url'] ), $blog_call_action['image']['alt'] );
+                                    }
+
+                                    if ( $blog_call_action['title'] || $blog_call_action['description'] ) 
+                                    {
+                                        echo '<div class="footer__item-text entry-title">';
+
+                                            if ( $blog_call_action['title'] ) 
+                                            {
+                                                printf( '<h6 class="title secondary">%s</h6>', $blog_call_action['title'] );
+                                            }
+
+                                            if ( $blog_call_action['description'] ) 
+                                            {
+                                                printf( '%s', $blog_call_action['description'] );                                                
+                                            }
+
+                                            if ( $link ) 
+                                            {
+                                                echo '<span class="link"><i class="icon-arrow-right"></i></span>';
+                                            }
+
+                                        echo '</div>';
+                                    }
+
+                                echo '</a>';
+                            echo '</div>';
+                        }
+
+                    echo '</div>';
+                echo '</div>';
+            }
         ?>
-
-        <div class="widget widget__recommended">
-            <h5 class="widget-title text-capitalize">Recommended Reading</h5>
-
-            <div class="row mb-30">
-                <div class="col-xl-12 col-md-4 col-sm-6">
-                    <article class="blog-post d-flex flex-column blog-post-sm">
-                        <div class="media float-left">
-                            <a href="blog-details.html">
-                                <img src="<?php echo get_theme_file_uri(); ?>/images/recommended-post-1.jpg" class="img-fluid" alt="">
-                            </a> 
-                        </div>
-
-                        <div class="text">
-                            <a href="#" class="date">NOVEMBER 19, 2021</a>
-                            <a href="#"><h5 class="title">The Best Branded Twitter Moments from Instagram’s Day Offline</h5></a>
-                        </div>
-                    </article>
-                </div> 
-
-                <div class="col-xl-12 col-md-4 col-sm-6">
-                    <article class="blog-post d-flex flex-column blog-post-sm">
-                        <div class="media float-left">
-                            <a href="blog-details.html">
-                                <img src="<?php echo get_theme_file_uri(); ?>/images/recommended-post-1.jpg" class="img-fluid" alt="">
-                            </a> 
-                        </div>
-
-                        <div class="text">
-                            <a href="#" class="date">NOVEMBER 19, 2021</a>
-                            <a href="#"><h5 class="title">The Best Branded Twitter Moments from Instagram’s Day Offline</h5></a>
-                        </div>
-                    </article>
-                </div> 
-
-                <div class="col-xl-12 col-md-4 col-sm-6">
-                    <article class="blog-post d-flex flex-column blog-post-sm">
-                        <div class="media float-left">
-                            <a href="blog-details.html">
-                                <img src="<?php echo get_theme_file_uri(); ?>/images/recommended-post-1.jpg" class="img-fluid" alt="">
-                            </a> 
-                        </div>
-
-                        <div class="text">
-                            <a href="#" class="date">NOVEMBER 19, 2021</a>
-                            <a href="#"><h5 class="title">The Best Branded Twitter Moments from Instagram’s Day Offline</h5></a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-
-        <div class="widget">
-            <h5 class="widget-title text-capitalize">Try these!</h5>
-
-            <div class="row mb-30">
-                <div class="col-xl-12 col-sm-6">
-                    <a href="brands.html" class="footer__item" style="background: linear-gradient(135deg, #fff7fc 0%, #edf0ff 49.75%, #f8feff 100%);">
-                        <div class="footer__item-media">
-                            <img src="<?php echo get_theme_file_uri(); ?>/images/for-brands.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="footer__item-text entry-title">
-                            <h6 class="sub-title secondary">Glewee</h6>
-                            <h5 class="title">For Brands</h5>
-                        </div>
-                    </a> 
-                </div>
-
-                <div class="col-xl-12 col-sm-6">
-                    <a href="creators.html" class="footer__item small" style="background: linear-gradient(135deg, #fff7fc 0%, #edf0ff 49.75%, #f8feff 100%);">
-                        <div class="footer__item-media">
-                            <img src="<?php echo get_theme_file_uri(); ?>/images/for-creators.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="footer__item-text entry-title">
-                            <h6 class="sub-title secondary">Glewee</h6>
-                            <h5 class="title">For Creators</h5>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-xl-12 col-sm-6">
-                    <a href="#" class="footer__item footer__item-demo" style="background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);">
-                        <div class="footer__item-media">
-                            <img src="<?php echo get_theme_file_uri(); ?>/images/call-action.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="footer__item-text entry-title">
-                            <h6 class="title secondary">Request a Demo</h6>
-                            <p>Book a live demo and unlock Creator Marketing today.</p>
-                            <span class="link"><i class="icon-arrow-right-1"></i></span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
     </aside>
 </div>

@@ -11,7 +11,7 @@ else
 }
 
 if ( $trusted_brands['title'] || $trusted_brands['description'] || $trusted_brands['brands'] ): ?>
-<section class="trusted-brands <?php echo $class; ?>">
+<section class="<?php echo $class; ?>">
     <?php if ( $trusted_brands['title'] || $trusted_brands['description'] ): ?>
     <div class="container">
         <div class="row">

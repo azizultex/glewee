@@ -2233,6 +2233,20 @@ BLOG PAGE STYLES
 			}
 		}
 	}
+
+	.content-full {
+
+		.blog-post {
+
+			.text {
+				max-width: 100%;
+
+				p {
+					max-width: 100%;
+				}
+			}
+		}
+	}
 }
 
 .search-bar {

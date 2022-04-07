@@ -1,143 +1,177 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+
+$latest_news = get_field( 'latest_news', get_option('page_for_posts') ); ?>
 
 	<div id="primary" class="content-area"> 
 
 	    <div class="blog-page-wraper">
 	        <div class="container"> 
 	            <div class="blog-page-wraper__overly">
-	                <img src="<?php echo get_theme_file_uri(); ?>/images/blog-page-ball-all.png" alt="">
+	                <img src="<?php echo get_theme_file_uri( 'images/blog-page-ball-all.png' ); ?>" alt="Blog">
 	            </div> 
 	        </div>
 
-	        <section class="featured-blog-posts">
+	        <section class="featured-blog-posts<?php if ( $latest_news['disable_latest_news'] ) echo ' pb-0'; ?>">
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-12">
-	                        <div class="entry-title"> 
-	                            <h1 class="title lg">The Latest News </h1>
-	                            <div class="description lg">
-	                                <p>Read through the latest news regarding all things Glewee, Creators, and Brands…</p>
-	                            </div>
-	                        </div>
+	                    	<?php
+	                    		echo '<div class="entry-title">';
 
-	                        <article class="blog-post d-flex align-items-center featured-blog">
-	                            <div class="media float-left">
-	                                <a href="blog-details.html">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/latest-news-post-1.png" class="img-fluid" alt="">
-	                                </a> 
-	                            </div>
+	                    			if ( $latest_news['title'] ) 
+	                    			{
+	                    				printf( '<h1 class="title lg">%s</h1>', $latest_news['title'] );
+	                    			}
+	                    			else
+	                    			{
+	                    				printf( '<h1 class="title lg">%s</h1>', get_the_title( get_option('page_for_posts') ) );
+	                    			}
 
-	                            <div class="text">
-	                                <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                <a href="#"><h5 class="title">Glewee is Now Available on iOS and Android!</h5></a>
-	                                <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With…</p>
-	                            </div>
-	                        </article>
+	                    			if ( $latest_news['description'] ) 
+	                    			{
+	                    				printf( '<div class="description lg">%s</div>', $latest_news['description'] );
+	                    			}
+
+	                    		echo '</div>';
+
+                    			$args = array(
+                    				'post_type' => 'post',
+                    				'posts_per_page' => 1,
+                    			);
+
+                    			$latest_posts_query = new WP_Query( $args );
+
+                    			if ( !$latest_news['disable_latest_news'] && $latest_posts_query->have_posts() ):
+	                    			
+	                    			while ( $latest_posts_query->have_posts() ): $latest_posts_query->the_post();
+	                    				
+	                    				get_template_part( 'template-parts/content', 'post', array( 'latest' => true ) );
+
+	                    			endwhile;
+
+	                    		endif;
+	                    	?>
 	                    </div>
 	                </div>
 	            </div>
 	        </section><!-- /featured-blog-posts -->
 	        
+	        <?php $recommended_reading = get_field( 'recommended_reading', get_option('page_for_posts') ); if ( !empty( $recommended_reading ) && array_filter( $recommended_reading ) ): ?>
 	        <section class="recommended-blog-posts pt-0">
 	            <div class="container">
+	            	<?php if ( $recommended_reading['title'] || $recommended_reading['description'] ): ?>
 	                <div class="row">
 	                    <div class="col-12">
 	                        <div class="entry-title"> 
-	                            <h2 class="title">Recommended Reading</h2>
-	                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</p>
+	                        	<?php
+	                        		if ( $recommended_reading['title'] ) 
+	                        		{
+	                        			printf( '<h2 class="title">%s</h2>', $recommended_reading['title'] );
+	                        		}
+
+	                        		if ( $recommended_reading['description'] ) 
+	                        		{
+	                        			printf( '%s', $recommended_reading['description'] );
+	                        		}
+	                        	?>
 	                        </div>
 	                    </div>
 	                </div>
+	                <?php endif;
 
+	                if ( $recommended_reading['type'] == 'custom' ) 
+	                {
+	                	$left_args = array(
+	                		'post_type' => 'post',
+	                		'posts_per_page' => 2,
+	                		'orderby' => 'post__in',
+	                		'post__in' => $recommended_reading['select_posts'],
+	                	);
+
+	                	$right_args = array(
+	                		'post_type' => 'post',
+	                		'posts_per_page' => 5,
+	                		'orderby' => 'post__in',
+	                		'post__in' => $recommended_reading['select_posts'],
+	                	);
+	                }
+	                elseif ( $recommended_reading['type'] == 'featured' ) 
+	                {
+	                	$left_args = array(
+	                		'post_type' => 'post',
+	                		'meta_value' => 'yes',
+	                		'posts_per_page' => 2,
+	                		'meta_key' => '_is_ns_featured_post', 
+	                	);
+
+	                	$right_args = array(
+	                		'offset' => 1,
+	                		'post_type' => 'post',
+	                		'meta_value' => 'yes',
+	                		'posts_per_page' => 5,
+	                		'meta_key' => '_is_ns_featured_post', 
+	                	);
+	                }
+	                else
+	                {
+	                	$left_args = array(
+	                		'posts_per_page' => 2,
+	                		'meta_key' => 'my_post_viewed',
+	                		'orderby' => 'meta_value_num',
+	                	);
+
+	                	$right_args = array(
+	                		'posts_per_page' => 5,
+	                		'meta_key' => 'my_post_viewed',
+	                		'orderby' => 'meta_value_num',
+	                	);
+	                }
+
+	                $counter = 1;
+	                $recommended_left_posts_query = new WP_Query( $left_args );
+	                $recommended_right_posts_query = new WP_Query( $right_args );
+
+	                if ( $recommended_left_posts_query->have_posts() || $recommended_right_posts_query->have_posts() ): ?>
 	                <div class="row mb-30">
+	                	<?php if ( $recommended_left_posts_query->have_posts() ): ?>
 	                    <div class="col-xl-6">
 	                        <div class="row">
-	                            <div class="col-xl-12">
-	                                <article class="blog-post d-flex align-items-center">
-	                                    <div class="media float-left">
-	                                        <a href="blog-details.html">
-	                                            <img src="<?php echo get_theme_file_uri(); ?>/images/recommended-post-1.jpg" class="img-fluid" alt="">
-	                                        </a> 
-	                                    </div>
+	                        	<?php
+	                        		while ( $recommended_left_posts_query->have_posts() ): $recommended_left_posts_query->the_post();
+	                        			echo '<div class="col-xl-12">';
 
-	                                    <div class="text">
-	                                        <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                        <a href="#"><h5 class="title">The Best Branded Twitter Moments from Instagram’s Day Offline</h5></a>
-	                                        <p>On Monday, October 4th the internet experienced a whirlwind blackout from the headquarters of social media…</p>
-	                                    </div>
-	                                </article>
-	                            </div>
+	                        				get_template_part( 'template-parts/content', 'post' );
 
-	                             <div class="col-xl-12">
-	                                <article class="blog-post d-flex align-items-center">
-	                                    <div class="media float-left">
-	                                        <a href="blog-details.html">
-	                                            <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-1.jpg" class="img-fluid" alt="">
-	                                        </a> 
-	                                    </div>
-
-	                                    <div class="text">
-	                                        <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                        <a href="#"><h5 class="title">Glewee is Now Available on iOS and Android!</h5></a>
-	                                        <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With...</p>
-	                                    </div>
-	                                </article>
-	                            </div>
+	                        			echo '</div>';
+	                        		endwhile;
+	                        	?>
 	                        </div>
 	                    </div>
+	                	<?php endif; 
 
+	                	if ( $recommended_right_posts_query->have_posts() ): ?>
 	                    <div class="col-xl-6">
 	                        <div class="row">
-	                            <div class="col-xl-12 col-lg-6">
-	                                <article class="blog-post d-flex align-items-center blog-post-md">
-	                                    <div class="media float-left">
-	                                        <a href="blog-details.html">
-	                                            <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-7.jpg" class="img-fluid" alt="">
-	                                        </a> 
-	                                    </div>
+	                        	<?php
+	                        		while ( $recommended_right_posts_query->have_posts() ): $recommended_right_posts_query->the_post();
+	                        			if ( $counter !== 1 && $counter !== 2 ) 
+	                        			{
+		                        			echo '<div class="col-xl-12 col-lg-6">';
 
-	                                    <div class="text">
-	                                        <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                        <a href="#"><h5 class="title">The Best Branded Twitter Moments from Instagram’s Day Offline</h5></a>
-	                                        <p>On Monday, October 4th the internet experienced a whirlwind blackout from the...</p>
-	                                    </div>
-	                                </article>
-	                            </div>
+		                        				get_template_part( 'template-parts/content', 'post', array( 'recommended' => true ) );
 
-	                            <div class="col-xl-12 col-lg-6">
-	                                <article class="blog-post d-flex align-items-center blog-post-md">
-	                                    <div class="media float-left">
-	                                        <a href="blog-details.html">
-	                                            <img src="<?php echo get_theme_file_uri(); ?>/images/blog-post-4.jpg" class="img-fluid" alt="">
-	                                        </a> 
-	                                    </div>
+		                        			echo '</div>';
+	                        			}
 
-	                                    <div class="text">
-	                                        <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                        <a href="#"><h5 class="title">The Best Branded Twitter Moments from Instagram’s Day Offline</h5></a>
-	                                        <p>On Monday, October 4th the internet experienced a whirlwind blackout from the...</p>
-	                                    </div>
-	                                </article>
-	                            </div>
-
-	                            <div class="col-xl-12 col-lg-6">
-	                                <article class="blog-post d-flex align-items-center blog-post-md">
-	                                    <div class="media float-left">
-	                                        <a href="blog-details.html">
-	                                            <img src="<?php echo get_theme_file_uri(); ?>/images/recommended-post-2.jpg" class="img-fluid" alt="">
-	                                        </a> 
-	                                    </div>
-
-	                                    <div class="text">
-	                                        <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                                        <a href="#"><h5 class="title">The Best Branded Twitter Moments from Instagram’s Day Offline</h5></a>
-	                                        <p>On Monday, October 4th the internet experienced a whirlwind blackout from the...</p>
-	                                    </div>
-	                                </article>
-	                            </div> 
+	                        			$counter++;
+	                        		endwhile;
+	                        	?> 
 	                        </div>
 	                    </div>
+	                    <?php endif; ?>
 	                </div>
+	                <?php endif; ?>
 	            </div>
 	        </section><!-- /recommended-blog-posts -->
 
@@ -148,14 +182,15 @@
 	                </div>
 	            </div>
 	        </div>
+	        <?php endif; ?>
 
 	        <section class="search-bar">
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-12">
-	                       <form action="" class="search-bar__form">
+	                       <form action="<?php echo esc_url( home_url( '/' ) ); ?>" class="search-bar__form" method="get">
 	                            <div class="form-group">
-	                                <input type="search" name="s" value="" placeholder="Search the Blog">
+	                                <input type="search" name="s" value="<?php echo get_search_query(); ?>" placeholder="Search the Blog">
 	                                <button type="submit"><i class="icon-search"></i></button>
 	                            </div>
 	                        </form>

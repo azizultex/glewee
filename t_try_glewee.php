@@ -85,7 +85,7 @@ get_header(); ?>
     	get_template_part( 
     		'template-parts/content', 'brands', 
     		array( 
-    			'class' => 'pt-0',
+    			'class' => 'trusted-brands pt-0',
     			'type' => $brands_type, 
     			'id' => get_the_ID(),
     		) 

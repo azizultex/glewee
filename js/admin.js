@@ -19,6 +19,10 @@ jQuery( document ).ready(function() {
     dynamic_title_repeater_accordion('gallery', 'creator');
     dynamic_title_repeater_accordion('features', 'title');
 
+    // Home
+    dynamic_title_repeater_accordion('explore_more', 'title');
+    dynamic_title_repeater_accordion('how_works', 'title');
+
 });
 
 function dynamic_title_repeater_accordion(repeater_name, field_name) {

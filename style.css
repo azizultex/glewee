@@ -2307,6 +2307,12 @@ BLOG PAGE STYLES
 .recommended-blog-posts .blog-post .text p {
     max-width: 289px;
 }
+.recommended-blog-posts .content-full .blog-post .text {
+    max-width: 100%;
+}
+.recommended-blog-posts .content-full .blog-post .text p {
+    max-width: 100%;
+}
 
 .search-bar {
     padding: 60px 0 140px;
@@ -8518,9 +8524,6 @@ MEDIA QUERIES
 
     .for-brands {
         padding: 40px 0;
-    }
-    .for-brands__item {
-        margin-bottom: 30px;
     }
     .for-brands__content .title {
         font-size: 35px;

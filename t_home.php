@@ -2,154 +2,94 @@
 /*
 Template Name: Home
 */
-get_header(); ?>
+get_header(); 
+	
+	$banner = get_field( 'home_banner' ); 
+	$apps_store = get_field( 'apps_store', 'options' ); ?>
 
 	<div class="banner">
 	    <div class="container"> 
 	        <div class="row">
 	            <div class="col-md-6 col-sm-7">
 	                <div class="banner__content">
-	                    <div class="banner__content-btn-group white animated fadeInUp">
-	                        <a href="#" class="btn bg-white"><img src="<?php echo get_theme_file_uri(); ?>/images/app-store.png" class="img-fluid" alt=""></a>
-	                        <a href="#" class="btn bg-white"><img src="<?php echo get_theme_file_uri(); ?>/images/google-play.png" class="img-fluid" alt=""></a>
-	                    </div>
+	                	<?php
+	                		if ( !$apps_store['apple_store'] || $apps_store['google_play'] ) 
+	                		{
+	                		    echo '<div class="banner__content-btn-group white animated fadeInUp">';
 
-	                    <div class="animated fadeInUp delay-2s">
-	                        <h1 class="title lg">Connect. laborate. Create.</h1>
-	                        <p>We Glewee is the premiere platform for Brands and Creators to execute paid social media Campaigns in <i>real time…</i> together.</p>
-	                    </div>
+	                		        if ( $apps_store['apple_store'] ) 
+	                		        {
+	                		            printf( '<a href="%s" class="btn bg-white" target="_blank"><img src="%s" class="img-fluid" alt="Apple Store"></a>', esc_url( $apps_store['apple_store'] ), esc_url( get_theme_file_uri( 'images/app-store.png' )) );
+	                		        }
 
-	                    <div class="banner__content-btn-group">
-	                        <a href="#" class="btn animated fadeInUp delay-3s">Book a Demo</a>
+	                		        if ( $apps_store['google_play'] ) 
+	                		        {
+	                		            printf( '<a href="%s" class="btn bg-white" target="_blank"><img src="%s" class="img-fluid" alt="Apple Store"></a>', esc_url( $apps_store['google_play'] ), esc_url( get_theme_file_uri( 'images/google-play.png' )) );
+	                		        }
 
-	                        <button class="scrollDown animated fadeInUp delay-4s" data-space="0">
-	                            <i class="icon-arrow-down"></i> 
-	                        </button>
-	                    </div>
+	                		    echo '</div>';
+	                		}
+
+	                		echo '<div class="animated fadeInUp delay-2s">';
+
+	                			if ( $banner['title'] ) 
+	                			{
+	                				printf( '<h1 class="title lg">%s</h1>', $banner['title'] );
+	                			}
+	                			else
+	                			{
+	                				printf( '<h1 class="title lg">%s</h1>', get_bloginfo( 'name' ) );
+	                			}
+
+	                			if ( $banner['description'] ) 
+	                			{
+	                				printf( '<div class="description">%s</div>', $banner['description'] );
+	                			}
+	                			else
+	                			{
+	                				printf( '<div class="description">%s</div>', get_bloginfo( 'description' ) );
+	                			}
+
+	                		echo '</div>';
+
+	                		echo '<div class="banner__content-btn-group">';
+
+	                			acfButton( $banner, 'animated fadeInUp delay-3s' );
+
+	                			echo '<button class="scrollDown animated fadeInUp delay-4s" data-space="0">
+		                            <i class="icon-arrow-down"></i> 
+		                        </button>';
+
+	                		echo '</div>';
+	                	?>
 	                </div>
 	            </div>
 
+	            <?php if ( $banner['image'] ): ?>
 	            <div class="col-md-6 col-sm-5">
 	                <div class="banner__media">
-	                    <img src="<?php echo get_theme_file_uri(); ?>/images/home-banner.svg" class="img-fluid" alt="">
+	                	<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $banner['image']['url'] ), $banner['image']['alt'] ); ?>
 	                </div>
 	            </div>
+	            <?php endif; ?>
 	        </div>
 	    </div>
 	</div><!-- /banner -->
 	
 	<div id="primary" class="content-area">  
 
-	    <section class="home-trusted-brands">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-12">
-	                    <div class="trusted-brands__content text-center">
-	                        <h2 class="title">Trusted by a wide range of Brands</h2>
-	                        <div class="description">
-	                            <p>After years of working alongside Creators and Brands, it was clear that the industry had some holes in it.</p>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div> 
-	        </div>
+		<?php
+			$brands_type = get_field( 'trusted_brands_type' );
 
-	        <div class="container-fluid pl-0 pr-0">
-	            <div class="row">
-	                <div class="col-12">
-	                    <div class="trusted-brands-slider-wrapper"> 
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-1.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-1.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-2.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-2.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-3.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-3.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-4.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-4.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-1.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-1.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-2.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-2.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-3.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-3.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="slider-item">
-	                            <a href="#" class="trusted-brands__item">
-	                                <div class="trusted-brands__item-media">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-4.png" class="img-fluid" alt="">
-	                                </div>
-	                                <div class="trusted-brands__item-client-logo">
-	                                    <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-4.png" class="img-fluid" alt="">
-	                                </div>
-	                            </a>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </section><!-- /home-trusted-brands -->
+			get_template_part( 
+				'template-parts/content', 'brands', 
+				array( 
+					'class' => 'home-trusted-brands',
+					'type' => $brands_type, 
+					'id' => get_the_ID(),
+				) 
+			); 
+		?>
 
 	    <div class="container">
 	        <div class="row">
@@ -159,84 +99,123 @@ get_header(); ?>
 	        </div>
 	    </div>
 
+	    <?php $explore_more = get_field( 'explore_more' ); if ( $explore_more ): ?>
 	    <section class="for-brands">
-	        <div class="container">  
-	            <div class="for-brands__item">
-	                <div class="row align-items-center flex-lg-row flex-column-reverse">
-	                    <div class="col-lg-4">
+	        <div class="container"> 
+	        	<?php foreach ( $explore_more as $key => $explore ): ?>
+	            <div class="for-brands__item<?php echo $key % 2 ? ' creators' : ''; ?>">
+	                <div class="row align-items-center flex-column-reverse<?php echo $key % 2 ? ' flex-lg-row-reverse' : ' flex-lg-row'; ?>">
+	                	<?php if ( $explore['sub_title'] || $explore['title'] || $explore['small_title'] || $explore['description'] || $explore['button']['text'] ): ?>
+	                    <div class="<?php echo $explore['image'] ? 'col-lg-4' : 'col-lg-12 fluid' ?>">
 	                        <div class="for-brands__content"> 
-	                            <h3 class="h2 transparent-text">Glewee</h3>
-	                            <h2 class="title h1">For Brands</h2>
-	                            <h5 class="color-black sub-title font-prox">Grow Your Brand Awareness with a New Marketing Channel</h5>
-	                            <p>Tap into Glewee’s pre-vetted Creator Community to deploy social media personalities for your next marketing campaign.</p>
+	                        	<?php
+	                        		if ( $explore['sub_title'] ) 
+	                        		{
+	                        			printf( '<h3 class="h2 transparent-text">%s</h3>', $explore['sub_title'] );
+	                        		}
 
-	                            <a href="#" class="btn">Explore More</a>
+	                        		if ( $explore['title'] ) 
+	                        		{
+	                        			printf( '<h2 class="title h1">%s</h2>', $explore['title'] );
+	                        		}
+
+	                        		if ( $explore['small_title'] ) 
+	                        		{
+	                        			printf( '<h5 class="color-black sub-title font-prox">%s</h5>', $explore['small_title'] );
+	                        		}
+
+	                        		if ( $explore['description'] ) 
+	                        		{
+	                        			printf( '%s', $explore['description'] );
+	                        		}
+
+	                        		acfButton( $explore );
+	                        	?>
 	                        </div>
 	                    </div>
+	                	<?php endif;
 
+	                    if ( $explore['image'] ): ?>
 	                    <div class="col-lg-8">
 	                        <div class="for-brands__media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/brand-awareness.svg" class="img-fluid" alt="">
+	                        	<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $explore['image']['url'] ), $explore['image']['alt'] ); ?>
 	                        </div>
 	                    </div>
+	                    <?php endif; ?>
 	                </div>
 	            </div>
-
-	            <div class="for-brands__item creators">
-	                <div class="row align-items-center flex-lg-row-reverse flex-column-reverse">
-	                    <div class="col-lg-4">
-	                        <div class="for-brands__content"> 
-	                            <h3 class="h2 transparent-text">Glewee</h3>
-	                            <h2 class="title h1">For Creators</h2>
-	                            <h5 class="color-black sub-title font-prox">Join Glewee’s Pre-Vetted Creator Community Today</h5>
-	                            <p>Collaborate with Brands that fit your personal identity. Create engaging content that your viewers will love. Monetize your following!</p>
-
-	                            <a href="#" class="btn">Explore More</a>
-	                        </div>
-	                    </div>
-
-	                    <div class="col-lg-8">
-	                        <div class="for-brands__media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/join-community.png" class="img-fluid" alt="">
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
+	            <?php endforeach; ?>
 	        </div>
-	    </section><!-- /for-brands --> 
+	    </section><!-- /for-brands -->
+	    <?php endif;
 
+	    $request_demo = get_field( 'request_demo' ); if ( !empty( $request_demo ) && array_filter( $request_demo ) ): ?>
 	    <section class="request-demo pt-0">
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-12">
-	                    <div class="request-demo__content">
-	                         <div class="request-demo__media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/request-demo.png" class="img-fluid" alt="">
-	                        </div>
-	                        
-	                        <div class="request-demo__text">
-	                            <h2 class="title">Request a Demo</h2>
-	                            <h5 class="sub-title">Let’s Start Building Campaigns</h5>
-	                            <p>Tired of getting no response from influencers online? Book a live demo and unlock Creator Marketing today.</p>
+	                    <div class="request-demo__content<?php echo $request_demo['image'] ? '' : ' fluid'; ?>">
+	                    	<?php
+	                    		if ( $request_demo['image'] ) 
+	                    		{
+	                    			printf( '<div class="request-demo__media">
+			                            <img src="%s" class="img-fluid" alt="%s">
+			                        </div>', esc_url( $request_demo['image']['url'] ), $request_demo['image']['alt'] );
+	                    		}
 
-	                            <a href="#" class="btn primary-color">Request a Demo</a>
-	                        </div>
+	                    		if ( $request_demo['title'] || $request_demo['sub_title'] || $request_demo['description'] || $request_demo['button'] ) 
+	                    		{
+	                    			echo '<div class="request-demo__text">';
+
+	                    				if ( $request_demo['title'] ) 
+	                    				{
+	                    					printf( '<h2 class="title">%s</h2>', $request_demo['title'] );
+	                    				}
+
+	                    				if ( $request_demo['sub_title'] ) 
+	                    				{
+	                    					printf( '<h5 class="sub-title">%s</h5>', $request_demo['sub_title'] );
+	                    				}
+
+	                    				if ( $request_demo['description'] ) 
+	                    				{
+	                    					printf( '%s', $request_demo['description'] );
+	                    				}
+
+	                    				acfButton( $request_demo, 'primary-color' );
+
+	                    			echo '</div>';
+	                    		}
+	                    	?>
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
 	    </section><!-- /request-demo -->
+	    <?php endif;
 
+	    $why_glewee = get_field( 'why_glewee' ); if ( !empty( $why_glewee ) && array_filter( $why_glewee ) ): ?>
 	    <section class="why-glewee">
 	        <div class="container">
+	        	<?php if ( $why_glewee['title'] || $why_glewee['sub_title'] ): ?>
 	            <div class="row">
 	                <div class="col-12">
 	                    <div class="why-glewee__content">
-	                        <h2 class="title h1 lg">Why <i>Glewee?</i></h2>
-	                        <span class="sub-title h2">We empower <span>Brands</span> and <span>Creators</span> to collaborate on social campaigns.</span>
+	                    	<?php
+	                    		if ( $why_glewee['title'] ) 
+	                    		{
+	                    			printf( '<h2 class="title h1 lg">%s</h2>', $why_glewee['title'] );
+	                    		}
+
+	                    		if ( $why_glewee['sub_title'] ) 
+	                    		{
+	                    			printf( '<h2 class="sub-title">%s</h2>', $why_glewee['sub_title'] );
+	                    		}
+	                    	?>
 	                    </div>
 	                </div>
 	            </div>
+	            <?php endif; ?>
 
 	            <div class="row mb-30">
 	                <div class="col-xl-7 col-lg-6">
@@ -320,116 +299,69 @@ get_header(); ?>
 	            </div>
 	        </div>
 	    </section><!-- /why-glewee -->
+		<?php endif;
 
+		$how_works = get_field( 'how_works' ); if ( !empty( $how_works ) && array_filter( $how_works ) ): ?>
 	    <div class="how-works home">
 	        <div class="container">
+	        	<?php if ( $how_works['sub_title'] || $how_works['title'] ): ?>
 	            <div class="row">
 	                <div class="col-12">
 	                    <div class="how-works__content">
 	                        <div class="how-works__content-text">
-	                            <h3 class="title h2">How it works</h3> 
-	                            <h2 class="main-title color-secondary h1 lg">For Brands</h2>
+	                        	<?php
+	                        		if ( $how_works['sub_title'] ) 
+	                        		{
+	                        			printf( '<h3 class="title h2">%s</h3> ', $how_works['sub_title'] );
+	                        		}
+
+	                        		if ( $how_works['title'] ) 
+	                        		{
+	                        			printf( '<h2 class="main-title color-secondary h1 lg">%s</h2>', $how_works['title'] );
+	                        		}
+	                        	?>
 	                        </div> 
 	                    </div>
 	                </div>
 	            </div>
+	            <?php endif; ?>
 
+	            <?php if ( $how_works['how_works'] ): ?>
 	            <div class="row how-works-slider">
-	                <div class="slider-item" data-title="Create">
+	            	<?php foreach ( $how_works['how_works'] as $how ): ?>
+	                <div class="slider-item" data-title="<?php echo $how['nav']; ?>">
 	                    <div class="how-works__item d-flex align-items-center flex-row"> 
+	                    	<?php if ( $how['title'] || $how['sub_title'] || $how['description'] || $how['button']['text'] ): ?>
 	                        <div class="how-works__item-text float-left">
-	                            <h2 class="title">Create a Campaign</h2> 
-	                            <h6 class="sub-title">Our Glewee wizard helps you create a lazer-focused campaign</h6>
-	                            <p>Get started by setting up a campaign (public or private) and our guided template will help you create campaign-specific parameters along the way.</p>
+	                        	<?php
+	                        		if ( $how['title'] ) 
+	                        		{
+	                        			printf( '<h2 class="title">%s</h2>', $how['title'] );
+	                        		}
 
-	                            <a href="#" class="btn">Launch a Campaign</a>
+	                        		if ( $how['sub_title'] ) 
+	                        		{
+	                        			printf( '<h6 class="sub-title">%s</h6>', $how['sub_title'] );
+	                        		}
+
+	                        		if ( $how['description'] ) 
+	                        		{
+	                        			printf( '%s', $how['description'] );
+	                        		}
+
+	                        		acfButton( $how );
+	                        	?>
 	                        </div>
+	                    	<?php endif;
 
+	                        if ( $how['image'] ): ?>
 	                        <div class="how-works__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/how-work-item-1.png" class="img-fluid" alt="">
+	                        	<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $how['image']['url'] ), $how['image']['alt'] ); ?>
 	                        </div> 
-	                    </div>
-	                </div>  
-
-	                <div class="slider-item" data-title="Discover">
-	                    <div class="how-works__item d-flex align-items-center flex-row"> 
-	                        <div class="how-works__item-text float-left">
-	                            <h2 class="title">Discover Creators</h2> 
-	                            <h6 class="sub-title">Pre-vetted creators are filtered through to see who qualifies</h6>
-	                            <p>Get started by setting up a campaign (public or private) and our guided template will help you create campaign-specific parameters along the way.</p>
-
-	                            <a href="#" class="btn">Discover Creators</a>
-	                        </div>
-
-	                        <div class="how-works__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/how-work-item-2.png" class="img-fluid" alt="">
-	                        </div> 
-	                    </div>
-	                </div> 
-
-	                <div class="slider-item" data-title="Engage">
-	                    <div class="how-works__item d-flex align-items-center flex-row"> 
-	                        <div class="how-works__item-text float-left">
-	                            <h2 class="title">Create a Campaign</h2> 
-	                            <h6 class="sub-title">Our Glewee wizard helps you create a lazer-focused campaign</h6>
-	                            <p>Get started by setting up a campaign (public or private) and our guided template will help you create campaign-specific parameters along the way.</p>
-
-	                            <a href="#" class="btn">Request a Demo</a>
-	                        </div>
-
-	                        <div class="how-works__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/how-work-item-2.png" class="img-fluid" alt="">
-	                        </div> 
+	                        <?php endif; ?>
 	                    </div>
 	                </div> 
-
-	                <div class="slider-item" data-title="Collaborate">
-	                    <div class="how-works__item d-flex align-items-center flex-row"> 
-	                        <div class="how-works__item-text float-left">
-	                            <h2 class="title">Discover Creators</h2> 
-	                            <h6 class="sub-title">Pre-vetted creators are filtered through to see who qualifies</h6>
-	                            <p>Get started by setting up a campaign (public or private) and our guided template will help you create campaign-specific parameters along the way.</p>
-
-	                            <a href="#" class="btn">Discover Creators</a>
-	                        </div>
-
-	                        <div class="how-works__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/how-work-item-2.png" class="img-fluid" alt="">
-	                        </div> 
-	                    </div>
-	                </div> 
-
-	                <div class="slider-item" data-title="Publish">
-	                    <div class="how-works__item d-flex align-items-center flex-row"> 
-	                        <div class="how-works__item-text float-left">
-	                            <h2 class="title">Create a Campaign</h2> 
-	                            <h6 class="sub-title">Our Glewee wizard helps you create a lazer-focused campaign</h6>
-	                            <p>Get started by setting up a campaign (public or private) and our guided template will help you create campaign-specific parameters along the way.</p>
-
-	                            <a href="#" class="btn">Request a Demo</a>
-	                        </div>
-
-	                        <div class="how-works__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/how-work-item-2.png" class="img-fluid" alt="">
-	                        </div> 
-	                    </div>
-	                </div>
-
-	                <div class="slider-item" data-title="Analyze">
-	                    <div class="how-works__item d-flex align-items-center flex-row"> 
-	                        <div class="how-works__item-text float-left">
-	                            <h2 class="title">Discover Creators</h2> 
-	                            <h6 class="sub-title">Pre-vetted creators are filtered through to see who qualifies</h6>
-	                            <p>Get started by setting up a campaign (public or private) and our guided template will help you create campaign-specific parameters along the way.</p>
-
-	                            <a href="#" class="btn">Discover Creators</a>
-	                        </div>
-
-	                        <div class="how-works__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/how-work-item-2.png" class="img-fluid" alt="">
-	                        </div> 
-	                    </div>
-	                </div> 
+	            	<?php endforeach; ?>
 	            </div>
 
 	            <div class="row">
@@ -439,6 +371,7 @@ get_header(); ?>
 	                    </div>
 	                </div>
 	            </div>
+	            <?php endif; ?>
 	        </div>
 	    </div><!-- /how-works -->
 
@@ -449,138 +382,211 @@ get_header(); ?>
 	            </div>
 	        </div>
 	    </div>
+	    <?php endif;
 
+	    $our_network = get_field( 'our_network' ); if ( !empty( $our_network ) && array_filter( $our_network ) ): ?>
 	    <section class="our-network home">
 	        <div class="container">
 	            <div class="row">
+	            	<?php if ( $our_network['title'] || $our_network['sub_title'] ): ?>
 	                <div class="col-lg-6">
 	                    <div class="our-network__content">
-	                        <h2 class="title color-secondary">Our Network is your network.</h2>
-	                        <h3 class="sub-title h2">We are the data driven, collaborative, and intuitive change-makers in the Brand & Creator space.</h3>
+	                    	<?php
+	                    		if ( $our_network['title'] ) 
+	                    		{
+	                    			printf( '<h2 class="title color-secondary">%s</h2>', $our_network['title'] );
+	                    		}
+
+	                    		if ( $our_network['sub_title'] ) 
+	                    		{
+	                    			printf( '<h3 class="sub-title h2">%s</h3>', $our_network['sub_title'] );
+	                    		}
+	                    	?>
 	                    </div>
 	                </div>
+	                <?php endif;
 
+	                if ( $our_network['features'] ): ?>
 	                <div class="col-lg-6">
-	                    <div class="our-network__item">
-	                        <h4 class="title"><span class="counter">100</span>+ Brands</h4>
-	                        <p>Join the Glewee Brand Community actively launching campaigns for our Creators to participate in. Look no further for your next Brand Advocate Team!</p>
-	                        <a href="#" class="read-more">Apply as a Brand <i class="icon-arrow-right-1"></i></a>
-	                    </div><!-- /our-network__item -->
+	                	<?php
+	                		foreach ( $our_network['features'] as $feature ) 
+	                		{
+	                			echo '<div class="our-network__item">';
 
-	                    <div class="our-network__item">
-	                        <h4 class="title"><span class="counter">1500</span>+ Creators</h4>
-	                        <p>Join the Glewee Creator Community to maximize your social media career, enhance organization, track your statistics, and join new campaigns. </p>
-	                        <a href="#" class="read-more">Apply as a Creator <i class="icon-arrow-right-1"></i></a>
-	                    </div><!-- /our-network__item -->
+	                				if ( $feature['title'] ) 
+	                				{
+	                					printf( '<h4 class="title">%s</h4>', $feature['title'] );
+	                				}
 
-	                    <div class="our-network__item">
-	                        <h4 class="title"><span class="counter">325</span>M Followers</h4>
-	                        <p>Our Creators have massed over 325,000,000+ followers across all of their platforms. Join Glewee to gain access to their already-built-out networks!</p>
-	                        <a href="#" class="read-more">Discover Glewee<i class="icon-arrow-right-1"></i></a>
-	                    </div><!-- /our-network__item -->
+	                				if ( $feature['description'] ) 
+	                				{
+	                					printf( '%s', $feature['description'] );
+	                				}
+
+	                				if ( $feature['link'] ) 
+	                				{
+	                					printf( '<a href="%s" class="read-more" target="%s">%s <i class="icon-arrow-right"></i></a>', $feature['link']['url'], $feature['link']['target'], $feature['link']['title'] );
+	                				}
+	                			echo '</div>';
+	                		}
+	                	?>
 	                </div>
+	                <?php endif; ?>
 	            </div>
 	        </div>
 	    </section><!-- /our-network -->
+	    <?php endif;
 
+	    $pricing_features = get_field( 'pricing_features' ); if ( !empty( $pricing_features ) && array_filter( $pricing_features ) ): ?>
 	    <section class="request-demo pt-0 pb-0">
 	        <div class="container">
 	            <div class="row"> 
 	                <div class="col-12">
-	                    <div class="request-demo__content pricing-text-white">
-	                        <div class="request-demo__media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/request-demo.png" class="img-fluid" alt="">
-	                        </div>
+	                    <div class="request-demo__content pricing-text-white<?php echo $pricing_features['image'] ? '' : ' fluid'; ?>">
+	                    	<?php
+	                    		if ( $pricing_features['image'] ) 
+	                    		{
+	                    			printf( '<div class="request-demo__media">
+			                            <img src="%s" class="img-fluid" alt="%s">
+			                        </div>', esc_url( $pricing_features['image']['url'] ), $pricing_features['image']['alt'] );
+	                    		}
 
-	                        <div class="request-demo__text">
-	                            <h2 class="title">Pricing & Features</h2>
-	                            <h5 class="sub-title">Spoiler Alert: It’s free.</h5>
-	                            <p>We’re not like all those other platforms that offer “14 million” data scraped emails for $2,000 a month. Apply for a Glewee Brand account for free today.</p>
+	                    		if ( $pricing_features['title'] || $pricing_features['sub_title'] || $pricing_features['description'] || $pricing_features['button'] ) 
+	                    		{
+	                    			echo '<div class="request-demo__text">';
 
-	                            <a href="#" class="btn primary-color">View Pricing & Features</a>
-	                        </div>
+	                    				if ( $pricing_features['title'] ) 
+	                    				{
+	                    					printf( '<h2 class="title">%s</h2>', $pricing_features['title'] );
+	                    				}
+
+	                    				if ( $pricing_features['sub_title'] ) 
+	                    				{
+	                    					printf( '<h5 class="sub-title">%s</h5>', $pricing_features['sub_title'] );
+	                    				}
+
+	                    				if ( $pricing_features['description'] ) 
+	                    				{
+	                    					printf( '%s', $pricing_features['description'] );
+	                    				}
+
+	                    				acfButton( $pricing_features, 'primary-color' );
+
+	                    			echo '</div>';
+	                    		}
+	                    	?>
 	                    </div>
 	                </div>
 	            </div>
 	        </div>
 	    </section><!-- /request-demo -->
+	    <?php endif;
 
+	    $latest_news = get_field( 'latest_news' ); if ( !empty( $latest_news ) && array_filter( $latest_news ) ): ?>
 	    <section class="latest-news">
 	        <div class="container">
+	        	<?php if ( $latest_news['title'] ): ?>
 	            <div class="row">
 	                <div class="col-12">
 	                    <div class="latest-news__content">
-	                        <h1 class="title lg">The Latest News</h1>
+	                    	<?php
+	                    		if ( $latest_news['title'] ) 
+	                    		{
+	                    			printf( '<h2 class="title h1 lg">%s</h2>', $latest_news['title'] );
+	                    		}
+	                    	?>
 	                    </div>
 	                </div>
 	            </div>
+	        	<?php endif;
 
+	        	if ( $latest_news['type'] == 'custom' ) 
+	        	{
+	        		$args = array(
+	        			'post_type' => 'post',
+	        			'posts_per_page' => 3,
+	        			'orderby' => 'post__in',
+	        			'post__in' => $latest_news['select_posts'],
+	        		);
+	        	}
+	        	elseif ( $latest_news['type'] == 'featured' ) 
+	        	{
+	        		$args = array(
+	        			'post_type' => 'post',
+	        			'meta_value' => 'yes',
+	        			'posts_per_page' => 3,
+	        			'meta_key' => '_is_ns_featured_post', 
+	        		);
+	        	}
+	        	else
+	        	{
+	        		$args = array(
+	        			'posts_per_page' => 3,
+	        			'meta_key' => 'my_post_viewed',
+	        			'orderby' => 'meta_value_num',
+	        		);
+	        	}
+
+	        	$counter = 1;
+	        	$latest_posts_query = new WP_Query( $args );
+
+	        	if ( $latest_posts_query->have_posts() ): ?>
 	            <div class="row mb-30 js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": ".column" }'>
-	                <div class="col-xl-6 item">
-	                    <article class="blog-post blog-post-latest d-flex align-items-center font-size-30">
-	                        <div class="media float-left">
-	                            <a href="blog-details.html">
-	                                <img src="<?php echo get_theme_file_uri(); ?>/images/latest-news-post-3.jpg" class="img-fluid" alt="">
-	                            </a> 
-	                        </div>
+	            	<?php
+            			while ( $latest_posts_query->have_posts() ): $latest_posts_query->the_post();
+            				echo '<div class="col-xl-6 item">';
 
-	                        <div class="text">
-	                            <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                            <a href="#"><h5 class="title">Via Yahoo Finance: Glewee Launches First Free-To-Use Invite-Only Marketplace To Connect Marketers and Creators!</h5></a>
-	                            <p>Recently, Glewee has featured in Yahoo Finance. As we are very excited to share the news, we wnated to allow all our users to...</p>
-	                        </div>
-	                    </article> 
-	                </div>
+            					if ( $counter == 1 ) 
+            					{
+            						get_template_part( 'template-parts/content', 'post', array( 'home_latest' => true ) );
+            					}
+            					else
+            					{
+            						get_template_part( 'template-parts/content', 'post', array( 'home_latest_small' => true ) );
+            					}
 
-	                <div class="col-xl-6 item">
-	                    <article class="blog-post d-flex align-items-center font-size-30">
-	                        <div class="media float-left">
-	                            <a href="blog-details.html">
-	                                <img src="<?php echo get_theme_file_uri(); ?>/images/latest-news-post-2.jpg" class="img-fluid" alt="">
-	                            </a> 
-	                        </div>
+            				echo '</div>';
 
-	                        <div class="text">
-	                            <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                            <a href="#"><h5 class="title">The Best Branded Twitter Moments from Instagram’s Day Offline</h5></a>
-	                            <p>On Monday, October 4th the internet experienced a whirlwind blackout from the headquarters of social media…</p>
-	                        </div>
-	                    </article> 
-	                </div>
+            				$counter++;
+            			endwhile;
 
-	                <div class="col-xl-6 item">
-	                    <article class="blog-post d-flex align-items-center font-size-30">
-	                        <div class="media float-left">
-	                            <a href="blog-details.html">
-	                                <img src="<?php echo get_theme_file_uri(); ?>/images/latest-news-post-1.png" class="img-fluid" alt="">
-	                            </a> 
-	                        </div>
+            			wp_reset_query();
 
-	                        <div class="text">
-	                            <a href="#" class="date">NOVEMBER 19, 2021</a>
-	                            <a href="#"><h5 class="title">Glewee is Now Available on iOS and Android!</h5></a>
-	                            <p>After months of development, growth, and many, many, iterations of idea boards - Glewee is now formally live on web, iOS, and Android! With...</p>
-	                        </div>
-	                    </article> 
-	                </div>
+            			if ( $latest_news['call_action']['sub_title'] || $latest_news['call_action']['title'] || $latest_news['call_action']['link'] ) 
+            			{
+            				$link = $latest_news['call_action']['link'] ? 'href="'.esc_url( $latest_news['call_action']['link']['url'] ).'" target="'.$latest_news['call_action']['link']['target'].'"' : '';
 
-	                <div class="col-xl-6 item">
-	                    <a href="#" class="blog-post d-flex align-items-center blog-post-latest-xl"> 
-	                        <div class="text">
-	                            <span class="date">Join the Glewee Newsletter</span>
-	                            <h4 class="title">The Trend Report Newsletter</h4> 
-	                            <div class="sub-title">Subscribe <i class="icon-arrow-right-1"></i></div>
-	                        </div>
-	                    </a>
-	                </div>
+            				echo '<div class="col-xl-6 item">';
+            					echo '<a '.$link.' class="blog-post d-flex align-items-center blog-post-latest-xl">';
+            						echo '<div class="text">';
 
+            							if ( $latest_news['call_action']['sub_title'] ) 
+            							{
+            								printf( '<span class="date">%s</span>', $latest_news['call_action']['sub_title'] );
+            							}
+
+            							if ( $latest_news['call_action']['title'] ) 
+            							{
+            								printf( '<h4 class="title">%s</h4> ', $latest_news['call_action']['title'] );
+            							}
+
+            							if ( $latest_news['call_action']['link'] ) 
+            							{
+            								printf( '<div class="sub-title">%s <i class="icon-arrow-right"></i></div>', $latest_news['call_action']['link']['title'] );
+            							}
+            						echo '</div>';
+            					echo '</a>';
+            				echo '</div>';
+            			}
+	            	?>
 	                <div class="col-xl-6 column"></div>
 	            </div>
+	            <?php endif; ?>
 	        </div>
 	    </section><!-- /latest-news -->
-
-        <?php 
-        	$call_action = get_field( 'call_action', 'options' ); if ( $call_action ): ?>
+		<?php endif;
+ 
+        $call_action = get_field( 'call_action', 'options' ); if ( $call_action ): ?>
     	    <div class="container">
     	        <div class="row">
     	            <div class="col-12">

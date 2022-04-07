@@ -1,4 +1,6 @@
 <?php
+$latest = $args['latest'] ? ' align-items-center featured-blog' : ( $args['recommended'] ? ' align-items-center blog-post-md' : ( $args['sidebar_recommended'] ? ' align-items-start flex-column blog-post-sm' : ( $args['home_latest'] ? ' blog-post-latest align-items-center font-size-30' : ( $args['home_latest_small'] ? ' align-items-center font-size-30' : ' align-items-center' ))));
+
 $categories = get_the_category( get_the_ID() );
 
 $cpost_link = get_field( 'custom_link' );
@@ -6,14 +8,21 @@ $cpost_link_target = $cpost_link['type'] == 'external' && !$cpost_link['target']
 $cpost_link_url = $cpost_link['type'] == 'internal' && !empty( $cpost_link['internal_url'] ) ? $cpost_link['internal_url'] : ( $cpost_link['type'] == 'external' && !empty( $cpost_link['external_url'] ) ? $cpost_link['external_url'] : get_the_permalink() );	
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post d-flex align-items-center' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'blog-post d-flex'.$latest ); ?>>
 	<?php
 		echo '<div class="media float-left">';
 			echo '<a href="'.esc_url( $cpost_link_url ).'" target="'.$cpost_link_target.'">';
 
 				if ( has_post_thumbnail() ) 
 				{
-					the_post_thumbnail( 'post_thumb', array( 'class' => 'img-fluid' ) );
+					if ( $args['latest'] ) 
+					{
+						the_post_thumbnail( 'post_large', array( 'class' => 'img-fluid' ) );
+					}
+					else
+					{
+						the_post_thumbnail( 'post_thumb', array( 'class' => 'img-fluid' ) );
+					}
 				}
 				else
 				{
@@ -22,7 +31,7 @@ $cpost_link_url = $cpost_link['type'] == 'internal' && !empty( $cpost_link['inte
 
 			echo '</a>';
 
-			if ( $categories ) 
+			if ( !$args['sidebar_recommended'] && $args['home_latest'] && $args['home_latest_small'] && $categories ) 
 			{
 				echo '<ul class="categories list-inline">';
 
@@ -43,11 +52,18 @@ $cpost_link_url = $cpost_link['type'] == 'internal' && !empty( $cpost_link['inte
 
 			echo '<a href="'.esc_url( $cpost_link_url ).'" target="'.$cpost_link_target.'">';
 
-				the_title( '<h4 class="title">', '</h4>' );
+				if ( $args['home_latest'] || $args['home_latest_small'] ) 
+				{
+					the_title( '<h5 class="title">', '</h5>' );
+				}
+				else
+				{
+					the_title( '<h4 class="title">', '</h4>' );
+				}
 
 			echo '</a>';
 
-			if ( has_excerpt() ) 
+			if ( !$args['sidebar_recommended'] && has_excerpt() ) 
 			{
 				echo '<div class="excerpt">';
 

@@ -117,7 +117,7 @@
         </nav><!-- /nav -->
     </header><!-- /header -->
     <?php 
-        if ( !is_front_page() && !is_home() && !is_page_template( 't_about.php' ) && !is_category() && !is_tag() ) 
+        if ( !is_front_page() && !is_home() && !is_page_template( 't_about.php' ) && !is_category() && !is_tag() && !is_search() ) 
         {
             echo '<div class="header-gutter"></div>';
         } 
