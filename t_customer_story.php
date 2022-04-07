@@ -129,50 +129,6 @@ get_header(); ?>
 	                    			echo '</div>';
 	                    		}
 	                    	?>
-	                        <!-- <div class="col-12">
-	                            <div class="story-post border big" style="background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);">  
-	                                <div class="text d-flex flex-column justify-content-between">
-	                                    <h6 class="sub-title">Total Impressions Generated from the Campaign</h6>
-	                                    <h1 class="title"><span class="counter d-block">412,555</span></h1>
-	                                </div> 
-	                            </div>
-	                        </div>
-
-	                        <div class="col-sm-6">
-	                            <a class="story-post text-primary" style="background: linear-gradient(135deg, #fff7fc 0%, #edf0ff 49.75%, #f8feff 100%);">  
-	                                <div class="text d-flex flex-column justify-content-between">
-	                                    <h6 class="sub-title">Campaign Timeline</h6>
-	                                    <h3 class="title"><span class="counter d-block">30</span> Days</h3> 
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="col-sm-6">
-	                            <a class="story-post border" style="background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);">  
-	                                <div class="text d-flex flex-column justify-content-between">
-	                                    <h6 class="sub-title">Total Number of Creators</h6>
-	                                    <h3 class="title"><span class="counter d-block">20</span> Creators</h3> 
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="col-sm-6">
-	                            <a class="story-post border" style="background: #001179">  
-	                                <div class="text d-flex flex-column justify-content-between">
-	                                    <h6 class="sub-title">Primary Social Media Utilized</h6>
-	                                    <h3 class="title">Instagram + TikTok</h3> 
-	                                </div>
-	                            </a>
-	                        </div>
-
-	                        <div class="col-sm-6">
-	                            <a class="story-post text-primary" style="background: linear-gradient(135deg, #fff7fc 0%, #edf0ff 49.75%, #f8feff 100%);">  
-	                                <div class="text d-flex flex-column justify-content-between">
-	                                    <h6 class="sub-title">Total # Social Media Posts</h6>
-	                                    <h3 class="title"><span class="counter d-block">40</span> Posts</h3> 
-	                                </div>
-	                            </a>
-	                        </div> -->
 	                    </div>
 	                </div>
 	                <?php endif; ?>
