@@ -23,6 +23,11 @@ jQuery( document ).ready(function() {
     dynamic_title_repeater_accordion('explore_more', 'title');
     dynamic_title_repeater_accordion('how_works', 'title');
 
+    // About
+    dynamic_title_repeater_accordion('tabs', 'title');
+    dynamic_title_repeater_accordion('creators', 'name');
+    dynamic_title_repeater_accordion('campaigns', 'title');
+
 });
 
 function dynamic_title_repeater_accordion(repeater_name, field_name) {

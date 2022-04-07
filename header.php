@@ -63,6 +63,22 @@
                         'walker'             => new wp_bootstrap_navwalker(),
                     ));
                 ?>
+
+                <ul class="navbar-nav">
+                    <?php
+                        $buttons = get_field( 'buttons', 'options' );
+
+                        if ( $buttons ) 
+                        { 
+                            foreach ( $buttons as $key => $button ) 
+                            {
+                                $style = $key % 2 ? ' border-pink' : ' border-green';
+
+                                printf( '<li class="btn-menu%s"><a href="%s" target="%s">%s</a></li>', $style, esc_url( $button['button']['url'] ), $button['button']['target'], $button['button']['title'] );
+                            }                                
+                        }
+                    ?>
+                </ul>
             </div>
         </div>
     </div><!-- /mobile-header -->
@@ -102,8 +118,17 @@
                     ?>
 
                     <ul class="navbar-nav navbar-right">
-                        <li class="btn-menu border-green"><a href="#">Login</a></li>   
-                        <li class="btn-menu border-pink"><a href="#">Apply</a></li>   
+                        <?php
+                            if ( $buttons ) 
+                            { 
+                                foreach ( $buttons as $key => $button ) 
+                                {
+                                    $style = $key % 2 ? ' border-pink' : ' border-green';
+
+                                    printf( '<li class="btn-menu%s"><a href="%s" target="%s">%s</a></li>', $style, esc_url( $button['button']['url'] ), $button['button']['target'], $button['button']['title'] );
+                                }                                
+                            }
+                        ?> 
                         <li class="mobile-navbar-toggler">
                             <button class="navbar-toggle" type="button">
                                 <span class="icon-bar"><span class="inner"></span></span>

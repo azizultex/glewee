@@ -13,647 +13,392 @@ get_header(); ?>
 	            </div>
 	        </div>
 
+			<?php $about_content = get_field( 'about_content' ); if ( !empty( $about_content ) && array_filter( $about_content ) ): ?>
 	        <section class="banner about-glewee">
 	            <div class="container"> 
-	                <div class="about-glewee__media">
-	                    <img src="<?php echo get_theme_file_uri(); ?>/images/about-glewee.png" alt="">
-	                </div> 
+            	<?php 
+            		if ( $about_content['image'] ) 
+            		{
+            			printf( '<div class="about-glewee__media">
+		                    <img src="%s" alt="%s">
+		                </div>', esc_url( $about_content['image']['url'] ), $about_content['image']['alt'] );
+            		}
 
+	            	if ( $about_content['title'] || $about_content['description'] || $about_content['sub_title'] ): ?>
 	                <div class="row">
 	                    <div class="col-12">
 	                        <div class="banner__content entry-title">
-	                            <h1 class="title lg">About Glewee</h1>
-	                            <p>Glewee is the first free to use application-based creator platform</p>
-	                            <h4 class="sub-title">We are the data driven, collaborative, and intuitive change makers in the Brand and Creator space.</h4>
+	                        	<?php
+	                        		if ( $about_content['title'] ) 
+	                        		{
+	                        			printf( '<h1 class="title lg">%s</h1>', $about_content['title'] );
+	                        		}
+
+	                        		if ( $about_content['description'] ) 
+	                        		{
+	                        			printf( '%s', $about_content['description'] );
+	                        		}
+
+	                        		if ( $about_content['sub_title'] ) 
+	                        		{
+	                        			printf( '<h4 class="sub-title">%s</h4>', $about_content['sub_title'] );
+	                        		}
+	                        	?>
 	                        </div>
 	                    </div>
 	                </div> 
+	            	<?php endif;
 
+	            	if ( $about_content['call_action'] ): ?>
 	                <div class="row mb-30">
+	                	<?php foreach ( $about_content['call_action'] as $action ): $link = $action['link'] ? 'href="'.esc_url( $action['link']['url'] ).'" target="'.$action['link']['target'].'"' : ''; ?>
 	                    <div class="col-lg-5 col-md-6">
-	                        <a href="#" class="about-glewee__item">
-	                            <div class="about-glewee__item-text">
-	                                <h4 class="title">Glewee for Brands</h4>
-	                                <h6 class="sub-title secondary">Discover how Glewee helps brands grow</h6>
-	                            </div>
+	                        <a <?php echo $link; ?> class="about-glewee__item smoothScroll">
+	                        	<?php
+	                        		if ( $action['title'] || $action['sub_title'] ) 
+	                        		{
+	                        			echo '<div class="about-glewee__item-text">';
 
-	                            <div class="about-glewee__item-icon">
-	                                <i class="icon-arrow-down"></i>
-	                            </div>
+	                        				if ( $action['title'] ) 
+	                        				{
+	                        					printf( '<h4 class="title">%s</h4>', $action['title'] );
+	                        				}
+
+	                        				if ( $action['sub_title'] ) 
+	                        				{
+	                        					printf( '<h6 class="sub-title secondary">%s</h6>', $action['sub_title'] );
+	                        				}
+
+	                        			echo '</div>';
+	                        		}
+
+	                        		if ( $action['link'] ) 
+	                        		{
+	                        			printf( '<div class="about-glewee__item-icon">
+			                                <i class="icon-arrow-down"></i>
+			                            </div>', $action['link'] );
+	                        		}
+	                        	?>
 	                        </a>
 	                    </div><!-- /about-glewee__item -->
-
-	                    <div class="col-lg-5 col-md-6">
-	                        <a href="#" class="about-glewee__item">
-	                            <div class="about-glewee__item-text">
-	                                <h4 class="title">Glewee for Creators</h4>
-	                                <h6 class="sub-title secondary">Explore how Glewee helped Creators thrive</h6>
-	                            </div>
-
-	                            <div class="about-glewee__item-icon">
-	                                <i class="icon-arrow-down"></i>
-	                            </div>
-	                        </a>
-	                    </div><!-- /about-glewee__item -->
+	                    <?php endforeach; ?>
 	                </div>
+	                <?php endif; ?>
 	            </div>
 	        </section><!-- /banner about-glewee -->
+	    	<?php endif;
 
+	        $social_campaigns = get_field( 'social_campaigns' ); if ( !empty( $social_campaigns ) && array_filter( $social_campaigns ) ): ?>
 	        <div class="container">
 	            <div class="about-page-wraper__overly"> 
-	                <img src="<?php echo get_theme_file_uri(); ?>/images/we-empower.png" alt=""><!-- class="rellax" --> 
+	                <img src="<?php echo get_theme_file_uri( 'images/we-empower.png' ); ?>" alt="<?php echo $social_campaigns['title']; ?>"> 
 	            </div>
 	        </div>
 
 	        <section class="we-empower pt-0">
 	            <div class="container">
 	                <div class="row align-items-center">
-	                    <div class="col-xl-6">
+	                	<?php if ( $social_campaigns['title'] || $social_campaigns['content'] ): ?>
+	                    <div class="<?php echo $social_campaigns['campaigns'] ? 'col-xl-6' : 'col-xl-12 fluid'; ?>">
 	                        <div class="we-empower__content entry-title">
-	                            <h2 class="title">We empower Brands and Creators to collaborate on social campaigns</h2>
+	                        	<?php
+	                        		if ( $social_campaigns['title'] ) 
+	                        		{
+	                        			printf( '<h2 class="title">%s</h2>', $social_campaigns['title'] );
+	                        		}
 
-	                            <div class="description">
-	                                <p>After years of working alongside Creators and Brands, it was clear that the industry had some holes in it.</p>
-
-	                                <p>Glewee is designed to be the new piece of technology necessary to band these holes and streamline the process of employing Creators for social campaigns.</p>
-	                            </div>
+	                        		if ( $social_campaigns['content'] ) 
+	                        		{
+	                        			printf( '<div class="description">%s</div>', $social_campaigns['content'] );
+	                        		}
+	                        	?>
 	                        </div>
 	                    </div>
+	                    <?php endif;
 
+	                    if ( $social_campaigns['campaigns'] ): ?>
 	                    <div class="col-xl-6">
 	                        <div class="row mb-30 js-masonry" data-masonry-options='{ "itemSelector": ".item", "columnWidth": ".column" }'>
-	                            <div class="col-sm-8 item">
-	                                <a class="we-empower__item big">
-	                                    <div class="we-empower__item-icon">
-	                                        <i class="icon-glewee"></i>
-	                                    </div>
-	                                    <div class="we-empower__item-text">
-	                                        <h3 class="title">Core Values</h3>
-	                                        <span class="sub-title">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</span>
-	                                        <p>After years of working alongside Creators and Brands, it was clear that the industry had some holes in it.</p>
-	                                    </div>
+	                        	<?php foreach ( $social_campaigns['campaigns'] as $key => $campaign ): ?>
+	                            <div class="<?php echo $key == 0 ? 'col-sm-8 ' : 'col-sm-4 '; ?>item">
+	                                <a class="we-empower__item<?php if ( $key == 0 ) echo ' big'; ?>">
+	                                	<?php
+	                                		if ( $campaign['icon'] ) 
+	                                		{
+	                                			printf( '<div class="we-empower__item-icon">
+			                                        <i class="%s"></i>
+			                                    </div>', $campaign['icon'] );
+	                                		}
+
+	                                		if ( $campaign['title'] || $campaign['sub_title'] || $campaign['description'] ) 
+	                                		{
+	                                			echo '<div class="we-empower__item-text">';
+
+	                                				if ( $campaign['title'] ) 
+	                                				{
+	                                					if ( $key == 0 ) 
+	                                					{
+	                                						printf( '<h3 class="title">%s</h3>', $campaign['title'] );
+	                                					}
+	                                					else
+	                                					{
+	                                						printf( '<h4 class="title">%s</h4>', $campaign['title'] );
+	                                					}
+	                                				}
+
+	                                				if ( $campaign['sub_title'] ) 
+	                                				{
+	                                					printf( '<span class="sub-title">%s</span>', $campaign['sub_title'] );
+	                                				}
+
+	                                				if ( $campaign['description'] ) 
+	                                				{
+	                                					printf( '%s', $campaign['description'] );
+	                                				}
+	                                			echo '</div>';
+	                                		}
+	                                	?>
 	                                </a>
 	                            </div>
-
-	                            <div class="col-sm-4 item">
-	                                 <a class="we-empower__item">
-	                                    <div class="we-empower__item-icon">
-	                                        <i class="icon-heart"></i>
-	                                    </div>
-	                                    <div class="we-empower__item-text">
-	                                        <h4 class="title">Caring</h4>
-	                                        <span class="sub-title">We care about eachother</span>
-	                                    </div>
-	                                </a>
-	                            </div> <!-- /we-empower__item -->
-
-	                            <div class="col-sm-4 item">
-	                                 <a class="we-empower__item">
-	                                    <div class="we-empower__item-icon">
-	                                        <i class="icon-challenge"></i>
-	                                    </div>
-	                                    <div class="we-empower__item-text">
-	                                        <h4 class="title">Driven</h4>
-	                                        <span class="sub-title">We strive to do all we can do</span>
-	                                    </div>
-	                                </a>
-	                            </div> <!-- /we-empower__item -->
-
-	                            <div class="col-sm-4 item">
-	                                 <a class="we-empower__item">
-	                                    <div class="we-empower__item-icon">
-	                                        <i class="icon-heart"></i>
-	                                    </div>
-	                                    <div class="we-empower__item-text">
-	                                        <h4 class="title">Caring</h4>
-	                                        <span class="sub-title">We care about eachother</span>
-	                                    </div>
-	                                </a>
-	                            </div> <!-- /we-empower__item -->
-
-	                            <div class="col-sm-4 item">
-	                                 <a class="we-empower__item">
-	                                    <div class="we-empower__item-icon">
-	                                        <i class="icon-challenge"></i>
-	                                    </div>
-	                                    <div class="we-empower__item-text">
-	                                        <h4 class="title">Driven</h4>
-	                                        <span class="sub-title">We strive to do all we can do</span>
-	                                    </div>
-	                                </a>
-	                            </div>  <!-- /we-empower__item -->
-
-	                            <div class="col-sm-4 item">
-	                                 <a class="we-empower__item">
-	                                    <div class="we-empower__item-icon">
-	                                        <i class="icon-heart"></i>
-	                                    </div>
-	                                    <div class="we-empower__item-text">
-	                                        <h4 class="title">Caring</h4>
-	                                        <span class="sub-title">We care about eachother</span>
-	                                    </div>
-	                                </a>
-	                            </div> <!-- /we-empower__item -->
-
+	                        	<?php endforeach; ?>
 	                            <div class="col-sm-4 column"></div>
 	                        </div>
 	                    </div>
+	                    <?php endif; ?>
 	                </div>
 	            </div>
 	        </section><!-- /we-empower -->
+	    	<?php endif;
 
-	        <section class="brand-awareness pt-0">
+	        $brand_awareness = get_field( 'brand_awareness' ); if ( !empty( $brand_awareness ) && array_filter( $brand_awareness ) ): ?>
+	        <section id="brands" class="brand-awareness pt-0">
 	            <div class="container">
 	                <div class="row">
-	                    <div class="col-xl-8">
-	                        <div class="brand-awareness__media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/brand-awareness.svg" class="img-fluid" alt="">
-	                        </div>
-	                    </div>
-	                    <div class="col-xl-4">
-	                        <div class="brand-awareness__content">
-	                            <h5 class="sub-title color-secondary">Glewee for Brands</h5>
-	                            <h2 class="title">Grow your Brand Awareness</h2>
+                		<?php if ( $brand_awareness['image'] ): ?>
+                	    <div class="col-xl-8">
+                	        <div class="brand-awareness__media">
+                	        	<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $brand_awareness['image']['url'] ), $brand_awareness['image']['alt'] ); ?>
+                	        </div>
+                	    </div>
+                		<?php endif;
 
-	                            <div class="content-editor about-readmores"> 
-	                                <h6>With a New Marketing Channel</h6>
-	                                <p>Searching through social media platform after social media platform trying to find the perfect creator for a campaign can be a full-time job in today’s world. Once you’ve tracked down that creator, now it’s a whole different mission to get in touch with them. Do you have a manager? Should you just shoot them a DM from the branded page? Do Creators check their email often?</p> 
+                		if ( $brand_awareness['sub_title'] || $brand_awareness['title'] || $brand_awareness['content'] || $brand_awareness['button']['text'] ): ?>
+                	    <div class="col-xl-4">
+                	        <div class="brand-awareness__content">
+                	        	<?php
+                	        		if ( $brand_awareness['sub_title'] ) 
+                	        		{
+                	        			printf( '<h5 class="sub-title color-secondary">%s</h5>', $brand_awareness['sub_title'] );
+                	        		}
 
-	                                <p>Pain point after pain point, one missed connection after another. That can be the every day…</p>
+                	        		if ( $brand_awareness['title'] ) 
+                	        		{
+                	        			printf( '<h2 class="title">%s</h2>', $brand_awareness['title'] );
+                	        		}
 
-	                                <p>Searching through social media platform after social media platform trying to find the perfect creator for a campaign can be a full-time job in today’s world. Once you’ve tracked down that creator, now it’s a whole different mission to get in touch with them. Do you have a manager? Should you just shoot them a DM from the branded page? Do Creators check their email often?</p> 
-	                            </div>
+                	        		if ( $brand_awareness['content'] ) 
+                	        		{
+                	        			printf( '<div class="content-editor about-readmores">%s</div>', $brand_awareness['content'] );
+                	        		}
 
-	                            <a href="#" class="btn">Glewee for Brands</a>
-	                        </div>
-	                    </div>
+                	        		acfButton( $brand_awareness );
+                	        	?>
+                	        </div>
+                	    </div>
+                	    <?php endif; ?>
 	                </div>
 	            </div>
 	        </section><!-- /brand-awareness -->
+	    	<?php endif;
 
-	        <section class="about-trusted-brands pt-0">
-	            <div class="container">
-	                <div class="row">
-	                    <div class="col-12"> 
-	                        <div class="trusted-brands__content text-center">
-	                            <h2 class="title">Trusted by a wide range of Brands</h2>
-	                            <div class="description">
-	                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam</p>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div> 
-	            </div>
+        	$brands_type = get_field( 'trusted_brands_type' );
 
-	            <div class="container-fluid pl-0 pr-0">
-	                <div class="row">
-	                    <div class="col-12">
-	                        <div class="trusted-brands-slider-wrapper"> 
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-1.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-1.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </a>
-	                            </div>
-
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-2.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-2.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </a>
-	                            </div>
-
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-3.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-3.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </a>
-	                            </div>
-
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-4.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-4.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </a>
-	                            </div>
-
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-1.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-1.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </a>
-	                            </div>
-
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-2.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-2.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </a>
-	                            </div>
-
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-3.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-3.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </a>
-	                            </div>
-
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-4.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-client-4.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </a>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </section><!-- /trusted-brands -->
+        	get_template_part( 
+        		'template-parts/content', 'brands', 
+        		array( 
+        			'class' => 'about-trusted-brands pt-0',
+        			'type' => $brands_type, 
+        			'id' => get_the_ID(),
+        		) 
+        	); 
 	        
-	        <section class="brand-awareness pt-0">
+	        $about_community = get_field( 'about_community' ); if ( !empty( $about_community ) && array_filter( $about_community ) ): ?>
+	        <section id="creators" class="brand-awareness pt-0">
 	            <div class="container">
 	                <div class="row align-items-center">
+	                	<?php if ( $about_community['image'] ): ?>
 	                    <div class="col-xl-8 align-items-center">
 	                        <div class="brand-awareness__media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/join-community.svg" class="img-fluid" alt="">
+	                        	<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $about_community['image']['url'] ), $about_community['image']['alt'] ); ?>
 	                        </div>
 	                    </div>
+	                	<?php endif;
+
+	                	if ( $about_community['sub_title'] || $about_community['title'] || $about_community['content'] || $about_community['button']['text'] ): ?>
 	                    <div class="col-xl-4">
 	                        <div class="brand-awareness__content">
-	                            <h5 class="sub-title color-secondary">Glewee for Creators</h5>
-	                            <h2 class="title">Join the Creator Community</h2>
-	                            
-	                            <div class="content-editor about-readmores">
-	                                <h6>And start creating engaging content!</h6>
+	                        	<?php
+	                        		if ( $about_community['sub_title'] ) 
+	                        		{
+	                        			printf( '<h5 class="sub-title color-secondary">%s</h5>', $about_community['sub_title'] );
+	                        		}
 
-	                                <p>You don’t have to tell us twice about how hard it is to self-manage a career in social media. Between creating content and posting across all of your social channels, and juggling communications with brands to work with. It’s a lot, and it certainly is a full time job.</p>
+	                        		if ( $about_community['title'] ) 
+	                        		{
+	                        			printf( '<h2 class="title">%s</h2>', $about_community['title'] );
+	                        		}
 
-	                                <p>How many times have you missed a brand deal because it got lost in your inbox, or you couldn’t track down that DM thread with a new job offer? What about times where you didn’t really have….</p>
+	                        		if ( $about_community['content'] ) 
+	                        		{
+	                        			printf( '<div class="content-editor about-readmores">%s</div>', $about_community['content'] );
+	                        		}
 
-	                                <p>You don’t have to tell us twice about how hard it is to self-manage a career in social media. Between creating content and posting across all of your social channels, and juggling communications with brands to work with. It’s a lot, and it certainly is a full time job.</p>
-	                            </div>
-
-	                            <a href="#" class="btn">Glewee for Brands</a>
+	                        		acfButton( $about_community );
+	                        	?>
 	                        </div>
 	                    </div>
+	                    <?php endif; ?>
 	                </div>
 	            </div>
 	        </section><!-- /join-community -->
+	    	<?php endif;
 
+	    	$trusted_creators = get_field( 'trusted_creators' ); if ( !empty( $trusted_creators ) && array_filter( $trusted_creators ) ): ?>
 	        <section class="trusted-creators pt-0">
+	        	<?php if ( $trusted_creators['title'] || $trusted_creators['description'] ): ?>
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-12"> 
 	                        <div class="trusted-brands__content text-center">
-	                            <h2 class="title">Trusted by a wide range of Creators</h2>
-	                            <div class="description">
-	                                <p>After years of working alongside Creators and Brands, it was clear that the industry had some holes in it.</p>
-	                            </div>
+	                        	<?php
+	                        		if ( $trusted_creators['title'] ) 
+	                        		{
+	                        			printf( '<h2 class="title">%s</h2>', $trusted_creators['title'] );
+	                        		}
+
+	                        		if ( $trusted_creators['description'] )
+	                        		{
+	                        			printf( '<div class="description">%s</div>', $trusted_creators['description'] );
+	                        		}
+	                        	?>
 	                        </div>
 	                    </div>
 	                </div> 
 	            </div>
+	            <?php endif;
 
+	            if ( $trusted_creators['creators'] ): ?>
 	            <div class="container-fluid pl-0 pr-0">
 	                <div class="row">
 	                    <div class="col-12">
 	                        <div class="trusted-brands-slider-wrapper"> 
+	                        	<?php foreach ( $trusted_creators['creators'] as $creator ): $link = $creator['link'] ? 'href="'.$creator['link']['url'].'" target="'.$creator['link']['target'].'"' : ''; ?>
 	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item text">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-tex-1.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <h6 class="title">@MarkJones</h6>
-	                                    </div>
-	                                </a>
-	                            </div>
+	                                <a <?php echo $link; ?> class="trusted-brands__item text">
+	                                	<?php
+	                                		if ( $creator['image'] ) 
+	                                		{
+	                                			printf( '<div class="trusted-brands__item-media">
+			                                        <img src="%s" class="img-fluid" alt="%s">
+			                                    </div>', esc_url( $creator['image']['url'] ), $creator['image']['alt'] );
+	                                		}
 
-	                            <div class="slider-item">
-	                               <a href="#" class="trusted-brands__item text">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-tex-2.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <h6 class="title">@JessieStone</h6>
-	                                    </div>
+	                                		if ( $creator['name'] ) 
+	                                		{
+	                                			printf( '<div class="trusted-brands__item-client-logo">
+			                                        <h6 class="title">@%s</h6>
+			                                    </div>', $creator['name'] );
+	                                		}
+	                                	?>
 	                                </a>
 	                            </div>
-	                            
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item text">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-tex-1.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <h6 class="title">@MarkJones</h6>
-	                                    </div>
-	                                </a>
-	                            </div>
-
-	                            <div class="slider-item">
-	                               <a href="#" class="trusted-brands__item text">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-tex-2.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <h6 class="title">@JessieStone</h6>
-	                                    </div>
-	                                </a>
-	                            </div>
-	                            
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item text">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-tex-1.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <h6 class="title">@MarkJones</h6>
-	                                    </div>
-	                                </a>
-	                            </div>
-
-	                            <div class="slider-item">
-	                               <a href="#" class="trusted-brands__item text">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-tex-2.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <h6 class="title">@JessieStone</h6>
-	                                    </div>
-	                                </a>
-	                            </div>
-	                            
-	                            <div class="slider-item">
-	                                <a href="#" class="trusted-brands__item text">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-tex-1.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <h6 class="title">@MarkJones</h6>
-	                                    </div>
-	                                </a>
-	                            </div>
-
-	                            <div class="slider-item">
-	                               <a href="#" class="trusted-brands__item text">
-	                                    <div class="trusted-brands__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/trusted-brands__item-tex-2.png" class="img-fluid" alt="">
-	                                    </div>
-	                                    <div class="trusted-brands__item-client-logo">
-	                                        <h6 class="title">@JessieStone</h6>
-	                                    </div>
-	                                </a>
-	                            </div>
+	                            <?php endforeach; ?>
 	                        </div>
 	                    </div>
 	                </div>
 	            </div>
+	            <?php endif; ?>
 	        </section><!-- /trusted-brands -->
+	    	<?php endif;
 
+	        $glewee_does = get_field( 'glewee_does' ); if ( !empty( $glewee_does ) && array_filter( $glewee_does ) ): ?>
 	        <div class="overlay h-2442"></div>
 
 	        <section class="what-glewee">
 	            <div class="container">
+	            	<?php if ( $glewee_does['title'] || $glewee_does['sub_title'] || $glewee_does['description'] ): ?>
 	                <div class="row">
 	                    <div class="col-12">
 	                        <div class="what-glewee__content">
-	                            <h2 class="title">A Bit of What Glewee Does</h2>
-	                            <span class="sub-title">Lorem ipsum dolor sit amet, consetetur</span>
-	                            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
+	                        	<?php
+	                        		if ( $glewee_does['title'] ) 
+	                        		{
+	                        			printf( '<h2 class="title">%s</h2>', $glewee_does['title'] );
+	                        		}
+
+	                        		if ( $glewee_does['sub_title'] ) 
+	                        		{
+	                        			printf( '<span class="sub-title">%s</span>', $glewee_does['sub_title'] );
+	                        		}
+
+	                        		if ( $glewee_does['description'] ) 
+	                        		{
+	                        			printf( '%s', $glewee_does['description'] );
+	                        		}
+	                        	?>
 	                        </div>
 	                    </div>
 	                </div>
+	                <?php endif;
 
+	                if ( $glewee_does['tabs'] ): ?>
 	                <div class="row">
 	                    <div class="col-xl-2"> 
 	                        <ul class="nav what-tabs__nav flex-xl-column" role="tablist">
-	                            <li><a data-toggle="tab"  role="tab" href="#tab-text-1" aria-selected="false" aria-controls="tab-text-1" id="tab-id-1"  class="active">Instagram</a></li>
+	                        	<?php 
+	                        		foreach ( $glewee_does['tabs'] as $key => $nav ) 
+	                        		{
+	                        			$active = $key == 0 ? 'active' : '';
 
-	                            <li><a data-toggle="tab" role="tab" href="#tab-text-2" aria-selected="false" aria-controls="tab-text-2" id="tab-id-2">Tik tok</a></li>
-	                            
-	                            <li><a data-toggle="tab" role="tab" href="#tab-text-3" aria-selected="false" aria-controls="tab-text-3" id="tab-id-3">Twitter</a></li>
-
-	                            <li><a data-toggle="tab" role="tab" href="#tab-text-4" aria-selected="false" aria-controls="tab-text-4" id="tab-id-4">YouTube</a></li>
-
-	                            <li><a data-toggle="tab" role="tab" href="#tab-text-5" aria-selected="false" aria-controls="tab-text-5" id="tab-id-5">Facebook</a></li>
+	                        			printf( '<li><a data-toggle="tab"  role="tab" href="#tab-text-%s" aria-selected="false" aria-controls="tab-text-%s" class="%s">%s</a></li>', $key, $key, $active, $nav['title'] );
+	                        		}
+	                        	?>
 	                        </ul> 
 	                    </div>
 
 	                    <div class="col-xl-10"> 
 	                        <div class="what-tabs__body">
 	                            <div class="tab-content">
-	                                <div id="tab-text-1" class="tab-pane active what-tabs__item" role="tabpanel" aria-labelledby="tab-id-1">
+	                            	<?php foreach ( $glewee_does['tabs'] as $key => $tab ): ?>
+	                                <div id="tab-text-<?php echo $key; ?>" class="tab-pane what-tabs__item<?php if ( $key == 0 ) echo ' active'; ?>" role="tabpanel">
 	                                    <div class="what-tabs__item-text">
 	                                        <div class="content">
-	                                            <h3 class="title">Instagram</h3>
-	                                            <span class="sub-title">Insta Feed Posts</span>
+	                                        	<?php
+	                                        		if ( $tab['title'] ) 
+	                                        		{
+	                                        			printf( '<h3 class="title">%s</h3>', $tab['title'] );
+	                                        		}
 
-	                                            <ul>
-	                                                <li>Creator image post</li>
-	                                                <li>Creator video</li>
-	                                                <li>Add brand tags to content</li>
-	                                                <li>Add campaign hashtag</li>
-	                                                <li>Brand crafted caption</li>
-	                                                <li>Exclusive post (no other tags)</li>
-	                                            </ul>
-	                                        </div>
-
-	                                        <div class="content"> 
-	                                            <span class="sub-title">Insta Story Posts</span>
-
-	                                            <ul>
-	                                                <li>Creator curated image story</li>
-	                                                <li>Creator curated video story</li>
-	                                                <li>Add brand tag to story</li>
-	                                                <li>Add campaign hashtag</li>
-	                                                <li>Swipe up link to website</li>
-	                                                <li>Exclusive post (no other tags)</li>
-	                                            </ul>
+	                                        		if ( $tab['content'] ) 
+	                                        		{
+	                                        			printf( '<div class="content-editor">%s</div>', $tab['content'] );
+	                                        		}
+	                                        	?>
 	                                        </div>
 	                                    </div>
 
+	                                    <?php if ( $tab['image'] ): ?>
 	                                    <div class="what-tabs__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/what-tabs__item-1.png" class="img-fluid" alt="">
+	                                    	<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $tab['image']['url'] ), $tab['image']['alt'] ); ?>
 	                                    </div>
+	                                    <?php endif; ?>
 	                                </div> 
-
-	                                <div id="tab-text-2" class="tab-pane what-tabs__item" role="tabpanel" aria-labelledby="tab-id-2">
-	                                    <div class="what-tabs__item-text">
-	                                        <div class="content">
-	                                            <h3 class="title">Tik Tok</h3>
-	                                            <span class="sub-title">Insta Feed Posts</span>
-
-	                                            <ul>
-	                                                <li>Creator image post</li>
-	                                                <li>Creator video</li>
-	                                                <li>Add brand tags to content</li>
-	                                                <li>Add campaign hashtag</li>
-	                                                <li>Brand crafted caption</li>
-	                                                <li>Exclusive <a href="#">post</a> (no other tags)</li>
-	                                            </ul> 
-	                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, nam sequi autem est corrupti consequuntur vitae, minima minus in dolores.</p>
-	                                        </div>
-
-	                                        <div class="content"> 
-	                                            <span class="sub-title">Insta Story Posts</span>
-
-	                                            <ul>
-	                                                <li>Creator curated image story</li>
-	                                                <li>Creator curated video story</li>
-	                                                <li>Add brand tag to story</li>
-	                                                <li>Add campaign hashtag</li>
-	                                                <li>Swipe up link to website</li>
-	                                                <li>Exclusive post (no other tags)</li>
-	                                            </ul>
-	                                        </div>
-	                                    </div>
-
-	                                    <div class="what-tabs__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/brand-awareness.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </div> 
-
-	                                <div id="tab-text-3" class="tab-pane what-tabs__item" role="tabpanel" aria-labelledby="tab-id-3">
-	                                    <div class="what-tabs__item-text">
-	                                        <div class="content">
-	                                            <h3 class="title">Twitter</h3>
-	                                            <span class="sub-title">Insta Feed Posts</span>
-
-	                                            <ul>
-	                                                <li>Creator image post</li>
-	                                                <li>Creator video</li>
-	                                                <li>Add brand tags to content</li>
-	                                                <li>Add campaign hashtag</li>
-	                                                <li>Brand crafted caption</li>
-	                                                <li>Exclusive post (no other tags)</li>
-	                                            </ul>
-	                                        </div>
-
-	                                        <div class="content"> 
-	                                            <span class="sub-title">Insta Story Posts</span>
-
-	                                            <ul>
-	                                                <li>Creator curated image story</li>
-	                                                <li>Creator curated video story</li>
-	                                                <li>Add brand tag to story</li>
-	                                                <li>Add campaign hashtag</li>
-	                                                <li>Swipe up link to website</li>
-	                                                <li>Exclusive post (no other tags)</li>
-	                                            </ul>
-	                                        </div>
-	                                    </div>
-
-	                                    <div class="what-tabs__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/boost-brand-1.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </div> 
-
-	                                <div id="tab-text-4" class="tab-pane what-tabs__item" role="tabpanel" aria-labelledby="tab-id-4">
-	                                    <div class="what-tabs__item-text">
-	                                        <div class="content">
-	                                            <h3 class="title">YouTube</h3>
-	                                            <span class="sub-title">Insta Feed Posts</span>
-
-	                                            <ul>
-	                                                <li>Creator image post</li>
-	                                                <li>Creator video</li>
-	                                                <li>Add brand tags to content</li>
-	                                                <li>Add campaign hashtag</li>
-	                                                <li>Brand crafted caption</li>
-	                                                <li>Exclusive post (no other tags)</li>
-	                                            </ul>
-	                                        </div>
-
-	                                        <div class="content"> 
-	                                            <span class="sub-title">Insta Story Posts</span>
-
-	                                            <ul>
-	                                                <li>Creator curated image story</li>
-	                                                <li>Creator curated video story</li>
-	                                                <li>Add brand tag to story</li>
-	                                                <li>Add campaign hashtag</li>
-	                                                <li>Swipe up link to website</li>
-	                                                <li>Exclusive post (no other tags)</li>
-	                                            </ul>
-	                                        </div>
-	                                    </div>
-
-	                                    <div class="what-tabs__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/request-demo.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </div> 
-
-	                                <div id="tab-text-5" class="tab-pane what-tabs__item" role="tabpanel" aria-labelledby="tab-id-5">
-	                                    <div class="what-tabs__item-text">
-	                                        <div class="content">
-	                                            <h3 class="title">Facebook</h3>
-	                                            <span class="sub-title">Insta Feed Posts</span>
-
-	                                            <ul>
-	                                                <li>Creator image post</li>
-	                                                <li>Creator video</li>
-	                                                <li>Add brand tags to content</li>
-	                                                <li>Add campaign hashtag</li>
-	                                                <li>Brand crafted caption</li>
-	                                                <li>Exclusive post (no other tags)</li>
-	                                            </ul>
-	                                        </div>
-
-	                                        <div class="content"> 
-	                                            <span class="sub-title">Insta Story Posts</span>
-
-	                                            <ul>
-	                                                <li>Creator curated image story</li>
-	                                                <li>Creator curated video story</li>
-	                                                <li>Add brand tag to story</li>
-	                                                <li>Add campaign hashtag</li>
-	                                                <li>Swipe up link to website</li>
-	                                                <li>Exclusive post (no other tags)</li>
-	                                            </ul>
-	                                        </div>
-	                                    </div>
-
-	                                    <div class="what-tabs__item-media">
-	                                        <img src="<?php echo get_theme_file_uri(); ?>/images/your-marketing-1.png" class="img-fluid" alt="">
-	                                    </div>
-	                                </div> 
+	                                <?php endforeach; ?>
 	                            </div> 
 	                        </div> 
 	                    </div> 
 	                </div>
+	                <?php endif; ?>
 	            </div>
 	        </section><!-- /what-glewee -->
 
@@ -664,23 +409,43 @@ get_header(); ?>
 	                </div>
 	            </div>
 	        </div>
+	    	<?php endif;
 
+	        $ebook_offer = get_field( 'about_ebook_offer' ); if ( !empty( $ebook_offer ) && array_filter( $ebook_offer ) ): ?>
 	        <section class="ebook-offer">
 	            <div class="container">
 	                <div class="row mb-60">
 	                    <div class="col-12">
 	                        <div class="ebook-offer__item d-flex flex-xl-row flex-column align-items-center">
-	                            <div class="ebook-offer__item-media">
-	                                <img src="<?php echo get_theme_file_uri(); ?>/images/ebook-offer.png" class="img-fluid" alt="">
-	                            </div>
-	                            <div class="ebook-offer__item-text">
-	                                <h4 class="title">Ebook Offer Goes Here</h4>
+    	                    	<?php
+    	                    		$class = !$ebook_offer['image'] ? ' ml-0 fluid' : '';
 
-	                                <div class="description">
-	                                    <p>Join the Glewee Creator Community to maximize your social media career, enhance organization, track your statistics, and join new, exciting, campaigns.</p>
-	                                </div>
-	                                <a href="#" class="btn">Download Now</a>
-	                            </div>
+    	                    		if ( $ebook_offer['image'] ) 
+    	                    		{
+    	                    			printf( '<div class="ebook-offer__item-media">
+    			                            <img src="%s" class="img-fluid" alt="%s">
+    			                        </div>', esc_url( $ebook_offer['image']['url'] ), $ebook_offer['image']['alt'] );
+    	                    		}
+
+    	                    		if ( $ebook_offer['title'] || $ebook_offer['content'] || $ebook_offer['button'] ) 
+    	                    		{
+    	                    			echo '<div class="ebook-offer__item-text'.$class.'">';
+
+    	                    				if ( $ebook_offer['title'] ) 
+    	                    				{
+    	                    					printf( '<h4 class="title">%s</h4>', $ebook_offer['title'] );
+    	                    				}
+
+    	                    				if ( $ebook_offer['content'] ) 
+    	                    				{
+    	                    					printf( '<div class="description">%s</div>', $ebook_offer['content'] );
+    	                    				}
+
+    	                    				acfButton( $ebook_offer );
+
+    	                    			echo '</div>';
+    	                    		}
+    	                    	?>
 	                        </div>
 	                    </div>
 	                </div>
@@ -694,27 +459,54 @@ get_header(); ?>
 	                </div>
 	            </div>
 	        </div>
+	    	<?php endif;
 
+	        $about_contact = get_field( 'about_contact' ); if ( !empty( $about_contact ) && array_filter( $about_contact ) ): ?>
 	        <section class="about-contact">
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-12">
 	                        <div class="contact">
-	                            <div class="contact__text text-center">
-	                                <h3 class="title">Want to talk about who we are & what we do?</h3>
-	                                <div class="description">
-	                                    <p>Send us a message, we look forward to speaking with you!</p>
-	                                </div>
-	                            </div>
+    		                    <?php
+    	                    		if ( $about_contact['title'] || $about_contact['description'] ) 
+    	                    		{
+    	                    			echo '<div class="contact__text text-center">';
 
-	                            <div class="contact__form">
-	                                <?php echo do_shortcode('[gravityform id="1" title="false" description="false" tabindex="10" ajax="true"]'); ?>
-	                            </div>
+    	                    				if ( $about_contact['title'] ) 
+    	                    				{
+    	                    					printf( '<h3 class="title">%s</h3>', $about_contact['title'] );
+    	                    				}
+
+    	                    				if ( $about_contact['description'] ) 
+    	                    				{
+    	                    					printf( '<div class="description">%s</div>', $about_contact['description'] );
+    	                    				}
+
+    	                    			echo '</div>';
+    	                    		}
+
+    	                    		if ( $about_contact['form_type'] ) 
+    	                    		{
+    									echo '<div class="contact__form">';
+
+    		                    		if ( $about_contact['form_type'] == 'embed' && $about_contact['embed_code'] ) 
+    		                    		{
+    		                    			printf('<div class="embed_code">%s</div>', $about_contact['embed_code']);
+    		                    		}
+    		                    		elseif( $about_contact['form_type'] == 'form' && $about_contact['select_form'] )
+    		                    		{
+    		                    			echo do_shortcode('[gravityform id="'. $about_contact['select_form']['id'] .'" title="false" description="false" tabindex="10" ajax="true"]');
+    		                    		} 
+
+    	                    			echo '</div>';
+    	                    		}
+    	                    	?>
 	                        </div>
 	                    </div>
 	                </div>
 	            </div>
 	        </section>
+	        <?php endif; ?>
 	    </div>
 
 	</div><!-- /content-area -->
