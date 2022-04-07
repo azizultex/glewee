@@ -28,6 +28,9 @@ jQuery( document ).ready(function() {
     dynamic_title_repeater_accordion('creators', 'name');
     dynamic_title_repeater_accordion('campaigns', 'title');
 
+    // For Brands
+    dynamic_title_repeater_accordion('how_works', 'title');
+
 });
 
 function dynamic_title_repeater_accordion(repeater_name, field_name) {
