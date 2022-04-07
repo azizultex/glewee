@@ -215,88 +215,185 @@ get_header();
 	                    </div>
 	                </div>
 	            </div>
-	            <?php endif; ?>
+	            <?php endif;
 
+	            if ( $why_glewee['awareness_block'] || $why_glewee['social_engagement_block'] || $why_glewee['case_study_block'] || $why_glewee['case_study_other'] || $why_glewee['website_traffic_block'] || $why_glewee['impression_block'] || $why_glewee['investment'] ): ?>
 	            <div class="row mb-30">
+	            	<?php if ( $why_glewee['awareness_block'] ): ?>
 	                <div class="col-xl-7 col-lg-6">
 	                    <a class="why-glewee__item boost-brand" style="background: white;">
-	                        <div class="why-glewee__item-text">
-	                            <h2 class="title">Boost Your Brand Awareness</h2>
-	                        </div>
-	                        <div class="why-glewee__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/boost-brand-1.png" alt="">
-	                        </div>
+	                    	<?php
+	                    		if ( $why_glewee['awareness_block']['title'] ) 
+	                    		{
+	                    			printf( '<div class="why-glewee__item-text">
+			                            <h2 class="title">%s</h2>
+			                        </div>', $why_glewee['awareness_block']['title'] );
+	                    		}
+
+	                    		if ( $why_glewee['awareness_block']['image'] ) 
+	                    		{
+	                    			printf( '<div class="why-glewee__item-media">
+			                            <img src="%s" alt="%s">
+			                        </div>', esc_url( $why_glewee['awareness_block']['image']['url'] ), $why_glewee['awareness_block']['image']['alt'] );
+	                    		}
+	                    	?>
 	                    </a>
 	                </div>
+	            	<?php endif;
 
+	            	if ( $why_glewee['social_engagement_block'] || $why_glewee['case_study_block'] ): ?>
 	                <div class="col-xl-5 col-lg-6">
+	                	<?php if ( $why_glewee['social_engagement_block'] ): ?>
 	                    <div class="col-12"> 
 	                        <a class="why-glewee__item expand" style="background: #001179;">
-	                            <div class="why-glewee__item-text">
-	                                <h2 class="title">Expand Your Social Engagment</h2>
-	                            </div>
-	                            <div class="why-glewee__item-media">
-	                                <img src="<?php echo get_theme_file_uri(); ?>/images/like.png" alt="">
-	                            </div>
+	                        	<?php
+	                        		if ( $why_glewee['social_engagement_block']['title'] ) 
+	                        		{
+	                        			printf( '<div class="why-glewee__item-text">
+			                                <h2 class="title">%s</h2>
+			                            </div>', $why_glewee['social_engagement_block']['title'] );
+	                        		}
+
+	                        		if ( $why_glewee['social_engagement_block']['image'] ) 
+	                        		{
+	                        			printf( '<div class="why-glewee__item-media">
+			                                <img src="%s" alt="%s">
+			                            </div>', esc_url( $why_glewee['social_engagement_block']['image']['url'] ), $why_glewee['social_engagement_block']['image']['alt'] );
+	                        		}
+	                        	?>
 	                        </a>
 	                    </div>
+	                	<?php endif;
 
+	                	if ( $why_glewee['case_study_block'] ): $link = $why_glewee['case_study_block']['button'] ? 'href="'.esc_url( $why_glewee['case_study_block']['button']['url'] ).'" target="'.$why_glewee['case_study_block']['button']['target'].'"' : ''; ?>
 	                    <div class="col-12">
-	                        <a href="#" class="why-glewee__item glewee" style="background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);">
+	                        <a <?php echo $link; ?> class="why-glewee__item glewee" style="background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);">
 	                            <div class="why-glewee__item-text">
-	                                <div class="number">25K</div>
-	                                <h3 class="title">Glewee helped The Abby Co. gain over 25K followers in 1 week.</h3>
-	                                <p>By leveraging our awesome platform The Abby Co. is now doing awesome stuff</p>
-	                                <span class="btn">View Case Study</span> 
+	                            	<?php
+	                            		if ( $why_glewee['case_study_block']['number'] ) 
+	                            		{
+	                            			printf( '<div class="number">%s</div>', $why_glewee['case_study_block']['number'] );
+	                            		}
+
+	                            		if ( $why_glewee['case_study_block']['title'] ) 
+	                            		{
+	                            			printf( '<h3 class="title">%s</h3>', $why_glewee['case_study_block']['title'] );
+	                            		}
+
+	                            		if ( $why_glewee['case_study_block']['description'] ) 
+	                            		{
+	                            			printf( '%s', $why_glewee['case_study_block']['description'] );
+	                            		}
+
+	                            		if ( $why_glewee['case_study_block']['button'] ) 
+	                            		{
+	                            			printf( '<span class="btn">%s</span>', $why_glewee['case_study_block']['button']['title'] );
+	                            		}
+	                            	?> 
 	                            </div> 
 	                        </a>
 	                    </div>
+	                    <?php endif; ?>
 	                </div>
+	                <?php endif;
 
+	                if ( $why_glewee['case_study_other'] ): $link = $why_glewee['case_study_other']['button'] ? 'href="'.esc_url( $why_glewee['case_study_other']['button']['url'] ).'" target="'.$why_glewee['case_study_other']['button']['target'].'"' : ''; ?>
 	                <div class="col-xl-5 col-lg-6">
-	                    <a href="#" class="why-glewee__item glewee" style="background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);">
+	                    <a <?php echo $link; ?> class="why-glewee__item glewee" style="background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);">
 	                        <div class="why-glewee__item-text">
-	                            <div class="number">1.5M</div>
-	                            <h3 class="title">Glewee helped The Abby Co. gain over 25K followers in 1 week.</h3>
-	                            <p>By leveraging our awesome platform The Abby Co. is now doing awesome stuff</p>
-	                            <span class="btn">View Case Study</span> 
+	                        	<?php
+	                        		if ( $why_glewee['case_study_other']['number'] ) 
+	                        		{
+	                        			printf( '<div class="number">%s</div>', $why_glewee['case_study_other']['number'] );
+	                        		}
+
+	                        		if ( $why_glewee['case_study_other']['title'] ) 
+	                        		{
+	                        			printf( '<h3 class="title">%s</h3>', $why_glewee['case_study_other']['title'] );
+	                        		}
+
+	                        		if ( $why_glewee['case_study_other']['description'] ) 
+	                        		{
+	                        			printf( '%s', $why_glewee['case_study_other']['description'] );
+	                        		}
+
+	                        		if ( $why_glewee['case_study_other']['button'] ) 
+	                        		{
+	                        			printf( '<span class="btn">%s</span>', $why_glewee['case_study_other']['button']['title'] );
+	                        		}
+	                        	?> 
 	                        </div> 
 	                    </a>
 	                </div>
+	                <?php endif;
 
+	                if ( $why_glewee['website_traffic_block'] ): ?>
 	                <div class="col-xl-7 col-lg-6">
 	                    <a class="why-glewee__item boost-brand drive" style="background: white;">
-	                        <div class="why-glewee__item-text">
-	                            <h2 class="title">Drive New Website Traffic</h2>
-	                        </div>
-	                        <div class="why-glewee__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/drive.png" alt="">
-	                        </div>
+	                    	<?php
+	                    		if ( $why_glewee['website_traffic_block']['title'] ) 
+	                    		{
+	                    			printf( '<div class="why-glewee__item-text">
+			                            <h2 class="title">%s</h2>
+			                        </div>', $why_glewee['website_traffic_block']['title'] );
+	                    		}
+
+	                    		if ( $why_glewee['website_traffic_block']['image'] ) 
+	                    		{
+	                    			printf( '<div class="why-glewee__item-media">
+			                            <img src="%s" alt="%s">
+			                        </div>', esc_url( $why_glewee['website_traffic_block']['image']['url'] ), $why_glewee['website_traffic_block']['image']['alt'] );
+	                    		}
+	                    	?>
 	                    </a>
 	                </div>
+	                <?php endif;
 
+	                if ( $why_glewee['impression_block'] ): ?>
 	                <div class="col-xl-7 col-lg-6">
 	                    <a class="why-glewee__item expand expand-big" style="background: #001179;">
-	                        <div class="why-glewee__item-text">
-	                            <h2 class="title">Maximize Cost Per Impression</h2>
-	                        </div>
-	                        <div class="why-glewee__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/people.png" alt="">
-	                        </div>
+	                    	<?php
+	                    		if ( $why_glewee['impression_block']['title'] ) 
+	                    		{
+	                    			printf( '<div class="why-glewee__item-text">
+			                            <h2 class="title">%s</h2>
+			                        </div>', $why_glewee['impression_block']['title'] );
+	                    		}
+
+	                    		if ( $why_glewee['impression_block']['image'] ) 
+	                    		{
+	                    			printf( '<div class="why-glewee__item-media">
+			                            <img src="%s" alt="%s">
+			                        </div>', esc_url( $why_glewee['impression_block']['image']['url'] ), $why_glewee['impression_block']['image']['alt'] );
+	                    		}
+	                    	?>
 	                    </a>
 	                </div>
+	                <?php endif;
 
+	                if ( $why_glewee['investment'] ): ?>
 	                <div class="col-xl-5 col-lg-6">
 	                    <a class="why-glewee__item expand" style="background: #001179;">
-	                        <div class="why-glewee__item-text">
-	                            <h2 class="title">Increase Return on Investment</h2>
-	                        </div>
-	                        <div class="why-glewee__item-media">
-	                            <img src="<?php echo get_theme_file_uri(); ?>/images/dolar.png" alt="">
-	                        </div>
+	                    	<?php
+	                    		if ( $why_glewee['investment']['title'] ) 
+	                    		{
+	                    			printf( '<div class="why-glewee__item-text">
+			                            <h2 class="title">%s</h2>
+			                        </div>', $why_glewee['investment']['title'] );
+	                    		}
+
+	                    		if ( $why_glewee['investment']['image'] ) 
+	                    		{
+	                    			printf( '<div class="why-glewee__item-media">
+			                            <img src="%s" alt="%s">
+			                        </div>', esc_url( $why_glewee['investment']['image']['url'] ), $why_glewee['investment']['image']['alt'] );
+	                    		}
+	                    	?>
 	                    </a>
 	                </div>
+	                <?php endif; ?>
 	            </div>
+	            <?php endif; ?>
 	        </div>
 	    </section><!-- /why-glewee -->
 		<?php endif;
