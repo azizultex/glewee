@@ -69,6 +69,17 @@
         }
     });
 
+    /** Sidr submenu */
+	$('.sidr-inner .navbar-nav li a .dropdown-toggle').on('click', function () {
+		if ($(this).parent().siblings('ul.dropdown-menu').length > 0) {
+			if ($(this).parent().parent().hasClass('active')) {
+				$(this).parent().parent().removeClass('active');
+			} else {
+				$(this).parent().parent().addClass('active');
+			}
+		}
+	});
+
     /*** Scroll Nav */
     $('.navbar-nav li a[href*="#"]:not([href="#"])').click(function() {
 	    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {

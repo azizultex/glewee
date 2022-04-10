@@ -96,6 +96,7 @@ get_header(); ?>
 	        </div>
 
 	        <section class="we-empower pt-0">
+	        	<a id="who-we-are" class="blankSpace"></a>
 	            <div class="container">
 	                <div class="row align-items-center">
 	                	<?php if ( $social_campaigns['title'] || $social_campaigns['content'] ): ?>
@@ -263,68 +264,21 @@ get_header(); ?>
 	        </section><!-- /join-community -->
 	    	<?php endif;
 
-	    	$trusted_creators = get_field( 'trusted_creators' ); if ( !empty( $trusted_creators ) && array_filter( $trusted_creators ) ): ?>
-	        <section class="trusted-creators pt-0">
-	        	<?php if ( $trusted_creators['title'] || $trusted_creators['description'] ): ?>
-	            <div class="container">
-	                <div class="row">
-	                    <div class="col-12"> 
-	                        <div class="trusted-brands__content text-center">
-	                        	<?php
-	                        		if ( $trusted_creators['title'] ) 
-	                        		{
-	                        			printf( '<h2 class="title">%s</h2>', $trusted_creators['title'] );
-	                        		}
+	    	$creators_type = get_field( 'trusted_creators_type' );
 
-	                        		if ( $trusted_creators['description'] )
-	                        		{
-	                        			printf( '<div class="description">%s</div>', $trusted_creators['description'] );
-	                        		}
-	                        	?>
-	                        </div>
-	                    </div>
-	                </div> 
-	            </div>
-	            <?php endif;
-
-	            if ( $trusted_creators['creators'] ): ?>
-	            <div class="container-fluid pl-0 pr-0">
-	                <div class="row">
-	                    <div class="col-12">
-	                        <div class="trusted-brands-slider-wrapper"> 
-	                        	<?php foreach ( $trusted_creators['creators'] as $creator ): $link = $creator['link'] ? 'href="'.$creator['link']['url'].'" target="'.$creator['link']['target'].'"' : ''; ?>
-	                            <div class="slider-item">
-	                                <a <?php echo $link; ?> class="trusted-brands__item text">
-	                                	<?php
-	                                		if ( $creator['image'] ) 
-	                                		{
-	                                			printf( '<div class="trusted-brands__item-media">
-			                                        <img src="%s" class="img-fluid" alt="%s">
-			                                    </div>', esc_url( $creator['image']['url'] ), $creator['image']['alt'] );
-	                                		}
-
-	                                		if ( $creator['name'] ) 
-	                                		{
-	                                			printf( '<div class="trusted-brands__item-client-logo">
-			                                        <h6 class="title">@%s</h6>
-			                                    </div>', $creator['name'] );
-	                                		}
-	                                	?>
-	                                </a>
-	                            </div>
-	                            <?php endforeach; ?>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	            <?php endif; ?>
-	        </section><!-- /trusted-brands -->
-	    	<?php endif;
+	    	get_template_part( 
+	    		'template-parts/content', 'creators', 
+	    		array( 
+	    			'class' => 'trusted-creators pt-0',
+	    			'type' => $creators_type, 
+	    			'id' => get_the_ID(),
+	    		) 
+	    	); 
 
 	        $glewee_does = get_field( 'glewee_does' ); if ( !empty( $glewee_does ) && array_filter( $glewee_does ) ): ?>
 	        <div class="overlay h-2442"></div>
 
-	        <section class="what-glewee">
+	        <section id="what-we-do" class="what-glewee">
 	            <div class="container">
 	            	<?php if ( $glewee_does['title'] || $glewee_does['sub_title'] || $glewee_does['description'] ): ?>
 	                <div class="row">

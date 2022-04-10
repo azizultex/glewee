@@ -21,7 +21,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul role=\"menu\" class=\"dropdown-menu\">\n";
+		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
 	}
 
 	/**
@@ -84,7 +84,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			if ( $args->has_children && $depth === 0 ) {
 				$atts['href']   		= $item->url;
 				// $atts['data-toggle']	= 'dropdown';
-				$atts['class']			= 'dropdown-toggle';
+				// $atts['class']			= 'dropdown-toggle';
 				$atts['aria-haspopup']	= 'true';
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
@@ -102,8 +102,6 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 
 			$item_output = $args->before;
 
-			$menu_icon = get_field( 'menu_icon', $item );
-
 			/*
 			 * Glyphicons
 			 * ===========
@@ -111,8 +109,8 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			 * if there is a value in the attr_title property. If the attr_title
 			 * property is NOT null we apply it as the class name for the glyphicon.
 			 */
-			if ( $menu_icon !== 'none' )
-				$item_output .= '<a'. $attributes .'><span class="' . esc_attr( $menu_icon ) . '"></span>&nbsp;';
+			if ( ! empty( $item->attr_title ) )
+				$item_output .= '<a'. $attributes .'><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
 			else
 				$item_output .= '<a'. $attributes .'>';
 
