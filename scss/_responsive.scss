@@ -182,7 +182,7 @@ MEDIA QUERIES
     }
 
     .list-work-item {
-        margin-bottom: 70px;
+        margin-bottom: 100px;
     }
 
     /***********************************
@@ -426,7 +426,7 @@ MEDIA QUERIES
     }
 
     .list-work-item {
-        margin-bottom: 60px;
+        margin-bottom: 90px;
     }
 
     /***********************************
@@ -1331,6 +1331,10 @@ MEDIA QUERIES
             column-gap: 30px;
             margin-left: 0; 
         }
+    }
+
+    .list-work-item {
+        margin-bottom: 80px;
     }
 
     /***********************************
@@ -2366,6 +2370,10 @@ MEDIA QUERIES
                 margin-bottom: 35px !important;
             }
         }
+    }
+
+    .list-work-item {
+        margin-bottom: 70px;
     }
 
     /***********************************
@@ -3461,6 +3469,14 @@ MEDIA QUERIES
 
     .ebook-offer.brands {
         padding: 80px 0;
+    }
+
+    .list-work-item {
+        margin-bottom: 50px;
+
+        &__media {
+            margin-bottom: 20px;
+        }
     }
 
     /***********************************

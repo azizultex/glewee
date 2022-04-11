@@ -1768,7 +1768,7 @@ BRANDS PAGE STYLES
 }
 
 .list-work-item {
-    margin-bottom: 80px;
+    margin-bottom: 150px;
 }
 .list-work-item:last-child {
     margin-bottom: 0;
@@ -6059,7 +6059,7 @@ MEDIA QUERIES
     }
 
     .list-work-item {
-        margin-bottom: 70px;
+        margin-bottom: 100px;
     }
 
     /***********************************
@@ -6253,7 +6253,7 @@ MEDIA QUERIES
     }
 
     .list-work-item {
-        margin-bottom: 60px;
+        margin-bottom: 90px;
     }
 
     /***********************************
@@ -6958,6 +6958,10 @@ MEDIA QUERIES
            -moz-column-gap: 30px;
                 column-gap: 30px;
         margin-left: 0;
+    }
+
+    .list-work-item {
+        margin-bottom: 80px;
     }
 
     /***********************************
@@ -7778,6 +7782,10 @@ MEDIA QUERIES
     }
     .our-network.brands .our-network__item-wraper .our-network__item {
         margin-bottom: 35px !important;
+    }
+
+    .list-work-item {
+        margin-bottom: 70px;
     }
 
     /***********************************
@@ -8605,6 +8613,13 @@ MEDIA QUERIES
 
     .ebook-offer.brands {
         padding: 80px 0;
+    }
+
+    .list-work-item {
+        margin-bottom: 50px;
+    }
+    .list-work-item__media {
+        margin-bottom: 20px;
     }
 
     /***********************************

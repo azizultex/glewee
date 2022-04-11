@@ -156,9 +156,11 @@ get_header();
 
 	                        		if ( $how_it_works['link'] ) 
 	                        		{
+	                        			$popup = $how_it_works['popup'] ? ' class="list-how-work" data-effect="mfp-work" ' : '';
+
 	                        			printf( '<div class="how-works__content-view">
-			                                <a href="%s" target="%s">%s <i class="icon-arrow-right"></i></a>
-			                            </div>', esc_url( $how_it_works['link']['url'] ), $how_it_works['link']['target'], $how_it_works['link']['title'] );
+			                                <a href="%s"%starget="%s">%s <i class="icon-arrow-right"></i></a>
+			                            </div>', $how_it_works['link']['url'], $popup, $how_it_works['link']['target'], $how_it_works['link']['title'] );
 	                        		}
 	                        	?>
 	                        </div>
@@ -211,7 +213,123 @@ get_header();
 	                        </div>
 	                    </div>
 	                </div>
-	                <?php endif; ?>
+
+                    <?php if ( $how_it_works['popup'] && $how_it_works['how_works'] || $how_it_works['call_action'] ): ?>
+                    <div id="mfp-how-work" class="list-how-work-details mfp-with-anim mfp-hide">
+                       
+                       <?php if ( $how_it_works['how_works'] ): ?>
+                       <section class="list-how-work__wraper">
+                           <div class="container">
+                           		<?php if ( $how_it_works['title'] || get_the_title() ): ?>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="list-how-work-details__content">
+                                        	<?php
+                                        		if ( $how_it_works['title'] ) 
+                                        		{
+                                        			printf( '<h2 class="title color-secondary">%s</h2>', $how_it_works['title'] );
+                                        		}
+
+                                        		if ( get_the_title() ) 
+                                        		{
+                                        			printf( '<h2 class="sub-title h1">%s</h2>', get_the_title() );
+                                        		}
+                                        	?>
+                                        </div>
+                                    </div>
+                                </div>
+                           		<?php endif;
+
+                           		if ( $how_it_works['how_works'] ): foreach ( $how_it_works['how_works'] as $key => $how ): ?>
+                                <div class="list-work-item">
+                                   <div class="row align-items-center<?php echo $key % 2 ? '' : ' flex-row-reverse'; ?>">
+                                   		<?php if ( $how['image'] ): ?>
+                                       	<div class="col-md-7">
+                                           	<div class="list-work-item__media">
+                                           		<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $how['image']['url'] ), $how['image']['alt'] ); ?>
+                                           	</div>
+                                       	</div>
+                                       	<?php endif; ?>
+
+                                       	<?php if ( $how['title'] || $how['sub_title'] || $how['description'] || $how['button']['text'] ): ?>
+                                       	<div class="col-md-5">
+                                           <div class="list-work-item__text">
+    	                                       	<?php
+    	                                       		if ( $how['title'] ) 
+    	                                       		{
+    	                                       			printf( '<h2 class="title">%s</h2>', $how['title'] );
+    	                                       		}
+
+    	                                       		if ( $how['sub_title'] ) 
+    	                                       		{
+    	                                       			printf( '<h6 class="sub-title color-secondary">%s</h6>', $how['sub_title'] );
+    	                                       		}
+
+    	                                       		if ( $how['description'] ) 
+    	                                       		{
+    	                                       			printf( '%s', $how['description'] );
+    	                                       		}
+
+    	                                       		acfButton( $how );
+    	                                       	?>
+                                            </div>
+                                       	</div>
+                                       	<?php endif; ?>
+                                   </div>
+                                </div>
+                                <?php endforeach; endif; ?>
+                           </div>
+                       	</section>
+                      	<?php endif;
+
+                      	if ( $how_it_works['call_action'] ): ?>
+                      	<section class="call-action pb-0">
+                           <div class="container">
+                               <div class="row mb-30">
+                               	<?php
+                               	    foreach ( $how_it_works['call_action'] as $key => $box ) 
+                               	    {
+                               	        $style = $key % 2 ? ' left-image' : '';
+                               	        $column = count( $how_it_works['call_action'] ) > 1 ? 'col-sm-6' : 'col-sm-12';
+                               	        $link = $box['link'] ? 'href="'.esc_url( $box['link']['url'] ).'" target="'.$box['link']['target'].'"' : '';
+
+                               	        echo '<div class="'.$column.'">';
+                               	            echo '<a '.$link.' class="call-action__item list-how d-flex flex-column justify-content-between smoothScroll'.$style.'">';
+
+                               	                if ( $box['image'] ) 
+                               	                {
+                               	                    printf( '<div class="call-action__item-media">
+                               	                        <img src="%s" class="img-fluid" alt="%s">
+                               	                    </div>', esc_url( $box['image']['url'] ), $box['image']['alt'] );
+                               	                }
+
+                               	                if ( $box['sub_title'] || $box['link'] ) 
+                               	                {
+                               	                    echo '<div class="call-action__item-text">';
+
+   	                            	                    if ( $box['title'] ) 
+   	                            	                    {
+   	                            	                        printf( '<h5 class="title">%s</h5>', $box['title'] );
+   	                            	                    }
+
+                               	                        if ( $box['link'] ) 
+                               	                        {
+                               	                            printf( '<h6 class="link">%s <i class="icon-arrow-right"></i></h6>', $box['link']['title'] );
+                               	                        }
+
+                               	                    echo '</div>';
+                               	                }
+                               	            echo '</a>';
+                               	        echo '</div>';
+                               	    }
+                               	?>
+                               	</div>
+                           	</div>
+                       	</section><!-- /call-action -->
+                       	<?php endif; ?>
+
+                    </div><!-- /mfp-join-detail -->
+                	<?php endif; endif; ?>
 	            </div>
 	        </div><!-- /how-works -->
 	    	<?php endif;
@@ -285,7 +403,7 @@ get_header();
             <?php endif;
 
             $application = get_field( 'creators_application' ); if ( !empty( $application ) && array_filter( $application ) ): ?>
-            <section class="application pt-0">
+            <section id="application" class="application pt-0">
                 <div class="container">
                     <div class="row">
                         <div class="col-12"> 
