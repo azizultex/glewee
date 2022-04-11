@@ -1655,9 +1655,134 @@ HOME STYLES
     position: relative;
 }
 
+#for-brands-creators-chooser {
+    padding: 0 45px 0 0 !important;
+    width: inherit !important;
+    font-family: "poppins", sans-serif !important;
+    -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+    display: block !important;
+    color: #7D8FFA !important;
+    font-size: 112px !important;
+    line-height: 124px !important;
+    font-weight: bold !important;
+    letter-spacing: -2.8px;
+    border-radius: 0 !important;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    background-size: 16px !important;
+    background-repeat: no-repeat !important;
+    background-position: right 1px center !important;
+    background-image: url(images/svg/caret-down-1.svg) !important;
+}
+
 /***********************************
 BRANDS PAGE STYLES
 ***********************************/
+.list-how-work-details {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden auto;
+}
+
+.mfp-work {
+    /* start state */
+    /* animate in */
+    /* animate out */
+}
+.mfp-work.mfp-bg {
+    opacity: 1 !important;
+    background: linear-gradient(325deg, #fff7fc 0%, #edf0ff 49.75%, #f8feff 100%);
+}
+.mfp-work .mfp-content {
+    vertical-align: top;
+}
+.mfp-work .mfp-with-anim {
+    opacity: 0;
+    margin: 0;
+    margin-left: auto;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+}
+.mfp-work.mfp-bg {
+    opacity: 0;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+.mfp-work.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+}
+.mfp-work.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-work.mfp-removing .mfp-with-anim {
+    opacity: 0;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+}
+.mfp-work.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+.mfp-work.mfp-wrap {
+    z-index: 99999;
+    top: 0 !important;
+    overflow: hidden !important;
+    position: fixed !important;
+}
+.mfp-work .mfp-container {
+    padding: 0;
+    text-align: right;
+}
+.mfp-work .mfp-content {
+    height: 100%;
+}
+.mfp-work .mfp-close {
+    opacity: 1;
+    top: 84px;
+    color: #000;
+    right: 100px;
+    font-size: 25px;
+    font-family: "glewee";
+    background: linear-gradient(135deg, #ef66c5 0%, #364ddd 49.75%, #00bfe8 100%);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.list-how-work-details {
+    padding: 160px 0;
+}
+.list-how-work-details__content {
+    margin-bottom: 70px;
+}
+.list-how-work-details__content .title {
+    font-size: 136px;
+    line-height: 136px;
+    letter-spacing: -4.08px;
+}
+
+.list-work-item {
+    margin-bottom: 80px;
+}
+.list-work-item:last-child {
+    margin-bottom: 0;
+}
+.list-work-item__text {
+    max-width: 466px;
+}
+.list-work-item__text .sub-title {
+    margin-bottom: 5px;
+}
+.list-work-item__text .btn {
+    margin-top: 20px;
+}
+
 .brands-page-wraper {
     overflow: hidden;
 }
@@ -2104,11 +2229,11 @@ BRANDS PAGE STYLES
     position: absolute;
 }
 
-.slider-controls {
+.slider-controls, .slider-controls-creators {
     margin-top: 33px;
     position: inherit !important;
 }
-.slider-controls .slider-arrows .how-works__arrow {
+.slider-controls .slider-arrows .how-works__arrow, .slider-controls-creators .slider-arrows .how-works__arrow {
     width: 80px;
     height: 80px;
     cursor: pointer;
@@ -2119,18 +2244,18 @@ BRANDS PAGE STYLES
     transition: all 0.3s ease;
     background: linear-gradient(105deg, #ffb1e7 0%, #8d9dff 49.75%, #5de2ff 100%);
 }
-.slider-controls .slider-arrows .how-works__arrow:hover {
+.slider-controls .slider-arrows .how-works__arrow:hover, .slider-controls-creators .slider-arrows .how-works__arrow:hover {
     background: #001179 !important;
 }
-.slider-controls .slider-arrows .how-works__arrow.how-works__arrow_left {
+.slider-controls .slider-arrows .how-works__arrow.how-works__arrow_left, .slider-controls-creators .slider-arrows .how-works__arrow.how-works__arrow_left {
     margin-right: 12px;
     background: linear-gradient(225deg, #ffb1e7 0%, #8d9dff 49.75%, #5de2ff 100%);
 }
-.slider-controls .slider-arrows .how-works__arrow i {
+.slider-controls .slider-arrows .how-works__arrow i, .slider-controls-creators .slider-arrows .how-works__arrow i {
     color: #FFF;
     font-size: 22px;
 }
-.slider-controls .slick-dots {
+.slider-controls .slick-dots, .slider-controls-creators .slick-dots {
     width: auto;
     font-size: 0;
     line-height: 0;
@@ -2138,7 +2263,7 @@ BRANDS PAGE STYLES
     text-align: right;
     margin: 0 -20px 0;
 }
-.slider-controls .slick-dots li {
+.slider-controls .slick-dots li, .slider-controls-creators .slick-dots li {
     margin: 0;
     width: auto;
     height: auto;
@@ -2154,23 +2279,23 @@ BRANDS PAGE STYLES
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-.slider-controls .slick-dots li.slick-active {
+.slider-controls .slick-dots li.slick-active, .slider-controls-creators .slick-dots li.slick-active {
     color: #001179;
 }
 
-.how-works-slider {
+.how-works-slider, .how-works-slider-creators {
     overflow: hidden;
     margin-bottom: 0 !important;
     margin-right: calc(-100vw / 2 + 100% / 2) !important;
 }
-.how-works-slider .slick-list {
+.how-works-slider .slick-list, .how-works-slider-creators .slick-list {
     margin-left: 0;
     margin-right: 0;
 }
-.how-works-slider .slick-list .slick-track {
+.how-works-slider .slick-list .slick-track, .how-works-slider-creators .slick-list .slick-track {
     height: 100%;
 }
-.how-works-slider .slick-list .slick-track .slick-slide {
+.how-works-slider .slick-list .slick-track .slick-slide, .how-works-slider-creators .slick-list .slick-track .slick-slide {
     padding-left: 15px;
     padding-right: 15px;
     float: left !important;
@@ -4766,6 +4891,9 @@ FOOTER STYLES
     height: calc(100% - 30px);
     background: linear-gradient(104deg, #ffe0f5 0%, #cad1fc 49.75%, #d1f7ff 100%);
 }
+.call-action__item.list-how .call-action__item-text {
+    padding: 100px 60px;
+}
 .call-action__item:-webkit-any-link:hover .call-action__item-media img {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
@@ -5909,6 +6037,31 @@ MEDIA QUERIES
         padding: 150px 0;
     }
 
+    #for-brands-creators-chooser {
+        font-size: 90px !important;
+        line-height: 100px !important;
+        letter-spacing: -2.25px !important;
+    }
+
+    .mfp-work .mfp-close {
+        top: 15px;
+        right: 15px;
+        font-size: 20px;
+    }
+
+    .list-how-work-details {
+        padding: 130px 0;
+    }
+    .list-how-work-details__content .title {
+        font-size: 120px;
+        line-height: 126px;
+        letter-spacing: -3.6px;
+    }
+
+    .list-work-item {
+        margin-bottom: 70px;
+    }
+
     /***********************************
     CAREERS
     ***********************************/
@@ -6079,6 +6232,28 @@ MEDIA QUERIES
 
     .latest-news {
         padding: 120px 0;
+    }
+
+    #for-brands-creators-chooser {
+        font-size: 80px !important;
+        line-height: 90px !important;
+        letter-spacing: -2px !important;
+    }
+
+    .list-how-work-details {
+        padding: 120px 0;
+    }
+    .list-how-work-details__content {
+        margin-bottom: 50px;
+    }
+    .list-how-work-details__content .title {
+        font-size: 100px;
+        line-height: 110px;
+        letter-spacing: -3px;
+    }
+
+    .list-work-item {
+        margin-bottom: 60px;
     }
 
     /***********************************
@@ -6254,11 +6429,11 @@ MEDIA QUERIES
         max-width: 1000px;
     }
 
-    .slider-controls .slick-dots {
+    .slider-controls .slick-dots, .slider-controls-creators .slick-dots {
         margin-left: 5px;
         margin-right: 5px;
     }
-    .slider-controls .slick-dots li {
+    .slider-controls .slick-dots li, .slider-controls-creators .slick-dots li {
         font-size: 20px;
         line-height: 30px;
         padding-left: 5px;
@@ -6298,6 +6473,9 @@ MEDIA QUERIES
     ***********************************/
     .call-action {
         padding-bottom: 120px;
+    }
+    .call-action__item.list-how .call-action__item-text {
+        padding: 80px 28px;
     }
     .call-action__item-text {
         padding: 60px 38px;
@@ -6428,6 +6606,25 @@ MEDIA QUERIES
     .latest-news .blog-post .text {
         max-width: 100%;
         margin-right: auto;
+    }
+
+    #for-brands-creators-chooser {
+        font-size: 72px !important;
+        line-height: 84px !important;
+        padding: 0 35px 0 0 !important;
+        letter-spacing: -1.8px !important;
+    }
+
+    .list-how-work-details {
+        padding: 100px 0;
+    }
+    .list-how-work-details__content {
+        margin-bottom: 40px;
+    }
+    .list-how-work-details__content .title {
+        font-size: 80px;
+        line-height: 90px;
+        letter-spacing: -2.4px;
     }
 
     /***********************************
@@ -6816,6 +7013,9 @@ MEDIA QUERIES
     .call-action {
         padding: 100px 0;
     }
+    .call-action__item.list-how .call-action__item-text {
+        padding: 60px 25px;
+    }
     .call-action__item-text .title {
         margin-bottom: 0;
     }
@@ -7043,6 +7243,24 @@ MEDIA QUERIES
     }
     .latest-news__content {
         margin-bottom: 40px;
+    }
+
+    #for-brands-creators-chooser {
+        font-size: 60px !important;
+        line-height: 68px !important;
+        letter-spacing: -1.5px !important;
+    }
+
+    .list-how-work-details {
+        padding: 80px 0;
+    }
+    .list-how-work-details__content {
+        margin-bottom: 30px;
+    }
+    .list-how-work-details__content .title {
+        font-size: 72px;
+        line-height: 84px;
+        letter-spacing: -1.8px;
     }
 
     /***********************************
@@ -7503,15 +7721,15 @@ MEDIA QUERIES
         margin-left: inherit;
     }
 
-    .slider-controls .slider-arrows .how-works__arrow {
+    .slider-controls .slider-arrows .how-works__arrow, .slider-controls-creators .slider-arrows .how-works__arrow {
         width: 60px;
         height: 60px;
         line-height: 60px;
     }
-    .slider-controls .slider-arrows .how-works__arrow i {
+    .slider-controls .slider-arrows .how-works__arrow i, .slider-controls-creators .slider-arrows .how-works__arrow i {
         font-size: 16px;
     }
-    .slider-controls .slick-dots li {
+    .slider-controls .slick-dots li, .slider-controls-creators .slick-dots li {
         font-size: 16px;
         line-height: 26px;
         letter-spacing: -0.4px;
@@ -7608,6 +7826,9 @@ MEDIA QUERIES
     ***********************************/
     .call-action {
         padding: 80px 0;
+    }
+    .call-action__item.list-how .call-action__item-text {
+        padding: 50px 25px;
     }
     .call-action__item-text {
         padding: 50px 25px;
@@ -7910,6 +8131,31 @@ MEDIA QUERIES
     }
     .latest-news__content {
         margin-bottom: 35px;
+    }
+
+    #for-brands-creators-chooser {
+        font-size: 55px !important;
+        line-height: 65px !important;
+        letter-spacing: -1.375px !important;
+    }
+
+    .list-how-work-details {
+        padding: 70px 0;
+    }
+    .list-how-work-details__content .title {
+        font-size: 60px;
+        line-height: 72px;
+        letter-spacing: -1.5px;
+    }
+
+    .list-work-item__media {
+        margin-bottom: 10px;
+    }
+    .list-work-item__text {
+        max-width: 100%;
+    }
+    .list-work-item__text .btn {
+        margin-top: 15px;
     }
 
     /***********************************
@@ -8682,6 +8928,18 @@ MEDIA QUERIES
         padding: 40px 0;
     }
 
+    #for-brands-creators-chooser {
+        font-size: 48px !important;
+        line-height: 58px !important;
+        letter-spacing: -1.2px !important;
+    }
+
+    .list-how-work-details__content .title {
+        font-size: 45px;
+        line-height: 55px;
+        letter-spacing: -1.125px;
+    }
+
     /***********************************
     TRY GLEWEE
     ***********************************/
@@ -9375,6 +9633,13 @@ MEDIA QUERIES
     .why-glewee__item.expand.expand-big .why-glewee__item-media {
         right: -260px;
     }
+
+    #for-brands-creators-chooser {
+        font-size: 42px !important;
+        line-height: 52px !important;
+        padding: 0 30px 0 0 !important;
+        letter-spacing: -1.05px !important;
+    }
 }
 /* 480 */
 @media only screen and (max-width: 450px) {
@@ -9388,7 +9653,7 @@ MEDIA QUERIES
         min-height: 670px;
     }
 
-    .slider-controls .slick-dots li {
+    .slider-controls .slick-dots li, .slider-controls-creators .slick-dots li {
         font-size: 14px;
         line-height: 24px;
         letter-spacing: -0.35px;

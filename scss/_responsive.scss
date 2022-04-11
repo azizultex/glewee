@@ -159,6 +159,32 @@ MEDIA QUERIES
         padding: 150px 0;
     }
 
+    #for-brands-creators-chooser { 
+        font-size: 90px !important;
+        line-height: 100px !important;   
+        letter-spacing: -2.25px !important;
+    } 
+
+    .mfp-work .mfp-close { 
+        top: 15px; 
+        right: 15px;
+        font-size: 20px; 
+    }
+
+    .list-how-work-details {
+        padding: 130px 0;
+
+        &__content .title {
+            font-size: 120px;
+            line-height: 126px; 
+            @include letter-spacing(-30, 120);
+        }
+    }
+
+    .list-work-item {
+        margin-bottom: 70px;
+    }
+
     /***********************************
     CAREERS
     ***********************************/
@@ -379,6 +405,30 @@ MEDIA QUERIES
         padding: 120px 0;
     }
 
+    #for-brands-creators-chooser { 
+        font-size: 80px !important;
+        line-height: 90px !important;   
+        letter-spacing: -2px !important;
+    }
+
+    .list-how-work-details {
+        padding: 120px 0;
+
+        &__content {
+            margin-bottom: 50px;
+
+            .title {
+                font-size: 100px;
+                line-height: 110px; 
+                @include letter-spacing(-30, 100);
+            }
+        }
+    }
+
+    .list-work-item {
+        margin-bottom: 60px;
+    }
+
     /***********************************
     TRY GLEWEE
     ***********************************/
@@ -584,16 +634,19 @@ MEDIA QUERIES
         }
     }
 
-    .slider-controls .slick-dots {
-        margin-left: 5px;
-        margin-right: 5px;
+    .slider-controls, .slider-controls-creators {
 
-        li {
-            font-size: 20px;
-            line-height: 30px;
-            padding-left: 5px;
-            padding-right: 5px;
-            @include letter-spacing(-25, 20);
+        .slick-dots {
+            margin-left: 5px;
+            margin-right: 5px;
+
+            li {
+                font-size: 20px;
+                line-height: 30px;
+                padding-left: 5px;
+                padding-right: 5px;
+                @include letter-spacing(-25, 20);
+            }
         }
     }
 
@@ -635,6 +688,10 @@ MEDIA QUERIES
         padding-bottom: 120px;
 
         &__item {
+
+            &.list-how .call-action__item-text {
+                padding: 80px 28px;
+            }
 
             &-text { 
                 padding: 60px 38px;
@@ -806,6 +863,28 @@ MEDIA QUERIES
             margin-right: auto;
         }
     }
+
+    #for-brands-creators-chooser { 
+        font-size: 72px !important;
+        line-height: 84px !important;   
+        padding: 0 35px 0 0 !important;
+        letter-spacing: -1.8px !important;
+    }
+
+    .list-how-work-details {
+        padding: 100px 0;
+
+        &__content {
+            margin-bottom: 40px;
+
+            .title {
+                font-size: 80px;
+                line-height: 90px; 
+                @include letter-spacing(-30, 80);
+            }
+        }
+    } 
+
     /***********************************
     TRY GLEWEE
     ***********************************/
@@ -1322,6 +1401,10 @@ MEDIA QUERIES
 
         &__item {
 
+            &.list-how .call-action__item-text {
+                padding: 60px 25px;
+            }
+
             &-text {
 
                 .title { 
@@ -1639,6 +1722,26 @@ MEDIA QUERIES
             margin-bottom: 40px;
         }
     }
+
+    #for-brands-creators-chooser { 
+        font-size: 60px !important;
+        line-height: 68px !important;    
+        letter-spacing: -1.5px !important;
+    }
+
+    .list-how-work-details {
+        padding: 80px 0;
+
+        &__content {
+            margin-bottom: 30px;
+
+            .title {
+                font-size: 72px;
+                line-height: 84px; 
+                @include letter-spacing(-25, 72);
+            }
+        }
+    } 
 
     /***********************************
     TRY GLEWEE
@@ -2193,7 +2296,7 @@ MEDIA QUERIES
         }
     }
 
-    .slider-controls {
+    .slider-controls, .slider-controls-creators {
 
         .slider-arrows .how-works__arrow {
             width: 60px;
@@ -2323,6 +2426,10 @@ MEDIA QUERIES
         padding: 80px 0;
 
         &__item {
+
+            &.list-how .call-action__item-text {
+                padding: 50px 25px;
+            }
 
             &-text {
                 padding: 50px 25px;
@@ -2755,6 +2862,40 @@ MEDIA QUERIES
 
         &__content {
             margin-bottom: 35px;
+        }
+    }
+
+    #for-brands-creators-chooser { 
+        font-size: 55px !important;
+        line-height: 65px !important;    
+        letter-spacing: -1.375px !important;
+    }
+
+    .list-how-work-details {
+        padding: 70px 0;
+
+        &__content { 
+
+            .title {
+                font-size: 60px;
+                line-height: 72px; 
+                @include letter-spacing(-25, 60);
+            }
+        }
+    }
+
+    .list-work-item {
+
+        &__media {
+            margin-bottom: 10px;
+        }
+
+        &__text {
+            max-width: 100%;
+
+            .btn  {
+                margin-top: 15px;
+            }
         }
     }
 
@@ -3716,6 +3857,24 @@ MEDIA QUERIES
         padding: 40px 0;
     }
 
+    #for-brands-creators-chooser { 
+        font-size: 48px !important;
+        line-height: 58px !important;    
+        letter-spacing: -1.2px !important;
+    }
+
+    .list-how-work-details { 
+
+        &__content { 
+
+            .title {
+                font-size: 45px;
+                line-height: 55px; 
+                @include letter-spacing(-25, 45);
+            }
+        }
+    }
+
     /***********************************
     TRY GLEWEE
     ***********************************/
@@ -4566,6 +4725,14 @@ MEDIA QUERIES
     .why-glewee__item.expand.expand-big .why-glewee__item-media { 
         right: -260px;
     }
+
+     #for-brands-creators-chooser { 
+        font-size: 42px !important;
+        line-height: 52px !important;    
+        padding: 0 30px 0 0 !important;
+        letter-spacing: -1.05px !important;
+    }
+
     
 } /* 480 */
 
@@ -4584,10 +4751,13 @@ MEDIA QUERIES
         }
     }
 
-    .slider-controls .slick-dots li {
-        font-size: 14px;
-        line-height: 24px; 
-        @include letter-spacing(-25, 14);
+    .slider-controls, .slider-controls-creators {
+        
+        .slick-dots li {
+            font-size: 14px;
+            line-height: 24px; 
+            @include letter-spacing(-25, 14);
+        }
     }
 
     /***********************************

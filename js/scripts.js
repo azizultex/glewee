@@ -163,6 +163,33 @@
 		slidesToScroll: 1
 	});
 
+	var selected = $('#for-brands-creators-chooser'),
+    creators = document.getElementById("for-creators__chooser"),
+    brands = document.getElementById("for-brands__chooser");
+
+	selected.change(function(){ 
+
+		if (selected.val() == 'for-brands' ) {
+		  	creators.classList.add("hide");   
+		  	brands.classList.remove("hide");
+		} else {
+			brands.classList.add("hide");   
+		  	creators.classList.remove("hide");
+		}
+	});
+
+	/*** join-kickout lightbox */
+    $('.list-how-work').magnificPopup({
+      removalDelay: 300, //delay removal by X to allow out-animation
+      callbacks: {
+        beforeOpen: function() {
+           this.st.mainClass = this.st.el.attr('data-effect');
+        }
+      },
+      midClick: true,
+      closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close"></button>',
+    });
+
 	/*** pricing table */
 	var pricingSwitcher = document.getElementById("switcher"),
     pricingMonthly = document.getElementById("monthly"),
@@ -444,6 +471,32 @@
         nextArrow: '<div class="how-works__arrow how-works__arrow_right"><i class="icon-arrow-right"></div>',  
         dotsClass: "slick-dots list-inline",
         appendDots: $(".slider-controls"),
+        customPaging: function (slider, i) {
+            var title = $(slider.$slides[i]).data("title");
+            return title;
+        },
+	}) 
+
+    /*** how-works Slider */
+    var $how_worksslick;
+
+	$how_worksslick = $('.how-works-slider-creators');
+
+	$how_worksslick.slick({
+		autoplay: true,
+		speed: 300, 
+  		dots: true,
+  		arrows: true,
+  		infinite: true,
+		slidesToShow: 1, 
+	  	initialSlide: 1,
+	  	variableWidth: true,
+	  	slidesToScroll: 1,
+	  	appendArrows: $('.slider-controls-creators .slider-arrows'),
+        prevArrow: '<div class="how-works__arrow how-works__arrow_left"><i class="icon-arrow-left"></i></div>',
+        nextArrow: '<div class="how-works__arrow how-works__arrow_right"><i class="icon-arrow-right"></div>',  
+        dotsClass: "slick-dots list-inline",
+        appendDots: $(".slider-controls-creators"),
         customPaging: function (slider, i) {
             var title = $(slider.$slides[i]).data("title");
             return title;
