@@ -22,6 +22,7 @@ jQuery( document ).ready(function() {
     // Home
     dynamic_title_repeater_accordion('explore_more', 'title');
     dynamic_title_repeater_accordion('how_works', 'title');
+    dynamic_title_repeater_accordion('how_works_group', 'name');
 
     // About
     dynamic_title_repeater_accordion('tabs', 'title');

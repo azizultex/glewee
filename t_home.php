@@ -401,20 +401,28 @@ get_header();
 		$how_works = get_field( 'how_works' ); if ( !empty( $how_works ) && array_filter( $how_works ) ): ?>
 	    <div class="how-works home">
 	        <div class="container">
-	        	<?php if ( $how_works['sub_title'] || $how_works['title'] ): ?>
+	        	<?php if ( $how_works['title'] || $how_works['how_works_group'] ): ?>
 	            <div class="row">
 	                <div class="col-12">
 	                    <div class="how-works__content">
 	                        <div class="how-works__content-text">
 	                        	<?php
-	                        		if ( $how_works['sub_title'] ) 
-	                        		{
-	                        			printf( '<h3 class="title h2">%s</h3> ', $how_works['sub_title'] );
-	                        		}
-
 	                        		if ( $how_works['title'] ) 
 	                        		{
-	                        			printf( '<h2 class="main-title color-secondary h1 lg">%s</h2>', $how_works['title'] );
+	                        			printf( '<h3 class="title h2">%s</h3> ', $how_works['title'] );
+	                        		}
+
+	                        		if ( $how_works['how_works_group'] ) 
+	                        		{
+	                        			echo '<select id="for-brands-creators-chooser">';
+	                        				foreach ( $how_works['how_works_group'] as $key => $group ) 
+	                        				{
+	                        					$selected = $key == 0 ? ' selected' : '';
+
+	                        					printf( '<option class="main-title color-secondary h1 lg" value="%s"%s>%s</option>', clean( $group['name'] ), $selected, $group['name'] );
+	                        				}
+
+	                        			echo '</select>';
 	                        		}
 	                        	?>
 	                        </div> 
@@ -423,52 +431,56 @@ get_header();
 	            </div>
 	            <?php endif; ?>
 
-	            <?php if ( $how_works['how_works'] ): ?>
-	            <div class="row how-works-slider">
-	            	<?php foreach ( $how_works['how_works'] as $how ): ?>
-	                <div class="slider-item" data-title="<?php echo $how['nav']; ?>">
-	                    <div class="how-works__item d-flex align-items-center flex-row"> 
-	                    	<?php if ( $how['title'] || $how['sub_title'] || $how['description'] || $how['button']['text'] ): ?>
-	                        <div class="how-works__item-text float-left">
-	                        	<?php
-	                        		if ( $how['title'] ) 
-	                        		{
-	                        			printf( '<h2 class="title">%s</h2>', $how['title'] );
-	                        		}
+	            <?php if ( $how_works['how_works_group'] ): foreach ( $how_works['how_works_group'] as $key => $group ): ?>
+	            <div id="<?php echo clean( $group['name'] ); ?>__chooser" class="<?php if ( $key !== 0 ) echo 'hide'; ?>">
+	            	<?php if ( $group['how_works'] ): ?>
+	            	<div class="row<?php echo $key % 2 ? ' how-works-slider-creators' : ' how-works-slider'; ?>">
+	            		<?php foreach ( $group['how_works'] as $how ): ?>
+	            	    <div class="slider-item" data-title="<?php echo $how['nav']; ?>">
+	            	        <div class="how-works__item d-flex align-items-center flex-row"> 
+	            	        	<?php if ( $how['title'] || $how['sub_title'] || $how['description'] || $how['button']['text'] ): ?>
+	            	            <div class="how-works__item-text float-left">
+	            	            	<?php
+	            	            		if ( $how['title'] ) 
+	            	            		{
+	            	            			printf( '<h2 class="title">%s</h2>', $how['title'] );
+	            	            		}
 
-	                        		if ( $how['sub_title'] ) 
-	                        		{
-	                        			printf( '<h6 class="sub-title">%s</h6>', $how['sub_title'] );
-	                        		}
+	            	            		if ( $how['sub_title'] ) 
+	            	            		{
+	            	            			printf( '<h6 class="sub-title">%s</h6>', $how['sub_title'] );
+	            	            		}
 
-	                        		if ( $how['description'] ) 
-	                        		{
-	                        			printf( '%s', $how['description'] );
-	                        		}
+	            	            		if ( $how['description'] ) 
+	            	            		{
+	            	            			printf( '%s', $how['description'] );
+	            	            		}
 
-	                        		acfButton( $how );
-	                        	?>
-	                        </div>
-	                    	<?php endif;
+	            	            		acfButton( $how );
+	            	            	?>
+	            	            </div>
+	            	        	<?php endif;
 
-	                        if ( $how['image'] ): ?>
-	                        <div class="how-works__item-media">
-	                        	<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $how['image']['url'] ), $how['image']['alt'] ); ?>
-	                        </div> 
-	                        <?php endif; ?>
-	                    </div>
-	                </div> 
-	            	<?php endforeach; ?>
+	            	            if ( $how['image'] ): ?>
+	            	            <div class="how-works__item-media">
+	            	            	<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $how['image']['url'] ), $how['image']['alt'] ); ?>
+	            	            </div> 
+	            	            <?php endif; ?>
+	            	        </div>
+	            	    </div> 
+	            		<?php endforeach; ?>
+	            	</div>
+
+	            	<div class="row">
+	            	    <div class="col-12">
+	            	        <div class="<?php echo $key % 2 ? 'slider-controls-creators ' : 'slider-controls '; ?>d-flex align-items-center justify-content-between">
+	            	            <div class="slider-arrows d-flex align-items-center"></div> 
+	            	        </div>
+	            	    </div>
+	            	</div>
+	            	<?php endif; ?>
 	            </div>
-
-	            <div class="row">
-	                <div class="col-12">
-	                    <div class="slider-controls d-flex align-items-center justify-content-between">
-	                        <div class="slider-arrows d-flex align-items-center"></div> 
-	                    </div>
-	                </div>
-	            </div>
-	            <?php endif; ?>
+	            <?php endforeach; endif; ?>
 	        </div>
 	    </div><!-- /how-works -->
 
