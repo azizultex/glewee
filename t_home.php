@@ -432,7 +432,7 @@ get_header();
 	            <?php endif; ?>
 
 	            <?php if ( $how_works['how_works_group'] ): foreach ( $how_works['how_works_group'] as $key => $group ): ?>
-	            <div id="<?php echo clean( $group['name'] ); ?>__chooser" class="<?php if ( $key !== 0 ) echo 'hide'; ?>">
+	            <div id="<?php echo clean( $group['name'] ); ?>" class="for-brands-creators<?php if ( $key !== 0 ) echo ' hide'; ?>">
 	            	<?php if ( $group['how_works'] ): ?>
 	            	<div class="row<?php echo $key % 2 ? ' how-works-slider-creators' : ' how-works-slider'; ?>">
 	            		<?php foreach ( $group['how_works'] as $how ): ?>

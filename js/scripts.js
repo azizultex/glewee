@@ -163,20 +163,31 @@
 		slidesToScroll: 1
 	});
 
-	var selected = $('#for-brands-creators-chooser'),
-    creators = document.getElementById("for-creators__chooser"),
-    brands = document.getElementById("for-brands__chooser");
+	$('#for-brands-creators-chooser').select2({
+      minimumResultsForSearch: Infinity,
+    });
 
-	selected.change(function(){ 
-
-		if (selected.val() == 'for-brands' ) {
-		  	creators.classList.add("hide");   
-		  	brands.classList.remove("hide");
-		} else {
-			brands.classList.add("hide");   
-		  	creators.classList.remove("hide");
-		}
+    $('#for-brands-creators-chooser').on('select2:select', function (e) {
+	    var data = e.params.data;
+	  
+	    $('.for-brands-creators').addClass('hide');
+	    $('.for-brands-creators#'+data.id+'').removeClass('hide');
 	});
+
+	// var selected = $('#for-brands-creators-chooser'),
+ //    creators = document.getElementById("for-creators__chooser"),
+ //    brands = document.getElementById("for-brands__chooser");
+
+	// selected.change(function(){ 
+
+	// 	if (selected.val() == 'for-brands' ) {
+	// 	  	creators.classList.add("hide");   
+	// 	  	brands.classList.remove("hide");
+	// 	} else {
+	// 		brands.classList.add("hide");   
+	// 	  	creators.classList.remove("hide");
+	// 	}
+	// });
 
 	/*** join-kickout lightbox */
     $('.list-how-work').magnificPopup({

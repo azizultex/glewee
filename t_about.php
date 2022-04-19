@@ -324,7 +324,7 @@ get_header(); ?>
 	                        <div class="what-tabs__body">
 	                            <div class="tab-content">
 	                            	<?php foreach ( $glewee_does['tabs'] as $key => $tab ): ?>
-	                                <div id="tab-text-<?php echo $key; ?>" class="tab-pane what-tabs__item<?php if ( $key == 0 ) echo ' active'; ?>" role="tabpanel">
+	                                <div id="tab-text-<?php echo $key; ?>" class="tab-pane what-tabs__item<?php if ( $glewee_does['animation'] ) echo ' animated '.$glewee_does['animation']; if ( $key == 0 ) echo ' active'; ?>" role="tabpanel">
 	                                    <div class="what-tabs__item-text">
 	                                        <div class="content">
 	                                        	<?php

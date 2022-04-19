@@ -1438,23 +1438,113 @@ HOME STYLES
 	}
 }
 
-#for-brands-creators-chooser { 
-	padding: 0 45px 0 0 !important; 
-	width: inherit !important; 
-	font-family: $pop !important;
-	box-shadow: none !important;
-	display: block !important;
-	color: $secondary !important;
-	font-size: 112px !important;
-	line-height: 124px !important;
-	font-weight: bold !important;
-	@include letter-spacing(-25, 112);
-	@include border-radius(0 !important); 
-    background-size: 16px !important; 
-    background-repeat: no-repeat !important;
-    background-position: right 1px center !important;
-    background-image: url(images/svg/caret-down-1.svg) !important;
-} 
+select option[selected] {
+  display: none;
+}
+
+.select2  {  
+	max-width: 770px !important;
+
+	&-selection {
+
+		&__arrow {
+			top: 50% !important;
+			right: 10px !important;
+			width: 27px !important;
+			height: 17px !important;
+			background-size: contain;
+			background-repeat: no-repeat;
+			@include transform(translate(0, -50%));
+			background-image: url(images/svg/caret-down-1.svg) !important;
+
+			b {
+				display: none !important;
+			}
+		}
+
+		&--single {
+			border: 0 !important;
+			height: auto !important;
+		}
+	} 
+
+	&-container {
+		
+		&--open {
+
+			&.select2-container--below {
+
+				.select2-selection {
+					box-shadow: -1px 1px 0 #B6BDF3 inset, 1px 0 0 #B6BDF3 inset;
+				}
+			}
+
+			&.select2-container--above {
+
+				.select2-selection {
+					box-shadow: -1px -1px 0 #B6BDF3 inset, 1px 0 0 #B6BDF3 inset;
+				}
+			}
+
+			.select2-selection--single { 
+				border: 0 !important;
+			}
+
+			.select2-selection__rendered, .select2-results__option {
+				overflow: hidden;
+				padding: 0 !important;
+				width: auto !important;
+				cursor: pointer !important;
+				font-size: 112px !important;
+				color: $secondary !important;
+				font-family: $pop !important;
+				font-weight: bold !important;
+				line-height: 124px !important;
+				white-space: nowrap !important;
+				@include letter-spacing(-25, 112);
+			}
+		}
+
+	}
+
+	&-results__option[aria-selected="true"] {
+		display: none;
+	}
+
+	&-selection__rendered, &-results__option {
+		overflow: hidden;
+		width: auto !important;
+		padding: 0 !important;
+		cursor: pointer !important;
+		font-size: 112px !important;
+		color: $secondary !important;
+		font-family: $pop !important;
+		font-weight: bold !important;
+		line-height: 124px !important;
+		white-space: nowrap !important;
+		@include letter-spacing(-25, 112);
+
+		&[aria-selected="false"] {
+			color: #B6BDF3 !important;
+		}
+	}
+}
+
+.select2-dropdown {
+	border: 0 !important;
+
+	&.select2-dropdown--below {
+		box-shadow: -1px -1px 0 #B6BDF3 inset, 1px 0 0 #B6BDF3 inset;
+	}
+
+	&.select2-dropdown--above {
+		box-shadow: -1px 1px 0 #B6BDF3 inset, 1px 0 0 #B6BDF3 inset;
+	}
+}
+
+.select2-container--default.select2-container--open.select2-container--above .select2-selection--single .select2-selection__arrow {
+	@include transform(translate(0, -50%)rotate(180deg));
+}
 
 /***********************************
 BRANDS PAGE STYLES
