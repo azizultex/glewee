@@ -1442,7 +1442,8 @@ select option[selected] {
   display: none;
 }
 
-.select2  {  
+.select2  { 
+	margin-left: -15px;
 	max-width: 770px !important;
 
 	&-selection {
@@ -1463,6 +1464,8 @@ select option[selected] {
 		}
 
 		&--single {
+			padding-left: 15px;
+			padding-bottom: 15px;
 			border: 0 !important;
 			height: auto !important;
 		}
@@ -1531,6 +1534,8 @@ select option[selected] {
 }
 
 .select2-dropdown {
+	padding-left: 15px;
+	padding-bottom: 15px;
 	border: 0 !important;
 
 	&.select2-dropdown--below {

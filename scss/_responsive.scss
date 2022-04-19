@@ -873,6 +873,7 @@ MEDIA QUERIES
     }
  
     .select2 {
+        margin-left: -10px;
         max-width: 530px !important;
 
         &-selection__rendered, &-results__option, &-container--open .select2-selection__rendered, &-container--open .select2-results__option { 
@@ -880,6 +881,16 @@ MEDIA QUERIES
             line-height: 84px !important;   
             letter-spacing: -1.8px !important;
         }
+    }
+
+    .select2-selection--single {
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+    .select2-dropdown {
+        padding-left: 10px;
+        padding-bottom: 10px;
     }
 
     .list-how-work-details {
