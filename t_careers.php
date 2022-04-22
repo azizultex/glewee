@@ -57,7 +57,7 @@ get_header();
 	                    			printf( '%s', $careers_content['content'] );
 	                    		}
 
-	                    		acfButton( $careers_content, 'btn-red smoothScroll' );
+	                    		acfButton( $careers_content, 'btn-red btn-glowing smoothScroll' );
 	                    	?>
 	                    </div>
 	                </div>
@@ -285,7 +285,7 @@ get_header();
 	                							if ( $job['link'] ) 
 	                							{
 	                								printf( '<div class="job__item-card-button">
-						                                <span class="btn">%s</span>
+						                                <span class="btn btn-glowing">%s</span>
 						                            </div>', $job['link']['title'] );
 	                							}
 	                						echo '</a>';

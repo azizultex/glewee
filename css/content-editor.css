@@ -10481,6 +10481,130 @@ select:focus, textarea:hover, textarea:focus {
     content: none;
 }
 
+.social-media {
+    margin-bottom: 0;
+}
+.social-media li a {
+    width: 46px;
+    height: 46px;
+    color: #FFF;
+    display: block;
+    font-size: 14px;
+    line-height: 46px;
+    text-align: center;
+    background: #001179;
+    border-radius: 500px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-right: 5px;
+    margin-bottom: 20px;
+}
+.social-media li a:before {
+    vertical-align: middle;
+}
+.social-media li a.icon-facebook {
+    background: #4064AD;
+}
+.social-media li a.icon-facebook:hover {
+    background: #324e88;
+}
+.social-media li a.icon-gplus {
+    background: #DC4E41;
+}
+.social-media li a.icon-gplus:hover {
+    background: #c63224;
+}
+.social-media li a.icon-instagram {
+    background: #7558F2;
+}
+.social-media li a.icon-instagram:hover {
+    background: #4e29ee;
+}
+.social-media li a.icon-linkedin {
+    background: #286290;
+}
+.social-media li a.icon-linkedin:hover {
+    background: #1d4768;
+}
+.social-media li a.icon-pinterest {
+    background: #EB274D;
+}
+.social-media li a.icon-pinterest:hover {
+    background: #cc1337;
+}
+.social-media li a.icon-qq {
+    background: #FEBF1B;
+}
+.social-media li a.icon-qq:hover {
+    background: #e5a601;
+}
+.social-media li a.icon-quora {
+    background: #b92b27;
+}
+.social-media li a.icon-quora:hover {
+    background: #8f211e;
+}
+.social-media li a.icon-reddit-alien {
+    background: #FF5600;
+}
+.social-media li a.icon-reddit-alien:hover {
+    background: #cc4500;
+}
+.social-media li a.icon-sina-weibo {
+    background: #E6162D;
+}
+.social-media li a.icon-sina-weibo:hover {
+    background: #b71224;
+}
+.social-media li a.icon-snapchat-ghost {
+    background: #FFFC00;
+}
+.social-media li a.icon-snapchat-ghost:hover {
+    background: #ccca00;
+}
+.social-media li a.icon-telegram {
+    background: #0088cc;
+}
+.social-media li a.icon-telegram:hover {
+    background: #006699;
+}
+.social-media li a.icon-twitter {
+    background: #1F9CEB;
+}
+.social-media li a.icon-twitter:hover {
+    background: #1280c5;
+}
+.social-media li a.icon-vkontakte {
+    background: #5181b8;
+}
+.social-media li a.icon-vkontakte:hover {
+    background: #3e6898;
+}
+.social-media li a.icon-wechat {
+    background: #7bb32e;
+}
+.social-media li a.icon-wechat:hover {
+    background: #5f8a24;
+}
+.social-media li a.icon-whatsapp {
+    background: #25D366;
+}
+.social-media li a.icon-whatsapp:hover {
+    background: #1da851;
+}
+.social-media li a.icon-youtube {
+    background: #FF0000;
+}
+.social-media li a.icon-youtube:hover {
+    background: #cc0000;
+}
+.social-media li a.icon-twitch {
+    background: #9147FE;
+}
+.social-media li a.icon-twitch:hover {
+    background: #7314fe;
+}
+
 .list-inline {
     margin-left: -5px;
     margin-right: -5px;

@@ -1,8 +1,8 @@
-<?php get_header( '', array( 'transparent' => false, 'sticky' => true ) ); ?>
+<?php get_header( '', array( 'transparent' => false, 'sticky' => true ) ); $content = get_field( 'content' );?>
 	
 	<div id="primary" class="content-area"> 
 
-	    <section class="blog-details-page single">
+	    <section class="blog-details-page">
 	        <div class="container">
 	            <div class="row" data-sticky_parent> 
 	                <div class="col-xl-7 offset-xl-2 offset-lg-1" data-sticky_column>
@@ -11,21 +11,8 @@
 	                    		echo '<div class="blog-post-top">';
 								echo '<a href="'.esc_url( get_day_link( get_the_time( 'Y' ), get_the_time( 'm' ), get_the_time( 'd' ) ) ).'" class="date text-uppercase">'.get_the_date('F j, Y').'</a>';								
 								the_title( '<h1 class="title">', '</h1>' );
-	                    		echo '</div>';
-								
-								// Start Author 
-								$authors = get_field( 'authors' );
-								
-	                    		echo '<div class="blog-post blog-post-sm">';
-								if ($authors) 
-								{
-									foreach ( $authors as $author ) 
-									{
-										get_template_part( 'template-parts/content', 'author', array( 'author_id' => $author ) );
-									}
-								}
-								echo '</div>';
-
+	                    		echo '</div>';								
+																
 	                    		echo '<article class="blog-post">';
 
 	                    			if ( has_post_thumbnail() ) 
@@ -36,6 +23,26 @@
 
 	                    				echo '</div> ';
 	                    			}
+									
+									$position = $content['position'];
+
+									if ( $position ) 
+									{
+										printf( '<h4 class="position text-uppercase">%s</h4>', $position );
+									}
+									$social_media = $content['social_media'];
+
+									if ( $social_media ) 
+									{
+										echo '<ul class="social-media list-inline d-flex">';
+
+											foreach ( $social_media as $social ) 
+											{
+												printf( '<li><a href="%s" class="%s" target="_blank"></a></li>', esc_url( $social['url'] ), $social['icon'] );
+											}
+
+										echo '</ul>';
+									}
 
                 					if( '' !== get_post()->post_content )
                 			        {

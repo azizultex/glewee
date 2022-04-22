@@ -146,7 +146,7 @@ get_header(); ?>
 	                	    		{
 	                	    			echo '<div class="pricing-bottom__content-btn">';
 
-	                	    				acfButton( $monthly, 'btn btn-border' );
+	                	    				acfButton( $monthly, 'btn-border btn-glowing' );
 
 	                	    			echo '</div>';
 	                	    		}
@@ -212,7 +212,7 @@ get_header(); ?>
 	                        					echo '</ul>';
 	                        				}
 
-	                        				acfButton( $monthly, 'btn btn-border' );
+	                        				acfButton( $monthly, 'btn-border btn-glowing' );
 
 	                        			echo '</div>';
 	                        		}
@@ -276,7 +276,7 @@ get_header(); ?>
 	                	    		{
 	                	    			echo '<div class="pricing-bottom__content-btn">';
 
-	                	    				acfButton( $yearly, 'btn btn-border' );
+	                	    				acfButton( $yearly, 'btn-border btn-glowing' );
 
 	                	    			echo '</div>';
 	                	    		}
@@ -342,7 +342,7 @@ get_header(); ?>
 	                        					echo '</ul>';
 	                        				}
 
-	                        				acfButton( $yearly, 'btn btn-border' );
+	                        				acfButton( $yearly, 'btn-border btn-glowing' );
 
 	                        			echo '</div>';
 	                        		}
@@ -375,7 +375,7 @@ get_header(); ?>
 	                    			printf( '<h3 class="sub-title color-secondary">%s</h3>', $apply_creator['sub_title'] );
 	                    		}
 
-	                    		acfButton( $apply_creator );
+	                    		acfButton( $apply_creator, 'btn-glowing' );
 	                    	?>
 	                    </div>
 	                </div>

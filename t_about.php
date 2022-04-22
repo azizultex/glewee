@@ -66,7 +66,7 @@ get_header(); ?>
 
 	                        				if ( $action['sub_title'] ) 
 	                        				{
-	                        					printf( '<h6 class="sub-title secondary">%s</h6>', $action['sub_title'] );
+	                        					printf( '<h6 class="sub-title">%s</h6>', $action['sub_title'] );
 	                        				}
 
 	                        			echo '</div>';
@@ -202,7 +202,7 @@ get_header(); ?>
                 	        			printf( '<div class="content-editor about-readmores">%s</div>', $brand_awareness['content'] );
                 	        		}
 
-                	        		acfButton( $brand_awareness );
+                	        		acfButton( $brand_awareness, 'btn-glowing' );
                 	        	?>
                 	        </div>
                 	    </div>
@@ -254,7 +254,7 @@ get_header(); ?>
 	                        			printf( '<div class="content-editor about-readmores">%s</div>', $about_community['content'] );
 	                        		}
 
-	                        		acfButton( $about_community );
+	                        		acfButton( $about_community,'btn-glowing' );
 	                        	?>
 	                        </div>
 	                    </div>
@@ -395,7 +395,7 @@ get_header(); ?>
     	                    					printf( '<div class="description">%s</div>', $ebook_offer['content'] );
     	                    				}
 
-    	                    				acfButton( $ebook_offer );
+    	                    				acfButton( $ebook_offer, 'btn-glowing' );
 
     	                    			echo '</div>';
     	                    		}

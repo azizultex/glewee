@@ -55,7 +55,7 @@ get_header();
                         		{
                     				foreach ( $banner['buttons'] as $key => $button ) 
                     				{
-                    					$btn_class = $key % 2 ? 'big-text secondary-btn' : 'big-text';
+                    					$btn_class = $key % 2 ? 'big-text secondary-btn' : 'btn-glowing big-text';
 
                     					acfButton( $button, $btn_class );
                     				}
@@ -108,7 +108,7 @@ get_header();
             	                			printf( '%s', $work['description'] );
             	                		}
 
-            	                		acfButton( $work );
+            	                		acfButton( $work, 'btn-glowing' );
             	                	?>
             	                </div>  
             	            </div>
@@ -191,7 +191,7 @@ get_header();
                 	            			printf( '%s', $how['description'] );
                 	            		}
 
-                	            		acfButton( $how );
+                	            		acfButton( $how, 'btn-glowing' );
                 	            	?>
                 	            </div>
                 	        	<?php endif;
@@ -270,7 +270,7 @@ get_header();
     	                                       			printf( '%s', $how['description'] );
     	                                       		}
 
-    	                                       		acfButton( $how );
+    	                                       		acfButton( $how, 'btn-glowing' );
     	                                       	?>
                                             </div>
                                        	</div>

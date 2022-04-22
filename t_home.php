@@ -54,7 +54,7 @@ get_header();
 
 	                		echo '<div class="banner__content-btn-group">';
 
-	                			acfButton( $banner, 'animated fadeInUp delay-3s' );
+	                			acfButton( $banner, 'btn-glowing animated fadeInUp delay-3s' );
 
 	                			echo '<button class="scrollDown animated fadeInUp delay-4s" data-space="0">
 		                            <i class="icon-arrow-down"></i> 
@@ -129,7 +129,7 @@ get_header();
 	                        			printf( '%s', $explore['description'] );
 	                        		}
 
-	                        		acfButton( $explore );
+	                        		acfButton( $explore ,'btn-glowing');
 	                        	?>
 	                        </div>
 	                    </div>
@@ -456,7 +456,7 @@ get_header();
 	            	            			printf( '%s', $how['description'] );
 	            	            		}
 
-	            	            		acfButton( $how );
+	            	            		acfButton( $how, 'btn-glowing' );
 	            	            	?>
 	            	            </div>
 	            	        	<?php endif;
@@ -631,8 +631,9 @@ get_header();
 	        	{
 	        		$args = array(
 	        			'posts_per_page' => 3,
-	        			'meta_key' => 'my_post_viewed',
-	        			'orderby' => 'meta_value_num',
+	        			//'meta_key' => 'my_post_viewed',
+	        			//'orderby' => 'meta_value_num',
+						'order' => 'DESC',
 	        		);
 	        	}
 

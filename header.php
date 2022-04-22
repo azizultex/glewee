@@ -125,7 +125,7 @@
                                 {
                                     $style = $key % 2 ? ' border-pink' : ' border-green';
 
-                                    printf( '<li class="btn-menu%s"><a href="%s" target="%s">%s</a></li>', $style, esc_url( $button['button']['url'] ), $button['button']['target'], $button['button']['title'] );
+                                    printf( '<li class="btn-menu%s"><a href="%s" target="%s" alt="%s"></a></li>', $style, esc_url( $button['button']['url'] ), $button['button']['target'], $button['button']['title'] );
                                 }                                
                             }
                         ?> 

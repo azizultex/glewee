@@ -129,7 +129,7 @@ get_header(); ?>
 	                    					printf( '<div class="description">%s</div>', $ebook_offer['content'] );
 	                    				}
 
-	                    				acfButton( $ebook_offer );
+	                    				acfButton( $ebook_offer, 'btn-glowing' );
 
 	                    			echo '</div>';
 	                    		}
