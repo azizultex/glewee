@@ -86,3 +86,40 @@ $social-colors: (
     	content: none;
     }
 }
+
+.social-media {
+	margin-bottom: 0;
+
+	li {
+
+		a {
+			width: 46px;
+			height: 46px;
+			color: $white;
+			display: block;
+			font-size: 14px;
+			line-height: 46px;
+			text-align: center;
+			background: $primary;
+			border-radius: 500px;
+			@include transition(all 0.3s ease);
+			margin-right: 5px;
+			margin-bottom: 20px;
+
+			&:before {
+				vertical-align: middle;
+			}
+
+			@each $name, $color in $social-colors {
+
+				&.icon-#{$name} {
+					background: $color;
+
+					&:hover {
+						background: darken($color, 10%);
+					}
+				}
+			}
+		}
+	}
+}
