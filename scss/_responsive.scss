@@ -926,6 +926,10 @@ MEDIA QUERIES
         }
     }
 
+    .swiper-slide {
+        max-width: 270px;
+    }
+
     .trusted-brands-slider-wrapper {  
         
         .trusted-brands-slider {  
@@ -2716,7 +2720,20 @@ MEDIA QUERIES
                                 }
                             }
                         }
-                    }    
+                    }  
+
+                    &.navbar-right {
+
+                        > li {
+
+                            &.btn-menu {
+
+                                > a {
+                                    padding: 2px;
+                                }
+                            }
+                        }
+                    }  
                 }
             }
         }
@@ -3962,6 +3979,10 @@ MEDIA QUERIES
             }
         }
     }  
+
+    .swiper-slide {
+        max-width: 250px;
+    }
 
     .trusted-brands-slider-wrapper {  
         

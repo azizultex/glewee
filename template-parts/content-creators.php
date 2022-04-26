@@ -40,28 +40,30 @@ if ( $trusted_creators['title'] || $trusted_creators['description'] || $trusted_
     <div class="container-fluid pl-0 pr-0">
         <div class="row">
             <div class="col-12">
-                <div class="trusted-brands-slider-wrapper"> 
-                	<?php foreach ( $trusted_creators['creators'] as $creator ): $link = $creator['link'] ? 'href="'.$creator['link']['url'].'" target="'.$creator['link']['target'].'"' : ''; ?>
-                    <div class="slider-item">
-                        <a <?php echo $link; ?> class="trusted-brands__item text">
-                        	<?php
-                        		if ( $creator['image'] ) 
-                        		{
-                        			printf( '<div class="trusted-brands__item-media">
-                                        <img src="%s" class="img-fluid" alt="%s">
-                                    </div>', esc_url( $creator['image']['url'] ), $creator['image']['alt'] );
-                        		}
+                <div class="swiper">
+                    <div class="trusted-brands-slider-wrapper swiper-wrapper"> 
+                    	<?php foreach ( $trusted_creators['creators'] as $creator ): $link = $creator['link'] ? 'href="'.$creator['link']['url'].'" target="'.$creator['link']['target'].'"' : ''; ?>
+                        <div class="slider-item swiper-slide">
+                            <a <?php echo $link; ?> class="trusted-brands__item text">
+                            	<?php
+                            		if ( $creator['image'] ) 
+                            		{
+                            			printf( '<div class="trusted-brands__item-media">
+                                            <img src="%s" class="img-fluid" alt="%s">
+                                        </div>', esc_url( $creator['image']['url'] ), $creator['image']['alt'] );
+                            		}
 
-                        		if ( $creator['name'] ) 
-                        		{
-                        			printf( '<div class="trusted-brands__item-client-logo">
-                                        <h6 class="title">@%s</h6>
-                                    </div>', $creator['name'] );
-                        		}
-                        	?>
-                        </a>
+                            		if ( $creator['name'] ) 
+                            		{
+                            			printf( '<div class="trusted-brands__item-client-logo">
+                                            <h6 class="title">@%s</h6>
+                                        </div>', $creator['name'] );
+                            		}
+                            	?>
+                            </a>
+                        </div>
+                        <?php endforeach; ?>
                     </div>
-                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

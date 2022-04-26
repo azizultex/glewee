@@ -3635,6 +3635,14 @@ TRY GLEWEE PAGE STYLES
 	}
 }
 
+.swiper-wrapper {
+	transition-timing-function: linear;
+}
+
+.swiper-slide {
+	max-width: 330px;
+}
+
 .trusted-brands {
 	overflow: hidden;
 	padding: 140px 0;

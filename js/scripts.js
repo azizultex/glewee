@@ -150,21 +150,45 @@
        	}
     });
 
-	$('.trusted-brands-slider-wrapper').slick({
-		dots: false,
-		autoplay: true,
-		speed: 5000,
-		arrows: false,
-		infinite: true,
-		slidesToShow: 6,
-		autoplaySpeed: 0,
-		cssEase: 'linear',
-		centerMode: true,
-		slidesToScroll: 1
-	});
+    $sliderBrands = $('.trusted-brands-slider-wrapper');
+
+	// $sliderBrands.slick({
+	// 	dots: false,
+	// 	autoplay: true,
+	// 	speed: 5000,
+	// 	arrows: false,
+	// 	infinite: true,
+	// 	slidesToShow: 6,
+	// 	autoplaySpeed: 0,
+	// 	cssEase: 'linear',
+	// 	centerMode: true,
+	// 	slidesToScroll: 1
+	// });
+
+	var mySwiper = new Swiper ('.swiper', {
+	    loop: true,
+	    speed: 2000, 
+	    spaceBetween: 30,
+	    centeredSlides: true,
+	    slidesPerView: 'auto',
+		direction: 'horizontal',  
+	    autoplay: {
+	      	delay: 0,
+	      	disableOnInteraction: false
+	    }, 
+	}); 
+
+	$('.swiper').hover(function() 
+	{
+        mySwiper.autoplay.stop();
+    }, 
+    function() 
+    {
+        mySwiper.autoplay.start();
+    });
 
 	$('#for-brands-creators-chooser').select2({
-      minimumResultsForSearch: Infinity,
+      	minimumResultsForSearch: Infinity,
     });
 
     $('#for-brands-creators-chooser').on('select2:select', function (e) {
@@ -174,31 +198,16 @@
 	    $('.for-brands-creators#'+data.id+'').removeClass('hide');
 	});
 
-	// var selected = $('#for-brands-creators-chooser'),
- //    creators = document.getElementById("for-creators__chooser"),
- //    brands = document.getElementById("for-brands__chooser");
-
-	// selected.change(function(){ 
-
-	// 	if (selected.val() == 'for-brands' ) {
-	// 	  	creators.classList.add("hide");   
-	// 	  	brands.classList.remove("hide");
-	// 	} else {
-	// 		brands.classList.add("hide");   
-	// 	  	creators.classList.remove("hide");
-	// 	}
-	// });
-
 	/*** join-kickout lightbox */
     $('.list-how-work').magnificPopup({
-      removalDelay: 300, //delay removal by X to allow out-animation
-      callbacks: {
-        beforeOpen: function() {
-           this.st.mainClass = this.st.el.attr('data-effect');
-        }
-      },
-      midClick: true,
-      closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close"></button>',
+      	removalDelay: 300, //delay removal by X to allow out-animation
+      	callbacks: {
+	        beforeOpen: function() {
+	           this.st.mainClass = this.st.el.attr('data-effect');
+	        }
+      	},
+      	midClick: true,
+      	closeMarkup: '<button title="Close (Esc)" type="button" class="mfp-close"></button>',
     });
 
 	/*** pricing table */

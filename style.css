@@ -3738,6 +3738,15 @@ TRY GLEWEE PAGE STYLES
     margin-top: 10px;
 }
 
+.swiper-wrapper {
+    -webkit-transition-timing-function: linear;
+            transition-timing-function: linear;
+}
+
+.swiper-slide {
+    max-width: 330px;
+}
+
 .trusted-brands {
     overflow: hidden;
     padding: 140px 0;
@@ -7065,6 +7074,10 @@ MEDIA QUERIES
         height: 270px;
     }
 
+    .swiper-slide {
+        max-width: 270px;
+    }
+
     .trusted-brands-slider-wrapper .trusted-brands-slider .slider-item {
         max-width: 300px;
     }
@@ -8441,6 +8454,9 @@ MEDIA QUERIES
     .header .navbar .navbar-collapse .navbar-nav > li.btn-menu.border-green > a, .header .navbar .navbar-collapse .navbar-nav > li.btn-menu.border-pink > a {
         padding: 3px 14px;
     }
+    .header .navbar .navbar-collapse .navbar-nav.navbar-right > li.btn-menu > a {
+        padding: 2px;
+    }
 
     .sidr .sidr-inner .mobile-header .navbar-header .navbar-brand {
         max-width: 120px;
@@ -9414,6 +9430,10 @@ MEDIA QUERIES
     .trusted-brands__item-media {
         width: 250px;
         height: 250px;
+    }
+
+    .swiper-slide {
+        max-width: 250px;
     }
 
     .trusted-brands-slider-wrapper .trusted-brands-slider .slider-item {
