@@ -5914,3 +5914,16 @@ DEFAULT STYLES
 
 @import 'basic';
 @import 'responsive';
+
+.goingclear {
+	font-size: 9px;
+	color: #b8bdcc;
+	text-align: right;
+}
+
+@media screen and (max-width: 1000px) {
+	.goingclear {
+		text-align: center;
+		float: none;
+	}
+}

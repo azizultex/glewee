@@ -168,6 +168,10 @@
                             echo '</div>';
                         ?>
                     </div>
+
+                    <div class="goingclear">
+                        <a href="https://goingclear.com" target="_blank" class="goingclear" style="color:#CCCCCC;font-size:10px;">Web Design</a> <span style="font-size:10px;">by GoingClear</span> 
+                    </div>
                 </div>
             </div>
         </div>
