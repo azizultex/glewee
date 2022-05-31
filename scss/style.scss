@@ -1144,6 +1144,13 @@ HOME STYLES
 		bottom: -173px;
 		position: absolute;
 	}
+
+	&__overlay {
+		top: 0;
+		left: -26px;
+		z-index: -1;
+		position: absolute;
+	}
 }
 
 .home-trusted-brands {
@@ -5922,6 +5929,7 @@ DEFAULT STYLES
 }
 
 @media screen and (max-width: 1000px) {
+
 	.goingclear {
 		text-align: center;
 		float: none;

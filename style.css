@@ -1667,6 +1667,12 @@ HOME STYLES
     bottom: -173px;
     position: absolute;
 }
+.banner__overlay {
+    top: 0;
+    left: -26px;
+    z-index: -1;
+    position: absolute;
+}
 
 .home-trusted-brands {
     overflow: hidden;

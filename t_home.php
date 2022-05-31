@@ -74,7 +74,16 @@ get_header();
 	            <?php if ( $banner['image'] ): ?>
 	            <div class="col-md-6 col-sm-5">
 	                <div class="banner__media">
-	                	<?php printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $banner['image']['url'] ), $banner['image']['alt'] ); ?>
+	                	<?php
+	                		if ( $banner['overlay'] ) 
+	                		{
+	                		 	printf( '<div class="banner__overlay">
+			                		<img src="%s" class="img-fluid" alt="%s">
+			                	</div>', esc_url( $banner['overlay']['url'] ), $banner['overlay']['alt'] );
+	                		}
+
+	                		printf( '<img src="%s" class="img-fluid" alt="%s">', esc_url( $banner['image']['url'] ), $banner['image']['alt'] ); 
+	                	?>
 	                </div>
 	            </div>
 	            <?php endif; ?>
