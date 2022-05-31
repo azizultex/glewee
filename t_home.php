@@ -19,12 +19,18 @@ get_header();
 
 	                		        if ( $apps_store['apple_store'] ) 
 	                		        {
-	                		            printf( '<a href="%s" class="btn bg-white" target="_blank"><img src="%s" class="img-fluid" alt="Apple Store"></a>', esc_url( $apps_store['apple_store'] ), esc_url( get_theme_file_uri( 'images/app-store.png' )) );
+	                		        	$as_logo_alt = $apps_store['apple_store_logo'] ? $apps_store['apple_store_logo']['alt'] : 'Apple Store';
+	                		        	$as_logo_url = $apps_store['apple_store_logo'] ? $apps_store['apple_store_logo']['url'] : get_theme_file_uri( 'images/app-store.png' );
+
+	                		            printf( '<a href="%s" class="btn bg-white" target="_blank"><img src="%s" class="img-fluid" alt="%s"></a>', esc_url( $apps_store['apple_store'] ), esc_url( $as_logo_url ), $as_logo_alt );
 	                		        }
 
 	                		        if ( $apps_store['google_play'] ) 
 	                		        {
-	                		            printf( '<a href="%s" class="btn bg-white" target="_blank"><img src="%s" class="img-fluid" alt="Apple Store"></a>', esc_url( $apps_store['google_play'] ), esc_url( get_theme_file_uri( 'images/google-play.png' )) );
+	                		        	$gp_logo_alt = $apps_store['google_play_logo'] ? $apps_store['google_play_logo']['alt'] : 'Google Play';
+	                		        	$gp_logo_url = $apps_store['google_play_logo'] ? $apps_store['google_play_logo']['url'] : get_theme_file_uri( 'images/google-play.png' );
+
+	                		            printf( '<a href="%s" class="btn bg-white" target="_blank"><img src="%s" class="img-fluid" alt="%s"></a>', esc_url( $apps_store['google_play'] ), esc_url( $gp_logo_url ), $gp_logo_alt );
 	                		        }
 
 	                		    echo '</div>';
