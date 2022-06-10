@@ -1322,14 +1322,15 @@ HOME STYLES
 		z-index: 1;
 		display: block;
 		overflow: hidden;
-		padding: 40px 50px;
+		// padding: 40px 50px;
+		padding: 40px 30px;
 		border-radius: 34px;
 		position: relative;
 		margin-bottom: 30px;
 		@include transition(all .3s ease);
 
 		&.glewee {
-			padding-top: 119px;
+			// padding-top: 119px;
 
 			.why-glewee__item {
 
@@ -1432,11 +1433,11 @@ HOME STYLES
 		&-text {
 
 			.number	 {
-				font-size: 132px;
+				font-size: 120px;
 				font-weight: 700;
 				font-family: $pop;
-				line-height: 132px; 
-				@include letter-spacing(-25, 132); 
+				line-height: 120px; 
+				@include letter-spacing(-25, 120); 
 				background: linear-gradient(111deg, #ffb1e7 0%, #8d9dff 49.75%, #5de2ff 100%);
 				-webkit-text-fill-color: transparent;
 				-webkit-background-clip: text;

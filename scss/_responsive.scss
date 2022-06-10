@@ -56,9 +56,17 @@ MEDIA QUERIES
     }
 }/* 1560 */
 
-@media only screen and (max-width: 1460px) { 
+// @media only screen and (max-width: 1460px) { 
+@media only screen and (max-width: 1920px) { 
 
-    h1, .h1 { &.lg {font-size: 90px; line-height: 100px; @include letter-spacing(-25, 90) } } 
+    h1, .h1 { 
+
+        &.lg {
+            font-size: 90px; 
+            line-height: 100px; 
+            @include letter-spacing(-25, 90) 
+        } 
+    } 
 
     /***********************************
     HOME STYLES
@@ -344,9 +352,17 @@ MEDIA QUERIES
 
 }/* 1460 */
 
-@media only screen and (max-width: 1366px) { 
+// @media only screen and (max-width: 1366px) { 
+@media only screen and (max-width: 1920px) { 
 
-    h1, .h1 { &.lg { font-size: 80px; line-height: 90px; @include letter-spacing(-25, 80) } }
+    h1, .h1 {
+
+        &.lg { 
+            font-size: 80px; 
+            line-height: 90px; 
+            @include letter-spacing(-25, 80) 
+        } 
+    }
 
     .container {
         max-width: 1170px;
@@ -723,8 +739,23 @@ MEDIA QUERIES
 
 @media only screen and (max-width: 1199px) {
  
-    h1, .h1 { font-size: 60px;  line-height: 68px; @include letter-spacing(-25, 60); &.lg { font-size: 72px; line-height: 84px; @include letter-spacing(-25, 72) } }
-    h2, .h2 { font-size: 55px;  line-height: 65px; @include letter-spacing(-25, 55) } 
+    h1, .h1 { 
+        font-size: 60px;  
+        line-height: 68px; 
+        @include letter-spacing(-25, 60); 
+
+        &.lg { 
+            font-size: 72px; 
+            line-height: 84px; 
+            @include letter-spacing(-25, 72);
+        } 
+    }
+
+    h2, .h2 { 
+        font-size: 55px;  
+        line-height: 65px; 
+        @include letter-spacing(-25, 55);
+    } 
 
     .btn {
 

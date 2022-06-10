@@ -1804,15 +1804,12 @@ HOME STYLES
     z-index: 1;
     display: block;
     overflow: hidden;
-    padding: 40px 50px;
+    padding: 40px 30px;
     border-radius: 34px;
     position: relative;
     margin-bottom: 30px;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-}
-.why-glewee__item.glewee {
-    padding-top: 119px;
 }
 .why-glewee__item.glewee .why-glewee__item-text {
     max-width: 415px;
@@ -1878,11 +1875,11 @@ HOME STYLES
     position: absolute;
 }
 .why-glewee__item-text .number {
-    font-size: 132px;
+    font-size: 120px;
     font-weight: 700;
     font-family: "poppins", sans-serif;
-    line-height: 132px;
-    letter-spacing: -3.3px;
+    line-height: 120px;
+    letter-spacing: -3px;
     background: linear-gradient(111deg, #ffb1e7 0%, #8d9dff 49.75%, #5de2ff 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
@@ -6380,7 +6377,7 @@ MEDIA QUERIES
     }
 }
 /* 1560 */
-@media only screen and (max-width: 1460px) {
+@media only screen and (max-width: 1920px) {
     h1.lg, .h1.lg {
         font-size: 90px;
         line-height: 100px;
@@ -6599,7 +6596,7 @@ MEDIA QUERIES
     }
 }
 /* 1460 */
-@media only screen and (max-width: 1366px) {
+@media only screen and (max-width: 1920px) {
     h1.lg, .h1.lg {
         font-size: 80px;
         line-height: 90px;
